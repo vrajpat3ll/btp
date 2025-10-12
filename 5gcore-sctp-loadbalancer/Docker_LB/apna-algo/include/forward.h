@@ -6,6 +6,8 @@
 #include "amf.h"
 
 #define BUFFER_SIZE 1024
+#define MAX_RETRIES 10
+#define FORWARD_CONNS_ARRAY_LEN 2 * MAX_CONNECTIONS
 
 typedef struct {
     int source_socket;

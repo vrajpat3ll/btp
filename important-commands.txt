@@ -1,6 +1,0 @@
-alias describe=
-kubectl get pods -A --no-headers | fzf | awk '{print $2, $1}' | xargs -n 2 sh -c 'kubectl describe pod $0 -n $1'
-// interactively describe the pod you choose
-
-// better version
-kubectl get pods -A --no-headers | fzf --with-nth=2,1 --preview 'kubectl describe pod {2} -n {1}'

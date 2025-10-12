@@ -11,7 +11,7 @@
 // Externalized mutex used by the round-robin function
 pthread_mutex_t round_robin_mutex = PTHREAD_MUTEX_INITIALIZER;
 static int round_robin_index = 0;
-
+extern int AMF_CAPACITY;
 AMF amfs[MAX_AMFS];
 
 void amf_init_default(void) {
@@ -69,7 +69,7 @@ AMF *get_next_amf_round_robin(void) {
     }
     for (int i = 0; i < MAX_AMFS; i++) {
         int idx = (round_robin_index + i) % MAX_AMFS;
-        if (amfs[idx].active) {
+        if (amfs[idx].active && amfs[idx].connections < AMF_CAPACITY) {
             target_amf = &amfs[idx];
             round_robin_index = (idx + 1) % MAX_AMFS;
             log("INFO", "[amf] get_next_amf_round_robin: Selected AMF index %d (id=%d, ip=%s)\n", idx, amfs[idx].id, amfs[idx].ip);

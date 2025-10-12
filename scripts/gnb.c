@@ -17,18 +17,15 @@ void create_file(const char *file_path, const char *content) {
 }
 
 // Function to create a folder with the specified content
-void create_folder(int folder_num, const char *base_ip) {
+void create_folder(int folder_num) {
     char folder_name[200];
     char folder_path[300];
 
     // Create folder name
-    snprintf(folder_name, sizeof(folder_name), "5gcore-sctp-loadbalancer/my5GRanTester%d-helm-chart", folder_num);
+    snprintf(folder_name, sizeof(folder_name), "5gcore-sctp-loadbalancer/helm-charts/my5GRanTester%d-helm-chart", folder_num);
 
     // Create the main folder
-    if (mkdir(folder_name, 0777) != 0) {
-        // perror("Error creating main folder");
-        // exit(EXIT_FAILURE);
-    }
+    mkdir(folder_name, 0777) != 0;
 
     // Create chart.yaml content
     const char *chart_yaml_content = 
@@ -49,7 +46,7 @@ void create_folder(int folder_num, const char *base_ip) {
     char values_yaml_content[5000];
     snprintf(values_yaml_content, sizeof(values_yaml_content), 
         "image:\n"
-        "  repository: wriddhiraaj/my5g-ran-tester\n"
+        "  repository: vrajpat3ll/my5g-ran-tester\n"
         "  pullPolicy: IfNotPresent\n"
         "  tag: \"latest\"\n\n"
         "config:\n"
@@ -186,7 +183,7 @@ int main(int argc, char *argv[]) {
 
     int num_folders = atoi(argv[1]);
     for (int i = 1; i <= num_folders; i++) {
-        create_folder(i, "10.0.3.10");
+        create_folder(i);
     }
 
     printf("Folders created successfully.\n");

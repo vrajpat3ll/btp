@@ -1,24 +1,29 @@
 #include <arpa/inet.h>
+#include <errno.h>
+#include <fcntl.h>
 #include <netinet/sctp.h>
 #include <pthread.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-#include <time.h>
 #include <sys/stat.h>
-#include <fcntl.h>
-#include <errno.h>
+#include <time.h>
+#include <unistd.h>
 
 #include "amf.h"
 #include "forward.h"
 #include "scale.h"
 #include "utils.h"
 
+int listen_socket;
+
+
 int main(int argc, char *argv[]) {
     (void)argc;
     (void)argv;
 
+    // logs setup
     {
         struct stat st = {0};
         if (stat("logs", &st) == -1) {
@@ -41,11 +46,11 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    log("INFO", "[main] Initializing AMF and forwarding tables...\n"); // Line 16
     amf_init_default();
     forward_init_table();
+    log("INFO", "[main] Initialized tables...\n");
 
-    int listen_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_SCTP);
+    listen_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_SCTP);
     if (listen_socket < 0) {
         log_perror("[main] socket");
         return 1;
@@ -56,14 +61,14 @@ int main(int argc, char *argv[]) {
     listen_addr.sin_family = AF_INET;
     listen_addr.sin_addr.s_addr = inet_addr("10.0.3.1");
     listen_addr.sin_port = htons(38412);
-    
-    log("INFO", "[main] Binding socket to 10.0.3.1:38412\n"); 
+
+    log("INFO", "[main] Binding socket to 10.0.3.1:38412\n");
     if (bind(listen_socket, (struct sockaddr *)&listen_addr, sizeof(listen_addr)) < 0) {
         log_perror("[main] bind");
         close(listen_socket);
         return 1;
     }
-    
+
     log("INFO", "[main] Setting up socket for listening (%d max connections)...\n", MAX_CONNECTIONS);
     if (listen(listen_socket, MAX_CONNECTIONS) < 0) {
         log_perror("[main] listen");
@@ -96,7 +101,7 @@ int main(int argc, char *argv[]) {
             free(gnb_sock);
             continue;
         }
-        log("INFO", "[main] Accepted new GNB connection from %s:%d\n", inet_ntoa(gnb_addr.sin_addr), ntohs(gnb_addr.sin_port)); 
+        log("INFO", "[main] Requested gNB connection from %s:%d\n", inet_ntoa(gnb_addr.sin_addr), ntohs(gnb_addr.sin_port));
 
         scale_up_check();
 
