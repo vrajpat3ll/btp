@@ -48,14 +48,14 @@ if [ "$(docker images -q $IMAGE_NAME:$TAG)" != "" ]; then
 fi
 
 sudo docker login
-sudo docker build -t $IMAGE_NAME 5gcore-sctp-loadbalancer/Docker_LB/apna-algo
+sudo docker build -t $IMAGE_NAME src/apna-algo -f docker/apna-algo/Dockerfile
 
 sudo docker tag $IMAGE_NAME $IMAGE_NAME:$TAG
 echo "Tagged image as $IMAGE_NAME:$TAG"
 sudo docker push $IMAGE_NAME:$TAG
 echo "Pushed image $IMAGE_NAME:$TAG to Docker Hub"
 
-CONFIG_FILE="5gcore-sctp-loadbalancer/Loadbalancer-helm-chart/values.yaml"
+CONFIG_FILE="charts/loadbalancer/values.yaml"
 
 # Update the tag line (handles double or single quotes and spaces)
 sed -i 's/tag: *["'"'"'].*["'"'"']/tag: "'"$TAG"'"/' $CONFIG_FILE

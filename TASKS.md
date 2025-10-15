@@ -5,3 +5,7 @@
 - [ ] why are we using `wriddhiraj/my5g-ran-tester`? can we use the barebone RANTester?
 - [ ] TLS handshake timeout in kubectl -> find out why this issue is occuring
   - [x] use `sudo systemctl restart docker` to get around this issue
+- [ ] refactor codebase
+  - [ ] GOAL: to be able to have the same ./begin.sh work properly
+- [ ] async logging for actual time-evals
+- [ ] 

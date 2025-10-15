@@ -11,7 +11,7 @@ int main(int argc, char**argv) {
     srand(time(NULL));
 
     // Open the file for writing
-    file = fopen("r_time.txt", "w");
+    file = fopen("data/ue-conn-timediff.txt", "w");
     if (file == NULL) {
         printf("Error opening file!\n");
         return 1;
@@ -26,7 +26,7 @@ int main(int argc, char**argv) {
     // Close the file
     fclose(file);
 
-    printf("Random values written to r_time.txt\n");
+    printf("Random values written to ue-conn-timediff.txt\n");
 
     return 0;
 }

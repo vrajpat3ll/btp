@@ -1,0 +1,3 @@
+[submodule "third-party/my5G-RANTester"]
+	path = third-party/my5G-RANTester
+	url = https://github.com/vrajpat3ll/my5G-RANTester.git

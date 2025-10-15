@@ -13,10 +13,10 @@ if ! [[ "$NUM_SIMS" =~ ^[0-9]+$ ]] || [[ "$NUM_SIMS" -le 0 ]]; then
   exit 1
 fi
 
-./setup.sh $NUM_SIMS
+./scripts/setup.sh $NUM_SIMS
 
 # ./dock.sh
-cd 5gcore-sctp-loadbalancer || { echo "dir missing"; exit 1; }
+cd config || { echo "dir missing"; exit 1; }
 
 step "Cluster"
 sudo kind create cluster --config config-3node.yml
@@ -28,16 +28,14 @@ sudo kubectl create ns loadbalancer || true
 for i in $(seq 1 $NUM_SIMS); do sudo kubectl create ns ran-simulator$i || true; done
 
 step "CNI"
-sudo curl -sLO https://github.com/redhat-nfvpe/koko/releases/download/v0.82/koko_0.82_linux_amd64
-chmod +x koko_0.82_linux_amd64
-sudo ./koko_0.82_linux_amd64 -d kind-worker,eth1 -d kind-worker2,eth1q
+sudo koko -d kind-worker,eth1 -d kind-worker2,eth1q
 
 sudo modprobe sctp
 sudo kubectl create -f cni-install.yml
 
 step "Open5GS"
 sudo kubectl create -f core-5g-macvlan.yml
-sudo helm -n open5gs upgrade --install core5g open5gs-helm-charts/
+sudo helm -n open5gs upgrade --install core5g ../charts/open5gs
 sudo kubectl -n open5gs get po
 
 step "RBAC"
@@ -45,13 +43,15 @@ sudo kubectl apply -f service-account.yaml
 sudo kubectl apply -f cluster-role.yaml
 sudo kubectl apply -f cluster-role-binding.yaml
 
+cd ../charts || { echo "dir missing"; exit 1; }
+
 step "Loadbalancer"
-sudo helm -n loadbalancer upgrade --install lb Loadbalancer-helm-chart/
+sudo helm -n loadbalancer upgrade --install lb loadbalancer
 sudo kubectl -n loadbalancer get po
 
 step "RAN sims"
 for i in $(seq 1 $NUM_SIMS); do
-  sudo helm -n ran-simulator$i upgrade --install sim5g my5GRanTester$i-helm-chart/
+  sudo helm -n ran-simulator$i upgrade --install sim5g my5GRan-Tester/$i
 done
 
 # step "Monitor"

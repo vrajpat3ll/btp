@@ -1,8 +1,0 @@
-myloadbalancer:
-  multusTrafficIP: "10.0.3.1"
-  multusTrafficnetMask: "24"
-  image:
-    repository: vrajpat3ll/load_balancer
-    pullPolicy: IfNotPresent
-    tag: "latest"
-

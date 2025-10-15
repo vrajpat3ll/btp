@@ -35,7 +35,7 @@ if [ "${#times[@]}" -lt "$end" ]; then
     exit 1
 fi
 
-# passwordless sudo for 10 minute
+# passwordless sudo for 10 minutes
 sudo -v
 echo "Defaults timestamp_type=global,timestamp_timeout=600" \
   | sudo tee /etc/sudoers.d/99-global-timestamp

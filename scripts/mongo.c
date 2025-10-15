@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
     FILE *fp;
-    fp = fopen("5gcore-sctp-loadbalancer/open5gs-helm-charts/templates/mongo-ue-init-script.yaml", "w"); // Open file for writing
+    fp = fopen("charts/open5gs/templates/mongo-ue-init-script.yaml", "w"); // Open file for writing
 
     if (fp == NULL) {
         printf("Error opening file!\n");

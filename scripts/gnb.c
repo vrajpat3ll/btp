@@ -22,7 +22,7 @@ void create_folder(int folder_num) {
     char folder_path[300];
 
     // Create folder name
-    snprintf(folder_name, sizeof(folder_name), "5gcore-sctp-loadbalancer/helm-charts/my5GRanTester%d-helm-chart", folder_num);
+    snprintf(folder_name, sizeof(folder_name), "charts/my5GRan-Tester/%d", folder_num);
 
     // Create the main folder
     mkdir(folder_name, 0777) != 0;
@@ -46,7 +46,7 @@ void create_folder(int folder_num) {
     char values_yaml_content[5000];
     snprintf(values_yaml_content, sizeof(values_yaml_content), 
         "image:\n"
-        "  repository: vrajpat3ll/my5g-ran-tester\n"
+        "  repository: wriddhiraaj/my5g-ran-tester\n"
         "  pullPolicy: IfNotPresent\n"
         "  tag: \"latest\"\n\n"
         "config:\n"

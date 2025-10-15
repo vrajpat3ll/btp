@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+    
 int main(int argc, char *argv[]) {
     FILE *fp;
-    fp = fopen("5gcore-sctp-loadbalancer/core-5g-macvlan.yml", "w");
+    fp = fopen("config/core-5g-macvlan.yml", "w");
 
     if (fp == NULL) {
         printf("Error opening file!\n");

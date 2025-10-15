@@ -1,0 +1,1563 @@
+[2025-10-12 09:27:25] [INFO] [main] Logging initialized at logs/run-20251012-092725.log
+[2025-10-12 09:27:25] [INFO] [main] Initializing AMF and forwarding tables...
+[2025-10-12 09:27:25] [INFO] [forward] forward_init_table: Initializing live thread table
+[2025-10-12 09:27:25] [INFO] [main] Binding socket to 10.0.3.1:38412
+[2025-10-12 09:27:25] [INFO] [main] Setting up socket for listening (100 max connections)...
+[2025-10-12 09:27:25] [INFO] [main] Proxy listening on 10.0.3.1:38412 with AMF capacity 10
+[2025-10-12 09:27:56] [INFO] [main] Accepted new GNB connection from 10.0.3.10:9487
+[2025-10-12 09:27:56] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:27:56] [INFO] [scale] scale_up_check: total_conn_count=0, threshold=8
+[2025-10-12 09:27:56] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:27:56] [INFO] [forward] Handling new gNB connection: socket=5, IP=10.0.3.10, port=9487
+[2025-10-12 09:27:56] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:27:56] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:27:56] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:27:56] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:27:56] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=7)
+[2025-10-12 09:27:56] [INFO] [forward] Connection setup latency: gNB socket 5 -> AMF id=1 took 1 µs (0.001 ms)
+[2025-10-12 09:27:56] [INFO] [forward] forward_register_thread: Registered thread at slot 0
+[2025-10-12 09:27:56] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 0
+[2025-10-12 09:27:56] [INFO] [forward] forward_register_thread: Registered thread at slot 1
+[2025-10-12 09:27:56] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 0, 10.0.3.10:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:27:56] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 1
+[2025-10-12 09:27:56] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 1, 10.0.3.3:38412 -> 10.0.3.10:9487)
+[2025-10-12 09:27:56] [INFO] [forward] Transferred 63 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:27:56] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.10:9487
+[2025-10-12 09:27:57] [INFO] [forward] Transferred 76 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:27:57] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.10:9487
+[2025-10-12 09:27:57] [INFO] [forward] Transferred 64 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:27:57] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.10:9487
+[2025-10-12 09:27:57] [INFO] [forward] Transferred 100 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:27:58] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.10:9487
+[2025-10-12 09:27:58] [INFO] [forward] Transferred 19 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:27:58] [INFO] [forward] Transferred 53 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:27:58] [INFO] [forward] Transferred 96 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:27:58] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.10:9487
+[2025-10-12 09:27:58] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.10:9487
+[2025-10-12 09:27:58] [INFO] [forward] Transferred 40 bytes 10.0.3.10:9487 -> 10.0.3.3:38412
+[2025-10-12 09:28:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:28:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:29:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:29:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:30:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:30:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:31:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:31:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:32:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:32:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:33:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:33:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:34:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:34:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:35:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:35:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:36:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:36:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:37:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:37:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:38:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:38:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:39:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:39:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:40:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:40:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:41:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:41:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:42:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:42:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:43:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:43:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:44:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:44:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:45:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:45:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:46:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:46:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:47:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:47:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:48:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:48:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:49:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:49:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:50:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:50:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:51:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:51:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:52:09] [INFO] [main] Accepted new GNB connection from 10.0.3.11:9487
+[2025-10-12 09:52:09] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:09] [INFO] [scale] scale_up_check: total_conn_count=1, threshold=8
+[2025-10-12 09:52:09] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:52:09] [INFO] [forward] Handling new gNB connection: socket=6, IP=10.0.3.11, port=9487
+[2025-10-12 09:52:09] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:09] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:09] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:52:09] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:52:09] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=9)
+[2025-10-12 09:52:09] [INFO] [forward] Connection setup latency: gNB socket 6 -> AMF id=1 took 1 µs (0.001 ms)
+[2025-10-12 09:52:09] [INFO] [forward] forward_register_thread: Registered thread at slot 2
+[2025-10-12 09:52:09] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 2
+[2025-10-12 09:52:09] [INFO] [forward] forward_register_thread: Registered thread at slot 3
+[2025-10-12 09:52:09] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 2, 10.0.3.11:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:52:09] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 3
+[2025-10-12 09:52:09] [INFO] [forward] Transferred 63 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:09] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 3, 10.0.3.3:38412 -> 10.0.3.11:9487)
+[2025-10-12 09:52:09] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.11:9487
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 76 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.10:9487
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.11:9487
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 64 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.11:9487
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 100 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.11:9487
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 19 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 53 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 96 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.11:9487
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.11:9487
+[2025-10-12 09:52:10] [INFO] [forward] Transferred 40 bytes 10.0.3.11:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:14] [INFO] [main] Accepted new GNB connection from 10.0.3.12:9487
+[2025-10-12 09:52:14] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:14] [INFO] [scale] scale_up_check: total_conn_count=2, threshold=8
+[2025-10-12 09:52:14] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:52:14] [INFO] [forward] Handling new gNB connection: socket=8, IP=10.0.3.12, port=9487
+[2025-10-12 09:52:14] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:14] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:14] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:52:14] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:52:14] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=11)
+[2025-10-12 09:52:14] [INFO] [forward] Connection setup latency: gNB socket 8 -> AMF id=1 took 1 µs (0.001 ms)
+[2025-10-12 09:52:14] [INFO] [forward] forward_register_thread: Registered thread at slot 4
+[2025-10-12 09:52:14] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 4
+[2025-10-12 09:52:14] [INFO] [forward] forward_register_thread: Registered thread at slot 5
+[2025-10-12 09:52:14] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 4, 10.0.3.12:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:52:14] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 5, 10.0.3.3:38412 -> 10.0.3.12:9487)
+[2025-10-12 09:52:14] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.12:9487
+[2025-10-12 09:52:14] [INFO] [forward] Transferred 63 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:14] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 5
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 76 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.11:9487
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.12:9487
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 64 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.12:9487
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 100 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.12:9487
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 19 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 53 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 96 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.12:9487
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.12:9487
+[2025-10-12 09:52:15] [INFO] [forward] Transferred 40 bytes 10.0.3.12:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:17] [INFO] [main] Accepted new GNB connection from 10.0.3.13:9487
+[2025-10-12 09:52:17] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:17] [INFO] [scale] scale_up_check: total_conn_count=3, threshold=8
+[2025-10-12 09:52:17] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:52:17] [INFO] [forward] Handling new gNB connection: socket=10, IP=10.0.3.13, port=9487
+[2025-10-12 09:52:17] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:17] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:17] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:52:17] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:52:17] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=13)
+[2025-10-12 09:52:17] [INFO] [forward] Connection setup latency: gNB socket 10 -> AMF id=1 took 0 µs (0.000 ms)
+[2025-10-12 09:52:17] [INFO] [forward] forward_register_thread: Registered thread at slot 6
+[2025-10-12 09:52:17] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 6
+[2025-10-12 09:52:17] [INFO] [forward] forward_register_thread: Registered thread at slot 7
+[2025-10-12 09:52:17] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 7
+[2025-10-12 09:52:17] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 7, 10.0.3.3:38412 -> 10.0.3.13:9487)
+[2025-10-12 09:52:17] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 6, 10.0.3.13:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:52:17] [INFO] [forward] Transferred 63 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:17] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.13:9487
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 76 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.12:9487
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.13:9487
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 64 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.13:9487
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 100 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.13:9487
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 19 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 53 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 96 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.13:9487
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.13:9487
+[2025-10-12 09:52:18] [INFO] [forward] Transferred 40 bytes 10.0.3.13:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:19] [INFO] [main] Accepted new GNB connection from 10.0.3.14:9487
+[2025-10-12 09:52:19] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:19] [INFO] [scale] scale_up_check: total_conn_count=4, threshold=8
+[2025-10-12 09:52:19] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:52:19] [INFO] [forward] Handling new gNB connection: socket=12, IP=10.0.3.14, port=9487
+[2025-10-12 09:52:19] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:19] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:19] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:52:19] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:52:19] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=15)
+[2025-10-12 09:52:19] [INFO] [forward] Connection setup latency: gNB socket 12 -> AMF id=1 took 0 µs (0.000 ms)
+[2025-10-12 09:52:19] [INFO] [forward] forward_register_thread: Registered thread at slot 8
+[2025-10-12 09:52:19] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 8
+[2025-10-12 09:52:19] [INFO] [forward] forward_register_thread: Registered thread at slot 9
+[2025-10-12 09:52:19] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 8, 10.0.3.14:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:52:19] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 9
+[2025-10-12 09:52:19] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 9, 10.0.3.3:38412 -> 10.0.3.14:9487)
+[2025-10-12 09:52:19] [INFO] [forward] Transferred 63 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:19] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.14:9487
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 76 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.13:9487
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.14:9487
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 64 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.14:9487
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 100 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.14:9487
+[2025-10-12 09:52:20] [INFO] [forward] Transferred 19 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:21] [INFO] [forward] Transferred 53 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:21] [INFO] [forward] Transferred 96 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:21] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.14:9487
+[2025-10-12 09:52:21] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.14:9487
+[2025-10-12 09:52:21] [INFO] [forward] Transferred 40 bytes 10.0.3.14:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:22] [INFO] [main] Accepted new GNB connection from 10.0.3.15:9487
+[2025-10-12 09:52:22] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:22] [INFO] [scale] scale_up_check: total_conn_count=5, threshold=8
+[2025-10-12 09:52:22] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:52:22] [INFO] [forward] Handling new gNB connection: socket=14, IP=10.0.3.15, port=9487
+[2025-10-12 09:52:22] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:22] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:22] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:52:22] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:52:22] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=17)
+[2025-10-12 09:52:22] [INFO] [forward] Connection setup latency: gNB socket 14 -> AMF id=1 took 3 µs (0.003 ms)
+[2025-10-12 09:52:22] [INFO] [forward] forward_register_thread: Registered thread at slot 10
+[2025-10-12 09:52:22] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 10
+[2025-10-12 09:52:22] [INFO] [forward] forward_register_thread: Registered thread at slot 11
+[2025-10-12 09:52:22] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 10, 10.0.3.15:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:52:22] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 11, 10.0.3.3:38412 -> 10.0.3.15:9487)
+[2025-10-12 09:52:22] [INFO] [forward] Transferred 63 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:22] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 11
+[2025-10-12 09:52:22] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.15:9487
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 76 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.14:9487
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.15:9487
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 64 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.15:9487
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 100 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.15:9487
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 19 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 53 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 96 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.15:9487
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.15:9487
+[2025-10-12 09:52:23] [INFO] [forward] Transferred 40 bytes 10.0.3.15:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 09:52:26] [INFO] [main] Accepted new GNB connection from 10.0.3.16:9487
+[2025-10-12 09:52:26] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:26] [INFO] [scale] scale_up_check: total_conn_count=6, threshold=8
+[2025-10-12 09:52:26] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:52:26] [INFO] [forward] Handling new gNB connection: socket=16, IP=10.0.3.16, port=9487
+[2025-10-12 09:52:26] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:26] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:26] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:52:26] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:52:26] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=19)
+[2025-10-12 09:52:26] [INFO] [forward] Connection setup latency: gNB socket 16 -> AMF id=1 took 0 µs (0.000 ms)
+[2025-10-12 09:52:26] [INFO] [forward] forward_register_thread: Registered thread at slot 12
+[2025-10-12 09:52:26] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 12
+[2025-10-12 09:52:26] [INFO] [forward] forward_register_thread: Registered thread at slot 13
+[2025-10-12 09:52:26] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 13
+[2025-10-12 09:52:26] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 12, 10.0.3.16:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:52:26] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 13, 10.0.3.3:38412 -> 10.0.3.16:9487)
+[2025-10-12 09:52:26] [INFO] [forward] Transferred 63 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:26] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.16:9487
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 76 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.15:9487
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.16:9487
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 64 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.16:9487
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 100 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.16:9487
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 19 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 53 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 96 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.16:9487
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.16:9487
+[2025-10-12 09:52:27] [INFO] [forward] Transferred 40 bytes 10.0.3.16:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:31] [INFO] [main] Accepted new GNB connection from 10.0.3.17:9487
+[2025-10-12 09:52:31] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:31] [INFO] [scale] scale_up_check: total_conn_count=7, threshold=8
+[2025-10-12 09:52:31] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 09:52:31] [INFO] [forward] Handling new gNB connection: socket=18, IP=10.0.3.17, port=9487
+[2025-10-12 09:52:31] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:31] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:31] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 09:52:31] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 09:52:31] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=21)
+[2025-10-12 09:52:31] [INFO] [forward] Connection setup latency: gNB socket 18 -> AMF id=1 took 3 µs (0.003 ms)
+[2025-10-12 09:52:31] [INFO] [forward] forward_register_thread: Registered thread at slot 14
+[2025-10-12 09:52:31] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 14
+[2025-10-12 09:52:31] [INFO] [forward] forward_register_thread: Registered thread at slot 15
+[2025-10-12 09:52:31] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 14, 10.0.3.17:9487 -> 10.0.3.3:38412)
+[2025-10-12 09:52:31] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 15, 10.0.3.3:38412 -> 10.0.3.17:9487)
+[2025-10-12 09:52:31] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 15
+[2025-10-12 09:52:31] [INFO] [forward] Transferred 63 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:31] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.17:9487
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 76 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.16:9487
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.17:9487
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 64 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.17:9487
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 100 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.17:9487
+[2025-10-12 09:52:32] [INFO] [forward] Transferred 19 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:33] [INFO] [forward] Transferred 53 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:33] [INFO] [forward] Transferred 96 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:33] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.17:9487
+[2025-10-12 09:52:33] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.17:9487
+[2025-10-12 09:52:33] [INFO] [forward] Transferred 40 bytes 10.0.3.17:9487 -> 10.0.3.3:38412
+[2025-10-12 09:52:35] [INFO] [main] Accepted new GNB connection from 10.0.3.18:9487
+[2025-10-12 09:52:35] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 09:52:35] [INFO] [scale] scale_up_check: total_conn_count=8, threshold=8
+[2025-10-12 09:52:35] [INFO] [scale] SCALE UP: Load (8) exceeds threshold (8). Deploying AMF 2...
+[2025-10-12 09:52:35] [INFO] [forward] Handling new gNB connection: socket=20, IP=10.0.3.18, port=9487
+[2025-10-12 09:52:35] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 09:52:35] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:52:35] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 1 (id=2, ip=10.0.3.4)
+[2025-10-12 09:52:35] [INFO] [amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[2025-10-12 09:52:35] [INFO] [amf] connect_to_amf: Failed to connect to 10.0.3.4:38412
+[2025-10-12 09:52:35] [INFO] [forward] handle_gnb_connection: Failed to connect to AMF id=2 ip=10.0.3.4
+[2025-10-12 09:53:05] [INFO] [amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[2025-10-12 09:53:05] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.4:38412 (sock=23)
+[2025-10-12 09:53:05] [INFO] [forward] Connection setup latency: gNB socket 20 -> AMF id=2 took 30000549 µs (30000.549 ms)
+[2025-10-12 09:53:05] [INFO] [forward] forward_register_thread: Registered thread at slot 16
+[2025-10-12 09:53:05] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 16
+[2025-10-12 09:53:05] [INFO] [forward] forward_register_thread: Registered thread at slot 17
+[2025-10-12 09:53:05] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 16, 10.0.3.18:9487 -> 10.0.3.4:38412)
+[2025-10-12 09:53:05] [INFO] [forward] Transferred 63 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:05] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 17
+[2025-10-12 09:53:05] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 17, 10.0.3.4:38412 -> 10.0.3.18:9487)
+[2025-10-12 09:53:05] [INFO] [forward] Transferred 57 bytes 10.0.3.4:38412 -> 10.0.3.18:9487
+[2025-10-12 09:53:05] [INFO] [forward] Transferred 76 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 66 bytes 10.0.3.4:38412 -> 10.0.3.18:9487
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 64 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 43 bytes 10.0.3.4:38412 -> 10.0.3.18:9487
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 100 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 155 bytes 10.0.3.4:38412 -> 10.0.3.18:9487
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 19 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 53 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 96 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 64 bytes 10.0.3.4:38412 -> 10.0.3.18:9487
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 185 bytes 10.0.3.4:38412 -> 10.0.3.18:9487
+[2025-10-12 09:53:06] [INFO] [forward] Transferred 40 bytes 10.0.3.18:9487 -> 10.0.3.4:38412
+[2025-10-12 09:53:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:53:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 09:53:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 09:53:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 09:54:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:54:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 09:54:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 09:54:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 09:55:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 09:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 09:55:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 09:56:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 09:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 09:56:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 09:57:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 09:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 09:57:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 09:58:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 09:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 09:58:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 09:59:06] [INFO] [forward] Peer closed connection on socket 5 (recv=0)
+[2025-10-12 09:59:06] [INFO] [forward] forward_messages: Connection closed or error on source socket 5
+[2025-10-12 09:59:06] [INFO] [forward] forward_messages: Decremented connection counts for AMF id=1, total_conn_count=8
+[2025-10-12 09:59:06] [INFO] [forward] forward_messages: Unregistered thread index 0
+[2025-10-12 09:59:06] [INFO] [forward] cleanup_forward_info: Closing source socket 5
+[2025-10-12 09:59:06] [INFO] [forward] cleanup_forward_info: Closing destination socket 7
+[2025-10-12 09:59:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 09:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 09:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 09:59:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:00:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 10:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:00:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:01:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 10:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:01:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:02:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 10:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:02:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:03:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 10:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:03:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:04:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 10:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:04:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:05:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 10:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:05:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:06:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.70
+[2025-10-12 10:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:06:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 10:06:38] [INFO] [forward] Peer closed connection on socket 6 (recv=0)
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Connection closed or error on source socket 6
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Decremented connection counts for AMF id=1, total_conn_count=7
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Unregistered thread index 2
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing source socket 6
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing destination socket 9
+[2025-10-12 10:06:38] [INFO] [forward] Peer closed connection on socket 8 (recv=0)
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Connection closed or error on source socket 8
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Decremented connection counts for AMF id=1, total_conn_count=6
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Unregistered thread index 4
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing source socket 8
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing destination socket 11
+[2025-10-12 10:06:38] [INFO] [forward] Peer closed connection on socket 10 (recv=0)
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Connection closed or error on source socket 10
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Decremented connection counts for AMF id=1, total_conn_count=5
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Unregistered thread index 6
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing source socket 10
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing destination socket 13
+[2025-10-12 10:06:38] [INFO] [forward] Peer closed connection on socket 12 (recv=0)
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Connection closed or error on source socket 12
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Decremented connection counts for AMF id=1, total_conn_count=4
+[2025-10-12 10:06:38] [INFO] [forward] forward_messages: Unregistered thread index 8
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing source socket 12
+[2025-10-12 10:06:38] [INFO] [forward] cleanup_forward_info: Closing destination socket 15
+[2025-10-12 10:07:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 10:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.30
+[2025-10-12 10:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 10:07:25] [INFO] [scale] SCALE DOWN: Migrating from AMF 2 to AMF 1
+[2025-10-12 10:07:25] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 10:07:25] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=5)
+[2025-10-12 10:07:25] [INFO] [scale] Migrated connection (gNB sock 20) to new AMF socket 5
+[2025-10-12 10:07:25] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 10:07:25] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=6)
+[2025-10-12 10:07:25] [INFO] [scale] Migrated connection (gNB sock 23) to new AMF socket 6
+[2025-10-12 10:07:25] [INFO] [scale] Descaling: Scaling down AMF 2 deployment to 0 replicas
+[2025-10-12 10:07:55] [INFO] [forward] Peer closed connection on socket 23 (recv=0)
+[2025-10-12 10:07:55] [INFO] [forward] forward_messages: Connection closed or error on source socket 23
+[2025-10-12 10:07:55] [INFO] [forward] forward_messages: Decremented connection counts for AMF id=1, total_conn_count=3
+[2025-10-12 10:07:55] [INFO] [forward] forward_messages: Unregistered thread index 17
+[2025-10-12 10:07:55] [INFO] [forward] cleanup_forward_info: Closing source socket 23
+[2025-10-12 10:07:55] [INFO] [forward] cleanup_forward_info: Closing destination socket 6
+[2025-10-12 10:08:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:08:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:09:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:09:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:10:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:10:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:11:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:11:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:12:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:12:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:13:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:13:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:14:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:14:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:15:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:15:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:16:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:16:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:17:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:17:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:18:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:18:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:19:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:19:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:20:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:20:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:21:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:21:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:22:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:22:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:23:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:23:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:24:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:24:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:25:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:25:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:26:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:26:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:27:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:27:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:28:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:28:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:29:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:29:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:30:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:30:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:31:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:31:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:32:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:32:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:33:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:33:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:34:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:34:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:35:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:35:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:36:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:36:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:37:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:37:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:38:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:38:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:39:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:39:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:40:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:40:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:41:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:41:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:42:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:42:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:43:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:43:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:44:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:44:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:45:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:45:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:46:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:46:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:47:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:47:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:48:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:48:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:49:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:49:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:50:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:50:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:51:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:51:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:52:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:52:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:53:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:53:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:54:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:54:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:55:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:55:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:56:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:56:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:57:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:57:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:58:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:58:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 10:59:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 10:59:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:00:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:00:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:01:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:01:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:02:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:02:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:03:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:03:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:04:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:04:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:05:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:05:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:06:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:06:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:07:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:07:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:08:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:08:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:09:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:09:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:10:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:10:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:11:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:11:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:12:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:12:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:13:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:13:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:14:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:14:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:15:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:15:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:16:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:16:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:17:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:17:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:18:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:18:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:19:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:19:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:20:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:20:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:21:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:21:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:22:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:22:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:23:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:23:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:24:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:24:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:25:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:25:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:26:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:26:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:27:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:27:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:28:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:28:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:29:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:29:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:30:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:30:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:31:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:31:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:32:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:32:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:33:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:33:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:34:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:34:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:35:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:35:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:36:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:36:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:37:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:37:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:38:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:38:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:39:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:39:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:40:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:40:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:41:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:41:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:42:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:42:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:43:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:43:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:44:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:44:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:45:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:45:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:45:36] [INFO] [main] Accepted new GNB connection from 10.0.3.20:9487
+[2025-10-12 11:45:36] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:45:36] [INFO] [scale] scale_up_check: total_conn_count=3, threshold=8
+[2025-10-12 11:45:36] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 11:45:36] [INFO] [forward] Handling new gNB connection: socket=22, IP=10.0.3.20, port=9487
+[2025-10-12 11:45:36] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 11:45:36] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:45:36] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 11:45:36] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 11:45:36] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=7)
+[2025-10-12 11:45:36] [INFO] [forward] Connection setup latency: gNB socket 22 -> AMF id=1 took 1 µs (0.001 ms)
+[2025-10-12 11:45:36] [INFO] [forward] forward_register_thread: Registered thread at slot 0
+[2025-10-12 11:45:36] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 0
+[2025-10-12 11:45:36] [INFO] [forward] forward_register_thread: Registered thread at slot 2
+[2025-10-12 11:45:36] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 2
+[2025-10-12 11:45:36] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 0, 10.0.3.20:9487 -> 10.0.3.3:38412)
+[2025-10-12 11:45:36] [INFO] [forward] Transferred 63 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:36] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 2, 10.0.3.3:38412 -> 10.0.3.20:9487)
+[2025-10-12 11:45:36] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.20:9487
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 76 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.17:9487
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.20:9487
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 64 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.20:9487
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 100 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.20:9487
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 19 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 53 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 96 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.20:9487
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.20:9487
+[2025-10-12 11:45:37] [INFO] [forward] Transferred 40 bytes 10.0.3.20:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:43] [INFO] [main] Accepted new GNB connection from 10.0.3.19:9487
+[2025-10-12 11:45:43] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:45:43] [INFO] [scale] scale_up_check: total_conn_count=4, threshold=8
+[2025-10-12 11:45:43] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 11:45:43] [INFO] [forward] Handling new gNB connection: socket=6, IP=10.0.3.19, port=9487
+[2025-10-12 11:45:43] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 11:45:43] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:45:43] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 11:45:43] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 11:45:43] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=9)
+[2025-10-12 11:45:43] [INFO] [forward] Connection setup latency: gNB socket 6 -> AMF id=1 took 0 µs (0.000 ms)
+[2025-10-12 11:45:43] [INFO] [forward] forward_register_thread: Registered thread at slot 4
+[2025-10-12 11:45:43] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 4, 10.0.3.19:9487 -> 10.0.3.3:38412)
+[2025-10-12 11:45:43] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 4
+[2025-10-12 11:45:43] [INFO] [forward] forward_register_thread: Registered thread at slot 6
+[2025-10-12 11:45:43] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 6
+[2025-10-12 11:45:43] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 6, 10.0.3.3:38412 -> 10.0.3.19:9487)
+[2025-10-12 11:45:43] [INFO] [forward] Transferred 63 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:43] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.19:9487
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 76 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.20:9487
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.19:9487
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 64 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.19:9487
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 100 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.19:9487
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 19 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 53 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 96 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.19:9487
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.19:9487
+[2025-10-12 11:45:44] [INFO] [forward] Transferred 40 bytes 10.0.3.19:9487 -> 10.0.3.3:38412
+[2025-10-12 11:46:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:46:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:47:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:47:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:48:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:48:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:49:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:49:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:50:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:50:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:51:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:51:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:52:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:52:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:52:57] [INFO] [main] Accepted new GNB connection from 10.0.3.22:9487
+[2025-10-12 11:52:57] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:52:57] [INFO] [scale] scale_up_check: total_conn_count=5, threshold=8
+[2025-10-12 11:52:57] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 11:52:57] [INFO] [forward] Handling new gNB connection: socket=8, IP=10.0.3.22, port=9487
+[2025-10-12 11:52:57] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 11:52:57] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:52:57] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 11:52:57] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 11:52:57] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=11)
+[2025-10-12 11:52:57] [INFO] [forward] Connection setup latency: gNB socket 8 -> AMF id=1 took 0 µs (0.000 ms)
+[2025-10-12 11:52:57] [INFO] [forward] forward_register_thread: Registered thread at slot 8
+[2025-10-12 11:52:57] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 8
+[2025-10-12 11:52:57] [INFO] [forward] forward_register_thread: Registered thread at slot 17
+[2025-10-12 11:52:57] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 8, 10.0.3.22:9487 -> 10.0.3.3:38412)
+[2025-10-12 11:52:57] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 17
+[2025-10-12 11:52:57] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 17, 10.0.3.3:38412 -> 10.0.3.22:9487)
+[2025-10-12 11:52:57] [INFO] [forward] Transferred 63 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:52:57] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.22:9487
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 76 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.19:9487
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.22:9487
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 64 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.22:9487
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 100 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.22:9487
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 19 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 53 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 96 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.22:9487
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.22:9487
+[2025-10-12 11:52:58] [INFO] [forward] Transferred 40 bytes 10.0.3.22:9487 -> 10.0.3.3:38412
+[2025-10-12 11:53:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:53:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:54:25] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:54:25] [INFO] [scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[2025-10-12 11:54:31] [INFO] [main] Accepted new GNB connection from 10.0.3.23:9487
+[2025-10-12 11:54:31] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:54:31] [INFO] [scale] scale_up_check: total_conn_count=6, threshold=8
+[2025-10-12 11:54:31] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 11:54:31] [INFO] [forward] Handling new gNB connection: socket=10, IP=10.0.3.23, port=9487
+[2025-10-12 11:54:31] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 11:54:31] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:54:31] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 11:54:31] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 11:54:31] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=13)
+[2025-10-12 11:54:31] [INFO] [forward] Connection setup latency: gNB socket 10 -> AMF id=1 took 0 µs (0.000 ms)
+[2025-10-12 11:54:31] [INFO] [forward] forward_register_thread: Registered thread at slot 18
+[2025-10-12 11:54:31] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 18
+[2025-10-12 11:54:31] [INFO] [forward] forward_register_thread: Registered thread at slot 19
+[2025-10-12 11:54:31] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 19
+[2025-10-12 11:54:31] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 19, 10.0.3.3:38412 -> 10.0.3.23:9487)
+[2025-10-12 11:54:31] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 18, 10.0.3.23:9487 -> 10.0.3.3:38412)
+[2025-10-12 11:54:31] [INFO] [forward] Transferred 63 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:31] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.23:9487
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 76 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.22:9487
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.23:9487
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 64 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.23:9487
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 100 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.23:9487
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 19 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 53 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 96 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.23:9487
+[2025-10-12 11:54:32] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.23:9487
+[2025-10-12 11:54:33] [INFO] [forward] Transferred 40 bytes 10.0.3.23:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:33] [INFO] [main] Accepted new GNB connection from 10.0.3.24:9487
+[2025-10-12 11:54:33] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:54:33] [INFO] [scale] scale_up_check: total_conn_count=7, threshold=8
+[2025-10-12 11:54:33] [INFO] [scale] scale_up_check: Load below threshold, no scaling up needed
+[2025-10-12 11:54:33] [INFO] [forward] Handling new gNB connection: socket=12, IP=10.0.3.24, port=9487
+[2025-10-12 11:54:33] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 11:54:33] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:54:33] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[2025-10-12 11:54:33] [INFO] [amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[2025-10-12 11:54:33] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=20)
+[2025-10-12 11:54:33] [INFO] [forward] Connection setup latency: gNB socket 12 -> AMF id=1 took 2 µs (0.002 ms)
+[2025-10-12 11:54:33] [INFO] [forward] forward_register_thread: Registered thread at slot 20
+[2025-10-12 11:54:33] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 20
+[2025-10-12 11:54:33] [INFO] [forward] forward_register_thread: Registered thread at slot 21
+[2025-10-12 11:54:33] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 21
+[2025-10-12 11:54:33] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 20, 10.0.3.24:9487 -> 10.0.3.3:38412)
+[2025-10-12 11:54:33] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 21, 10.0.3.3:38412 -> 10.0.3.24:9487)
+[2025-10-12 11:54:33] [INFO] [forward] Transferred 63 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:33] [INFO] [forward] Transferred 57 bytes 10.0.3.3:38412 -> 10.0.3.24:9487
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 76 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 20 bytes 10.0.3.3:38412 -> 10.0.3.23:9487
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 66 bytes 10.0.3.3:38412 -> 10.0.3.24:9487
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 64 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 43 bytes 10.0.3.3:38412 -> 10.0.3.24:9487
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 100 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 155 bytes 10.0.3.3:38412 -> 10.0.3.24:9487
+[2025-10-12 11:54:34] [INFO] [forward] Transferred 19 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:35] [INFO] [forward] Transferred 53 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:35] [INFO] [forward] Transferred 96 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:35] [INFO] [forward] Transferred 64 bytes 10.0.3.3:38412 -> 10.0.3.24:9487
+[2025-10-12 11:54:35] [INFO] [forward] Transferred 185 bytes 10.0.3.3:38412 -> 10.0.3.24:9487
+[2025-10-12 11:54:35] [INFO] [forward] Transferred 40 bytes 10.0.3.24:9487 -> 10.0.3.3:38412
+[2025-10-12 11:54:37] [INFO] [main] Accepted new GNB connection from 10.0.3.25:9487
+[2025-10-12 11:54:37] [INFO] [amf] get_active_amf_count: Active AMF count = 1
+[2025-10-12 11:54:37] [INFO] [scale] scale_up_check: total_conn_count=8, threshold=8
+[2025-10-12 11:54:37] [INFO] [scale] SCALE UP: Load (8) exceeds threshold (8). Deploying AMF 2...
+[2025-10-12 11:54:37] [INFO] [forward] Handling new gNB connection: socket=15, IP=10.0.3.25, port=9487
+[2025-10-12 11:54:37] [INFO] [amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[2025-10-12 11:54:37] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 11:54:37] [INFO] [amf] get_next_amf_round_robin: Selected AMF index 1 (id=2, ip=10.0.3.4)
+[2025-10-12 11:54:37] [INFO] [amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[2025-10-12 11:54:40] [INFO] [amf] connect_to_amf: Failed to connect to 10.0.3.4:38412
+[2025-10-12 11:54:40] [INFO] [forward] handle_gnb_connection: Failed to connect to AMF id=2 ip=10.0.3.4
+[2025-10-12 11:55:10] [INFO] [amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[2025-10-12 11:55:10] [INFO] [amf] connect_to_amf: Failed to connect to 10.0.3.4:38412
+[2025-10-12 11:55:10] [INFO] [forward] handle_gnb_connection: Failed to connect to AMF id=2 ip=10.0.3.4
+[2025-10-12 11:55:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 11:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 11:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.00
+[2025-10-12 11:55:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 11:55:40] [INFO] [amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[2025-10-12 11:55:40] [INFO] [amf] connect_to_amf: Successfully connected to 10.0.3.4:38412 (sock=24)
+[2025-10-12 11:55:40] [INFO] [forward] Connection setup latency: gNB socket 15 -> AMF id=2 took 63000056 µs (63000.056 ms)
+[2025-10-12 11:55:40] [INFO] [forward] forward_register_thread: Registered thread at slot 22
+[2025-10-12 11:55:40] [INFO] [forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 22
+[2025-10-12 11:55:40] [INFO] [forward] forward_register_thread: Registered thread at slot 23
+[2025-10-12 11:55:40] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 22, 10.0.3.25:9487 -> 10.0.3.4:38412)
+[2025-10-12 11:55:40] [INFO] [forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 23
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 63 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:55:40] [INFO] [forward] forward_messages: Started forwarding messages (thread index: 23, 10.0.3.4:38412 -> 10.0.3.25:9487)
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 57 bytes 10.0.3.4:38412 -> 10.0.3.25:9487
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 76 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 66 bytes 10.0.3.4:38412 -> 10.0.3.25:9487
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 64 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 43 bytes 10.0.3.4:38412 -> 10.0.3.25:9487
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 100 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 155 bytes 10.0.3.4:38412 -> 10.0.3.25:9487
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 19 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 53 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 96 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 64 bytes 10.0.3.4:38412 -> 10.0.3.25:9487
+[2025-10-12 11:55:40] [INFO] [forward] Transferred 185 bytes 10.0.3.4:38412 -> 10.0.3.25:9487
+[2025-10-12 11:55:41] [INFO] [forward] Transferred 40 bytes 10.0.3.25:9487 -> 10.0.3.4:38412
+[2025-10-12 11:56:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 11:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 11:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 11:56:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 11:57:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 11:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 11:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 11:57:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 11:58:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 11:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 11:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 11:58:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 11:59:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 11:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 11:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 11:59:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:00:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:00:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:01:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:01:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:02:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:02:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:03:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:03:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:04:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:04:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:05:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:05:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:06:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:06:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:07:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:07:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:08:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:08:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:08:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:08:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:09:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:09:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:09:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:09:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:10:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:10:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:10:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:10:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:11:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:11:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:11:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:11:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:12:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:12:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:12:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:12:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:13:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:13:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:13:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:13:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:14:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:14:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:14:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:14:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:15:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:15:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:15:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:15:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:16:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:16:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:16:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:16:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:17:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:17:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:17:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:17:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:18:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:18:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:18:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:18:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:19:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:19:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:19:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:19:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:20:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:20:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:20:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:20:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:21:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:21:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:21:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:21:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:22:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:22:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:22:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:22:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:23:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:23:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:23:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:23:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:24:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:24:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:24:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:24:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:25:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:25:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:25:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:25:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:26:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:26:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:26:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:26:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:27:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:27:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:27:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:27:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:28:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:28:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:28:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:28:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:29:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:29:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:29:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:29:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:30:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:30:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:30:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:30:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:31:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:31:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:31:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:31:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:32:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:32:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:32:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:32:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:33:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:33:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:33:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:33:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:34:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:34:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:34:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:34:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:35:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:35:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:35:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:35:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:36:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:36:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:36:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:36:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:37:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:37:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:37:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:37:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:38:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:38:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:38:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:38:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:39:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:39:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:39:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:39:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:40:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:40:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:40:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:40:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:41:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:41:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:41:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:41:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:42:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:42:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:42:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:42:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:43:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:43:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:43:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:43:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:44:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:44:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:44:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:44:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:45:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:45:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:45:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:45:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:46:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:46:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:46:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:46:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:47:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:47:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:47:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:47:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:48:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:48:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:48:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:48:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:49:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:49:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:49:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:49:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:50:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:50:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:50:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:50:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:51:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:51:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:51:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:51:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:52:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:52:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:52:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:52:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:53:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:53:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:53:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:53:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:54:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:54:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:54:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:54:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:55:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:55:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:56:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:56:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:57:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:57:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:58:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:58:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 12:59:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 12:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 12:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 12:59:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:00:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:00:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:01:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:01:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:02:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:02:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:03:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:03:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:04:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:04:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:05:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:05:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:06:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:06:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:07:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:07:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:08:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:08:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:08:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:08:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:09:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:09:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:09:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:09:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:10:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:10:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:10:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:10:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:11:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:11:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:11:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:11:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:12:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:12:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:12:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:12:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:13:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:13:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:13:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:13:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:14:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:14:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:14:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:14:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:15:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:15:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:15:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:15:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:16:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:16:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:16:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:16:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:17:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:17:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:17:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:17:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:18:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:18:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:18:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:18:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:19:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:19:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:19:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:19:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:20:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:20:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:20:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:20:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:21:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:21:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:21:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:21:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:22:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:22:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:22:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:22:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:23:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:23:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:23:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:23:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:24:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:24:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:24:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:24:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:25:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:25:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:25:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:25:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:26:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:26:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:26:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:26:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:27:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:27:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:27:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:27:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:28:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:28:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:28:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:28:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:29:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:29:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:29:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:29:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:30:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:30:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:30:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:30:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:31:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:31:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:31:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:31:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:32:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:32:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:32:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:32:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:33:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:33:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:33:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:33:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:34:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:34:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:34:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:34:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:35:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:35:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:35:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:35:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:36:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:36:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:36:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:36:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:37:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:37:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:37:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:37:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:38:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:38:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:38:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:38:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:39:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:39:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:39:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:39:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:40:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:40:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:40:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:40:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:41:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:41:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:41:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:41:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:42:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:42:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:42:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:42:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:43:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:43:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:43:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:43:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:44:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:44:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:44:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:44:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:45:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:45:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:45:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:45:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:46:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:46:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:46:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:46:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:47:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:47:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:47:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:47:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:48:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:48:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:48:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:48:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:49:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:49:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:49:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:49:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:50:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:50:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:50:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:50:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:51:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:51:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:51:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:51:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:52:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:52:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:52:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:52:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:53:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:53:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:53:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:53:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:54:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:54:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:54:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:54:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:55:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:55:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:55:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:56:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:56:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:56:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:57:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:57:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:57:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:58:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:58:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:58:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 13:59:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 13:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 13:59:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 13:59:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:00:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:00:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:00:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:01:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:01:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:01:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:02:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:02:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:02:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:03:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:03:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:03:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:04:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:04:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:04:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:05:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:05:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:05:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:06:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:06:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:06:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:07:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:07:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:07:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:08:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:08:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:08:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:08:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:09:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:09:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:09:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:09:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:10:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:10:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:10:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:10:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:11:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:11:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:11:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:11:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:12:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:12:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:12:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:12:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:13:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:13:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:13:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:13:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:14:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:14:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:14:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:14:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:15:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:15:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:15:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:15:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:16:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:16:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:16:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:16:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:17:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:17:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:17:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:17:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:18:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:18:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:18:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:18:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:19:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:19:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:19:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:19:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:20:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:20:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:20:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:20:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:21:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:21:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:21:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:21:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:22:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:22:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:22:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:22:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:23:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:23:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:23:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:23:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:24:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:24:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:24:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:24:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:25:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:25:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:25:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:25:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:26:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:26:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:26:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:26:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:27:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:27:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:27:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:27:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:28:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:28:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:28:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:28:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:29:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:29:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:29:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:29:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:30:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:30:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:30:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:30:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:31:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:31:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:31:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:31:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:32:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:32:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:32:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:32:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:33:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:33:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:33:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:33:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:34:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:34:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:34:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:34:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:35:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:35:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:35:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:35:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:36:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:36:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:36:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:36:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:37:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:37:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:37:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:37:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:38:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:38:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:38:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:38:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:39:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:39:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:39:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:39:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:40:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:40:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:40:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:40:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:41:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:41:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:41:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:41:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:42:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:42:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:42:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:42:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:43:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:43:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:43:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:43:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:44:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:44:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:44:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:44:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:45:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:45:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:45:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:45:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:46:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:46:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:46:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:46:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:47:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:47:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:47:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:47:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:48:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:48:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:48:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:48:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:49:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:49:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:49:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:49:25] [INFO] [scale] No suitable AMF found for migration from AMF 2
+[2025-10-12 14:50:25] [INFO] [amf] get_active_amf_count: Active AMF count = 2
+[2025-10-12 14:50:25] [INFO] [scale] descaling_thread_func: Checking AMF 1 utilization: 0.80
+[2025-10-12 14:50:25] [INFO] [scale] descaling_thread_func: Checking AMF 2 utilization: 0.10
+[2025-10-12 14:50:25] [INFO] [scale] No suitable AMF found for migration from AMF 2

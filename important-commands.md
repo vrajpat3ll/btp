@@ -9,6 +9,16 @@ sudo kubectl get pods -A --no-headers | fzf --with-nth=2,1 --preview 'sudo kubec
 sudo kubectl get pods -A --no-headers | fzf --with-nth=2,1 --preview 'sudo kubectl logs {2} -n {1}'
 
 # PACKET CAPTURE COMMANDS
+Run this in inside lb-0
+```sh
+tcpdump -i net1 -w capture.pcap
+```
+Run this inside the host machine
 ```sh
 sudo kubectl cp loadbalancer/lb-0:/capture.pcap  capture-one-UE.pcap
+```
+
+# TO RUN THE LOADBALANCER
+```sh
+sudo kubectl exec -ti -n loadbalancer lb-0 -- bash
 ```

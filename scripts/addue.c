@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(int argc, char* argv[]) {
-    FILE *file = fopen("5gcore-sctp-loadbalancer/open5gs-helm-charts/values.yaml", "w");
+    FILE *file = fopen("charts/open5gs/values.yaml", "w");
     if (file == NULL) {
         perror("Failed to open file");
         return 1;
