@@ -19,8 +19,10 @@ pthread_mutex_t live_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
 forward_info_t *live_threads[FORWARD_CONNS_ARRAY_LEN];
 struct timeval start_time, end_time;
 
-extern pthread_mutex_t amf_state_mutex;  // declared in scaling.c (shared state)
-extern int total_conn_count;             // declared in scaling.c
+extern pthread_mutex_t amf_state_mutex;   // declared in scaling.c (shared state)
+extern int total_conn_count;              // declared in scaling.c
+extern FILE *latency_file;                // declared in main.c
+extern const char *latency_log_filename;  // declared in main.c
 
 void forward_init_table(void) {
     log("INFO", "[forward] forward_init_table: Initializing live thread table\n");
@@ -154,6 +156,7 @@ void forward_unregister_index(int idx) {
 }
 
 void *handle_gnb_connection(void *arg) {
+    gettimeofday(&start_time, NULL);
     int gnb_socket = *(int *)arg;
     free(arg);
 
@@ -170,7 +173,6 @@ void *handle_gnb_connection(void *arg) {
         log_perror("[forward] getpeername failed");
         snprintf(gnb_ip, sizeof(gnb_ip), "unknown");
     }
-    gettimeofday(&start_time, NULL);
 
     AMF *target_amf = get_next_amf_round_robin();
     int amf_sock;
@@ -192,8 +194,6 @@ void *handle_gnb_connection(void *arg) {
             }
         }
 
-        extern pthread_mutex_t amf_state_mutex;
-
         // Consistent locking order: global then specific
         pthread_mutex_lock(&amf_state_mutex);
         pthread_mutex_lock(&target_amf->lock);
@@ -209,13 +209,33 @@ void *handle_gnb_connection(void *arg) {
     } while (amf_sock < 0);
 
     target_amf->connections++;
-    extern int total_conn_count;
     total_conn_count++;
     gettimeofday(&end_time, NULL);
     long latency_us = (end_time.tv_sec - start_time.tv_sec) * 1000000L +
                       (end_time.tv_usec - start_time.tv_usec) / 1000L;
     log("INFO", "[forward] Connection setup latency: gNB socket %d -> AMF id=%d took %ld µs (%.3f ms)\n",
         gnb_socket, target_amf->id, latency_us, latency_us / 1000.0);
+
+    {
+        // Format timestamp as YYYY-MM-DD HH:MM:SS
+        time_t now = time(NULL);
+        struct tm tm_now;
+        char timestamp_str[32];
+        localtime_r(&now, &tm_now);
+        strftime(timestamp_str, sizeof(timestamp_str), "%Y-%m-%d %H:%M:%S", &tm_now);
+
+        // Calculate human-readable latency in milliseconds
+        double latency_ms = latency_us / 1000.0;
+
+        // Log to CSV file: timestamp,gnb_ip,amf_ip,latency_us,latency_ms
+        latency_file = fopen(latency_log_filename, "a");
+        if (latency_file) {
+            fprintf(latency_file, "%s,%s,%s,%ld,%.3f\n", timestamp_str, gnb_ip, target_amf->ip, latency_us, latency_ms);
+            fclose(latency_file);
+        } else {
+            log_perror("Failed to open latency log");
+        }
+    }
 
     pthread_mutex_unlock(&target_amf->lock);
     pthread_mutex_unlock(&amf_state_mutex);

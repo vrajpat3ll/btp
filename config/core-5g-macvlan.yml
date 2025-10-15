@@ -354,6 +354,1656 @@ apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
   name: core5g-def
+  namespace: ran-simulator16
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator17
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator18
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator19
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator20
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator21
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator22
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator23
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator24
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator25
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator26
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator27
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator28
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator29
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator30
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator31
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator32
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator33
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator34
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator35
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator36
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator37
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator38
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator39
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator40
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator41
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator42
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator43
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator44
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator45
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator46
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator47
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator48
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator49
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator50
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator51
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator52
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator53
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator54
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator55
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator56
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator57
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator58
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator59
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator60
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator61
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator62
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator63
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator64
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator65
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator66
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator67
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator68
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator69
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator70
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator71
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator72
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator73
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator74
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator75
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator76
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator77
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator78
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator79
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator80
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator81
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator82
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator83
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator84
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator85
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator86
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator87
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator88
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator89
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
+  namespace: ran-simulator90
+spec: 
+  config: '{
+            "cniVersion": "0.3.1",
+            "plugins": [
+                {
+                    "type": "macvlan",
+                    "capabilities": { "ips": true },
+                    "master": "eth1",
+                    "mode": "bridge",
+                    "ipam": {
+                        "type": "static"
+                    }
+                }, {
+                    "type": "tuning"
+                } ]
+        }'
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: core5g-def
   namespace: loadbalancer
 spec:
   config: '{

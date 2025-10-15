@@ -1,4 +1,7 @@
 #!/bin/bash
+if [ $(which k9s) ]; then
+    k9s
+fi
 
 # Hide cursor for cleaner look
 tput civis

@@ -17,7 +17,8 @@
 #include "utils.h"
 
 int listen_socket;
-
+FILE *latency_file;
+const char* latency_log_filename = "logs/latency.log";
 
 int main(int argc, char *argv[]) {
     (void)argc;
@@ -43,6 +44,17 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "[main] Failed to initialize log file %s\n", fname);
         } else {
             log("INFO", "[main] Logging initialized at %s\n", fname);
+        }
+        latency_file = fopen(latency_log_filename, "a");
+        if (!latency_file) {
+            log_perror("[main] Failed to open latency log file");
+        } else {
+            fprintf(latency_file, "timestamp,gnb_ip,amf_ip,latency_us,latency_ms\n");
+            fflush(latency_file);
+            log("INFO", "[main] Latency log initialized at %s\n", latency_log_filename);
+        }
+        if (!fclose(latency_file)) {
+            log_perror("[main] Failed to close latency log file");
         }
     }
 
