@@ -16,13 +16,13 @@
 #include "utils.h"
 
 pthread_mutex_t live_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
-forward_info_t *live_threads[FORWARD_CONNS_ARRAY_LEN];
+forward_info_t* live_threads[FORWARD_CONNS_ARRAY_LEN];
 struct timeval start_time, end_time;
 
 extern pthread_mutex_t amf_state_mutex;   // declared in scaling.c (shared state)
 extern int total_conn_count;              // declared in scaling.c
-extern FILE *latency_file;                // declared in main.c
-extern const char *latency_log_filename;  // declared in main.c
+extern FILE* latency_file;                // declared in main.c
+extern const char* latency_log_filename;  // declared in main.c
 
 void forward_init_table(void) {
     log("INFO", "[forward] forward_init_table: Initializing live thread table\n");
@@ -31,7 +31,7 @@ void forward_init_table(void) {
     pthread_mutex_unlock(&live_threads_mutex);
 }
 
-static void cleanup_forward_info(forward_info_t *info) {
+static void cleanup_forward_info(forward_info_t* info) {
     if (!info) return;
     log("INFO", "[forward] cleanup_forward_info: Closing source socket %d\n", info->source_socket);
     close(info->source_socket);
@@ -44,8 +44,8 @@ static void cleanup_forward_info(forward_info_t *info) {
     free(info);
 }
 
-void *forward_messages(void *arg) {
-    forward_info_t *info = (forward_info_t *)arg;
+void* forward_messages(void* arg) {
+    forward_info_t* info = (forward_info_t*)arg;
 
     char buffer[BUFFER_SIZE];
     ssize_t nbytes;
@@ -62,7 +62,7 @@ void *forward_messages(void *arg) {
     while (1) {
         nbytes = sctp_recvmsg(info->source_socket, buffer, sizeof(buffer), NULL, 0, NULL, NULL);
         int dest_sock = -1;
-        AMF *temp_amf = *(info->current_amf);
+        AMF* temp_amf = *(info->current_amf);
 
         // Lock AMF to safely read the socket descriptor if needed
 
@@ -122,7 +122,7 @@ void *forward_messages(void *arg) {
     return NULL;
 }
 
-int forward_register_thread(forward_info_t *info) {
+int forward_register_thread(forward_info_t* info) {
     pthread_mutex_lock(&live_threads_mutex);
     int found_slot = -1;
     for (int i = 0; i < FORWARD_CONNS_ARRAY_LEN; i++) {
@@ -155,9 +155,9 @@ void forward_unregister_index(int idx) {
     pthread_mutex_unlock(&live_threads_mutex);
 }
 
-void *handle_gnb_connection(void *arg) {
+void* handle_gnb_connection(void* arg) {
     gettimeofday(&start_time, NULL);
-    int gnb_socket = *(int *)arg;
+    int gnb_socket = *(int*)arg;
     free(arg);
 
     struct sockaddr_in gnb_addr;
@@ -165,7 +165,7 @@ void *handle_gnb_connection(void *arg) {
     char gnb_ip[INET_ADDRSTRLEN];  // for IPv4, use INET6_ADDRSTRLEN for IPv6
     int gnb_port = -1;
 
-    if (getpeername(gnb_socket, (struct sockaddr *)&gnb_addr, &addr_len) == 0) {
+    if (getpeername(gnb_socket, (struct sockaddr*)&gnb_addr, &addr_len) == 0) {
         inet_ntop(AF_INET, &gnb_addr.sin_addr, gnb_ip, sizeof(gnb_ip));
         gnb_port = ntohs(gnb_addr.sin_port);
         log("INFO", "[forward] Handling new gNB connection: socket=%d, IP=%s, port=%d\n", gnb_socket, gnb_ip, gnb_port);
@@ -174,7 +174,7 @@ void *handle_gnb_connection(void *arg) {
         snprintf(gnb_ip, sizeof(gnb_ip), "unknown");
     }
 
-    AMF *target_amf = get_next_amf_round_robin();
+    AMF* target_amf = get_next_amf_round_robin();
     int amf_sock;
 
     do {
@@ -241,7 +241,7 @@ void *handle_gnb_connection(void *arg) {
     pthread_mutex_unlock(&amf_state_mutex);
 
     // --- GNB -> AMF thread ---
-    forward_info_t *gnb_to_amf = malloc(sizeof(forward_info_t));
+    forward_info_t* gnb_to_amf = malloc(sizeof(forward_info_t));
     if (!gnb_to_amf) {
         log("INFO", "[forward] handle_gnb_connection: Memory allocation failed for gnb_to_amf\n");
         close(gnb_socket);
@@ -252,7 +252,7 @@ void *handle_gnb_connection(void *arg) {
     gnb_to_amf->source_socket = gnb_socket;
     gnb_to_amf->destination_socket = malloc(sizeof(int));
     *(gnb_to_amf->destination_socket) = amf_sock;
-    gnb_to_amf->current_amf = (AMF **)malloc(sizeof(AMF *));
+    gnb_to_amf->current_amf = (AMF**)malloc(sizeof(AMF*));
     *(gnb_to_amf->current_amf) = target_amf;
     gnb_to_amf->is_active = 1;
     gnb_to_amf->live_thread_index = -1;
@@ -275,7 +275,7 @@ void *handle_gnb_connection(void *arg) {
     log("INFO", "[forward] handle_gnb_connection: GNB->AMF forwarding thread started at index %d\n", slot_g2a);
 
     // --- AMF -> GNB thread ---
-    forward_info_t *amf_to_gnb = malloc(sizeof(forward_info_t));
+    forward_info_t* amf_to_gnb = malloc(sizeof(forward_info_t));
     if (!amf_to_gnb) {
         log("INFO", "[forward] handle_gnb_connection: Memory allocation failed for amf_to_gnb\n");
         return NULL;
@@ -284,8 +284,8 @@ void *handle_gnb_connection(void *arg) {
     amf_to_gnb->source_socket = amf_sock;
     amf_to_gnb->destination_socket = malloc(sizeof(int));
     *(amf_to_gnb->destination_socket) = gnb_socket;
-    amf_to_gnb->current_amf = (AMF **)malloc(sizeof(AMF *));
-    *(amf_to_gnb->current_amf) = target_amf;
+    amf_to_gnb->current_amf = (AMF**)malloc(sizeof(AMF*));
+    *(amf_to_gnb->current_amf) = target_amf;  // NULL, to avoid double true in live_threads
     amf_to_gnb->is_active = 1;
     amf_to_gnb->live_thread_index = -1;
 
@@ -305,23 +305,23 @@ void *handle_gnb_connection(void *arg) {
     }
     pthread_detach(thread_a2g);
     log("INFO", "[forward] handle_gnb_connection: AMF->GNB forwarding thread started at index %d\n", slot_a2g);
-
+    // *(amf_to_gnb->current_amf) = NULL; // NULL, to avoid double true in live_threads
     return NULL;
 }
 
-void get_ip_port(int sock, char *buf, size_t buflen) {
+void get_ip_port(int sock, char* buf, size_t buflen) {
     struct sockaddr_storage addr;
     socklen_t addr_len = sizeof(addr);
     char ip_str[INET6_ADDRSTRLEN];
     int port = 0;
 
-    if (getpeername(sock, (struct sockaddr *)&addr, &addr_len) == 0) {
+    if (getpeername(sock, (struct sockaddr*)&addr, &addr_len) == 0) {
         if (addr.ss_family == AF_INET) {
-            struct sockaddr_in *s = (struct sockaddr_in *)&addr;
+            struct sockaddr_in* s = (struct sockaddr_in*)&addr;
             inet_ntop(AF_INET, &s->sin_addr, ip_str, sizeof(ip_str));
             port = ntohs(s->sin_port);
         } else if (addr.ss_family == AF_INET6) {
-            struct sockaddr_in6 *s = (struct sockaddr_in6 *)&addr;
+            struct sockaddr_in6* s = (struct sockaddr_in6*)&addr;
             inet_ntop(AF_INET6, &s->sin6_addr, ip_str, sizeof(ip_str));
             port = ntohs(s->sin6_port);
         } else {

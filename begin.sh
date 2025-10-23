@@ -56,3 +56,6 @@ done
 
 # step "Monitor"
 # ./monitor_pods.sh
+sleep 300
+
+./restart_koko.sh

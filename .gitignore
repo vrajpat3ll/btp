@@ -1,3 +1,9 @@
 *.o
 .vscode
 charts/my5GRan-Tester/*
+scripts/addue
+scripts/gnb
+scripts/macvlan
+scripts/mongo
+scripts/time
+koko_0.82_linux_amd64

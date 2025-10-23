@@ -18,7 +18,7 @@ pthread_mutex_t amf_state_mutex = PTHREAD_MUTEX_INITIALIZER;
 int total_conn_count = 0;
 
 // Helper: generate deployment name for AMF index i (0-based)
-static void get_deployment_name(int index, char *buf, size_t buf_len) {
+static void get_deployment_name(int index, char* buf, size_t buf_len) {
     // Human-friendly numbering starts at 1
     snprintf(buf, buf_len, "core5g-amf-%d-deployment", index + 1);
 }
@@ -46,7 +46,7 @@ void scale_up_check(void) {
                 char name_buf[64];
                 get_deployment_name(i, name_buf, sizeof(name_buf));
 
-                char *cmd[] = {
+                char* cmd[] = {
                     "kubectl",
                     "-n",
                     "open5gs",
@@ -54,8 +54,7 @@ void scale_up_check(void) {
                     "deployment",
                     name_buf,
                     "--replicas=1",
-                    NULL
-                };
+                    NULL};
                 execute_command("kubectl", cmd);
                 break;
             }
@@ -67,7 +66,7 @@ void scale_up_check(void) {
     pthread_mutex_unlock(&amf_state_mutex);
 }
 
-void *descaling_thread_func(void *arg) {
+void* descaling_thread_func(void* arg) {
     (void)arg;
     while (1) {
         sleep(DESCALING_INTERVAL_MINUTES * 60);
@@ -75,6 +74,12 @@ void *descaling_thread_func(void *arg) {
         pthread_mutex_lock(&amf_state_mutex);
         int active_count = get_active_amf_count();
         if (active_count <= 1) {
+            for (int i = 0; i < MAX_AMFS; i++) {
+                AMF* amf = &amfs[i];
+                if (amf->active)
+                    log("INFO", "[scale] descaling_thread_func: AMF %d - active=%d, connections=%d\n",
+                        amf->id, amf->active, amf->connections);
+            }
             log("INFO", "[scale] descaling_thread_func: Only %d active AMF(s), skipping scale down\n",
                 active_count);
             pthread_mutex_unlock(&amf_state_mutex);
@@ -82,20 +87,20 @@ void *descaling_thread_func(void *arg) {
         }
 
         for (int i = 0; i < MAX_AMFS; i++) {
-            AMF *old_amf = &amfs[i];
+            AMF* old_amf = &amfs[i];
             if (!old_amf->active) continue;
 
             float util = old_amf->connections > 0
-                          ? (float)old_amf->connections / AMF_CAPACITY
-                          : 0.0f;
+                             ? (float)old_amf->connections / AMF_CAPACITY
+                             : 0.0f;
             log("INFO", "[scale] descaling_thread_func: Checking AMF %d utilization: %.2f\n",
                 old_amf->id, util);
 
             if (util < THRESHOLD_DOWN) {
-                AMF *new_amf = NULL;
+                AMF* new_amf = NULL;
                 int min_load = AMF_CAPACITY;
                 for (int j = 0; j < MAX_AMFS; j++) {
-                    AMF *cand = &amfs[j];
+                    AMF* cand = &amfs[j];
                     if (!cand->active || cand == old_amf) continue;
                     float cand_util = (float)cand->connections / AMF_CAPACITY;
                     if (cand_util >= THRESHOLD_DOWN &&
@@ -114,11 +119,11 @@ void *descaling_thread_func(void *arg) {
                     pthread_mutex_lock(&new_amf->lock);
 
                     pthread_mutex_lock(&live_threads_mutex);
-                    for (int t = 0; t < MAX_CONNECTIONS; t++) {
+                    for (int t = 0; t < FORWARD_CONNS_ARRAY_LEN; t++) {
                         if (live_threads[t] == NULL || !live_threads[t]->is_active)
                             continue;
 
-                        forward_info_t *thread_info = live_threads[t];
+                        forward_info_t* thread_info = live_threads[t];
                         if (*(thread_info->current_amf) == old_amf) {
                             int old_sock = *(thread_info->destination_socket);
                             int new_sock = connect_to_amf(new_amf);
@@ -148,7 +153,7 @@ void *descaling_thread_func(void *arg) {
                     char name_buf[64];
                     get_deployment_name(i, name_buf, sizeof(name_buf));
 
-                    char *cmd[] = {
+                    char* cmd[] = {
                         "kubectl",
                         "-n",
                         "open5gs",
@@ -156,8 +161,7 @@ void *descaling_thread_func(void *arg) {
                         "deployment",
                         name_buf,
                         "--replicas=0",
-                        NULL
-                    };
+                        NULL};
                     execute_command("kubectl", cmd);
 
                     pthread_mutex_unlock(&new_amf->lock);

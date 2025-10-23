@@ -48,7 +48,7 @@ if [ "$(docker images -q $IMAGE_NAME:$TAG)" != "" ]; then
 fi
 
 sudo docker login
-sudo docker build -t $IMAGE_NAME src/apna-algo -f docker/apna-algo/Dockerfile
+sudo docker build -t $IMAGE_NAME . -f docker/apna-algo/Dockerfile
 
 sudo docker tag $IMAGE_NAME $IMAGE_NAME:$TAG
 echo "Tagged image as $IMAGE_NAME:$TAG"

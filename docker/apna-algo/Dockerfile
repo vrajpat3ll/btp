@@ -22,7 +22,7 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
     rm kubectl
 
 
-COPY . lb
+COPY src/apna-algo lb
 
 RUN cd lb && make
 

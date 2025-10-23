@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
 
     amf_init_default();
     forward_init_table();
-    log("INFO", "[main] Initialized tables...\n");
+    log("DEBUG", "[main] Initialized tables...\n");
 
     listen_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_SCTP);
     if (listen_socket < 0) {
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
     listen_addr.sin_addr.s_addr = inet_addr("10.0.3.1");
     listen_addr.sin_port = htons(38412);
 
-    log("INFO", "[main] Binding socket to 10.0.3.1:38412\n");
+    log("DEBUG", "[main] Binding socket to 10.0.3.1:38412\n");
     if (bind(listen_socket, (struct sockaddr *)&listen_addr, sizeof(listen_addr)) < 0) {
         log_perror("[main] bind");
         close(listen_socket);
