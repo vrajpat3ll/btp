@@ -2,7 +2,7 @@
 #define FORWARD_H
 
 #include <pthread.h>
-
+#include <stdbool.h>
 #include "amf.h"
 
 #define BUFFER_SIZE 1024
@@ -15,14 +15,16 @@ typedef struct {
     AMF **current_amf;        // pointer to pointer for live migration
     int live_thread_index;    // index in the live_threads table
     int is_active;
+    bool from_gnb;            // true if this thread forwards from gNB to AMF, false otherwise
 } forward_info_t;
 
 void forward_init_table(void);
 int forward_register_thread(forward_info_t *info);
 void forward_unregister_index(int idx);
 void *handle_gnb_connection(void *arg);
+void *forward_messages(void *arg) ;
 
-extern forward_info_t *live_threads[MAX_CONNECTIONS];
+extern forward_info_t *live_threads[FORWARD_CONNS_ARRAY_LEN];
 extern pthread_mutex_t live_threads_mutex;
 
 #endif  // FORWARD_H

@@ -99,15 +99,16 @@ void *forward_messages(void *arg) {
     log("INFO", "[forward] forward_messages: Connection closed or error on source socket %d\n", info->source_socket);
 
     // Cleanup connection counts
-    pthread_mutex_lock(&amf_state_mutex);
-    if (*info->current_amf) {
-        (*info->current_amf)->connections--;
-        total_conn_count--;
-        log("INFO", "[forward] forward_messages: Decremented connection counts for AMF id=%d, total_conn_count=%d\n",
-            (*info->current_amf)->id, total_conn_count);
-    }
-    pthread_mutex_unlock(&amf_state_mutex);
-
+    if(info->from_gnb){
+        pthread_mutex_lock(&amf_state_mutex);
+        if (*info->current_amf) {
+            (*info->current_amf)->connections--;
+            total_conn_count--;
+            log("INFO", "[forward] forward_messages: Decremented connection counts for AMF id=%d, total_conn_count=%d\n",
+                (*info->current_amf)->id, total_conn_count);
+        }
+        pthread_mutex_unlock(&amf_state_mutex);
+    }   
     // Unregister from live table
     pthread_mutex_lock(&live_threads_mutex);
     info->is_active = 0;
@@ -237,6 +238,7 @@ void *handle_gnb_connection(void *arg) {
     *(gnb_to_amf->current_amf) = target_amf;
     gnb_to_amf->is_active = 1;
     gnb_to_amf->live_thread_index = -1;
+    gnb_to_amf->from_gnb = true;
 
     int slot_g2a = forward_register_thread(gnb_to_amf);
     if (slot_g2a == -1) {
@@ -269,6 +271,7 @@ void *handle_gnb_connection(void *arg) {
     *(amf_to_gnb->current_amf) = target_amf;
     amf_to_gnb->is_active = 1;
     amf_to_gnb->live_thread_index = -1;
+    amf_to_gnb->from_gnb = false;
 
     int slot_a2g = forward_register_thread(amf_to_gnb);
     if (slot_a2g == -1) {
