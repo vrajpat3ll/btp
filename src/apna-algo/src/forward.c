@@ -211,8 +211,8 @@ void* handle_gnb_connection(void* arg) {
     target_amf->connections++;
     total_conn_count++;
     gettimeofday(&end_time, NULL);
-    long latency_us = (end_time.tv_sec - start_time.tv_sec) * 1000000L +
-                      (end_time.tv_usec - start_time.tv_usec) / 1000L;
+    double latency_us = (end_time.tv_sec - start_time.tv_sec) * 1000000L +
+                      (end_time.tv_usec - start_time.tv_usec);
     log("INFO", "[forward] Connection setup latency: gNB socket %d -> AMF id=%d took %ld µs (%.3f ms)\n",
         gnb_socket, target_amf->id, latency_us, latency_us / 1000.0);
 
