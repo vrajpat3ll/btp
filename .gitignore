@@ -2,3 +2,4 @@
 .vscode
 **/my5GRanTester*-helm-chart
 5gcore-sctp-loadbalancer/helm-charts
+charts

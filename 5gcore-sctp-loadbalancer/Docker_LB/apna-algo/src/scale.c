@@ -9,8 +9,8 @@
 #include "forward.h"
 #include "utils.h"
 
-int AMF_CAPACITY = 10;
-const float HEADROOM_PERCENTAGE = 0.16f;
+int AMF_CAPACITY = 15;
+const float HEADROOM_PERCENTAGE = 0.20f;
 const float THRESHOLD_DOWN = (1 - HEADROOM_PERCENTAGE) / 6;
 const float THRESHOLD_UP = (1 - HEADROOM_PERCENTAGE) / 2;
 
@@ -101,15 +101,15 @@ void *descaling_thread_func(void *arg) {
             log("INFO", "[scale] descaling_thread_func: Checking AMF %d utilization: %.2f\n",
                 old_amf->id, util);
 
-            if (util < THRESHOLD_DOWN) {
+            if (util <= THRESHOLD_DOWN) {
                 AMF *new_amf = NULL;
                 int min_load = AMF_CAPACITY;
                 for (int j = 0; j < MAX_AMFS; j++) {
                     AMF *cand = &amfs[j];
                     if (!cand->active || cand == old_amf) continue;
                     float cand_util = (float)cand->connections / AMF_CAPACITY;
-                    if (cand_util >= THRESHOLD_DOWN &&
-                        cand_util < THRESHOLD_UP &&
+                    if (cand_util > THRESHOLD_DOWN &&
+                        cand_util <= THRESHOLD_UP &&
                         cand->connections < min_load) {
                         min_load = cand->connections;
                         new_amf = cand;
