@@ -17,10 +17,10 @@
 #include "utils.h"
 
 int listen_socket;
-FILE *latency_file;
+FILE* latency_file;
 const char* latency_log_filename = "logs/latency.log";
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     (void)argc;
     (void)argv;
 
@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
     listen_addr.sin_port = htons(38412);
 
     log("DEBUG", "[main] Binding socket to 10.0.3.1:38412\n");
-    if (bind(listen_socket, (struct sockaddr *)&listen_addr, sizeof(listen_addr)) < 0) {
+    if (bind(listen_socket, (struct sockaddr*)&listen_addr, sizeof(listen_addr)) < 0) {
         log_perror("[main] bind");
         close(listen_socket);
         return 1;
@@ -101,12 +101,12 @@ int main(int argc, char *argv[]) {
     while (1) {
         struct sockaddr_in gnb_addr;
         socklen_t addr_len = sizeof(gnb_addr);
-        int *gnb_sock = malloc(sizeof(int));
+        int* gnb_sock = malloc(sizeof(int));
         if (!gnb_sock) {
             log_perror("[main] malloc");
             continue;
         }
-        *gnb_sock = accept(listen_socket, (struct sockaddr *)&gnb_addr, &addr_len);
+        *gnb_sock = accept(listen_socket, (struct sockaddr*)&gnb_addr, &addr_len);
 
         if (*gnb_sock < 0) {
             log_perror("[main] accept failed");

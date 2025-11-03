@@ -35,11 +35,13 @@ static void cleanup_forward_info(forward_info_t* info) {
     if (!info) return;
     log("INFO", "[forward] cleanup_forward_info: Closing source socket %d\n", info->source_socket);
     close(info->source_socket);
-    if (info->destination_socket && *(info->destination_socket) > 0) {
-        log("INFO", "[forward] cleanup_forward_info: Closing destination socket %d\n", *(info->destination_socket));
-        close(*(info->destination_socket));
+    if (info->from_gnb) {
+        if (info->destination_socket && *(info->destination_socket) > 0) {
+            log("INFO", "[forward] cleanup_forward_info: Closing destination socket %d\n", *(info->destination_socket));
+            close(*(info->destination_socket));
+        }
+        free(info->destination_socket);
     }
-    free(info->destination_socket);
     free(info->current_amf);
     free(info);
 }
@@ -100,15 +102,16 @@ void* forward_messages(void* arg) {
     log("INFO", "[forward] forward_messages: Connection closed or error on source socket %d\n", info->source_socket);
 
     // Cleanup connection counts
-    pthread_mutex_lock(&amf_state_mutex);
-    if (*info->current_amf) {
-        (*info->current_amf)->connections--;
-        total_conn_count--;
-        log("INFO", "[forward] forward_messages: Decremented connection counts for AMF id=%d, total_conn_count=%d\n",
-            (*info->current_amf)->id, total_conn_count);
+    if (info->from_gnb) {
+        pthread_mutex_lock(&amf_state_mutex);
+        if (*info->current_amf) {
+            (*info->current_amf)->connections--;
+            total_conn_count--;
+            log("INFO", "[forward] forward_messages: Decremented connection counts for AMF id=%d, total_conn_count=%d\n",
+                (*info->current_amf)->id, total_conn_count);
+        }
+        pthread_mutex_unlock(&amf_state_mutex);
     }
-    pthread_mutex_unlock(&amf_state_mutex);
-
     // Unregister from live table
     pthread_mutex_lock(&live_threads_mutex);
     info->is_active = 0;
@@ -189,6 +192,7 @@ void* handle_gnb_connection(void* arg) {
                 }
             }
             if (i >= MAX_RETRIES) {
+                log("INFO", "[forward] handle_gnb_connection: Reached max retries for connecting to AMFs...\n");
                 close(gnb_socket);
                 return NULL;
             }
@@ -211,10 +215,11 @@ void* handle_gnb_connection(void* arg) {
     target_amf->connections++;
     total_conn_count++;
     gettimeofday(&end_time, NULL);
-    double latency_us = (end_time.tv_sec - start_time.tv_sec) * 1000000L +
-                      (end_time.tv_usec - start_time.tv_usec);
-    log("INFO", "[forward] Connection setup latency: gNB socket %d -> AMF id=%d took %ld µs (%.3f ms)\n",
-        gnb_socket, target_amf->id, latency_us, latency_us / 1000.0);
+    double latency_ms = (end_time.tv_sec - start_time.tv_sec) * 1000.0 +
+                        (end_time.tv_usec - start_time.tv_usec) / 1000.0;
+    double latency_us = latency_ms * 1000;
+    log("INFO", "[forward] Connection setup latency: gNB socket %d -> AMF id=%d took %.3lf µs (%.3f ms)\n",
+        gnb_socket, target_amf->id, latency_us, latency_ms);
 
     {
         // Format timestamp as YYYY-MM-DD HH:MM:SS
@@ -224,13 +229,10 @@ void* handle_gnb_connection(void* arg) {
         localtime_r(&now, &tm_now);
         strftime(timestamp_str, sizeof(timestamp_str), "%Y-%m-%d %H:%M:%S", &tm_now);
 
-        // Calculate human-readable latency in milliseconds
-        double latency_ms = latency_us / 1000.0;
-
         // Log to CSV file: timestamp,gnb_ip,amf_ip,latency_us,latency_ms
         latency_file = fopen(latency_log_filename, "a");
         if (latency_file) {
-            fprintf(latency_file, "%s,%s,%s,%ld,%.3f\n", timestamp_str, gnb_ip, target_amf->ip, latency_us, latency_ms);
+            fprintf(latency_file, "%s,%s,%s,%.3lf,%.3f\n", timestamp_str, gnb_ip, target_amf->ip, latency_us, latency_ms);
             fclose(latency_file);
         } else {
             log_perror("Failed to open latency log");

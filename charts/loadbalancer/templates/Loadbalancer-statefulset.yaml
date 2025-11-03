@@ -45,4 +45,11 @@ spec:
           name: loadbalancer
         securityContext:
           privileged: true
-
+      #   volumeMounts:
+      #   - name: lb-logs
+      #     mountPath: /lb/logs
+      # volumes:
+      # - name: lb-logs
+      #   hostPath:
+      #     path: ~/Desktop/btp/data/logs  # <-- this is the host machine path
+      #     type: DirectoryOrCreate

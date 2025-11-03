@@ -54,8 +54,7 @@ for i in $(seq 1 $NUM_SIMS); do
   sudo helm -n ran-simulator$i upgrade --install sim5g my5GRan-Tester/$i
 done
 
-# step "Monitor"
-# ./monitor_pods.sh
 sleep 300
 
+cd ..
 ./restart_koko.sh
