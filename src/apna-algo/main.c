@@ -16,6 +16,8 @@
 #include "scale.h"
 #include "utils.h"
 
+const char* HOST_IP = "10.0.0.1";
+
 int listen_socket;
 FILE* latency_file;
 const char* latency_log_filename = "logs/latency.log";
@@ -71,10 +73,10 @@ int main(int argc, char* argv[]) {
     struct sockaddr_in listen_addr;
     memset(&listen_addr, 0, sizeof(listen_addr));
     listen_addr.sin_family = AF_INET;
-    listen_addr.sin_addr.s_addr = inet_addr("10.0.3.1");
+    listen_addr.sin_addr.s_addr = inet_addr(HOST_IP);
     listen_addr.sin_port = htons(38412);
 
-    log("DEBUG", "[main] Binding socket to 10.0.3.1:38412\n");
+    log("DEBUG", "[main] Binding socket to %s:38412\n", HOST_IP);
     if (bind(listen_socket, (struct sockaddr*)&listen_addr, sizeof(listen_addr)) < 0) {
         log_perror("[main] bind");
         close(listen_socket);
@@ -88,7 +90,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    log("INFO", "[main] Proxy listening on 10.0.3.1:38412 with AMF capacity %d\n", AMF_CAPACITY);
+    log("INFO", "[main] Proxy listening on %s:38412 with AMF capacity %d\n", HOST_IP, AMF_CAPACITY);
 
     pthread_t descaling_t;
     if (pthread_create(&descaling_t, NULL, descaling_thread_func, NULL) != 0) {

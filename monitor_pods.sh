@@ -13,19 +13,21 @@ while true; do
     pods_output=$(sudo kubectl get pods --all-namespaces -o wide)
 
     Completed=$(echo "$pods_output" | grep Completed | wc -l)
-    Unknown=$(echo "$pods_output" | grep Unknown | wc -l)
-    Running=$(echo "$pods_output" | grep Running | wc -l)
-    Init=$(echo "$pods_output" | grep Init | wc -l)
     ContainerCreating=$(echo "$pods_output" | grep ContainerCreating | wc -l)
+    Init=$(echo "$pods_output" | grep Init | wc -l)
+    Pending=$(echo "$pods_output" | grep Pending | wc -l)
+    Running=$(echo "$pods_output" | grep Running | wc -l)
+    Unknown=$(echo "$pods_output" | grep Unknown | wc -l)
 
     clear
-    echo -e "$pods_output"
-    echo -e ""
     echo "🔁 Pod Status Counts:"
     echo "    Init: $Init"
-    echo " Unknown: $Unknown"
+    echo " Pending: $Pending"
     echo " Running: $Running"
+    echo " Unknown: $Unknown"
     echo "Creating: $ContainerCreating"
 
+    echo -e ""
+    echo -e "$pods_output"
     sleep 1
 done

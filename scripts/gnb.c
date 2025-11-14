@@ -49,7 +49,7 @@ void create_folder(int folder_num) {
     char controlDataifIP[20];
     get_ip_for_ue(folder_num - 1, controlDataifIP, sizeof(controlDataifIP));
 
-    printf("UE %d -> IP = %s\n", folder_num, controlDataifIP);
+    // printf("UE %d -> IP = %s\n", folder_num, controlDataifIP);
 
     // Create values.yaml content with updated IP
     char values_yaml_content[5000];

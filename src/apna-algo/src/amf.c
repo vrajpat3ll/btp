@@ -1,12 +1,12 @@
 #include "amf.h"
-#include "utils.h"
 
-#include <arpa/inet.h>
 #include <netinet/sctp.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
+
+#include "utils.h"
 
 // Externalized mutex used by the round-robin function
 pthread_mutex_t round_robin_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -14,28 +14,30 @@ static int round_robin_index = 0;
 extern int AMF_CAPACITY;
 AMF amfs[MAX_AMFS];
 
+void get_ip(char* ip, int index) {
+    snprintf(ip, INET_ADDRSTRLEN, "10.0.0.%d", index + 4);
+}
+
 void amf_init_default(void) {
     // Initialize the default AMF entries; caller may modify
+    char ip[INET_ADDRSTRLEN];
     amfs[0].id = 1;
-    strncpy(amfs[0].ip, "10.0.3.3", sizeof(amfs[0].ip));
+    get_ip(ip, 0);
+    strncpy(amfs[0].ip, ip, sizeof(amfs[0].ip));
     amfs[0].port = 38412;
     amfs[0].active = 1;
     amfs[0].connections = 0;
     pthread_mutex_init(&amfs[0].lock, NULL);
 
-    amfs[1].id = 2;
-    strncpy(amfs[1].ip, "10.0.3.4", sizeof(amfs[1].ip));
-    amfs[1].port = 38412;
-    amfs[1].active = 0;
-    amfs[1].connections = 0;
-    pthread_mutex_init(&amfs[1].lock, NULL);
-    
-    amfs[2].id = 3;
-    strncpy(amfs[2].ip, "10.0.3.5", sizeof(amfs[2].ip));
-    amfs[2].port = 38412;
-    amfs[2].active = 0;
-    amfs[2].connections = 0;
-    pthread_mutex_init(&amfs[2].lock, NULL);
+    for (int i = 1; i < MAX_AMFS; i++) {
+        amfs[i].id = i + 1;
+        get_ip(ip, i);
+        strncpy(amfs[i].ip, ip, sizeof(amfs[i].ip));
+        amfs[i].port = 38412;
+        amfs[i].active = 0;
+        amfs[i].connections = 0;
+        pthread_mutex_init(&amfs[i].lock, NULL);
+    }
 }
 
 int get_active_amf_count(void) {
@@ -47,7 +49,7 @@ int get_active_amf_count(void) {
     return count;
 }
 
-AMF *amf_get_by_index(int i) {
+AMF* amf_get_by_index(int i) {
     if (i < 0 || i >= MAX_AMFS) {
         log("INFO", "[amf] amf_get_by_index: Invalid index %d\n", i);
         return NULL;
@@ -56,10 +58,10 @@ AMF *amf_get_by_index(int i) {
     return &amfs[i];
 }
 
-AMF *get_next_amf_round_robin(void) {
+AMF* get_next_amf_round_robin(void) {
     log("INFO", "[amf] get_next_amf_round_robin: Choosing next active AMF using round robin\n");
 
-    AMF *target_amf = NULL;
+    AMF* target_amf = NULL;
     pthread_mutex_lock(&round_robin_mutex);
     int active_count = get_active_amf_count();
     if (active_count == 0) {
@@ -81,7 +83,7 @@ AMF *get_next_amf_round_robin(void) {
     return target_amf;
 }
 
-int connect_to_amf(AMF *amf) {
+int connect_to_amf(AMF* amf) {
     log("INFO", "[amf] connect_to_amf: Connecting to AMF id=%d ip=%s port=%d\n", amf->id, amf->ip, amf->port);
     int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_SCTP);
     if (sock < 0) {
@@ -93,7 +95,7 @@ int connect_to_amf(AMF *amf) {
     addr.sin_family = AF_INET;
     addr.sin_port = htons(amf->port);
     addr.sin_addr.s_addr = inet_addr(amf->ip);
-    if (connect(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+    if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0) {
         log("INFO", "[amf] connect_to_amf: Failed to connect to %s:%d\n", amf->ip, amf->port);
         close(sock);
         return -1;

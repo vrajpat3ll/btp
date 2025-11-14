@@ -29,7 +29,6 @@ int main(int argc, char* argv[]) {
 	fprintf(file, "simulator:");
 	int i,j,m=0;
 	
-	int i;
     char imsi[20];   // buffer for 15-digit IMSI + null
 
     for (i = 1; i <= n; i++) 
