@@ -16,6 +16,13 @@ void create_file(const char *file_path, const char *content) {
     fclose(file);
 }
 
+void get_ip_for_ue(int ue_index, char *ip_buffer, size_t buf_size) {
+    int x = 1 + (ue_index / 256);   // subnet increments after every 256 UEs
+    int y = ue_index % 256;         // host part
+
+    snprintf(ip_buffer, buf_size, "10.0.%d.%d", x, y);
+}
+
 // Function to create a folder with the specified content
 void create_folder(int folder_num) {
     char folder_name[200];
@@ -40,7 +47,9 @@ void create_folder(int folder_num) {
 
     // Calculate the new IP address
     char controlDataifIP[20];
-    snprintf(controlDataifIP, sizeof(controlDataifIP), "10.0.3.%d", 10 + folder_num - 1);
+    get_ip_for_ue(folder_num - 1, controlDataifIP, sizeof(controlDataifIP));
+
+    printf("UE %d -> IP = %s\n", folder_num, controlDataifIP);
 
     // Create values.yaml content with updated IP
     char values_yaml_content[5000];
@@ -50,10 +59,10 @@ void create_folder(int folder_num) {
         "  pullPolicy: IfNotPresent\n"
         "  tag: \"latest\"\n\n"
         "config:\n"
-        "  amfVIP: \"10.0.3.1\"\n"
+        "  amfVIP: \"10.0.0.1\"\n"      //do we have to change
         "  amfPort: \"38412\"\n"
         "  controlDataifIP: \"%s\"\n"
-        "  controlDataifNetMask: \"24\"\n"
+        "  controlDataifNetMask: \"20\"\n"   //changed from 24 to 20
         "  msin: \"0000000031\"\n"
         "  mcc: \"208\"\n"
         "  mnc: \"93\"\n"

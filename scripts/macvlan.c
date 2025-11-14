@@ -78,8 +78,8 @@ int main(int argc, char *argv[]) {
     fprintf(fp, "                        \"type\": \"static\",\n");
     fprintf(fp, "                        \"addresses\": [\n");
     fprintf(fp, "                          {\n");
-    fprintf(fp, "                            \"address\": \"10.0.3.1/24\",\n");
-    fprintf(fp, "                            \"gateway\": \"10.0.3.254\"\n");
+    fprintf(fp, "                            \"address\": \"10.0.0.1/20\",\n");  // changes from 10.0.3.1/24 to 10.0.0.1/20
+    fprintf(fp, "                            \"gateway\": \"10.0.0.254\"\n");   // changes from 10.0.3.254 to 10.0.0.254
     fprintf(fp, "                          }\n");
     fprintf(fp, "                        ]\n");
     fprintf(fp, "                    }\n");

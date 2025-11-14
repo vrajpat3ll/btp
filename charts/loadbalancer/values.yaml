@@ -1,6 +1,6 @@
 myloadbalancer:
-  multusTrafficIP: "10.0.3.1"
-  multusTrafficnetMask: "24"
+  multusTrafficIP: "10.0.0.1" ## changed form 10.0.3.1 to 10.0.0.1
+  multusTrafficnetMask: "20"  ## changed form 24 to 20
   image:
     repository: vrajpat3ll/load_balancer
     pullPolicy: IfNotPresent
