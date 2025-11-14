@@ -1,0 +1,612 @@
+{
+  "meta": {
+    "generated_at": "2025-11-14T17:47:55.387967Z",
+    "num_ues": 100,
+    "lambda_arrival": 0.2,
+    "lambda_duration": 0.02,
+    "seed": 42,
+    "namespace_prefix": "ran-simulator"
+  },
+  "ues": [
+    {
+      "ue_id": 1,
+      "arrival_s": 5.1,
+      "duration_s": 1.266,
+      "namespace": "ran-simulator1"
+    },
+    {
+      "ue_id": 2,
+      "arrival_s": 6.708,
+      "duration_s": 12.629,
+      "namespace": "ran-simulator2"
+    },
+    {
+      "ue_id": 3,
+      "arrival_s": 13.376,
+      "duration_s": 56.459,
+      "namespace": "ran-simulator3"
+    },
+    {
+      "ue_id": 4,
+      "arrival_s": 24.513,
+      "duration_s": 4.548,
+      "namespace": "ran-simulator4"
+    },
+    {
+      "ue_id": 5,
+      "arrival_s": 27.253,
+      "duration_s": 1.513,
+      "namespace": "ran-simulator5"
+    },
+    {
+      "ue_id": 6,
+      "arrival_s": 28.487,
+      "duration_s": 35.196,
+      "namespace": "ran-simulator6"
+    },
+    {
+      "ue_id": 7,
+      "arrival_s": 28.621,
+      "duration_s": 11.085,
+      "namespace": "ran-simulator7"
+    },
+    {
+      "ue_id": 8,
+      "arrival_s": 33.869,
+      "duration_s": 39.366,
+      "namespace": "ran-simulator8"
+    },
+    {
+      "ue_id": 9,
+      "arrival_s": 35.114,
+      "duration_s": 44.49,
+      "namespace": "ran-simulator9"
+    },
+    {
+      "ue_id": 10,
+      "arrival_s": 43.402,
+      "duration_s": 0.326,
+      "namespace": "ran-simulator10"
+    },
+    {
+      "ue_id": 11,
+      "arrival_s": 51.597,
+      "duration_s": 59.889,
+      "namespace": "ran-simulator11"
+    },
+    {
+      "ue_id": 12,
+      "arrival_s": 53.677,
+      "duration_s": 8.449,
+      "namespace": "ran-simulator12"
+    },
+    {
+      "ue_id": 13,
+      "arrival_s": 69.434,
+      "duration_s": 20.518,
+      "namespace": "ran-simulator13"
+    },
+    {
+      "ue_id": 14,
+      "arrival_s": 69.921,
+      "duration_s": 5.086,
+      "namespace": "ran-simulator14"
+    },
+    {
+      "ue_id": 15,
+      "arrival_s": 79.324,
+      "duration_s": 46.282,
+      "namespace": "ran-simulator15"
+    },
+    {
+      "ue_id": 16,
+      "arrival_s": 87.552,
+      "duration_s": 65.417,
+      "namespace": "ran-simulator16"
+    },
+    {
+      "ue_id": 17,
+      "arrival_s": 91.394,
+      "duration_s": 180.811,
+      "namespace": "ran-simulator17"
+    },
+    {
+      "ue_id": 18,
+      "arrival_s": 93.773,
+      "duration_s": 40.153,
+      "namespace": "ran-simulator18"
+    },
+    {
+      "ue_id": 19,
+      "arrival_s": 102.615,
+      "duration_s": 48.185,
+      "namespace": "ran-simulator19"
+    },
+    {
+      "ue_id": 20,
+      "arrival_s": 112.507,
+      "duration_s": 43.061,
+      "namespace": "ran-simulator20"
+    },
+    {
+      "ue_id": 21,
+      "arrival_s": 118.603,
+      "duration_s": 2.345,
+      "namespace": "ran-simulator21"
+    },
+    {
+      "ue_id": 22,
+      "arrival_s": 119.897,
+      "duration_s": 17.081,
+      "namespace": "ran-simulator22"
+    },
+    {
+      "ue_id": 23,
+      "arrival_s": 120.312,
+      "duration_s": 13.25,
+      "namespace": "ran-simulator23"
+    },
+    {
+      "ue_id": 24,
+      "arrival_s": 120.845,
+      "duration_s": 16.285,
+      "namespace": "ran-simulator24"
+    },
+    {
+      "ue_id": 25,
+      "arrival_s": 125.893,
+      "duration_s": 22.693,
+      "namespace": "ran-simulator25"
+    },
+    {
+      "ue_id": 26,
+      "arrival_s": 128.205,
+      "duration_s": 11.755,
+      "namespace": "ran-simulator26"
+    },
+    {
+      "ue_id": 27,
+      "arrival_s": 129.758,
+      "duration_s": 137.958,
+      "namespace": "ran-simulator27"
+    },
+    {
+      "ue_id": 28,
+      "arrival_s": 134.979,
+      "duration_s": 46.969,
+      "namespace": "ran-simulator28"
+    },
+    {
+      "ue_id": 29,
+      "arrival_s": 135.918,
+      "duration_s": 65.305,
+      "namespace": "ran-simulator29"
+    },
+    {
+      "ue_id": 30,
+      "arrival_s": 136.81,
+      "duration_s": 23.858,
+      "namespace": "ran-simulator30"
+    },
+    {
+      "ue_id": 31,
+      "arrival_s": 159.603,
+      "duration_s": 51.083,
+      "namespace": "ran-simulator31"
+    },
+    {
+      "ue_id": 32,
+      "arrival_s": 163.673,
+      "duration_s": 57.698,
+      "namespace": "ran-simulator32"
+    },
+    {
+      "ue_id": 33,
+      "arrival_s": 172.926,
+      "duration_s": 74.805,
+      "namespace": "ran-simulator33"
+    },
+    {
+      "ue_id": 34,
+      "arrival_s": 174.227,
+      "duration_s": 1.631,
+      "namespace": "ran-simulator34"
+    },
+    {
+      "ue_id": 35,
+      "arrival_s": 176.122,
+      "duration_s": 15.581,
+      "namespace": "ran-simulator35"
+    },
+    {
+      "ue_id": 36,
+      "arrival_s": 177.306,
+      "duration_s": 143.156,
+      "namespace": "ran-simulator36"
+    },
+    {
+      "ue_id": 37,
+      "arrival_s": 187.759,
+      "duration_s": 18.893,
+      "namespace": "ran-simulator37"
+    },
+    {
+      "ue_id": 38,
+      "arrival_s": 193.086,
+      "duration_s": 25.179,
+      "namespace": "ran-simulator38"
+    },
+    {
+      "ue_id": 39,
+      "arrival_s": 205.385,
+      "duration_s": 30.703,
+      "namespace": "ran-simulator39"
+    },
+    {
+      "ue_id": 40,
+      "arrival_s": 206.924,
+      "duration_s": 14.16,
+      "namespace": "ran-simulator40"
+    },
+    {
+      "ue_id": 41,
+      "arrival_s": 211.044,
+      "duration_s": 15.241,
+      "namespace": "ran-simulator41"
+    },
+    {
+      "ue_id": 42,
+      "arrival_s": 215.436,
+      "duration_s": 114.052,
+      "namespace": "ran-simulator42"
+    },
+    {
+      "ue_id": 43,
+      "arrival_s": 217.986,
+      "duration_s": 12.38,
+      "namespace": "ran-simulator43"
+    },
+    {
+      "ue_id": 44,
+      "arrival_s": 248.019,
+      "duration_s": 35.619,
+      "namespace": "ran-simulator44"
+    },
+    {
+      "ue_id": 45,
+      "arrival_s": 248.495,
+      "duration_s": 2.413,
+      "namespace": "ran-simulator45"
+    },
+    {
+      "ue_id": 46,
+      "arrival_s": 249.076,
+      "duration_s": 49.369,
+      "namespace": "ran-simulator46"
+    },
+    {
+      "ue_id": 47,
+      "arrival_s": 256.929,
+      "duration_s": 27.423,
+      "namespace": "ran-simulator47"
+    },
+    {
+      "ue_id": 48,
+      "arrival_s": 257.257,
+      "duration_s": 24.033,
+      "namespace": "ran-simulator48"
+    },
+    {
+      "ue_id": 49,
+      "arrival_s": 285.018,
+      "duration_s": 37.657,
+      "namespace": "ran-simulator49"
+    },
+    {
+      "ue_id": 50,
+      "arrival_s": 302.734,
+      "duration_s": 98.585,
+      "namespace": "ran-simulator50"
+    },
+    {
+      "ue_id": 51,
+      "arrival_s": 302.792,
+      "duration_s": 63.777,
+      "namespace": "ran-simulator51"
+    },
+    {
+      "ue_id": 52,
+      "arrival_s": 308.516,
+      "duration_s": 38.498,
+      "namespace": "ran-simulator52"
+    },
+    {
+      "ue_id": 53,
+      "arrival_s": 310.068,
+      "duration_s": 51.216,
+      "namespace": "ran-simulator53"
+    },
+    {
+      "ue_id": 54,
+      "arrival_s": 310.659,
+      "duration_s": 28.526,
+      "namespace": "ran-simulator54"
+    },
+    {
+      "ue_id": 55,
+      "arrival_s": 313.682,
+      "duration_s": 153.756,
+      "namespace": "ran-simulator55"
+    },
+    {
+      "ue_id": 56,
+      "arrival_s": 324.114,
+      "duration_s": 15.285,
+      "namespace": "ran-simulator56"
+    },
+    {
+      "ue_id": 57,
+      "arrival_s": 327.585,
+      "duration_s": 9.84,
+      "namespace": "ran-simulator57"
+    },
+    {
+      "ue_id": 58,
+      "arrival_s": 339.773,
+      "duration_s": 102.211,
+      "namespace": "ran-simulator58"
+    },
+    {
+      "ue_id": 59,
+      "arrival_s": 341.546,
+      "duration_s": 50.937,
+      "namespace": "ran-simulator59"
+    },
+    {
+      "ue_id": 60,
+      "arrival_s": 346.24,
+      "duration_s": 8.293,
+      "namespace": "ran-simulator60"
+    },
+    {
+      "ue_id": 61,
+      "arrival_s": 353.429,
+      "duration_s": 38.759,
+      "namespace": "ran-simulator61"
+    },
+    {
+      "ue_id": 62,
+      "arrival_s": 360.968,
+      "duration_s": 37.789,
+      "namespace": "ran-simulator62"
+    },
+    {
+      "ue_id": 63,
+      "arrival_s": 360.971,
+      "duration_s": 19.59,
+      "namespace": "ran-simulator63"
+    },
+    {
+      "ue_id": 64,
+      "arrival_s": 361.069,
+      "duration_s": 132.323,
+      "namespace": "ran-simulator64"
+    },
+    {
+      "ue_id": 65,
+      "arrival_s": 371.618,
+      "duration_s": 89.09,
+      "namespace": "ran-simulator65"
+    },
+    {
+      "ue_id": 66,
+      "arrival_s": 373.455,
+      "duration_s": 2.984,
+      "namespace": "ran-simulator66"
+    },
+    {
+      "ue_id": 67,
+      "arrival_s": 383.974,
+      "duration_s": 146.825,
+      "namespace": "ran-simulator67"
+    },
+    {
+      "ue_id": 68,
+      "arrival_s": 384.422,
+      "duration_s": 33.276,
+      "namespace": "ran-simulator68"
+    },
+    {
+      "ue_id": 69,
+      "arrival_s": 384.78,
+      "duration_s": 71.481,
+      "namespace": "ran-simulator69"
+    },
+    {
+      "ue_id": 70,
+      "arrival_s": 392.039,
+      "duration_s": 6.871,
+      "namespace": "ran-simulator70"
+    },
+    {
+      "ue_id": 71,
+      "arrival_s": 395.264,
+      "duration_s": 39.904,
+      "namespace": "ran-simulator71"
+    },
+    {
+      "ue_id": 72,
+      "arrival_s": 396.803,
+      "duration_s": 102.956,
+      "namespace": "ran-simulator72"
+    },
+    {
+      "ue_id": 73,
+      "arrival_s": 399.554,
+      "duration_s": 11.9,
+      "namespace": "ran-simulator73"
+    },
+    {
+      "ue_id": 74,
+      "arrival_s": 403.429,
+      "duration_s": 65.454,
+      "namespace": "ran-simulator74"
+    },
+    {
+      "ue_id": 75,
+      "arrival_s": 404.552,
+      "duration_s": 18.678,
+      "namespace": "ran-simulator75"
+    },
+    {
+      "ue_id": 76,
+      "arrival_s": 431.195,
+      "duration_s": 52.474,
+      "namespace": "ran-simulator76"
+    },
+    {
+      "ue_id": 77,
+      "arrival_s": 434.077,
+      "duration_s": 36.447,
+      "namespace": "ran-simulator77"
+    },
+    {
+      "ue_id": 78,
+      "arrival_s": 434.722,
+      "duration_s": 12.725,
+      "namespace": "ran-simulator78"
+    },
+    {
+      "ue_id": 79,
+      "arrival_s": 436.785,
+      "duration_s": 44.374,
+      "namespace": "ran-simulator79"
+    },
+    {
+      "ue_id": 80,
+      "arrival_s": 438.093,
+      "duration_s": 12.437,
+      "namespace": "ran-simulator80"
+    },
+    {
+      "ue_id": 81,
+      "arrival_s": 438.461,
+      "duration_s": 49.862,
+      "namespace": "ran-simulator81"
+    },
+    {
+      "ue_id": 82,
+      "arrival_s": 439.761,
+      "duration_s": 117.915,
+      "namespace": "ran-simulator82"
+    },
+    {
+      "ue_id": 83,
+      "arrival_s": 449.579,
+      "duration_s": 3.675,
+      "namespace": "ran-simulator83"
+    },
+    {
+      "ue_id": 84,
+      "arrival_s": 450.938,
+      "duration_s": 55.278,
+      "namespace": "ran-simulator84"
+    },
+    {
+      "ue_id": 85,
+      "arrival_s": 452.143,
+      "duration_s": 7.096,
+      "namespace": "ran-simulator85"
+    },
+    {
+      "ue_id": 86,
+      "arrival_s": 465.85,
+      "duration_s": 42.32,
+      "namespace": "ran-simulator86"
+    },
+    {
+      "ue_id": 87,
+      "arrival_s": 469.049,
+      "duration_s": 76.767,
+      "namespace": "ran-simulator87"
+    },
+    {
+      "ue_id": 88,
+      "arrival_s": 477.288,
+      "duration_s": 10.561,
+      "namespace": "ran-simulator88"
+    },
+    {
+      "ue_id": 89,
+      "arrival_s": 477.797,
+      "duration_s": 28.198,
+      "namespace": "ran-simulator89"
+    },
+    {
+      "ue_id": 90,
+      "arrival_s": 480.552,
+      "duration_s": 31.464,
+      "namespace": "ran-simulator90"
+    },
+    {
+      "ue_id": 91,
+      "arrival_s": 487.082,
+      "duration_s": 55.946,
+      "namespace": "ran-simulator91"
+    },
+    {
+      "ue_id": 92,
+      "arrival_s": 507.809,
+      "duration_s": 5.18,
+      "namespace": "ran-simulator92"
+    },
+    {
+      "ue_id": 93,
+      "arrival_s": 510.385,
+      "duration_s": 20.723,
+      "namespace": "ran-simulator93"
+    },
+    {
+      "ue_id": 94,
+      "arrival_s": 520.276,
+      "duration_s": 14.295,
+      "namespace": "ran-simulator94"
+    },
+    {
+      "ue_id": 95,
+      "arrival_s": 521.331,
+      "duration_s": 29.766,
+      "namespace": "ran-simulator95"
+    },
+    {
+      "ue_id": 96,
+      "arrival_s": 524.071,
+      "duration_s": 16.324,
+      "namespace": "ran-simulator96"
+    },
+    {
+      "ue_id": 97,
+      "arrival_s": 525.508,
+      "duration_s": 128.37,
+      "namespace": "ran-simulator97"
+    },
+    {
+      "ue_id": 98,
+      "arrival_s": 528.435,
+      "duration_s": 98.79,
+      "namespace": "ran-simulator98"
+    },
+    {
+      "ue_id": 99,
+      "arrival_s": 532.431,
+      "duration_s": 2.596,
+      "namespace": "ran-simulator99"
+    },
+    {
+      "ue_id": 100,
+      "arrival_s": 568.63,
+      "duration_s": 90.403,
+      "namespace": "ran-simulator100"
+    }
+  ]
+}

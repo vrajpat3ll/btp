@@ -1,0 +1,312 @@
+btp@btp:~/Desktop/btp/tests$ python3     ./run_ue.py --trace traces/run1.json --log-dir ue_logs --events events/run1_events.json --use-sudo
+[2025-11-14T17:49:16.412972Z] Starting UE 1 (ns=ran-simulator1) -> log: ue_logs/ue_1.log
+[2025-11-14T17:49:17.681846Z] Stopping UE 1 (attempt graceful SIGTERM)
+[2025-11-14T17:49:18.022877Z] Starting UE 2 (ns=ran-simulator2) -> log: ue_logs/ue_2.log
+                                                                                        [2025-11-14T17:49:18.303483Z] UE 1 stopped, exit_code=1
+[2025-11-14T17:49:24.699452Z] Starting UE 3 (ns=ran-simulator3) -> log: ue_logs/ue_3.log
+                                                                                        [2025-11-14T17:49:30.668912Z] Stopping UE 2 (attempt graceful SIGTERM)
+                                                                                                                                                              [2025-11-14T17:49:31.190329Z] UE 2 stopped, exit_code=1
+                                                [2025-11-14T17:49:35.845970Z] Starting UE 4 (ns=ran-simulator4) -> log: ue_logs/ue_4.log
+                                                                                                                                        [2025-11-14T17:49:38.587985Z] Starting UE 5 (ns=ran-simulator5) -> log: ue_logs/ue_5.log
+                                                           [2025-11-14T17:49:39.823884Z] Starting UE 6 (ns=ran-simulator6) -> log: ue_logs/ue_6.log
+                                                                                                                                                   [2025-11-14T17:49:39.957862Z] Starting UE 7 (ns=ran-simulator7) -> log: ue_logs/ue_7.log
+                                                                      [2025-11-14T17:49:40.105715Z] Stopping UE 5 (attempt graceful SIGTERM)
+                                                                                                                                            [2025-11-14T17:49:40.401854Z] Stopping UE 4 (attempt graceful SIGTERM)
+                                             [2025-11-14T17:49:40.683735Z] UE 5 stopped, exit_code=1
+                                                                                                    [2025-11-14T17:49:40.886485Z] UE 4 stopped, exit_code=1
+                                                                                                                                                           [2025-11-14T17:49:45.210973Z] Starting UE 8 (ns=ran-simulator8) -> log: ue_logs/ue_8.log
+                                                                              [2025-11-14T17:49:46.457171Z] Starting UE 9 (ns=ran-simulator9) -> log: ue_logs/ue_9.log
+ [2025-11-14T17:49:51.055843Z] Stopping UE 7 (attempt graceful SIGTERM)
+                                                                       [2025-11-14T17:49:51.525381Z] UE 7 stopped, exit_code=1
+                                                                                                                              [2025-11-14T17:49:54.724575Z] Starting UE 10 (ns=ran-simulator10) -> log: ue_logs/ue_10.log
+                                                    [2025-11-14T17:49:55.053711Z] Stopping UE 10 (attempt graceful SIGTERM)
+                                                                                                                           [2025-11-14T17:49:55.626455Z] UE 10 stopped, exit_code=1
+              [2025-11-14T17:50:02.956884Z] Starting UE 11 (ns=ran-simulator11) -> log: ue_logs/ue_11.log
+                                                                                                         [2025-11-14T17:50:05.039339Z] Starting UE 12 (ns=ran-simulator12) -> log: ue_logs/ue_12.log
+                               [2025-11-14T17:50:13.500971Z] Stopping UE 12 (attempt graceful SIGTERM)
+                                                                                                      [2025-11-14T17:50:14.026706Z] UE 12 stopped, exit_code=1
+                                                                                                                                                              [2025-11-14T17:50:15.056854Z] Stopping UE 6 (attempt graceful SIGTERM)
+                                                               [2025-11-14T17:50:15.479302Z] UE 6 stopped, exit_code=1
+                                                                                                                      [2025-11-14T17:50:20.757745Z] Starting UE 13 (ns=ran-simulator13) -> log: ue_logs/ue_13.log
+                                            [2025-11-14T17:50:21.219833Z] Stopping UE 3 (attempt graceful SIGTERM)
+                                                                                                                  [2025-11-14T17:50:21.298750Z] Starting UE 14 (ns=ran-simulator14) -> log: ue_logs/ue_14.log
+                                        [2025-11-14T17:50:21.692111Z] UE 3 stopped, exit_code=1
+                                                                                               [2025-11-14T17:50:24.604762Z] Stopping UE 8 (attempt graceful SIGTERM)
+                                                                                                                                                                    [2025-11-14T17:50:25.027002Z] UE 8 stopped, exit_code=1
+                                                      [2025-11-14T17:50:26.392151Z] Stopping UE 14 (attempt graceful SIGTERM)
+                                                                                                                             [2025-11-14T17:50:26.812383Z] UE 14 stopped, exit_code=1
+                [2025-11-14T17:50:30.683566Z] Starting UE 15 (ns=ran-simulator15) -> log: ue_logs/ue_15.log
+                                                                                                           [2025-11-14T17:50:30.995841Z] Stopping UE 9 (attempt graceful SIGTERM)
+            [2025-11-14T17:50:31.370060Z] UE 9 stopped, exit_code=1
+                                                                   [2025-11-14T17:50:38.947875Z] Starting UE 16 (ns=ran-simulator16) -> log: ue_logs/ue_16.log
+                                                                                                                                                              [2025-11-14T17:50:41.281885Z] Stopping UE 13 (attempt graceful SIGTERM)
+                                                                [2025-11-14T17:50:41.600539Z] UE 13 stopped, exit_code=1
+                                                                                                                        [2025-11-14T17:50:42.726691Z] Starting UE 17 (ns=ran-simulator17) -> log: ue_logs/ue_17.log
+                                              [2025-11-14T17:50:45.098520Z] Starting UE 18 (ns=ran-simulator18) -> log: ue_logs/ue_18.log
+                                                                                                                                         [2025-11-14T17:50:54.022879Z] Starting UE 19 (ns=ran-simulator19) -> log: ue_logs/ue_19.log
+                                                               [2025-11-14T17:51:02.907878Z] Stopping UE 11 (attempt graceful SIGTERM)
+                                                                                                                                      [2025-11-14T17:51:03.226188Z] UE 11 stopped, exit_code=1
+                         [2025-11-14T17:51:03.898250Z] Starting UE 20 (ns=ran-simulator20) -> log: ue_logs/ue_20.log
+                                                                                                                    [2025-11-14T17:51:09.977826Z] Starting UE 21 (ns=ran-simulator21) -> log: ue_logs/ue_21.log
+                                          [2025-11-14T17:51:11.218366Z] Starting UE 22 (ns=ran-simulator22) -> log: ue_logs/ue_22.log
+                                                                                                                                     [2025-11-14T17:51:11.708507Z] Starting UE 23 (ns=ran-simulator23) -> log: ue_logs/ue_23.log
+                                                           [2025-11-14T17:51:12.189436Z] Starting UE 24 (ns=ran-simulator24) -> log: ue_logs/ue_24.log
+                                                                                                                                                      [2025-11-14T17:51:12.327234Z] Stopping UE 21 (attempt graceful SIGTERM)
+                                                        [2025-11-14T17:51:12.696450Z] UE 21 stopped, exit_code=143
+                                                                                                                  [2025-11-14T17:51:16.986881Z] Stopping UE 15 (attempt graceful SIGTERM)
+                    [2025-11-14T17:51:17.252309Z] Starting UE 25 (ns=ran-simulator25) -> log: ue_logs/ue_25.log
+                                                                                                               [2025-11-14T17:51:17.355705Z] UE 15 stopped, exit_code=1
+  [2025-11-14T17:51:19.613482Z] Starting UE 26 (ns=ran-simulator26) -> log: ue_logs/ue_26.log
+                                                                                             [2025-11-14T17:51:21.123395Z] Starting UE 27 (ns=ran-simulator27) -> log: ue_logs/ue_27.log
+                   [2025-11-14T17:51:24.974049Z] Stopping UE 23 (attempt graceful SIGTERM)
+                                                                                          [2025-11-14T17:51:25.293851Z] Stopping UE 18 (attempt graceful SIGTERM)
+                                                                                                                                                                 [2025-11-14T17:51:25.611947Z] UE 18 stopped, exit_code=1
+                                                    [2025-11-14T17:51:26.292978Z] UE 23 stopped, exit_code=143
+                                                                                                              [2025-11-14T17:51:26.386915Z] Starting UE 28 (ns=ran-simulator28) -> log: ue_logs/ue_28.log
+                                    [2025-11-14T17:51:27.325872Z] Starting UE 29 (ns=ran-simulator29) -> log: ue_logs/ue_29.log
+                                                                                                                               [2025-11-14T17:51:28.161382Z] Starting UE 30 (ns=ran-simulator30) -> log: ue_logs/ue_30.log
+                                                     [2025-11-14T17:51:28.317775Z] Stopping UE 22 (attempt graceful SIGTERM)
+                                                                                                                            [2025-11-14T17:51:28.492863Z] Stopping UE 24 (attempt graceful SIGTERM)
+                              [2025-11-14T17:51:28.636445Z] UE 22 stopped, exit_code=143
+                                                                                        [2025-11-14T17:51:28.811672Z] UE 24 stopped, exit_code=143
+                                                                                                                                                  [2025-11-14T17:51:31.382436Z] Stopping UE 26 (attempt graceful SIGTERM)
+                                                    [2025-11-14T17:51:31.700675Z] UE 26 stopped, exit_code=143
+                                                                                                              [2025-11-14T17:51:39.950495Z] Stopping UE 25 (attempt graceful SIGTERM)
+                [2025-11-14T17:51:40.270539Z] UE 25 stopped, exit_code=143
+                                                                          [2025-11-14T17:51:42.231258Z] Stopping UE 19 (attempt graceful SIGTERM)
+                                                                                                                                                 [2025-11-14T17:51:42.550510Z] UE 19 stopped, exit_code=1
+                                    [2025-11-14T17:51:44.370192Z] Stopping UE 16 (attempt graceful SIGTERM)
+                                                                                                           [2025-11-14T17:51:44.688503Z] UE 16 stopped, exit_code=1
+                                                                                                                                                                   [2025-11-14T17:51:46.989946Z] Stopping UE 20 (attempt graceful SIGTERM)
+                                                                     [2025-11-14T17:51:47.308343Z] UE 20 stopped, exit_code=143
+                                                                                                                               [2025-11-14T17:51:51.007366Z] Starting UE 31 (ns=ran-simulator31) -> log: ue_logs/ue_31.log
+                                                     [2025-11-14T17:51:52.045923Z] Stopping UE 30 (attempt graceful SIGTERM)
+                                                                                                                            [2025-11-14T17:51:52.364498Z] UE 30 stopped, exit_code=143
+                 [2025-11-14T17:51:54.982857Z] Starting UE 32 (ns=ran-simulator32) -> log: ue_logs/ue_32.log
+                                                                                                            [2025-11-14T17:52:04.334447Z] Starting UE 33 (ns=ran-simulator33) -> log: ue_logs/ue_33.log
+                                  [2025-11-14T17:52:05.535929Z] Starting UE 34 (ns=ran-simulator34) -> log: ue_logs/ue_34.log
+                                                                                                                             [2025-11-14T17:52:07.170656Z] Stopping UE 34 (attempt graceful SIGTERM)
+                               [2025-11-14T17:52:07.488528Z] UE 34 stopped, exit_code=143
+                                                                                         [2025-11-14T17:52:07.507771Z] Starting UE 35 (ns=ran-simulator35) -> log: ue_logs/ue_35.log
+               [2025-11-14T17:52:08.654312Z] Starting UE 36 (ns=ran-simulator36) -> log: ue_logs/ue_36.log
+                                                                                                          [2025-11-14T17:52:13.391207Z] Stopping UE 28 (attempt graceful SIGTERM)
+            [2025-11-14T17:52:13.709328Z] UE 28 stopped, exit_code=143
+                                                                      [2025-11-14T17:52:19.163713Z] Starting UE 37 (ns=ran-simulator37) -> log: ue_logs/ue_37.log
+                                                                                                                                                                 [2025-11-14T17:52:23.106265Z] Stopping UE 35 (attempt graceful SIGTERM)
+                                                                   [2025-11-14T17:52:23.424339Z] UE 35 stopped, exit_code=143
+                                                                                                                             [2025-11-14T17:52:24.428468Z] Starting UE 38 (ns=ran-simulator38) -> log: ue_logs/ue_38.log
+                                                   [2025-11-14T17:52:32.639580Z] Stopping UE 29 (attempt graceful SIGTERM)
+                                                                                                                          [2025-11-14T17:52:32.957361Z] UE 29 stopped, exit_code=143
+               [2025-11-14T17:52:36.744864Z] Starting UE 39 (ns=ran-simulator39) -> log: ue_logs/ue_39.log
+                                                                                                          [2025-11-14T17:52:38.059545Z] Stopping UE 37 (attempt graceful SIGTERM)
+            [2025-11-14T17:52:38.332448Z] Starting UE 40 (ns=ran-simulator40) -> log: ue_logs/ue_40.log
+                                                                                                       [2025-11-14T17:52:38.377844Z] UE 37 stopped, exit_code=143
+                                                                                                                                                                 [2025-11-14T17:52:42.142867Z] Stopping UE 31 (attempt graceful SIGTERM)
+                                                                   [2025-11-14T17:52:42.451825Z] Starting UE 41 (ns=ran-simulator41) -> log: ue_logs/ue_41.log
+                                                                                                                                                              [2025-11-14T17:52:42.461499Z] UE 31 stopped, exit_code=143
+                                                   [2025-11-14T17:52:46.765073Z] Starting UE 42 (ns=ran-simulator42) -> log: ue_logs/ue_42.log
+                                                                                                                                              [2025-11-14T17:52:49.385969Z] Starting UE 43 (ns=ran-simulator43) -> log: ue_logs/ue_43.log
+                                                                    [2025-11-14T17:52:49.623227Z] Stopping UE 38 (attempt graceful SIGTERM)
+                                                                                                                                           [2025-11-14T17:52:49.941548Z] UE 38 stopped, exit_code=143
+                                [2025-11-14T17:52:52.497077Z] Stopping UE 40 (attempt graceful SIGTERM)
+                                                                                                       [2025-11-14T17:52:52.714508Z] Stopping UE 32 (attempt graceful SIGTERM)
+         [2025-11-14T17:52:52.815267Z] UE 40 stopped, exit_code=143
+                                                                   [2025-11-14T17:52:53.032534Z] UE 32 stopped, exit_code=143
+                                                                                                                             [2025-11-14T17:52:57.695585Z] Stopping UE 41 (attempt graceful SIGTERM)
+                               [2025-11-14T17:52:58.013934Z] UE 41 stopped, exit_code=143
+                                                                                         [2025-11-14T17:53:01.774516Z] Stopping UE 43 (attempt graceful SIGTERM)
+                                                                                                                                                                [2025-11-14T17:53:02.092560Z] UE 43 stopped, exit_code=143
+                                                     [2025-11-14T17:53:07.476619Z] Stopping UE 39 (attempt graceful SIGTERM)
+                                                                                                                            [2025-11-14T17:53:07.795123Z] UE 39 stopped, exit_code=143
+                 [2025-11-14T17:53:19.215880Z] Stopping UE 33 (attempt graceful SIGTERM)
+                                                                                        [2025-11-14T17:53:19.426803Z] Starting UE 44 (ns=ran-simulator44) -> log: ue_logs/ue_44.log
+              [2025-11-14T17:53:19.534016Z] UE 33 stopped, exit_code=143
+                                                                        [2025-11-14T17:53:19.826844Z] Starting UE 45 (ns=ran-simulator45) -> log: ue_logs/ue_45.log
+                                                                                                                                                                   [2025-11-14T17:53:20.483804Z] Starting UE 46 (ns=ran-simulator46) -> log: ue_logs/ue_46.log
+                                                                                         [2025-11-14T17:53:22.244363Z] Stopping UE 45 (attempt graceful SIGTERM)
+                                                                                                                                                                [2025-11-14T17:53:22.562482Z] UE 45 stopped, exit_code=143
+                                                     [2025-11-14T17:53:28.320553Z] Starting UE 47 (ns=ran-simulator47) -> log: ue_logs/ue_47.log
+                                                                                                                                                [2025-11-14T17:53:28.614943Z] Starting UE 48 (ns=ran-simulator48) -> log: ue_logs/ue_48.log
+                                                                      [2025-11-14T17:53:39.136485Z] Stopping UE 27 (attempt graceful SIGTERM)
+                                                                                                                                             [2025-11-14T17:53:39.454542Z] UE 27 stopped, exit_code=143
+                                  [2025-11-14T17:53:43.548491Z] Stopping UE 17 (attempt graceful SIGTERM)
+                                                                                                         [2025-11-14T17:53:43.866715Z] UE 17 stopped, exit_code=1
+                                                                                                                                                                 [2025-11-14T17:53:52.673954Z] Stopping UE 48 (attempt graceful SIGTERM)
+                                                                   [2025-11-14T17:53:52.992242Z] UE 48 stopped, exit_code=143
+                                                                                                                             [2025-11-14T17:53:55.049150Z] Stopping UE 44 (attempt graceful SIGTERM)
+                               [2025-11-14T17:53:55.367251Z] UE 44 stopped, exit_code=143
+                                                                                         [2025-11-14T17:53:55.773211Z] Stopping UE 47 (attempt graceful SIGTERM)
+                                                                                                                                                                [2025-11-14T17:53:56.091811Z] UE 47 stopped, exit_code=143
+                                                     [2025-11-14T17:53:56.371323Z] Starting UE 49 (ns=ran-simulator49) -> log: ue_logs/ue_49.log
+                                                                                                                                                [2025-11-14T17:54:09.904132Z] Stopping UE 46 (attempt graceful SIGTERM)
+                                                  [2025-11-14T17:54:10.224919Z] UE 46 stopped, exit_code=143
+                                                                                                            [2025-11-14T17:54:14.089395Z] Starting UE 50 (ns=ran-simulator50) -> log: ue_logs/ue_50.log
+                                  [2025-11-14T17:54:14.197406Z] Starting UE 51 (ns=ran-simulator51) -> log: ue_logs/ue_51.log
+                                                                                                                             [2025-11-14T17:54:19.917226Z] Starting UE 52 (ns=ran-simulator52) -> log: ue_logs/ue_52.log
+                                             [2025-11-14T17:54:21.418863Z] Starting UE 53 (ns=ran-simulator53) -> log: ue_logs/ue_53.log
+                                                                                                                                        [2025-11-14T17:54:21.970921Z] Starting UE 54 (ns=ran-simulator54) -> log: ue_logs/ue_54.log
+                                                        [2025-11-14T17:54:25.029846Z] Starting UE 55 (ns=ran-simulator55) -> log: ue_logs/ue_55.log
+                                                                                                                                                   [2025-11-14T17:54:31.835209Z] Stopping UE 36 (attempt graceful SIGTERM)
+                                               [2025-11-14T17:54:32.153264Z] UE 36 stopped, exit_code=143
+                                                                                                         [2025-11-14T17:54:34.058781Z] Stopping UE 49 (attempt graceful SIGTERM)
+     [2025-11-14T17:54:34.376661Z] UE 49 stopped, exit_code=143
+                                                               [2025-11-14T17:54:35.485888Z] Starting UE 56 (ns=ran-simulator56) -> log: ue_logs/ue_56.log
+                                                                                                                                                          [2025-11-14T17:54:38.983809Z] Starting UE 57 (ns=ran-simulator57) -> log: ue_logs/ue_57.log
+                                                                          [2025-11-14T17:54:40.919019Z] Stopping UE 42 (attempt graceful SIGTERM)
+                                                                                                                                                 [2025-11-14T17:54:41.237270Z] UE 42 stopped, exit_code=143
+                                [2025-11-14T17:54:48.839605Z] Stopping UE 57 (attempt graceful SIGTERM)
+                                                                                                       [2025-11-14T17:54:49.157795Z] UE 57 stopped, exit_code=143
+                                                                                                                                                                 [2025-11-14T17:54:50.521053Z] Stopping UE 54 (attempt graceful SIGTERM)
+                                                             [2025-11-14T17:54:50.788394Z] Stopping UE 56 (attempt graceful SIGTERM)
+                                                                                                                                    [2025-11-14T17:54:50.838949Z] UE 54 stopped, exit_code=143
+                   [2025-11-14T17:54:51.107287Z] UE 56 stopped, exit_code=143
+                                                                             [2025-11-14T17:54:51.180819Z] Starting UE 58 (ns=ran-simulator58) -> log: ue_logs/ue_58.log
+                                                                                                                                                                        [2025-11-14T17:54:52.939372Z] Starting UE 59 (ns=ran-simulator59) -> log: ue_logs/ue_59.log
+                                                                                        [2025-11-14T17:54:57.648455Z] Starting UE 60 (ns=ran-simulator60) -> log: ue_logs/ue_60.log
+        [2025-11-14T17:54:58.433333Z] Stopping UE 52 (attempt graceful SIGTERM)
+                                                                               [2025-11-14T17:54:58.753837Z] UE 52 stopped, exit_code=143
+                                                                                                                                         [2025-11-14T17:55:04.802049Z] Starting UE 61 (ns=ran-simulator61) -> log: ue_logs/ue_61.log
+                                                         [2025-11-14T17:55:05.949962Z] Stopping UE 60 (attempt graceful SIGTERM)
+                                                                                                                                [2025-11-14T17:55:06.268839Z] UE 60 stopped, exit_code=143
+               [2025-11-14T17:55:12.376448Z] Starting UE 62 (ns=ran-simulator62) -> log: ue_logs/ue_62.log
+                                                                                                          [2025-11-14T17:55:12.379457Z] Starting UE 63 (ns=ran-simulator63) -> log: ue_logs/ue_63.log
+                          [2025-11-14T17:55:12.453428Z] Starting UE 64 (ns=ran-simulator64) -> log: ue_logs/ue_64.log
+                                                                                                                     [2025-11-14T17:55:12.689724Z] Stopping UE 53 (attempt graceful SIGTERM)
+                 [2025-11-14T17:55:13.008461Z] UE 53 stopped, exit_code=143
+                                                                           [2025-11-14T17:55:18.034916Z] Stopping UE 51 (attempt graceful SIGTERM)
+                                                                                                                                                  [2025-11-14T17:55:18.354184Z] UE 51 stopped, exit_code=143
+                                 [2025-11-14T17:55:23.026506Z] Starting UE 65 (ns=ran-simulator65) -> log: ue_logs/ue_65.log
+                                                                                                                            [2025-11-14T17:55:24.837738Z] Starting UE 66 (ns=ran-simulator66) -> log: ue_logs/ue_66.log
+                                            [2025-11-14T17:55:27.827507Z] Stopping UE 66 (attempt graceful SIGTERM)
+                                                                                                                   [2025-11-14T17:55:28.147140Z] UE 66 stopped, exit_code=143
+  [2025-11-14T17:55:31.990990Z] Stopping UE 63 (attempt graceful SIGTERM)
+                                                                         [2025-11-14T17:55:32.309765Z] UE 63 stopped, exit_code=143
+                                                                                                                                   [2025-11-14T17:55:35.282509Z] Starting UE 67 (ns=ran-simulator67) -> log: ue_logs/ue_67.log
+                                                   [2025-11-14T17:55:35.763325Z] Starting UE 68 (ns=ran-simulator68) -> log: ue_logs/ue_68.log
+                                                                                                                                              [2025-11-14T17:55:36.147765Z] Starting UE 69 (ns=ran-simulator69) -> log: ue_logs/ue_69.log
+                                                              [2025-11-14T17:55:43.413987Z] Starting UE 70 (ns=ran-simulator70) -> log: ue_logs/ue_70.log
+                                                                                                                                                         [2025-11-14T17:55:43.581856Z] Stopping UE 61 (attempt graceful SIGTERM)
+                                                     [2025-11-14T17:55:43.899731Z] UE 61 stopped, exit_code=143
+                                                                                                               [2025-11-14T17:55:43.922786Z] Stopping UE 59 (attempt graceful SIGTERM)
+           [2025-11-14T17:55:44.240820Z] UE 59 stopped, exit_code=143
+                                                                     [2025-11-14T17:55:46.662863Z] Starting UE 71 (ns=ran-simulator71) -> log: ue_logs/ue_71.log
+                                                                                                                                                                [2025-11-14T17:55:48.209578Z] Starting UE 72 (ns=ran-simulator72) -> log: ue_logs/ue_72.log
+                                                                                [2025-11-14T17:55:50.205301Z] Stopping UE 62 (attempt graceful SIGTERM)
+                                                                                                                                                       [2025-11-14T17:55:50.289938Z] Stopping UE 70 (attempt graceful SIGTERM)
+                                                   [2025-11-14T17:55:50.525484Z] UE 62 stopped, exit_code=143
+                                                                                                             [2025-11-14T17:55:50.607988Z] UE 70 stopped, exit_code=143
+                                                                                                                                                                       [2025-11-14T17:55:50.962445Z] Starting UE 73 (ns=ran-simulator73) -> log: ue_logs/ue_73.log
+                                                                                       [2025-11-14T17:55:52.677384Z] Stopping UE 50 (attempt graceful SIGTERM)
+                                                                                                                                                              [2025-11-14T17:55:52.995397Z] UE 50 stopped, exit_code=143
+                                             [2025-11-14T17:55:54.738955Z] Starting UE 74 (ns=ran-simulator74) -> log: ue_logs/ue_74.log
+                                                                                                                                        [2025-11-14T17:55:55.947937Z] Starting UE 75 (ns=ran-simulator75) -> log: ue_logs/ue_75.log
+                                                        [2025-11-14T17:56:02.876298Z] Stopping UE 73 (attempt graceful SIGTERM)
+                                                                                                                               [2025-11-14T17:56:03.194783Z] UE 73 stopped, exit_code=143
+              [2025-11-14T17:56:09.051182Z] Stopping UE 68 (attempt graceful SIGTERM)
+                                                                                     [2025-11-14T17:56:09.369280Z] UE 68 stopped, exit_code=143
+                                                                                                                                               [2025-11-14T17:56:14.642058Z] Stopping UE 75 (attempt graceful SIGTERM)
+                                           [2025-11-14T17:56:14.959868Z] UE 75 stopped, exit_code=143
+                                                                                                     [2025-11-14T17:56:22.504879Z] Starting UE 76 (ns=ran-simulator76) -> log: ue_logs/ue_76.log
+                     [2025-11-14T17:56:25.394488Z] Starting UE 77 (ns=ran-simulator77) -> log: ue_logs/ue_77.log
+                                                                                                                [2025-11-14T17:56:26.040161Z] Starting UE 78 (ns=ran-simulator78) -> log: ue_logs/ue_78.log
+                                [2025-11-14T17:56:26.608804Z] Stopping UE 71 (attempt graceful SIGTERM)
+                                                                                                       [2025-11-14T17:56:26.927250Z] UE 71 stopped, exit_code=143
+                                                                                                                                                                 [2025-11-14T17:56:28.101214Z] Starting UE 79 (ns=ran-simulator79) -> log: ue_logs/ue_79.log
+                                                                                 [2025-11-14T17:56:29.498840Z] Starting UE 80 (ns=ran-simulator80) -> log: ue_logs/ue_80.log
+ [2025-11-14T17:56:29.822856Z] Starting UE 81 (ns=ran-simulator81) -> log: ue_logs/ue_81.log
+                                                                                            [2025-11-14T17:56:31.106827Z] Starting UE 82 (ns=ran-simulator82) -> log: ue_logs/ue_82.log
+            [2025-11-14T17:56:33.469292Z] Stopping UE 58 (attempt graceful SIGTERM)
+                                                                                   [2025-11-14T17:56:33.788209Z] UE 58 stopped, exit_code=143
+                                                                                                                                             [2025-11-14T17:56:38.768286Z] Stopping UE 78 (attempt graceful SIGTERM)
+                                         [2025-11-14T17:56:39.086912Z] UE 78 stopped, exit_code=143
+                                                                                                   [2025-11-14T17:56:40.945717Z] Starting UE 83 (ns=ran-simulator83) -> log: ue_logs/ue_83.log
+                   [2025-11-14T17:56:41.950393Z] Stopping UE 80 (attempt graceful SIGTERM)
+                                                                                          [2025-11-14T17:56:42.272301Z] UE 80 stopped, exit_code=143
+                                                                                                                                                    [2025-11-14T17:56:42.345871Z] Starting UE 84 (ns=ran-simulator84) -> log: ue_logs/ue_84.log
+                                                                    [2025-11-14T17:56:43.485752Z] Starting UE 85 (ns=ran-simulator85) -> log: ue_logs/ue_85.log
+                                                                                                                                                               [2025-11-14T17:56:44.626660Z] Stopping UE 83 (attempt graceful SIGTERM)
+                                                           [2025-11-14T17:56:44.945212Z] UE 83 stopped, exit_code=143
+                                                                                                                     [2025-11-14T17:56:47.630828Z] Stopping UE 69 (attempt graceful SIGTERM)
+                 [2025-11-14T17:56:47.948775Z] UE 69 stopped, exit_code=143
+                                                                           [2025-11-14T17:56:50.584754Z] Stopping UE 85 (attempt graceful SIGTERM)
+                                                                                                                                                  [2025-11-14T17:56:50.902830Z] UE 85 stopped, exit_code=143
+                                 [2025-11-14T17:56:52.179828Z] Stopping UE 65 (attempt graceful SIGTERM)
+                                                                                                        [2025-11-14T17:56:52.500146Z] UE 65 stopped, exit_code=143
+                                                                                                                                                                  [2025-11-14T17:56:57.180834Z] Starting UE 86 (ns=ran-simulator86) -> log: ue_logs/ue_86.log
+                                                                                  [2025-11-14T17:56:58.835741Z] Stopping UE 55 (attempt graceful SIGTERM)
+                                                                                                                                                         [2025-11-14T17:56:59.153865Z] UE 55 stopped, exit_code=143
+                                        [2025-11-14T17:57:00.243021Z] Stopping UE 74 (attempt graceful SIGTERM)
+                                                                                                               [2025-11-14T17:57:00.430345Z] Starting UE 87 (ns=ran-simulator87) -> log: ue_logs/ue_87.log
+                               [2025-11-14T17:57:00.561345Z] UE 74 stopped, exit_code=143
+                                                                                         [2025-11-14T17:57:01.879872Z] Stopping UE 77 (attempt graceful SIGTERM)
+                                                                                                                                                                [2025-11-14T17:57:02.198185Z] UE 77 stopped, exit_code=143
+                                               [2025-11-14T17:57:08.691340Z] Starting UE 88 (ns=ran-simulator88) -> log: ue_logs/ue_88.log
+                                                                                                                                          [2025-11-14T17:57:09.152749Z] Starting UE 89 (ns=ran-simulator89) -> log: ue_logs/ue_89.log
+                                                          [2025-11-14T17:57:11.954990Z] Starting UE 90 (ns=ran-simulator90) -> log: ue_logs/ue_90.log
+                                                                                                                                                     [2025-11-14T17:57:12.520906Z] Stopping UE 79 (attempt graceful SIGTERM)
+                                                 [2025-11-14T17:57:12.839238Z] UE 79 stopped, exit_code=143
+                                                                                                           [2025-11-14T17:57:15.032418Z] Stopping UE 76 (attempt graceful SIGTERM)
+       [2025-11-14T17:57:15.350521Z] UE 76 stopped, exit_code=143
+                                                                 [2025-11-14T17:57:18.430812Z] Starting UE 91 (ns=ran-simulator91) -> log: ue_logs/ue_91.log
+                                                                                                                                                            [2025-11-14T17:57:19.264971Z] Stopping UE 88 (attempt graceful SIGTERM)
+                                                        [2025-11-14T17:57:19.583212Z] UE 88 stopped, exit_code=143
+                                                                                                                  [2025-11-14T17:57:19.736763Z] Stopping UE 81 (attempt graceful SIGTERM)
+              [2025-11-14T17:57:20.057337Z] UE 81 stopped, exit_code=143
+                                                                        [2025-11-14T17:57:24.858802Z] Stopping UE 64 (attempt graceful SIGTERM)
+                                                                                                                                               [2025-11-14T17:57:25.177053Z] UE 64 stopped, exit_code=143
+                              [2025-11-14T17:57:31.267591Z] Stopping UE 72 (attempt graceful SIGTERM)
+                                                                                                     [2025-11-14T17:57:31.585653Z] UE 72 stopped, exit_code=143
+                                                                                                                                                               [2025-11-14T17:57:37.381172Z] Stopping UE 89 (attempt graceful SIGTERM)
+                                                            [2025-11-14T17:57:37.665301Z] Stopping UE 84 (attempt graceful SIGTERM)
+                                                                                                                                   [2025-11-14T17:57:37.699250Z] UE 89 stopped, exit_code=143
+                   [2025-11-14T17:57:37.983700Z] UE 84 stopped, exit_code=143
+                                                                             [2025-11-14T17:57:39.155737Z] Starting UE 92 (ns=ran-simulator92) -> log: ue_logs/ue_92.log
+                                                                                                                                                                        [2025-11-14T17:57:39.513725Z] Stopping UE 86 (attempt graceful SIGTERM)
+                                                                     [2025-11-14T17:57:39.831713Z] UE 86 stopped, exit_code=143
+                                                                                                                               [2025-11-14T17:57:41.779510Z] Starting UE 93 (ns=ran-simulator93) -> log: ue_logs/ue_93.log
+                                                [2025-11-14T17:57:43.451775Z] Stopping UE 90 (attempt graceful SIGTERM)
+                                                                                                                       [2025-11-14T17:57:43.769543Z] UE 90 stopped, exit_code=143
+       [2025-11-14T17:57:44.339109Z] Stopping UE 92 (attempt graceful SIGTERM)
+                                                                              Error from server (NotFound): namespaces "ran-simulator92" not found
+                                                                                                                                                  [2025-11-14T17:57:44.508708Z] UE 92 stopped, exit_code=1
+                                [2025-11-14T17:57:51.641801Z] Starting UE 94 (ns=ran-simulator94) -> log: ue_logs/ue_94.log
+                                                                                                                           [2025-11-14T17:57:52.738854Z] Starting UE 95 (ns=ran-simulator95) -> log: ue_logs/ue_95.log
+                                            [2025-11-14T17:57:55.478815Z] Starting UE 96 (ns=ran-simulator96) -> log: ue_logs/ue_96.log
+                                                                                                                                       [2025-11-14T17:57:56.817842Z] Starting UE 97 (ns=ran-simulator97) -> log: ue_logs/ue_97.log
+                                                        [2025-11-14T17:57:59.777945Z] Starting UE 98 (ns=ran-simulator98) -> log: ue_logs/ue_98.log
+                                                                                                                                                   [2025-11-14T17:58:02.195932Z] Stopping UE 67 (attempt graceful SIGTERM)
+                                                [2025-11-14T17:58:02.516318Z] UE 67 stopped, exit_code=143
+                                                                                                          [2025-11-14T17:58:02.526785Z] Stopping UE 93 (attempt graceful SIGTERM)
+       Error from server (NotFound): namespaces "ran-simulator93" not found
+                                                                           [2025-11-14T17:58:02.693894Z] UE 93 stopped, exit_code=1
+                                                                                                                                   [2025-11-14T17:58:03.839463Z] Starting UE 99 (ns=ran-simulator99) -> log: ue_logs/ue_99.log
+                                                    [2025-11-14T17:58:05.946795Z] Stopping UE 94 (attempt graceful SIGTERM)
+                                                                                                                           Error from server (NotFound): namespaces "ran-simulator94" not found
+                     [2025-11-14T17:58:06.113914Z] UE 94 stopped, exit_code=1
+                                                                             [2025-11-14T17:58:06.440104Z] Stopping UE 99 (attempt graceful SIGTERM)
+                                                                                                                                                    Error from server (NotFound): namespaces "ran-simulator99" not found
+                                              [2025-11-14T17:58:06.607271Z] UE 99 stopped, exit_code=1
+                                                                                                      [2025-11-14T17:58:11.811938Z] Stopping UE 96 (attempt graceful SIGTERM)
+   Error from server (NotFound): namespaces "ran-simulator96" not found
+                                                                       [2025-11-14T17:58:11.980228Z] UE 96 stopped, exit_code=1
+                                                                                                                               [2025-11-14T17:58:14.386349Z] Stopping UE 91 (attempt graceful SIGTERM)
+                            Error from server (NotFound): namespaces "ran-simulator91" not found
+                                                                                                [2025-11-14T17:58:14.553945Z] UE 91 stopped, exit_code=1
+                                                                                                                                                        [2025-11-14T17:58:17.234854Z] Stopping UE 87 (attempt graceful SIGTERM)
+                                                     [2025-11-14T17:58:17.552844Z] UE 87 stopped, exit_code=143
+                                                                                                               [2025-11-14T17:58:22.535242Z] Stopping UE 95 (attempt graceful SIGTERM)
+            Error from server (NotFound): namespaces "ran-simulator95" not found
+                                                                                [2025-11-14T17:58:22.702175Z] UE 95 stopped, exit_code=1
+                                                                                                                                        [2025-11-14T17:58:29.100927Z] Stopping UE 82 (attempt graceful SIGTERM)
+                                     [2025-11-14T17:58:29.418684Z] UE 82 stopped, exit_code=143
+                                                                                               [2025-11-14T17:58:40.038465Z] Starting UE 100 (ns=ran-simulator100) -> log: ue_logs/ue_100.log
+                   [2025-11-14T17:59:38.671263Z] Stopping UE 98 (attempt graceful SIGTERM)
+                                                                                          Error from server (NotFound): namespaces "ran-simulator98" not found
+                                                                                                                                                              [2025-11-14T17:59:38.839174Z] UE 98 stopped, exit_code=1
+                                            [2025-11-14T18:00:05.283912Z] Stopping UE 97 (attempt graceful SIGTERM)
+                                                                                                                   Error from server (NotFound): namespaces "ran-simulator97" not found
+             [2025-11-14T18:00:05.502812Z] UE 97 stopped, exit_code=1
+                                                                     [2025-11-14T18:00:10.496263Z] Stopping UE 100 (attempt graceful SIGTERM)
+                                                                                                                                             Error from server (NotFound): namespaces "ran-simulator100" not found
+                                        [2025-11-14T18:00:10.713786Z] UE 100 stopped, exit_code=1
+                                                                                                 [2025-11-14T18:00:10.716481Z] Experiment finished. Events written to events/run1_events.json

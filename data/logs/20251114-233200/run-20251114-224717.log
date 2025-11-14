@@ -1,0 +1,7 @@
+[2025-11-14 22:47:17] [INFO] [main] Logging initialized at logs/run-20251114-224717.log
+[2025-11-14 22:47:17] [INFO] [main] Latency log initialized at logs/latency.log
+[2025-11-14 22:47:17] [ERROR] [main] Failed to close latency log file: No such file or directory
+[2025-11-14 22:47:17] [INFO] [forward] forward_init_table: Initializing live thread table
+[2025-11-14 22:47:17] [DEBUG] [main] Initialized tables...
+[2025-11-14 22:47:17] [DEBUG] [main] Binding socket to 10.0.0.1:38412
+[2025-11-14 22:47:17] [ERROR] [main] bind: Cannot assign requested address

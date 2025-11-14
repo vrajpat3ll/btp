@@ -1,0 +1,14 @@
+[2025-11-14 22:54:12] [INFO] [main] Logging initialized at logs/run-20251114-225412.log
+[2025-11-14 22:54:12] [INFO] [main] Latency log initialized at logs/latency.log
+[2025-11-14 22:54:12] [ERROR] [main] Failed to close latency log file: Success
+[2025-11-14 22:54:12] [INFO] [amf] amf_log_state: Dumping AMF list state
+[2025-11-14 22:54:12] [INFO] [amf] index=0 id=1 ip=10.0.0.4 port=38412 active=1 connections=0
+[2025-11-14 22:54:12] [INFO] [amf] index=1 id=2 ip=10.0.0.5 port=38412 active=0 connections=0
+[2025-11-14 22:54:12] [INFO] [amf] index=2 id=3 ip=10.0.0.6 port=38412 active=0 connections=0
+[2025-11-14 22:54:12] [INFO] [amf] index=3 id=4 ip=10.0.0.7 port=38412 active=0 connections=0
+[2025-11-14 22:54:12] [INFO] [amf] index=4 id=5 ip=10.0.0.8 port=38412 active=0 connections=0
+[2025-11-14 22:54:12] [INFO] [amf] amf_log_state: Completed AMF list state dump
+[2025-11-14 22:54:12] [INFO] [forward] forward_init_table: Initializing live thread table
+[2025-11-14 22:54:12] [DEBUG] [main] Initialized tables...
+[2025-11-14 22:54:12] [DEBUG] [main] Binding socket to 10.0.0.1:38412
+[2025-11-14 22:54:12] [ERROR] [main] bind: Cannot assign requested address
