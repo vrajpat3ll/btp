@@ -1,33 +1,47 @@
 #!/bin/bash
-if [ $(which k9s) ]; then
-    k9s
-fi
+[ "$(which k9s)" ] && k9s
 
-# Hide cursor for cleaner look
 tput civis
-
-# Restore cursor on exit
 trap "tput cnorm; exit" INT
 
-while true; do
-    pods_output=$(sudo kubectl get pods --all-namespaces -o wide)
+LOG_FILE="monitor.log"
 
-    Completed=$(echo "$pods_output" | grep Completed | wc -l)
-    ContainerCreating=$(echo "$pods_output" | grep ContainerCreating | wc -l)
-    Init=$(echo "$pods_output" | grep Init | wc -l)
-    Pending=$(echo "$pods_output" | grep Pending | wc -l)
-    Running=$(echo "$pods_output" | grep Running | wc -l)
-    Unknown=$(echo "$pods_output" | grep Unknown | wc -l)
+# Colors (ANSI, safe, minimal)
+G='\033[32m'  # green
+Y='\033[33m'  # yellow
+R='\033[31m'  # red
+B='\033[34m'  # blue
+M='\033[35m'  # magenta
+C='\033[36m'  # cyan
+W='\033[37m'  # white
+RESET='\033[0m'
+
+
+strip_ansi='s/\x1b\[[0-9]*[A-Za-z]//g'
+
+while true; do
+    pods=$(sudo kubectl get pods --all-namespaces -o wide)
+
+    Init=$(grep -c Init <<< "$pods")
+    Pending=$(grep -c Pending <<< "$pods")
+    Running=$(grep -c Running <<< "$pods")
+    Unknown=$(grep -c Unknown <<< "$pods")
+    Creating=$(grep -c ContainerCreating <<< "$pods")
+    Completed=$(grep -c Completed <<< "$pods")
+
+    out=$(cat <<EOF
+${B}PODS STATUS ${RESET}$(date '+%H:%M:%S')
+${C}Init:${RESET} $Init   ${Y}Pending:${RESET} $Pending   ${G}Running:${RESET} $Running
+${M}Unknown:${RESET} $Unknown   ${Y}Creating:${RESET} $Creating   ${W}Completed:${RESET} $Completed
+
+$pods
+
+EOF
+)
 
     clear
-    echo "🔁 Pod Status Counts:"
-    echo "    Init: $Init"
-    echo " Pending: $Pending"
-    echo " Running: $Running"
-    echo " Unknown: $Unknown"
-    echo "Creating: $ContainerCreating"
+    echo -e "$out" \
+      | tee >(sed -r "$strip_ansi" > "$LOG_FILE")
 
-    echo -e ""
-    echo -e "$pods_output"
     sleep 1
 done

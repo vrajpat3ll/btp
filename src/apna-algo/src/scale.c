@@ -116,6 +116,7 @@ void* descaling_thread_func(void* arg) {
                 }
 
                 if (new_amf) {
+                    // from  here migration latency to be calculated
                     log("INFO", "[scale] SCALE DOWN: Migrating from AMF %d to AMF %d\n",
                         old_amf->id, new_amf->id);
 
@@ -205,6 +206,9 @@ void* descaling_thread_func(void* arg) {
 
                     pthread_mutex_unlock(&new_amf->lock);
                     pthread_mutex_unlock(&old_amf->lock);
+
+                    // till here migration latency to be calculated
+
                     break;
                 } else {
                     log("INFO", "[scale] No suitable AMF found for migration from AMF %d\n",

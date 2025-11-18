@@ -17,10 +17,12 @@
 #include "utils.h"
 
 const char* HOST_IP = "10.0.0.1";
+const char* PORT = "38412";
 
 int listen_socket;
 FILE* latency_file;
-const char* latency_log_filename = "logs/latency.log";
+char latency_log_filename[256];
+char migration_log_filename[256];
 
 int main(int argc, char* argv[]) {
     (void)argc;
@@ -29,18 +31,41 @@ int main(int argc, char* argv[]) {
     // logs setup
     {
         struct stat st = {0};
+
+        // logs/ directory exists check
         if (stat("logs", &st) == -1) {
             if (mkdir("logs", 0755) != 0) {
                 perror("[main] mkdir logs");
             }
         }
 
+        // Timestamp
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
-        char fname[256];
-        if (strftime(fname, sizeof(fname), "logs/run-%Y%m%d-%H%M%S.log", &tm) == 0) {
-            snprintf(fname, sizeof(fname), "logs/run-%ld.log", (long)t);
+
+        char ts[32];  // timestamp string: YYYYMMDD-HHMMSS
+        if (strftime(ts, sizeof(ts), "%Y-%m-%d_%H%M`%S", &tm) == 0) {
+            // Fallback: just use epoch time
+            snprintf(ts, sizeof(ts), "%ld", (long)t);
         }
+
+        // logs/<timestamp> directory
+        char dir[256];
+        snprintf(dir, sizeof(dir), "logs/%s", ts);
+
+        if (stat(dir, &st) == -1) {
+            if (mkdir(dir, 0755) != 0) {
+                perror("[main] mkdir timestamped logs dir");
+            }
+        }
+
+        // run.log path: logs/{timestamp}/run.log
+        char fname[256];
+        snprintf(fname, sizeof(fname), "%s/run.log", dir);
+
+        // associative-latency.log path: logs/{timestamp}/associative-latency.log
+        snprintf(latency_log_filename, sizeof(latency_log_filename),
+                 "%s/associative-latency.log", dir);
 
         if (log_init(fname) != 0) {
             fprintf(stderr, "[main] Failed to initialize log file %s\n", fname);
@@ -55,7 +80,8 @@ int main(int argc, char* argv[]) {
             fflush(latency_file);
             log("INFO", "[main] Latency log initialized at %s\n", latency_log_filename);
         }
-        if (!fclose(latency_file)) {
+        // Correct fclose check: fclose returns 0 on success
+        if (latency_file && fclose(latency_file) != 0) {
             log_perror("[main] Failed to close latency log file");
         }
     }
@@ -74,9 +100,9 @@ int main(int argc, char* argv[]) {
     memset(&listen_addr, 0, sizeof(listen_addr));
     listen_addr.sin_family = AF_INET;
     listen_addr.sin_addr.s_addr = inet_addr(HOST_IP);
-    listen_addr.sin_port = htons(38412);
+    listen_addr.sin_port = htons(PORT);
 
-    log("DEBUG", "[main] Binding socket to %s:38412\n", HOST_IP);
+    log("DEBUG", "[main] Binding socket to %s:%s\n", HOST_IP, PORT);
     if (bind(listen_socket, (struct sockaddr*)&listen_addr, sizeof(listen_addr)) < 0) {
         log_perror("[main] bind");
         close(listen_socket);
@@ -90,7 +116,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    log("INFO", "[main] Proxy listening on %s:38412 with AMF capacity %d\n", HOST_IP, AMF_CAPACITY);
+    log("INFO", "[main] Proxy listening on %s:%s with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
 
     pthread_t descaling_t;
     if (pthread_create(&descaling_t, NULL, descaling_thread_func, NULL) != 0) {

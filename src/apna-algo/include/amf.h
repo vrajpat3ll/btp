@@ -5,7 +5,7 @@
 #include <pthread.h>
 
 #define MAX_AMFS 5
-#define MAX_CONNECTIONS 100
+#define MAX_CONNECTIONS 1000
 
 typedef struct AMF {
     unsigned int id;
