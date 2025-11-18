@@ -65,7 +65,10 @@ int main(int argc, char* argv[]) {
 
         // associative-latency.log path: logs/{timestamp}/associative-latency.log
         snprintf(latency_log_filename, sizeof(latency_log_filename),
-                 "%s/associative-latency.log", dir);
+                 "%s/associative-latency.csv", dir);
+
+        // migration log path: logs/{timestamp}/migration-log.csv
+        snprintf(migration_log_filename, sizeof(migration_log_filename), "%s/migration-latency.csv", dir);
 
         if (log_init(fname) != 0) {
             fprintf(stderr, "[main] Failed to initialize log file %s\n", fname);
@@ -83,6 +86,18 @@ int main(int argc, char* argv[]) {
         // Correct fclose check: fclose returns 0 on success
         if (latency_file && fclose(latency_file) != 0) {
             log_perror("[main] Failed to close latency log file");
+        }
+
+        FILE* migration_file = fopen(migration_log_filename, "a");
+        if (!migration_file) {
+            log_perror("[main] Failed to open migration log file");
+        } else {
+            // CSV header: timestamp,gnb_ip,old_amf_ip,new_amf_ip,migration_us,migration_ms
+            fprintf(migration_file, "timestamp,gnb_ip,old_amf_ip,new_amf_ip,migration_us,migration_ms\n");
+            fflush(migration_file);
+        }
+        if (migration_file && fclose(migration_file) != 0) {
+            log_perror("[main] Failed to close migration log file");
         }
     }
 
