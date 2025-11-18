@@ -1,6 +1,8 @@
 #include <arpa/inet.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <libgen.h>
+#include <limits.h>
 #include <netinet/sctp.h>
 #include <pthread.h>
 #include <signal.h>
@@ -98,6 +100,20 @@ int main(int argc, char* argv[]) {
         }
         if (migration_file && fclose(migration_file) != 0) {
             log_perror("[main] Failed to close migration log file");
+        }
+    }
+
+    // Write PID to current working directory ./logs/tmp.pid
+    {
+        char pidfile[512];
+        snprintf(pidfile, sizeof(pidfile), "logs/tmp.pid");
+        FILE* pf = fopen(pidfile, "w");
+        if (pf) {
+            fprintf(pf, "%d\n", (int)getpid());
+            fclose(pf);
+            log("INFO", "[main] Wrote PID %d to %s\n", (int)getpid(), pidfile);
+        } else {
+            log_perror("[main] Failed to open PID file for writing");
         }
     }
 
