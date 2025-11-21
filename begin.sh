@@ -16,11 +16,10 @@ fi
 ./scripts/setup.sh $NUM_SIMS
 
 # ./dock.sh
-cd config || { echo "dir missing"; exit 1; }
 
 step "Cluster"
-sudo kind create cluster --config config-3node.yml
-sudo kubectl create -f multus-daemonset.yml
+sudo kind create cluster --config config/config-3node.yml
+sudo kubectl create -f config/multus-daemonset.yml
 
 step "Namespaces"
 sudo kubectl create ns open5gs || true
@@ -31,27 +30,25 @@ step "CNI"
 sudo koko -d kind-worker,eth1 -d kind-worker2,eth1q
 
 sudo modprobe sctp
-sudo kubectl create -f cni-install.yml
+sudo kubectl create -f config/cni-install.yml
 
 step "Open5GS"
-sudo kubectl create -f core-5g-macvlan.yml
-sudo helm -n open5gs upgrade --install core5g ../charts/open5gs
+sudo kubectl create -f config/core-5g-macvlan.yml
+sudo helm -n open5gs upgrade --install core5g charts/open5gs
 sudo kubectl -n open5gs get po
 
 step "RBAC"
-sudo kubectl apply -f service-account.yaml
-sudo kubectl apply -f cluster-role.yaml
-sudo kubectl apply -f cluster-role-binding.yaml
-
-cd ../charts || { echo "dir missing"; exit 1; }
+sudo kubectl apply -f config/service-account.yaml
+sudo kubectl apply -f config/cluster-role.yaml
+sudo kubectl apply -f config/cluster-role-binding.yaml
 
 step "Loadbalancer"
-sudo helm -n loadbalancer upgrade --install lb loadbalancer
+sudo helm -n loadbalancer upgrade --install lb charts/loadbalancer
 sudo kubectl -n loadbalancer get po
 
 step "RAN sims"
 for i in $(seq 1 $NUM_SIMS); do
-  sudo helm -n ran-simulator$i upgrade --install sim5g my5GRan-Tester/$i
+  sudo helm -n ran-simulator$i upgrade --install sim5g charts/my5GRan-Tester/$i
 done
 
 # sleep 300

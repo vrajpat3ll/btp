@@ -9,3 +9,4 @@ scripts/time
 koko_0.82_linux_amd64
 .history
 tests/ue*
+monitor.log

@@ -44,7 +44,7 @@ sudo chmod 440 /etc/sudoers.d/99-global-timestamp
 for ((i=start; i<=end; i++)); do
     delay=${times[i-1]}
 
-    gnome-terminal --tab -- bash -c "
+    gnome-terminal --tab --title "UE $i" -- bash -c "
         sudo kubectl -n ran-simulator$i exec deploy/sim5g-simulator -- \
             bash -c 'cd /root/go/src/my5G-RANTester/cmd/ && ./app ue';
         exec bash"
