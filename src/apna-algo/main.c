@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
         struct tm tm = *localtime(&t);
 
         char ts[32];  // timestamp string: YYYYMMDD-HHMMSS
-        if (strftime(ts, sizeof(ts), "%Y-%m-%d_%H%M`%S", &tm) == 0) {
+        if (strftime(ts, sizeof(ts), "%Y-%m-%d_%H%M%S", &tm) == 0) {
             // Fallback: just use epoch time
             snprintf(ts, sizeof(ts), "%ld", (long)t);
         }
@@ -151,7 +151,7 @@ int main(int argc, char* argv[]) {
 
     pthread_t descaling_t;
     if (pthread_create(&descaling_t, NULL, descaling_thread_func, NULL) != 0) {
-        log_perror("[main:51] pthread_create");
+        log_perror("[main] pthread_create: descaling_thread_func");
         close(listen_socket);
         return 1;
     }
@@ -178,7 +178,7 @@ int main(int argc, char* argv[]) {
 
         pthread_t gnb_thread;
         if (pthread_create(&gnb_thread, NULL, handle_gnb_connection, gnb_sock) != 0) {
-            log_perror("[main:79] pthread_create");
+            log_perror("[main] pthread_create: handle_gnb_connection");
             close(*gnb_sock);
             free(gnb_sock);
             continue;
