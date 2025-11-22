@@ -1,0 +1,6 @@
+[submodule "5gcore-sctp-loadbalancer/kubeshark"]
+	path = 5gcore-sctp-loadbalancer/kubeshark
+	url = https://github.com/kubeshark/kubeshark
+[submodule "5gcore-sctp-loadbalancer/Docker_rantester/my5G-RANTester"]
+	path = 5gcore-sctp-loadbalancer/Docker_rantester/my5G-RANTester
+	url = https://github.com/my5G/my5G-RANTester.git
