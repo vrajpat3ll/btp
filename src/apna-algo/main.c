@@ -1,13 +1,7 @@
 #include <arpa/inet.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <libgen.h>
-#include <limits.h>
 #include <netinet/sctp.h>
 #include <pthread.h>
-#include <signal.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <time.h>
@@ -19,7 +13,7 @@
 #include "utils.h"
 
 const char* HOST_IP = "10.0.0.1";
-const char* PORT = "38412";
+uint16_t PORT = 38412;
 
 int listen_socket;
 FILE* latency_file;
@@ -133,7 +127,7 @@ int main(int argc, char* argv[]) {
     listen_addr.sin_addr.s_addr = inet_addr(HOST_IP);
     listen_addr.sin_port = htons(PORT);
 
-    log("DEBUG", "[main] Binding socket to %s:%s\n", HOST_IP, PORT);
+    log("DEBUG", "[main] Binding socket to %s:%d\n", HOST_IP, PORT);
     if (bind(listen_socket, (struct sockaddr*)&listen_addr, sizeof(listen_addr)) < 0) {
         log_perror("[main] bind");
         close(listen_socket);
@@ -147,7 +141,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    log("INFO", "[main] Proxy listening on %s:%s with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
+    log("INFO", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
 
     pthread_t descaling_t;
     if (pthread_create(&descaling_t, NULL, descaling_thread_func, NULL) != 0) {

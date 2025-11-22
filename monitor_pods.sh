@@ -17,10 +17,13 @@ W='\033[37m'  # white
 RESET='\033[0m'
 
 
-strip_ansi='s/\x1b\[[0-9]*[A-Za-z]//g'
+strip_ansi='s/\x1b\[[0-9;]*[A-Za-z]//g'
 
+# counter increments each second; write to file only every WRITE_INTERVAL seconds
+WRITE_INTERVAL=5
+counter=0
 while true; do
-    pods=$(sudo kubectl get pods --all-namespaces)
+    pods=$(sudo kubectl get pods --all-namespaces 2>/dev/null)
 
     Init=$(grep -c Init <<< "$pods")
     Pending=$(grep -c Pending <<< "$pods")
@@ -40,8 +43,15 @@ EOF
 )
 
     clear
-    echo -e "$out" \
-      | tee >(sed -r "$strip_ansi" > "$LOG_FILE")
+    echo -e "$out"
+
+    # Write sanitized output to file only every WRITE_INTERVAL seconds
+    counter=$((counter + 1))
+    if (( counter % WRITE_INTERVAL == 0 )); then
+      # strip ANSI sequences before writing
+      counter=(0)
+      echo -e "$out" | sed -r "$strip_ansi" > "$LOG_FILE"
+    fi
 
     sleep 1
 done

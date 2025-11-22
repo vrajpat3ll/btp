@@ -11,6 +11,7 @@ RUN apt-get update && \
     libsctp-dev \
     net-tools \
     iputils-ping \
+    iproute2 \ 
     tcpdump \
     vim \
     curl \
