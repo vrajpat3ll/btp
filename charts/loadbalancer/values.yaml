@@ -4,5 +4,5 @@ myloadbalancer:
   image:
     repository: vrajpat3ll/load_balancer
     pullPolicy: IfNotPresent
-    tag: "latest"
+    tag: "refactor"
 

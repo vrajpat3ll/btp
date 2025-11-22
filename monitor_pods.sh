@@ -20,7 +20,7 @@ RESET='\033[0m'
 strip_ansi='s/\x1b\[[0-9]*[A-Za-z]//g'
 
 while true; do
-    pods=$(sudo kubectl get pods --all-namespaces -o wide)
+    pods=$(sudo kubectl get pods --all-namespaces)
 
     Init=$(grep -c Init <<< "$pods")
     Pending=$(grep -c Pending <<< "$pods")

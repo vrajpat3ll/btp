@@ -11,8 +11,8 @@
   - [x] GOAL: to be able to have the same ./begin.sh work properly
 - [ ] async logging for actual time-evals
 - [ ] persistent logging backups
-- [ ] use bool to identify the thread and change the conditions in the handle_gnb connections to ensure consistency in count
-- [ ] add amf2gnb threads
+- [x] use bool to identify the thread and change the conditions in the handle_gnb connections to ensure consistency in count
+- [x] add amf2gnb threads
 - [ ] Assignee: _JAIN_, scripts for experimenting and finding results (./exp 100) -> 100 UEs ke saath network create karega, then jo bhi hume results chaiye (metrics like latency for forwarding decision, rtt?, etc.) wo find out karke kahi pe like `data/results` me store karega
 - [ ] handle SIGINT(loadbalamcer is closed), detached threads should be killed
-- [ ] migratiom latency logging
+- [x] migratiom latency logging
