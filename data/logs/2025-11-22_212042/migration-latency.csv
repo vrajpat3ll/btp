@@ -1,0 +1,2 @@
+timestamp,gnb_ip,old_amf_ip,new_amf_ip,migration_us,migration_ms
+2025-11-22 21:33:42,10.0.1.28:9487,10.0.0.6,10.0.0.5,957.000,0.957

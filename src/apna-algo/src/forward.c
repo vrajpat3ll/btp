@@ -22,7 +22,7 @@ struct timeval start_time, end_time;
 extern pthread_mutex_t amf_state_mutex;   // declared in scaling.c (shared state)
 extern int total_conn_count;              // declared in scaling.c
 extern FILE* latency_file;                // declared in main.c
-extern const char* latency_log_filename;  // declared in main.c
+extern char latency_log_filename[256];    // declared in main.c
 
 void forward_init_table(void) {
     log("INFO", "[forward] forward_init_table: Initializing live thread table\n");
