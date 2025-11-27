@@ -58,14 +58,14 @@ AMF* amf_get_by_index(int i) {
     return &amfs[i];
 }
 
-AMF* get_next_amf_round_robin(void) {
-    log("INFO", "[amf] get_next_amf_round_robin: Choosing next active AMF using round robin\n");
+AMF* get_next_amf(void) {
+    log("INFO", "[amf] get_next_amf: Choosing next active AMF using round robin\n");
 
     AMF* target_amf = NULL;
     pthread_mutex_lock(&round_robin_mutex);
     int active_count = get_active_amf_count();
     if (active_count == 0) {
-        log("INFO", "[amf] get_next_amf_round_robin: No active AMFs\n");
+        log("INFO", "[amf] get_next_amf: No active AMFs\n");
         pthread_mutex_unlock(&round_robin_mutex);
         return NULL;
     }
@@ -74,7 +74,7 @@ AMF* get_next_amf_round_robin(void) {
         if (amfs[idx].active && amfs[idx].connections < AMF_CAPACITY) {
             target_amf = &amfs[idx];
             round_robin_index = (idx + 1) % MAX_AMFS;
-            log("INFO", "[amf] get_next_amf_round_robin: Selected AMF index %d (id=%d, ip=%s)\n", idx, amfs[idx].id, amfs[idx].ip);
+            log("INFO", "[amf] get_next_amf: Selected AMF index %d (id=%d, ip=%s)\n", idx, amfs[idx].id, amfs[idx].ip);
             break;
         }
     }

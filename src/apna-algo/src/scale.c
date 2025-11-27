@@ -27,17 +27,17 @@ static void get_deployment_name(int index, char* buf, size_t buf_len) {
     snprintf(buf, buf_len, "core5g-amf-%d-deployment", index + 1);
 }
 
-void scale_up_check(void) {
+void scale_up(void) {
     pthread_mutex_lock(&amf_state_mutex);
     int active_count = get_active_amf_count();
     if (active_count == 0) {
-        log("INFO", "[scale] scale_up_check: No active AMFs, skipping scale up\n");
+        log("INFO", "[scale] scale_up: No active AMFs, skipping scale up\n");
         pthread_mutex_unlock(&amf_state_mutex);
         return;
     }
 
     int threshold = (int)(active_count * AMF_CAPACITY * (1 - HEADROOM_PERCENTAGE));
-    log("INFO", "[scale] scale_up_check: total_conn_count=%d, threshold=%d\n",
+    log("INFO", "[scale] scale_up: total_conn_count=%d, threshold=%d\n",
         total_conn_count, threshold);
 
     if (total_conn_count >= threshold) {
@@ -64,13 +64,13 @@ void scale_up_check(void) {
             }
         }
     } else {
-        log("INFO", "[scale] scale_up_check: Load below threshold, no scaling up needed\n");
+        log("INFO", "[scale] scale_up: Load below threshold, no scaling up needed\n");
     }
 
     pthread_mutex_unlock(&amf_state_mutex);
 }
 
-void* descaling_thread_func(void* arg) {
+void* descaler(void* arg) {
     (void)arg;
     while (1) {
         sleep(DESCALING_INTERVAL_MINUTES * 60);
@@ -85,10 +85,10 @@ void* descaling_thread_func(void* arg) {
                 float util = old_amf->connections > 0
                                  ? (float)old_amf->connections / AMF_CAPACITY
                                  : 0.0f;
-                log("INFO", "[scale] descaling_thread_func: Checking AMF %d utilization: %.2f\n",
+                log("INFO", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                     old_amf->id, util);
             }
-            log("INFO", "[scale] descaling_thread_func: Only %d active AMF(s), skipping scale down\n",
+            log("INFO", "[scale] descaler: Only %d active AMF(s), skipping scale down\n",
                 active_count);
             pthread_mutex_unlock(&amf_state_mutex);
             continue;
@@ -101,7 +101,7 @@ void* descaling_thread_func(void* arg) {
             float util = old_amf->connections > 0
                              ? (float)old_amf->connections / AMF_CAPACITY
                              : 0.0f;
-            log("INFO", "[scale] descaling_thread_func: Checking AMF %d utilization: %.2f\n",
+            log("INFO", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                 old_amf->id, util);
 
             if (util <= THRESHOLD_DOWN) {

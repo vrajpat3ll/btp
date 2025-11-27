@@ -177,7 +177,7 @@ void* handle_gnb_connection(void* arg) {
         snprintf(gnb_ip, sizeof(gnb_ip), "unknown");
     }
 
-    AMF* target_amf = get_next_amf_round_robin();
+    AMF* target_amf = get_next_amf();
     int amf_sock;
 
     do {
@@ -185,7 +185,7 @@ void* handle_gnb_connection(void* arg) {
             log("INFO", "[forward] handle_gnb_connection: No active AMF available, closing gNB socket %d\n", gnb_socket);
             int i = 0;
             for (; i < MAX_RETRIES && !target_amf; ++i) {
-                target_amf = get_next_amf_round_robin();
+                target_amf = get_next_amf();
                 if (!target_amf) {
                     log("INFO", "[forward] handle_gnb_connection: Still no active AMF, retrying in 10 seconds...\n");
                     sleep(10);

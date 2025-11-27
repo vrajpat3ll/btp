@@ -19,7 +19,7 @@ typedef struct AMF {
 extern AMF amfs[MAX_AMFS];
 
 void amf_init_default(void);
-AMF* get_next_amf_round_robin(void);
+AMF* get_next_amf(void);
 int get_active_amf_count(void);
 int connect_to_amf(AMF* amf);
 AMF* amf_get_by_index(int i);

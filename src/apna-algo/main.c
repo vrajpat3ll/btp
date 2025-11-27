@@ -144,8 +144,8 @@ int main(int argc, char* argv[]) {
     log("INFO", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
 
     pthread_t descaling_t;
-    if (pthread_create(&descaling_t, NULL, descaling_thread_func, NULL) != 0) {
-        log_perror("[main] pthread_create: descaling_thread_func");
+    if (pthread_create(&descaling_t, NULL, descaler, NULL) != 0) {
+        log_perror("[main] pthread_create: descaler");
         close(listen_socket);
         return 1;
     }
