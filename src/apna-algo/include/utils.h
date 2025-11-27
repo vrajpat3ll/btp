@@ -11,11 +11,11 @@
 #define COLOR_MAGENTA "\033[1;35m"
 #define COLOR_CYAN "\033[1;36m"
 
-void execute_command(const char *cmd, char *const args[]);
+void execute_command(const char* cmd, char* const args[]);
 
-int log_init(const char *filename);
+int log_init(const char* filename);
 void log_close();
-void log(const char *level, const char *format, ...);
-void log_perror(const char *message);
+void log(const char* level, const char* format, ...);
+void log_perror(const char* message);
 
-#endif // UTILS_H
+#endif  // UTILS_H

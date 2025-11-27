@@ -7,8 +7,8 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "config.h"
 #include "amf.h"
+#include "config.h"
 #include "forward.h"
 #include "scale.h"
 #include "utils.h"
@@ -139,7 +139,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    log("INFO", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
+    log("SUCCES", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
 
     pthread_t descaling_t;
     if (pthread_create(&descaling_t, NULL, descaler, NULL) != 0) {
@@ -177,7 +177,7 @@ int main(int argc, char* argv[]) {
         }
         pthread_detach(gnb_thread);
     }
-    log("INFO", "[main] Closing listening socket and exiting.\n");
+    log("SUCCESS", "[main] Closing listening socket and exiting.\n");
     log_close();
 
     close(listen_socket);

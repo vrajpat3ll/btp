@@ -10,8 +10,7 @@
 #include "utils.h"
 
 // Externalized mutex used by the round-robin function
-pthread_mutex_t round_robin_mutex = PTHREAD_MUTEX_INITIALIZER;
-static int round_robin_index = 0;
+pthread_mutex_t get_next_amf_mutex = PTHREAD_MUTEX_INITIALIZER;
 extern int AMF_CAPACITY;
 AMF amfs[MAX_AMFS];
 
@@ -22,20 +21,13 @@ void get_ip(char* ip, int index) {
 void amf_init_default(void) {
     // Initialize the default AMF entries; caller may modify
     char ip[INET_ADDRSTRLEN];
-    amfs[0].id = 1;
-    get_ip(ip, 0);
-    strncpy(amfs[0].ip, ip, sizeof(amfs[0].ip));
-    amfs[0].port = PORT;
-    amfs[0].active = 1;
-    amfs[0].connections = 0;
-    pthread_mutex_init(&amfs[0].lock, NULL);
 
-    for (int i = 1; i < MAX_AMFS; i++) {
+    for (int i = 0; i < MAX_AMFS; i++) {
         amfs[i].id = i + 1;
         get_ip(ip, i);
         strncpy(amfs[i].ip, ip, sizeof(amfs[i].ip));
         amfs[i].port = PORT;
-        amfs[i].active = 0;
+        amfs[i].active = 1;
         amfs[i].connections = 0;
         pthread_mutex_init(&amfs[i].lock, NULL);
     }
@@ -60,27 +52,33 @@ AMF* amf_get_by_index(int i) {
 }
 
 AMF* get_next_amf(void) {
-    log("INFO", "[amf] get_next_amf: Choosing next active AMF using round robin\n");
+    log("INFO", "[amf] get_next_amf: Choosing next active AMF using least connections algorithm\n");
 
     AMF* target_amf = NULL;
-    pthread_mutex_lock(&round_robin_mutex);
-    int active_count = get_active_amf_count();
-    if (active_count == 0) {
+    pthread_mutex_lock(&get_next_amf_mutex);
+
+    if (get_active_amf_count() == 0) {
         log("INFO", "[amf] get_next_amf: No active AMFs\n");
-        pthread_mutex_unlock(&round_robin_mutex);
+        pthread_mutex_unlock(&get_next_amf_mutex);
         return NULL;
     }
+    // algorithm: argmin_{AMF}{connections} | AMF is active and can take enough load
+    int min_conns = INT32_MAX;
+    int target_index = -1;
     for (int i = 0; i < MAX_AMFS; i++) {
-        int idx = (round_robin_index + i) % MAX_AMFS;
-        if (amfs[idx].active && amfs[idx].connections < AMF_CAPACITY) {
-            target_amf = &amfs[idx];
-            round_robin_index = (idx + 1) % MAX_AMFS;
-            log("INFO", "[amf] get_next_amf: Selected AMF index %d (id=%d, ip=%s)\n", idx, amfs[idx].id, amfs[idx].ip);
-            break;
+        if (amfs[i].active && amfs[i].connections < AMF_CAPACITY) {
+            if (amfs[i].connections < min_conns) {
+                min_conns = amfs[i].connections;
+                target_index = i;
+            }
         }
     }
 
-    pthread_mutex_unlock(&round_robin_mutex);
+    if (target_index != -1) {
+        target_amf = &amfs[target_index];
+        log("INFO", "[amf] get_next_amf: Selected AMF index %d (id=%d, ip=%s)\n", target_index, amfs[target_index].id, amfs[target_index].ip);
+    }
+    pthread_mutex_unlock(&get_next_amf_mutex);
     return target_amf;
 }
 

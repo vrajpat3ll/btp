@@ -19,10 +19,10 @@ pthread_mutex_t live_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
 forward_info_t* live_threads[FORWARD_CONNS_ARRAY_LEN];
 struct timeval start_time, end_time;
 
-extern pthread_mutex_t amf_state_mutex;   // declared in scaling.c (shared state)
-extern int total_conn_count;              // declared in scaling.c
-extern FILE* latency_file;                // declared in main.c
-extern char latency_log_filename[256];    // declared in main.c
+extern pthread_mutex_t amf_state_mutex;  // declared in scaling.c (shared state)
+extern int total_conn_count;             // declared in scaling.c
+extern FILE* latency_file;               // declared in main.c
+extern char latency_log_filename[256];   // declared in main.c
 
 void forward_init_table(void) {
     log("INFO", "[forward] forward_init_table: Initializing live thread table\n");

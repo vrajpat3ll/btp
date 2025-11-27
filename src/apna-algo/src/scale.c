@@ -12,15 +12,7 @@
 #include "forward.h"
 #include "utils.h"
 
-/* Initialize AMF_CAPACITY from the configured default macro so build-time
- * overrides via -DDEFAULT_AMF_CAPACITY=... are respected. Keep the variable
- * visible to other C files as before.
- */
 int AMF_CAPACITY = DEFAULT_AMF_CAPACITY;
-
-/* Use macros from config.h for headroom and thresholds */
-/* HEADROOM_PERCENTAGE, THRESHOLD_DOWN, THRESHOLD_UP are provided by config.h */
-
 pthread_mutex_t amf_state_mutex = PTHREAD_MUTEX_INITIALIZER;
 int total_conn_count = 0;
 
@@ -36,19 +28,19 @@ void scale_up(void) {
     pthread_mutex_lock(&amf_state_mutex);
     int active_count = get_active_amf_count();
     if (active_count == 0) {
-        log("INFO", "[scale] scale_up: No active AMFs, skipping scale up\n");
+        log("ERROR", "[scale] scale_up: No active AMFs, skipping scale up\n");
         pthread_mutex_unlock(&amf_state_mutex);
         return;
     }
 
     int threshold = (int)(active_count * AMF_CAPACITY * (1 - HEADROOM_PERCENTAGE));
-    log("INFO", "[scale] scale_up: total_conn_count=%d, threshold=%d\n",
+    log("DEBUG", "[scale] scale_up: total_conn_count=%d, threshold=%d\n",
         total_conn_count, threshold);
 
     if (total_conn_count >= threshold) {
         for (int i = 0; i < MAX_AMFS; i++) {
             if (!amfs[i].active) {
-                log("INFO", "[scale] SCALE UP: Load (%d) exceeds threshold (%d). Deploying AMF %d...\n",
+                log("WARN", "[scale] SCALE UP: Load (%d) exceeds threshold (%d). Deploying AMF %d...\n",
                     total_conn_count, threshold, amfs[i].id);
                 amfs[i].active = 1;
 
@@ -69,7 +61,7 @@ void scale_up(void) {
             }
         }
     } else {
-        log("INFO", "[scale] scale_up: Load below threshold, no scaling up needed\n");
+        log("DEBUG", "[scale] scale_up: Load below threshold, no scaling up needed\n");
     }
 
     pthread_mutex_unlock(&amf_state_mutex);
@@ -90,7 +82,7 @@ void* descaler(void* arg) {
                 float util = old_amf->connections > 0
                                  ? (float)old_amf->connections / AMF_CAPACITY
                                  : 0.0f;
-                log("INFO", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
+                log("DEBUG", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                     old_amf->id, util);
             }
             log("INFO", "[scale] descaler: Only %d active AMF(s), skipping scale down\n",
@@ -106,7 +98,7 @@ void* descaler(void* arg) {
             float util = old_amf->connections > 0
                              ? (float)old_amf->connections / AMF_CAPACITY
                              : 0.0f;
-            log("INFO", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
+            log("DEBUG", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                 old_amf->id, util);
 
             if (util <= THRESHOLD_DOWN) {

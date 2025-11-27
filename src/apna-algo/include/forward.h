@@ -5,8 +5,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "config.h"
 #include "amf.h"
+#include "config.h"
 
 typedef struct {
     int source_socket;
