@@ -7,13 +7,11 @@
 #include <time.h>
 #include <unistd.h>
 
+#include "config.h"
 #include "amf.h"
 #include "forward.h"
 #include "scale.h"
 #include "utils.h"
-
-const char* HOST_IP = "10.0.0.1";
-uint16_t PORT = 38412;
 
 int listen_socket;
 FILE* latency_file;
@@ -168,7 +166,7 @@ int main(int argc, char* argv[]) {
         }
         log("INFO", "[main] Requested gNB connection from %s:%d\n", inet_ntoa(gnb_addr.sin_addr), ntohs(gnb_addr.sin_port));
 
-        scale_up_check();
+        scale_up();
 
         pthread_t gnb_thread;
         if (pthread_create(&gnb_thread, NULL, handle_gnb_connection, gnb_sock) != 0) {

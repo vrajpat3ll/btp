@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+#include "config.h"
 #include "utils.h"
 
 // Externalized mutex used by the round-robin function
@@ -24,7 +25,7 @@ void amf_init_default(void) {
     amfs[0].id = 1;
     get_ip(ip, 0);
     strncpy(amfs[0].ip, ip, sizeof(amfs[0].ip));
-    amfs[0].port = 38412;
+    amfs[0].port = PORT;
     amfs[0].active = 1;
     amfs[0].connections = 0;
     pthread_mutex_init(&amfs[0].lock, NULL);
@@ -33,7 +34,7 @@ void amf_init_default(void) {
         amfs[i].id = i + 1;
         get_ip(ip, i);
         strncpy(amfs[i].ip, ip, sizeof(amfs[i].ip));
-        amfs[i].port = 38412;
+        amfs[i].port = PORT;
         amfs[i].active = 0;
         amfs[i].connections = 0;
         pthread_mutex_init(&amfs[i].lock, NULL);

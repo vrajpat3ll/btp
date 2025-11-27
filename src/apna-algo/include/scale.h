@@ -2,13 +2,14 @@
 #define SCALE_H
 
 #include "amf.h"
+#include "config.h"
 
-#define DESCALING_INTERVAL_MINUTES 1
-
+/* The implementation file (`src/scale.c`) defines the following variables:
+ *   int AMF_CAPACITY; // initialized from DEFAULT_AMF_CAPACITY
+ * and uses the macros HEADROOM_PERCENTAGE, THRESHOLD_DOWN, THRESHOLD_UP
+ * defined in `config.h`.
+ */
 extern int AMF_CAPACITY;
-extern const float HEADROOM_PERCENTAGE;
-extern const float THRESHOLD_DOWN;
-extern const float THRESHOLD_UP;
 
 void* descaler(void* arg);
 void scale_up(void);

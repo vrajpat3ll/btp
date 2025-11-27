@@ -5,12 +5,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "config.h"
 #include "amf.h"
-
-#define BUFFER_SIZE 1024
-#define MAX_RETRIES 10
-#define FORWARD_CONNS_ARRAY_LEN 2 * MAX_CONNECTIONS
-#define RECONNECT_BUFFER_TIME 5  // in seconds
 
 typedef struct {
     int source_socket;

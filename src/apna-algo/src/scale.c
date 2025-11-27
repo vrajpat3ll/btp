@@ -8,13 +8,18 @@
 #include <unistd.h>
 
 #include "amf.h"
+#include "config.h"
 #include "forward.h"
 #include "utils.h"
 
-int AMF_CAPACITY = 15;
-const float HEADROOM_PERCENTAGE = 0.20f;
-const float THRESHOLD_DOWN = (1 - HEADROOM_PERCENTAGE) / 6;
-const float THRESHOLD_UP = (1 - HEADROOM_PERCENTAGE) / 2;
+/* Initialize AMF_CAPACITY from the configured default macro so build-time
+ * overrides via -DDEFAULT_AMF_CAPACITY=... are respected. Keep the variable
+ * visible to other C files as before.
+ */
+int AMF_CAPACITY = DEFAULT_AMF_CAPACITY;
+
+/* Use macros from config.h for headroom and thresholds */
+/* HEADROOM_PERCENTAGE, THRESHOLD_DOWN, THRESHOLD_UP are provided by config.h */
 
 pthread_mutex_t amf_state_mutex = PTHREAD_MUTEX_INITIALIZER;
 int total_conn_count = 0;

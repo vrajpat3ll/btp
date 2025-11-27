@@ -4,8 +4,7 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 
-#define MAX_AMFS 5
-#define MAX_CONNECTIONS 1000
+#include "config.h"
 
 typedef struct AMF {
     unsigned int id;

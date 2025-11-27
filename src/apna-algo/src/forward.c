@@ -208,7 +208,7 @@ void* handle_gnb_connection(void* arg) {
                 target_amf->id, target_amf->ip);
             pthread_mutex_unlock(&target_amf->lock);
             pthread_mutex_unlock(&amf_state_mutex);
-            sleep(RECONNECT_BUFFER_TIME);
+            sleep(RECONNECT_BUFFER_SECONDS);
         }
     } while (amf_sock < 0);
 
