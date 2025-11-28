@@ -78,7 +78,7 @@ AMF* get_next_amf(const char* ip) {
     // Try to parse UE id from IP (format expected: a.b.x.y). id = 256*x + y
     int a = 0, b = 0, x = 0, y = 0;
     if (sscanf(ip, "%d.%d.%d.%d", &a, &b, &x, &y) == 4) {
-        long ue_id = 256L * x + y;
+        long ue_id = 256L * (x-1) + y;
 
         if (ue2amf_map && (size_t)ue_id <= 500) {
             int mapped_amf_id = ue2amf_map[ue_id];

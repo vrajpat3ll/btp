@@ -4,7 +4,7 @@ run_ues.py
 Run the UEs according to a JSON trace file.
 
 Usage:
-    ./run_ues.py --trace traces/run1.json --log-dir ue_logs --events events/run1_events.json [--use-sudo]
+    ./run_ues.py --trace traces/run1.json --log-dir ue_logs --events events/run1_events.json --use-sudo
 
 Notes:
  - Requires kubectl on PATH.
@@ -29,15 +29,15 @@ def iso_now():
 
 
 def log_info(msg):
-    print(f"[INFO] {iso_now()} | {msg}")
+    print(f"[INFO] {iso_now()} | {msg}", end='\n\r')
 
 
 def log_warn(msg):
-    print(f"[WARN] {iso_now()} | {msg}")
+    print(f"[WARN] {iso_now()} | {msg}", end='\n\r')
 
 
 def log_error(msg):
-    print(f"[ERROR] {iso_now()} | {msg}")
+    print(f"[ERROR] {iso_now()} | {msg}", end='\n\r')
 
 
 def run_ue(ue, start_time, log_dir, use_sudo):
