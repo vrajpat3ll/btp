@@ -30,6 +30,8 @@ def main():
     if args.seed is not None:
         random.seed(args.seed)
 
+    print("[INFO] Generating Poisson trace…")
+
     trace = {
         "meta": {
             "generated_at": datetime.utcnow().isoformat() + "Z",
@@ -55,11 +57,15 @@ def main():
             "namespace": f"{args.namespace_prefix}{i}"
         }
         trace["ues"].append(ue)
+        if i % 50 == 0:
+            print(f"[INFO] Generated UE {i}/{args.num_ues}")
 
     with open(args.out, "w+") as f:
         json.dump(trace, f, indent=2)
 
-    print(f"Wrote trace to {args.out}")
+    # print(f"Wrote trace to {args.out}")
+    print(f"[INFO] Trace written to {args.out}")
+    print("[OK]   Generation complete.")
 
 if __name__ == "__main__":
     main()
