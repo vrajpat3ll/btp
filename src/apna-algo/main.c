@@ -86,8 +86,8 @@ int main(int argc, char* argv[]) {
         if (!migration_file) {
             log_perror("[main] Failed to open migration log file");
         } else {
-            // CSV header: timestamp,gnb_ip,old_amf_ip,new_amf_ip,migration_us,migration_ms
-            fprintf(migration_file, "timestamp,gnb_ip,old_amf_ip,new_amf_ip,migration_us,migration_ms\n");
+            // CSV header: timestamp,old_amf_ip,new_amf_ip,migration_us,migration_ms
+            fprintf(migration_file, "timestamp,old_amf_ip,new_amf_ip,connections_migrated,migration_us,migration_ms\n");
             fflush(migration_file);
         }
         if (migration_file && fclose(migration_file) != 0) {
@@ -139,15 +139,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    log("SUCCES", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
-
-    pthread_t descaling_t;
-    if (pthread_create(&descaling_t, NULL, descaler, NULL) != 0) {
-        log_perror("[main] pthread_create: descaler");
-        close(listen_socket);
-        return 1;
-    }
-    pthread_detach(descaling_t);
+    log("SUCCESS", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
 
     while (1) {
         struct sockaddr_in gnb_addr;
@@ -165,8 +157,6 @@ int main(int argc, char* argv[]) {
             continue;
         }
         log("INFO", "[main] Requested gNB connection from %s:%d\n", inet_ntoa(gnb_addr.sin_addr), ntohs(gnb_addr.sin_port));
-
-        scale_up();
 
         pthread_t gnb_thread;
         if (pthread_create(&gnb_thread, NULL, handle_gnb_connection, gnb_sock) != 0) {

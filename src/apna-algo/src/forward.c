@@ -55,16 +55,21 @@ void* forward_messages(void* arg) {
     get_ip_port(info->source_socket, src_addr, sizeof(src_addr));
 
     pthread_mutex_lock(&(*info->current_amf)->lock);
-    get_ip_port(*(info->destination_socket), dst_addr, sizeof(dst_addr));
+    int dest_sock_init = *(info->destination_socket);
+    get_ip_port(dest_sock_init, dst_addr, sizeof(dst_addr));
     pthread_mutex_unlock(&(*info->current_amf)->lock);
 
     log("INFO", "[forward] forward_messages: Started forwarding messages (thread index: %d, %s -> %s)\n",
         info->live_thread_index, src_addr, dst_addr);
+    log("INFO", "[forward] forward_messages: initial sockets: src_sock=%d dest_sock=%d\n",
+        info->source_socket, dest_sock_init);
 
     while (1) {
         nbytes = sctp_recvmsg(info->source_socket, buffer, sizeof(buffer), NULL, 0, NULL, NULL);
         int dest_sock = -1;
         AMF* temp_amf = *(info->current_amf);
+        log("INFO", "[forward] forward_messages: recv returned nbytes=%zd from %s (socket=%d)\n",
+            nbytes, src_addr, info->source_socket);
 
         // Lock AMF to safely read the socket descriptor if needed
 
@@ -72,39 +77,61 @@ void* forward_messages(void* arg) {
             pthread_mutex_lock(&temp_amf->lock);
             dest_sock = *(info->destination_socket);
             pthread_mutex_unlock(&temp_amf->lock);
+            log("INFO", "[forward] forward_messages: resolved dest_sock=%d for AMF id=%d (dst=%s)\n",
+                dest_sock, temp_amf ? temp_amf->id : -1, dst_addr);
             if (dest_sock > 0) {
+                log("INFO", "[forward] forward_messages: attempting to send %zd bytes %s(socket=%d) -> %s(socket=%d)\n",
+                    nbytes, src_addr, info->source_socket, dst_addr, dest_sock);
                 ssize_t sent = sctp_sendmsg(dest_sock, buffer, nbytes, NULL, 0, 0, 0, 0, 0, 0);
                 if (sent < 0) {
-                    log_perror("[forward] sctp_sendmsg failed");
+                    char buf[256];
+                    snprintf(buf, sizeof(buf), "[forward]  %s(%d)  ->  %s(%d) sctp_sendmsg failed",
+                             src_addr, info->source_socket, dst_addr, dest_sock);
+                    log_perror(buf);
                     break;
                 }
-                log("INFO", "[forward] Transferred %zd bytes %s -> %s\n", nbytes, src_addr, dst_addr);
+                log("INFO", "[forward] Transferred %zd bytes %s(socket=%d) -> %s(socket=%d)\n",
+                    nbytes, src_addr, info->source_socket, dst_addr, dest_sock);
                 continue;
+            } else {
+                log("INFO", "[forward] forward_messages: no destination socket (dest_sock=%d) for %s -> %s\n",
+                    dest_sock, src_addr, dst_addr);
             }
         }
 
         if (nbytes == 0) {
-            log("INFO", "[forward] Peer closed connection on socket %d (recv=0)\n", info->source_socket);
+            log("INFO", "[forward] Peer closed connection on socket %d (recv=0) for %s -> %s\n",
+                info->source_socket, src_addr, dst_addr);
             break;
         }
 
         // nbytes < 0: handle error
         if (errno == ECONNRESET || errno == ENOTCONN || errno == EBADF || errno == EPIPE) {
-            log("INFO", "[forward] Detected abrupt disconnect (errno=%d) on socket %d\n", errno, info->source_socket);
+            log("INFO", "[forward] Detected abrupt disconnect (errno=%d) on socket %d for %s -> %s\n",
+                errno, info->source_socket, src_addr, dst_addr);
             break;
         }
 
-        if (errno == EINTR) continue;  // retry
-        log_perror("[forward] sctp_recvmsg failed");
+        if (errno == EINTR) {
+            log("INFO", "[forward] sctp_recvmsg interrupted by signal for %s -> %s, retrying\n",
+                src_addr, dst_addr);
+            continue;  // retry
+        }
+        char errbuf[256];
+        snprintf(errbuf, sizeof(errbuf), "[forward] sctp_recvmsg failed for %s(socket=%d) -> %s", src_addr, info->source_socket, dst_addr);
+        log_perror(errbuf);
         break;
     }
 
-    log("INFO", "[forward] forward_messages: Connection closed or error on source socket %d\n", info->source_socket);
+    log("INFO", "[forward] forward_messages: Connection closed or error on source socket %d for %s -> %s\n",
+        info->source_socket, src_addr, dst_addr);
 
     // Cleanup connection counts
     if (info->from_gnb) {
         pthread_mutex_lock(&amf_state_mutex);
         if (*info->current_amf) {
+            log("INFO", "[forward] forward_messages: decrementing connection counts for AMF id=%d (for %s -> %s), before: connections=%d total_conn_count=%d\n",
+                (*info->current_amf)->id, src_addr, dst_addr, (*info->current_amf)->connections, total_conn_count);
             (*info->current_amf)->connections--;
             total_conn_count--;
             log("INFO", "[forward] forward_messages: Decremented connection counts for AMF id=%d, total_conn_count=%d\n",
@@ -117,7 +144,8 @@ void* forward_messages(void* arg) {
     info->is_active = 0;
     if (info->live_thread_index >= 0 && info->live_thread_index < FORWARD_CONNS_ARRAY_LEN) {
         live_threads[info->live_thread_index] = NULL;
-        log("INFO", "[forward] forward_messages: Unregistered thread index %d\n", info->live_thread_index);
+        log("INFO", "[forward] forward_messages: Unregistered thread index %d for %s -> %s\n",
+            info->live_thread_index, src_addr, dst_addr);
     }
     pthread_mutex_unlock(&live_threads_mutex);
 

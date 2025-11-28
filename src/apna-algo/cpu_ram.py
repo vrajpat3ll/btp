@@ -6,8 +6,7 @@ import argparse
 from pathlib import Path
 
 PID_FILE = Path("/lb") / "logs" / "tmp.pid"
-# LOG_DIR = Path("/lb") / "logs"
-LOG_DIR = Path(".") / "data" / "logs"
+LOG_DIR = Path("/lb") / "logs"
 
 
 def parse_args():

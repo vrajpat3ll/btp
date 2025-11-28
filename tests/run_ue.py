@@ -162,7 +162,10 @@ def main():
     p.add_argument("--log-dir", default="ue_logs")
     p.add_argument("--events", default="events.json")
     p.add_argument(
-        "--use-sudo", action="store_true", help="preprend sudo to kubectl calls"
+        "--use-sudo",
+        action="store_true",
+        help="preprend sudo to kubectl calls",
+        default=True,
     )
     args = p.parse_args()
 
