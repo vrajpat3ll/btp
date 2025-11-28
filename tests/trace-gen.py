@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-generate_poisson_trace.py
+trace-gen.py
 Generate a Poisson arrival + exponential session duration trace in JSON.
 
 Usage:
-    ./generate_poisson_trace.py --num-ues 100 --lambda-arr 0.2 --lambda-dur 0.01 --out traces/run1.json --seed 42 --namespace-prefix ran-simulator
+    ./trace-gen.py --num-ues 100 --lambda-arr 0.2 --lambda-dur 0.01 --out traces/run1.json --seed 42 
 """
 import json
 import argparse
@@ -29,6 +29,8 @@ def main():
 
     if args.seed is not None:
         random.seed(args.seed)
+
+    print("[INFO] Generating Poisson trace…")
 
     trace = {
         "meta": {
@@ -55,11 +57,15 @@ def main():
             "namespace": f"{args.namespace_prefix}{i}"
         }
         trace["ues"].append(ue)
+        if i % 50 == 0:
+            print(f"[INFO] Generated UE {i}/{args.num_ues}")
 
     with open(args.out, "w+") as f:
         json.dump(trace, f, indent=2)
 
-    print(f"Wrote trace to {args.out}")
+    # print(f"Wrote trace to {args.out}")
+    print(f"[INFO] Trace written to {args.out}")
+    print("[OK]   Generation complete.")
 
 if __name__ == "__main__":
     main()

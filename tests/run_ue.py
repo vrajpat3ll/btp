@@ -25,7 +25,19 @@ events = []
 
 
 def iso_now():
-    return datetime.utcnow().isoformat() + "Z"
+    return datetime.utcnow().isoformat()[:-3] + "Z"
+
+
+def log_info(msg):
+    print(f"[INFO] {iso_now()} | {msg}")
+
+
+def log_warn(msg):
+    print(f"[WARN] {iso_now()} | {msg}")
+
+
+def log_error(msg):
+    print(f"[ERROR] {iso_now()} | {msg}")
 
 
 def run_ue(ue, start_time, log_dir, use_sudo):
@@ -53,7 +65,8 @@ def run_ue(ue, start_time, log_dir, use_sudo):
         "log_path": log_path,
     }
 
-    print(f"[{iso_now()}] Starting UE {ue_id} (ns={ns}) -> log: {log_path}")
+    # print(f"[{iso_now()}] Starting UE {ue_id} (ns={ns}) -> log: {log_path}")
+    log_info(f"UE {ue_id} | Starting (namespace={ns}) -> log: {log_path}")
 
     os.makedirs(log_dir, exist_ok=True)
     with open(log_path, "wb") as log_file:
@@ -77,11 +90,14 @@ def run_ue(ue, start_time, log_dir, use_sudo):
         proc = subprocess.Popen(cmd, stdout=log_file, stderr=subprocess.STDOUT)
 
         event["actual_start_time"] = iso_now()
+        
+        log_info(f"UE {ue_id} | Running for {duration}s")
 
         # sleep for the session duration, then attempt graceful shutdown
         time.sleep(duration)
 
-        print(f"[{iso_now()}] Stopping UE {ue_id} (attempt graceful SIGTERM)")
+        # print(f"[{iso_now()}] Stopping UE {ue_id} (attempt graceful SIGTERM)")
+        log_info(f"UE {ue_id} | Attempting graceful shutdown (SIGTERM)")
 
         try:
             # 1) Attempt graceful shutdown inside the pod (pkill -SIGTERM app)
@@ -101,7 +117,8 @@ def run_ue(ue, start_time, log_dir, use_sudo):
             subprocess.run(sig_cmd, timeout=10)
 
         except subprocess.TimeoutExpired:
-            print(f"[{iso_now()}] Warning: graceful signal timed out for UE {ue_id}")
+            # print(f"[{iso_now()}] Warning: graceful signal timed out for UE {ue_id}")
+            log_warn(f"UE {ue_id} | Graceful SIGTERM timeout")
 
         # allow a small grace period for the app to exit
         for _ in range(5):
@@ -111,7 +128,9 @@ def run_ue(ue, start_time, log_dir, use_sudo):
 
         if proc.poll() is None:
             # Not exited yet -> delete deployment to force pod termination
-            print(f"[{iso_now()}] UE {ue_id} still running, deleting deployment")
+            # print(f"[{iso_now()}] UE {ue_id} still running, deleting deployment")
+            log_warn(f"UE {ue_id} | Still running -> deleting deployment")
+
             del_cmd = [
                 "kubectl",
                 "-n",
@@ -136,6 +155,7 @@ def run_ue(ue, start_time, log_dir, use_sudo):
         event["exit_code"] = exit_code
         if exit_code is None:
             event["termination_method"] = "unknown-still-running"
+            log_warn(f"UE {ue_id} | kubectl still running, force killing")
             # try to kill the local kubectl process to clean up
             try:
                 proc.kill()
@@ -153,7 +173,8 @@ def run_ue(ue, start_time, log_dir, use_sudo):
     with lock:
         events.append(event)
 
-    print(f"[{iso_now()}] UE {ue_id} stopped, exit_code={event['exit_code']}")
+    # print(f"[{iso_now()}] UE {ue_id} stopped, exit_code={event['exit_code']}")
+    log_info(f"UE {ue_id} | Stopped | exit_code={event['exit_code']} | method={event['termination_method']}")
 
 
 def main():
@@ -162,16 +183,14 @@ def main():
     p.add_argument("--log-dir", default="ue_logs")
     p.add_argument("--events", default="events.json")
     p.add_argument(
-        "--use-sudo",
-        action="store_true",
-        help="preprend sudo to kubectl calls",
-        default=True,
+        "--use-sudo", action="store_true", help="preprend sudo to kubectl calls"
     )
     args = p.parse_args()
 
     trace_path = Path(args.trace)
     if not trace_path.exists():
-        print("Trace file not found:", trace_path)
+        # print("Trace file not found:", trace_path)
+        log_error(f"Trace file not found: {trace_path}")
         return
 
     with open(trace_path) as f:
@@ -179,8 +198,12 @@ def main():
 
     ues = trace.get("ues", [])
     if not ues:
-        print("No UEs in trace")
+        # print("No UEs in trace")
+        log_warn("No UEs in trace; exiting.")
         return
+
+    total = len(ues)
+    log_info(f"Loaded {total} UEs from trace file")
 
     start_time = time.time()
     threads = []
@@ -208,7 +231,7 @@ def main():
     with open(args.events, "w") as f:
         json.dump(out, f, indent=2)
 
-    print(f"[{iso_now()}] Experiment finished. Events written to {args.events}")
+    log_info(f"Experiment finished. Events written to {args.events}")
 
 
 if __name__ == "__main__":
