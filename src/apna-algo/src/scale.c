@@ -12,15 +12,7 @@
 #include "forward.h"
 #include "utils.h"
 
-/* Initialize AMF_CAPACITY from the configured default macro so build-time
- * overrides via -DDEFAULT_AMF_CAPACITY=... are respected. Keep the variable
- * visible to other C files as before.
- */
 int AMF_CAPACITY = DEFAULT_AMF_CAPACITY;
-
-/* Use macros from config.h for headroom and thresholds */
-/* HEADROOM_PERCENTAGE, THRESHOLD_DOWN, THRESHOLD_UP are provided by config.h */
-
 pthread_mutex_t amf_state_mutex = PTHREAD_MUTEX_INITIALIZER;
 int total_conn_count = 0;
 
@@ -36,19 +28,19 @@ void scale_up(void) {
     pthread_mutex_lock(&amf_state_mutex);
     int active_count = get_active_amf_count();
     if (active_count == 0) {
-        log("INFO", "[scale] scale_up: No active AMFs, skipping scale up\n");
+        log("ERROR", "[scale] scale_up: No active AMFs, skipping scale up\n");
         pthread_mutex_unlock(&amf_state_mutex);
         return;
     }
 
     int threshold = (int)(active_count * AMF_CAPACITY * (1 - HEADROOM_PERCENTAGE));
-    log("INFO", "[scale] scale_up: total_conn_count=%d, threshold=%d\n",
+    log("DEBUG", "[scale] scale_up: total_conn_count=%d, threshold=%d\n",
         total_conn_count, threshold);
 
     if (total_conn_count >= threshold) {
         for (int i = 0; i < MAX_AMFS; i++) {
             if (!amfs[i].active) {
-                log("INFO", "[scale] SCALE UP: Load (%d) exceeds threshold (%d). Deploying AMF %d...\n",
+                log("WARN", "[scale] SCALE UP: Load (%d) exceeds threshold (%d). Deploying AMF %d...\n",
                     total_conn_count, threshold, amfs[i].id);
                 amfs[i].active = 1;
 
@@ -69,12 +61,13 @@ void scale_up(void) {
             }
         }
     } else {
-        log("INFO", "[scale] scale_up: Load below threshold, no scaling up needed\n");
+        log("DEBUG", "[scale] scale_up: Load below threshold, no scaling up needed\n");
     }
 
     pthread_mutex_unlock(&amf_state_mutex);
 }
 
+// WARN: migration latency is incorrrectly measured, shouldn't be for each individual UE-gNB pair
 void* descaler(void* arg) {
     (void)arg;
     while (1) {
@@ -90,7 +83,7 @@ void* descaler(void* arg) {
                 float util = old_amf->connections > 0
                                  ? (float)old_amf->connections / AMF_CAPACITY
                                  : 0.0f;
-                log("INFO", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
+                log("DEBUG", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                     old_amf->id, util);
             }
             log("INFO", "[scale] descaler: Only %d active AMF(s), skipping scale down\n",
@@ -106,7 +99,7 @@ void* descaler(void* arg) {
             float util = old_amf->connections > 0
                              ? (float)old_amf->connections / AMF_CAPACITY
                              : 0.0f;
-            log("INFO", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
+            log("DEBUG", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                 old_amf->id, util);
 
             if (util <= THRESHOLD_DOWN) {
@@ -191,44 +184,41 @@ void* descaler(void* arg) {
                                         "[scale] Migration failed for gNB sock %d: could not connect to new AMF.\n",
                                         thread_info->source_socket);
                             }
-                            // Record migration end time and write CSV entry per migrated connection
-                            gettimeofday(&mig_end, NULL);
-                            double mig_ms = (mig_end.tv_sec - mig_start.tv_sec) * 1000.0 +
-                                            (mig_end.tv_usec - mig_start.tv_usec) / 1000.0;
-                            double mig_us = mig_ms * 1000;
-
-                            // Prepare CSV fields: timestamp, gnb_ip, old_amf_ip, new_amf_ip, migration_us, migration_ms
-                            char timestamp_str[32];
-                            time_t now = time(NULL);
-                            struct tm tm_now;
-                            localtime_r(&now, &tm_now);
-                            strftime(timestamp_str, sizeof(timestamp_str), "%Y-%m-%d %H:%M:%S", &tm_now);
-
-                            char gnb_ip[64] = "unknown";
-                            char old_amf_ip[64] = "unknown";
-                            char new_amf_ip[64] = "unknown";
-                            // Use helper to get gNB ip:port
-                            get_ip_port(thread_info->source_socket, gnb_ip, sizeof(gnb_ip));
-                            // AMF struct contains ip fields
-                            if (old_amf->ip) snprintf(old_amf_ip, sizeof(old_amf_ip), "%s", old_amf->ip);
-                            if (new_amf->ip) snprintf(new_amf_ip, sizeof(new_amf_ip), "%s", new_amf->ip);
-
-                            FILE* mig_file = fopen(migration_log_filename, "a");
-                            if (mig_file) {
-                                fprintf(mig_file, "%s,%s,%s,%s,%.3lf,%.3lf\n",
-                                        timestamp_str, gnb_ip, old_amf_ip, new_amf_ip, mig_us, mig_ms);
-                                fclose(mig_file);
-                            } else {
-                                log_perror("[scale] Failed to open migration log");
-                            }
                         }
                     }
                     pthread_mutex_unlock(&live_threads_mutex);
-
+                    int connections_migrated = old_amf->connections; 
                     new_amf->connections += old_amf->connections;
                     old_amf->connections = 0;
                     old_amf->active = 0;
 
+                    // Record migration end time and write CSV entry per migrated connection
+                    gettimeofday(&mig_end, NULL);
+                    double mig_ms = (mig_end.tv_sec - mig_start.tv_sec) * 1000.0 +
+                                    (mig_end.tv_usec - mig_start.tv_usec) / 1000.0;
+                    double mig_us = mig_ms * 1000;
+
+                    // Prepare CSV fields: timestamp, old_amf_ip, new_amf_ip, migration_us, migration_ms
+                    char timestamp_str[32];
+                    time_t now = time(NULL);
+                    struct tm tm_now;
+                    localtime_r(&now, &tm_now);
+                    strftime(timestamp_str, sizeof(timestamp_str), "%Y-%m-%d %H:%M:%S", &tm_now);
+
+                    char old_amf_ip[64] = "unknown";
+                    char new_amf_ip[64] = "unknown";
+                    // AMF struct contains ip fields
+                    if (old_amf->ip) snprintf(old_amf_ip, sizeof(old_amf_ip), "%s", old_amf->ip);
+                    if (new_amf->ip) snprintf(new_amf_ip, sizeof(new_amf_ip), "%s", new_amf->ip);
+
+                    FILE* mig_file = fopen(migration_log_filename, "a");
+                    if (mig_file) {
+                        fprintf(mig_file, "%s,%s,%s,%d,%.3lf,%.3lf\n",
+                                timestamp_str, old_amf_ip, new_amf_ip, connections_migrated, mig_us, mig_ms);
+                        fclose(mig_file);
+                    } else {
+                        log_perror("[scale] Failed to open migration log");
+                    }
                     log("INFO", "[scale] Descaling: Scaling down AMF %d deployment to 0 replicas\n",
                         old_amf->id);
 
