@@ -11,7 +11,7 @@ int main(int argc, char**argv) {
     srand(time(NULL));
 
     // Open the file for writing
-    file = fopen("data/ue-conn-timediff.txt", "w");
+    file = fopen("r_time.txt", "w");
     if (file == NULL) {
         printf("Error opening file!\n");
         return 1;
