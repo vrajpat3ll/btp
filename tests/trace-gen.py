@@ -14,7 +14,7 @@ from datetime import datetime
 
 def exp_sample(lmbda):
     # avoid 0 by sampling u in (0,1]
-    u = 1.0 - random.random()
+    u = random.uniform(1e-12, 1.0)
     return -math.log(u) / lmbda
 
 def main():
