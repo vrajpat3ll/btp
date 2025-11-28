@@ -38,6 +38,7 @@ sudo helm -n open5gs upgrade --install core5g charts/open5gs
 sudo kubectl -n open5gs get po
 
 step "RBAC"
+sudo kubectl apply -f config/components.yaml
 sudo kubectl apply -f config/service-account.yaml
 sudo kubectl apply -f config/cluster-role.yaml
 sudo kubectl apply -f config/cluster-role-binding.yaml
