@@ -52,7 +52,7 @@
  * with the variable name used in source files.
  */
 #ifndef DEFAULT_AMF_CAPACITY
-#define DEFAULT_AMF_CAPACITY 15
+#define DEFAULT_AMF_CAPACITY 100
 #endif
 
 #ifndef HEADROOM_PERCENTAGE

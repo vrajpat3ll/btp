@@ -4,7 +4,8 @@ run_ues.py
 Run the UEs according to a JSON trace file.
 
 Usage:
-    ./run_ues.py --trace traces/run1.json --log-dir ue_logs --events events/run1_events.json [--use-sudo]
+    python3 ./run_ue.py --trace traces/400ue.json --log-dir ue_logs --events events/400ue_events.json
+    python3 ./run_ue.py --trace traces/400ue.json --log-dir ue_logs --events events/400ue_events.json --no-sudo
 
 Notes:
  - Requires kubectl on PATH.
@@ -16,6 +17,7 @@ import json
 import os
 import subprocess
 import threading
+import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -29,15 +31,15 @@ def iso_now():
 
 
 def log_info(msg):
-    print(f"[INFO] {iso_now()} | {msg}")
+    print(f"[INFO] {iso_now()} | {msg}", end="\n\r")
 
 
 def log_warn(msg):
-    print(f"[WARN] {iso_now()} | {msg}")
+    print(f"[WARN] {iso_now()} | {msg}", end="\n\r")
 
 
 def log_error(msg):
-    print(f"[ERROR] {iso_now()} | {msg}")
+    print(f"[ERROR] {iso_now()} | {msg}", end="\n\r")
 
 
 def run_ue(ue, start_time, log_dir, use_sudo):
@@ -65,12 +67,10 @@ def run_ue(ue, start_time, log_dir, use_sudo):
         "log_path": log_path,
     }
 
-    # print(f"[{iso_now()}] Starting UE {ue_id} (ns={ns}) -> log: {log_path}")
     log_info(f"UE {ue_id} | Starting (namespace={ns}) -> log: {log_path}")
 
     os.makedirs(log_dir, exist_ok=True)
     with open(log_path, "wb") as log_file:
-        # kubectl exec command: run the app inside the pod's container
         cmd = [
             "kubectl",
             "-n",
@@ -86,11 +86,9 @@ def run_ue(ue, start_time, log_dir, use_sudo):
         if use_sudo:
             cmd.insert(0, "sudo")
 
-        # start the kubectl process
         proc = subprocess.Popen(cmd, stdout=log_file, stderr=subprocess.STDOUT)
-
         event["actual_start_time"] = iso_now()
-        
+
         log_info(f"UE {ue_id} | Running for {duration}s")
 
         # sleep for the session duration, then attempt graceful shutdown
@@ -174,7 +172,9 @@ def run_ue(ue, start_time, log_dir, use_sudo):
         events.append(event)
 
     # print(f"[{iso_now()}] UE {ue_id} stopped, exit_code={event['exit_code']}")
-    log_info(f"UE {ue_id} | Stopped | exit_code={event['exit_code']} | method={event['termination_method']}")
+    log_info(
+        f"UE {ue_id} | Stopped | exit_code={event['exit_code']} | method={event['termination_method']}"
+    )
 
 
 def main():
@@ -183,35 +183,36 @@ def main():
     p.add_argument("--log-dir", default="ue_logs")
     p.add_argument("--events", default="events.json")
     p.add_argument(
-        "--use-sudo", action="store_true", help="preprend sudo to kubectl calls"
+        "--no-sudo",
+        action="store_true",
+        help="do NOT prepend sudo to kubectl calls (sudo is used by default)",
     )
     args = p.parse_args()
 
     trace_path = Path(args.trace)
     if not trace_path.exists():
-        # print("Trace file not found:", trace_path)
         log_error(f"Trace file not found: {trace_path}")
-        return
+        sys.exit(1)
 
     with open(trace_path) as f:
         trace = json.load(f)
 
     ues = trace.get("ues", [])
     if not ues:
-        # print("No UEs in trace")
-        log_warn("No UEs in trace; exiting.")
-        return
+        log_error("No UEs in trace file")
+        sys.exit(1)
 
     total = len(ues)
     log_info(f"Loaded {total} UEs from trace file")
+
+    # Determine whether to use sudo (use it by default, disable with --no-sudo)
+    use_sudo = not args.no_sudo
 
     start_time = time.time()
     threads = []
     for ue in ues:
         t = threading.Thread(
-            target=run_ue,
-            args=(ue, start_time, args.log_dir, args.use_sudo),
-            daemon=True,
+            target=run_ue, args=(ue, start_time, args.log_dir, use_sudo)
         )
         t.start()
         threads.append(t)
