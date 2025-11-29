@@ -11,12 +11,13 @@ LOG_DIR = Path(".") / "data" / "logs"
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--interval", "-i", type=float, default=0.5)
-    parser.add_argument("--pod", required=True, help="Pod name")
-    parser.add_argument("--namespace", "-n", required=True, help="Namespace")
+    parser.add_argument("--pod", default="lb-0", help="Pod name")
+    parser.add_argument("--namespace", "-n", default="loadbalancer", help="Namespace")
     return parser.parse_args()
 
 
 def find_latest_timestamp(logs_dir: Path = LOG_DIR):
+    return None
     try:
         entries = os.listdir(logs_dir)
     except FileNotFoundError:
@@ -64,7 +65,7 @@ print("Press Ctrl+C to stop.\n")
 try:
     while True:
         # Run kubectl top
-        cmd = ["kubectl", "top", "pod", args.pod, "-n", args.namespace, "--no-headers"]
+        cmd = ["sudo", "kubectl", "top", "pod", args.pod, "-n", args.namespace, "--no-headers"]
 
         try:
             output = subprocess.check_output(cmd, text=True).strip()
