@@ -40,7 +40,6 @@ static void cleanup_forward_info(forward_info_t* info) {
             log("INFO", "[forward] cleanup_forward_info: Shutting down destination socket %d\n", *(info->destination_socket));
             // close(*(info->destination_socket));
             shutdown(*(info->destination_socket), SHUT_RDWR);
-
         }
         free(info->destination_socket);
     }
@@ -102,6 +101,8 @@ void* forward_messages(void* arg) {
         }
 
         if (nbytes == 0) {
+            get_ip_port(info->source_socket, src_addr, sizeof(src_addr));
+            get_ip_port(dest_sock, dst_addr, sizeof(dst_addr));
             log("INFO", "[forward] Peer closed connection on socket %d (recv=0) for %s -> %s\n",
                 info->source_socket, src_addr, dst_addr);
             break;

@@ -7,8 +7,8 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "config.h"
 #include "amf.h"
+#include "config.h"
 #include "forward.h"
 #include "scale.h"
 #include "utils.h"
@@ -86,8 +86,8 @@ int main(int argc, char* argv[]) {
         if (!migration_file) {
             log_perror("[main] Failed to open migration log file");
         } else {
-            // CSV header: timestamp,gnb_ip,old_amf_ip,new_amf_ip,migration_us,migration_ms
-            fprintf(migration_file, "timestamp,gnb_ip,old_amf_ip,new_amf_ip,migration_us,migration_ms\n");
+            // CSV header: timestamp,old_amf_ip,new_amf_ip,migration_us,migration_ms
+            fprintf(migration_file, "timestamp,old_amf_ip,new_amf_ip,connections_migrated,migration_us,migration_ms\n");
             fflush(migration_file);
         }
         if (migration_file && fclose(migration_file) != 0) {
@@ -139,8 +139,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    log("INFO", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
-
+    log("SUCCESS", "[main] Proxy listening on %s:%d with AMF capacity %d\n", HOST_IP, PORT, AMF_CAPACITY);
     pthread_t descaling_t;
     if (pthread_create(&descaling_t, NULL, descaler, NULL) != 0) {
         log_perror("[main] pthread_create: descaler");
@@ -177,7 +176,7 @@ int main(int argc, char* argv[]) {
         }
         pthread_detach(gnb_thread);
     }
-    log("INFO", "[main] Closing listening socket and exiting.\n");
+    log("SUCCESS", "[main] Closing listening socket and exiting.\n");
     log_close();
 
     close(listen_socket);
