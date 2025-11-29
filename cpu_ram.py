@@ -65,7 +65,7 @@ print("Press Ctrl+C to stop.\n")
 try:
     while True:
         # Run kubectl top
-        cmd = ["kubectl", "top", "pod", args.pod, "-n", args.namespace, "--no-headers"]
+        cmd = ["sudo", "kubectl", "top", "pod", args.pod, "-n", args.namespace, "--no-headers"]
 
         try:
             output = subprocess.check_output(cmd, text=True).strip()

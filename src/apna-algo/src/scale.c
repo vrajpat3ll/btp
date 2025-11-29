@@ -143,7 +143,10 @@ void* descaler(void* arg) {
                                 *(thread_info->destination_socket) = new_sock;
                                 log("INFO", "[scale] Migrated connection (gNB sock %d) to new AMF socket %d\n",
                                     thread_info->source_socket, new_sock);
-                                close(old_sock);  // OLD AMF2GNB SCOCKET WILL GET DISRUPTED
+                                pthread_mutex_unlock(&live_threads_mutex);         // Unlock before registering thread
+                                // close(old_sock);  // OLD AMF2GNB SCOCKET WILL GET DISRUPTED
+                                shutdown(old_sock, SHUT_RDWR);
+                                pthread_mutex_lock(&live_threads_mutex);           // Re-lock after registering thread
                                 log("DEBUG", "[scale] Closed old AMF socket %d after migration\n", old_sock);
                                 // creat an amf2gnb thread where source is new_sock and dest is gnb socket
 
