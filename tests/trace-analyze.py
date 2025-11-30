@@ -14,18 +14,14 @@ Outputs:
  - Optional CSV with concurrency timeline
  - Optional plots (requires matplotlib)
 """
+
 import argparse
 import json
 import math
 import statistics
 from datetime import timedelta
 import sys
-
-try:
-    import matplotlib.pyplot as plt
-    HAS_MPL = True
-except Exception:
-    HAS_MPL = False
+import matplotlib.pyplot as plt
 
 
 def percentile(data, p):
@@ -94,19 +90,28 @@ def analyze_trace(trace):
         summary["dur_p95_s"] = percentile(durations, 95)
         summary["dur_p99_s"] = percentile(durations, 99)
     else:
-        summary.update({k: None for k in ["dur_mean_s", "dur_std_s", "dur_min_s", "dur_max_s", "dur_p50_s", "dur_p90_s", "dur_p95_s", "dur_p99_s"]})
+        summary.update({
+            "dur_mean_s": None,
+            "dur_std_s": None,
+            "dur_min_s": None,
+            "dur_max_s": None,
+            "dur_p50_s": None,
+            "dur_p90_s": None,
+            "dur_p95_s": None,
+            "dur_p99_s": None,
+        })
 
-    # concurrency timeline: events (time, delta)
+    # concurrency timeline
     events = []
     for a, d in zip(arrivals, durations):
         events.append((a, 1))
         events.append((a + d, -1))
-    events.sort(key=lambda x: (x[0], -x[1]))  # ensure arrivals (+1) come before departures at same time
+    events.sort(key=lambda x: (x[0], -x[1]))
 
     concurrency = 0
     peak = 0
     peak_times = []
-    timeline = []  # (time, concurrency) at change points
+    timeline = []
     for t, delta in events:
         concurrency += delta
         timeline.append((t, concurrency))
@@ -119,6 +124,11 @@ def analyze_trace(trace):
     summary["peak_concurrency"] = peak
     summary["peak_times_s"] = peak_times
     summary["timeline"] = timeline
+
+    # total time
+    departures = [a + d for a, d in zip(arrivals, durations)]
+    summary["total_time_s"] = max(departures) if departures else 0.0
+
     return summary
 
 
@@ -130,22 +140,35 @@ def print_summary(summary):
     print(f"  Number of UEs: {summary.get('num_ues', 0)}")
     if summary.get("num_ues", 0) == 0:
         return
-    print(f"  Arrivals: first={summary['arrival_first_s']:.3f}s last={summary['arrival_last_s']:.3f}s span={summary['arrival_span_s']:.3f}s")
-    print(f"  Arrival mean={summary['arrival_mean_s']:.6f}s std={summary['arrival_std_s']:.6f}s empirical_rate={summary['arrival_rate_empirical_per_s']:.6f}/s")
+    print(f"  Arrivals: first={summary['arrival_first_s']:.3f}s "
+          f"last={summary['arrival_last_s']:.3f}s span={summary['arrival_span_s']:.3f}s")
+    print(f"  Arrival mean={summary['arrival_mean_s']:.6f}s "
+          f"std={summary['arrival_std_s']:.6f}s "
+          f"empirical_rate={summary['arrival_rate_empirical_per_s']:.6f}/s")
     if summary.get('inter_mean_s') is not None:
-        print(f"  Inter-arrival: mean={summary['inter_mean_s']:.6f}s std={summary['inter_std_s']:.6f}s min={summary['inter_min_s']:.6f}s max={summary['inter_max_s']:.6f}s")
+        print(f"  Inter-arrival: mean={summary['inter_mean_s']:.6f}s "
+              f"std={summary['inter_std_s']:.6f}s "
+              f"min={summary['inter_min_s']:.6f}s "
+              f"max={summary['inter_max_s']:.6f}s")
     if summary.get('dur_mean_s') is not None:
-        print(f"  Durations: mean={summary['dur_mean_s']:.6f}s std={summary['dur_std_s']:.6f}s min={summary['dur_min_s']:.6f}s max={summary['dur_max_s']:.6f}s")
-        print(f"    p50={summary['dur_p50_s']:.6f}s p90={summary['dur_p90_s']:.6f}s p95={summary['dur_p95_s']:.6f}s p99={summary['dur_p99_s']:.6f}s")
+        print(f"  Durations: mean={summary['dur_mean_s']:.6f}s "
+              f"std={summary['dur_std_s']:.6f}s "
+              f"min={summary['dur_min_s']:.6f}s "
+              f"max={summary['dur_max_s']:.6f}s")
+        print(f"    p50={summary['dur_p50_s']:.6f}s "
+              f"p90={summary['dur_p90_s']:.6f}s "
+              f"p95={summary['dur_p95_s']:.6f}s "
+              f"p99={summary['dur_p99_s']:.6f}s")
     print(f"  Peak concurrency: {summary['peak_concurrency']}")
     if summary['peak_times_s']:
-        # print up to a few peak times
         pts = summary['peak_times_s']
         shown = pts[:5]
         s = ', '.join(f"{t:.3f}s" for t in shown)
         if len(pts) > 5:
             s += f", ... (+{len(pts)-5} more)"
         print(f"  Peak time(s): {s}")
+    print(f"  Total experiment time: {summary['total_time_s']:.3f}s "
+          f"({timedelta(seconds=int(summary['total_time_s']))})")
 
 
 def write_csv_timeline(timeline, outpath):
@@ -159,9 +182,6 @@ def write_csv_timeline(timeline, outpath):
 
 
 def plot_histograms(arrivals, durations):
-    if not HAS_MPL:
-        print("matplotlib not available; cannot plot. Install matplotlib to enable plotting.")
-        return
     fig, axes = plt.subplots(1, 2, figsize=(12, 4))
     axes[0].hist(arrivals, bins=50)
     axes[0].set_title('Arrival times')
@@ -177,7 +197,7 @@ def main():
     p = argparse.ArgumentParser(description="Analyze traces produced by trace-gen.py")
     p.add_argument("trace", help="Path to trace JSON file")
     p.add_argument("--csv", help="Write concurrency timeline CSV to this path")
-    p.add_argument("--plot", action="store_true", help="Show simple histograms (requires matplotlib)")
+    p.add_argument("--plot", action="store_true", help="Show simple histograms")
     args = p.parse_args()
 
     try:
