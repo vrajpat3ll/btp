@@ -6,7 +6,7 @@ Uses the same trace file and durations to schedule shutdowns.
 Generates the events.json output.
 
 Example command:
-python3 stop_ue.py --trace traces/400ue-run.json --log-dir ue_logs --num_ues 100 --events events/400ue_events.json
+python3 stop_ue.py --trace traces/400ue-run.json --log-dir ue_logs --num_ues <...> --events events/<...>ue_events.json
 """
 
 import argparse
