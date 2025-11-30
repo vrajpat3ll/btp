@@ -7,6 +7,7 @@ Generates the events.json output.
 
 Example command:
 python3 stop_ue.py --trace traces/400ue-run.json --log-dir ue_logs --num_ues <...> --events events/<...>ue_events.json
+python3 stop_ue.py --trace traces/400ue-run.json --log-dir ue_logs --num_ues 200 --events events/200ue_events.json
 """
 
 import argparse
@@ -111,7 +112,7 @@ def main():
     p.add_argument("--log-dir", default="ue_logs")
     p.add_argument("--events", default="events.json")
     p.add_argument("--no-sudo", action="store_true")
-    p.add_argument("--num_ues", deafult=100)
+    p.add_argument("--num_ues", default=100)
     args = p.parse_args()
 
     trace_path = Path(args.trace)
@@ -134,7 +135,7 @@ def main():
     threads = []
     i = 0
     for ue in ues:
-        if i < args.num_ues:
+        if i < int(args.num_ues):
             i+=1
         else: 
             break
