@@ -11,7 +11,7 @@ LOG_DIR = Path(".") / "data" / "logs"
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--interval", "-i", type=float, default=0.5)
+    parser.add_argument("--interval", "-i", type=float, default=5)
     parser.add_argument("--lb", default="lb-0", help="Load balancer pod name")
     parser.add_argument("--namespace_lb", default="loadbalancer", help="LB namespace")
     parser.add_argument("--namespace_amf", default="open5gs", help="AMF namespace")
