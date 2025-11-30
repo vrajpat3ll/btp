@@ -37,8 +37,9 @@ static void cleanup_forward_info(forward_info_t* info) {
     close(info->source_socket);
     if (info->from_gnb) {
         if (info->destination_socket && *(info->destination_socket) > 0) {
-            log("INFO", "[forward] cleanup_forward_info: Closing destination socket %d\n", *(info->destination_socket));
-            close(*(info->destination_socket));
+            log("INFO", "[forward] cleanup_forward_info: Shutting down destination socket %d\n", *(info->destination_socket));
+            // close(*(info->destination_socket));
+            shutdown(*(info->destination_socket), SHUT_RDWR);
         }
         free(info->destination_socket);
     }
