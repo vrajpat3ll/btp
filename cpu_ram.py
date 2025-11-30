@@ -39,6 +39,7 @@ def get_usage_from_grep(pattern, namespace):
 
 
 def find_latest_timestamp(logs_dir: Path = LOG_DIR):
+    return None
     try:
         entries = os.listdir(logs_dir)
     except FileNotFoundError:
