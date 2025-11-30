@@ -83,7 +83,7 @@ AMF* get_next_amf(const char* ip) {
         if (ue2amf_map && (size_t)ue_id <= 500) {
             int mapped_amf_id = ue2amf_map[ue_id];
             if (mapped_amf_id >= 1 && mapped_amf_id <= MAX_AMFS) {
-                AMF* mapped_amf = amf_get_by_index(mapped_amf_id);
+                AMF* mapped_amf = amf_get_by_index(mapped_amf_id - 1);
                 if (mapped_amf) {
                     if (mapped_amf->active && mapped_amf->connections < AMF_CAPACITY) {
                         log("INFO", "[amf] get_next_amf: UE id=%ld mapped to AMF id=%d (ip=%s)\n", ue_id, mapped_amf->id, mapped_amf->ip);
