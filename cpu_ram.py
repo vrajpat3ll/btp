@@ -4,20 +4,41 @@ import csv
 import os
 import argparse
 from pathlib import Path
+import time
 
 LOG_DIR = Path(".") / "data" / "logs"
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--interval", "-i", type=float, default=0.5)
-    parser.add_argument("--pod", default="lb-0", help="Pod name")
-    parser.add_argument("--namespace", "-n", default="loadbalancer", help="Namespace")
+    parser.add_argument("--interval", "-i", type=float, default=5)
+    parser.add_argument("--lb", default="lb-0", help="Load balancer pod name")
+    parser.add_argument("--namespace_lb", default="loadbalancer", help="LB namespace")
+    parser.add_argument("--namespace_amf", default="open5gs", help="AMF namespace")
     return parser.parse_args()
 
 
+def get_usage_from_grep(pattern, namespace):
+    """
+    Runs: kubectl top pods -n <ns> | grep <pattern>
+    Returns (cpu_m, mem_mi) or (0,0) if not found.
+    """
+
+    try:
+        cmd = f"sudo kubectl top pods -n {namespace} --no-headers | grep {pattern}"
+        output = subprocess.check_output(cmd, text=True, shell=True).strip()
+
+        # Expected format: "<podname> <cpu> <mem>"
+        parts = output.split()
+        cpu = parts[1].replace("m", "")
+        mem = parts[2].replace("Mi", "")
+        return int(cpu), int(mem)
+
+    except subprocess.CalledProcessError:
+        return 0, 0
+
+
 def find_latest_timestamp(logs_dir: Path = LOG_DIR):
-    return None
     try:
         entries = os.listdir(logs_dir)
     except FileNotFoundError:
@@ -50,45 +71,53 @@ if timestamp_dir is None:
 LOG_DIR = LOG_DIR / timestamp_dir
 os.makedirs(LOG_DIR, exist_ok=True)
 
-LOG_FILE = LOG_DIR / "resource-utilization.csv"
+LOG_FILE = LOG_DIR / "lb_amf_resource.csv"
 
-# Write CSV header
+# ----- CSV HEADER -----
+header = ["Timestamp", "LB-CPU(m)", "LB-MEM(Mi)"]
+for i in range(1, 6):  # AMF-1 to AMF-5
+    header += [f"amf-{i}-CPU(m)", f"amf-{i}-MEM(Mi)"]
+header += ["TOTAL-AMF-CPU", "TOTAL-AMF-MEM"]
+
 with open(LOG_FILE, "w", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerow(["Timestamp", "CPU(m)", "Memory(Mi)"])
+    csv.writer(f).writerow(header)
 
-print(f"Monitoring pod: {args.pod} in namespace {args.namespace}")
+print("Monitoring load balancer + AMFs (1..5)")
 print(f"Logging to: {LOG_FILE}")
-print("Press Ctrl+C to stop.\n")
+print("Press Ctrl+C to stop\n")
 
-# Monitor loop
+# ---------------------------- MAIN LOOP ----------------------------
 try:
     while True:
-        # Run kubectl top
-        cmd = ["sudo", "kubectl", "top", "pod", args.pod, "-n", args.namespace, "--no-headers"]
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
 
-        try:
-            output = subprocess.check_output(cmd, text=True).strip()
-            # Example output: "lb-0   10m   17Mi"
-            parts = output.split()
-            cpu_m = parts[1]  # e.g., "10m"
-            mem_mi = parts[2]  # e.g., "17Mi"
+        # Load Balancer usage
+        lb_cpu, lb_mem = get_usage_from_grep(args.lb, args.namespace_lb)
 
-        except subprocess.CalledProcessError:
-            cpu_m = "NA"
-            mem_mi = "NA"
+        row = [timestamp, lb_cpu, lb_mem]
 
-        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+        total_amf_cpu = 0
+        total_amf_mem = 0
 
-        print(ts, cpu_m, mem_mi)
+        # AMF-1 to AMF-5
+        for i in range(1, 6):
+            pattern = f"core5g-amf-{i}"
+            cpu, mem = get_usage_from_grep(pattern, args.namespace_amf)
+            total_amf_cpu += cpu
+            total_amf_mem += mem
+            row += [cpu, mem]
 
-        # Append to CSV
+
+        total_amf_cpu+=lb_cpu
+        total_amf_mem+=lb_mem
+        # Totals
+        row += [total_amf_cpu, total_amf_mem]
+
+        print(row)
+
+        # Write to CSV
         with open(LOG_FILE, "a", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow([ts, cpu_m, mem_mi])
-
-        # Sleep manually
-        import time
+            csv.writer(f).writerow(row)
 
         time.sleep(args.interval)
 

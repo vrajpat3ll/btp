@@ -52,16 +52,11 @@
  * with the variable name used in source files.
  */
 #ifndef DEFAULT_AMF_CAPACITY
-#define DEFAULT_AMF_CAPACITY 20
-#endif
-
-// this is in percentaga, actually
-#ifndef HEADROOM
-#define HEADROOM 20
+#define DEFAULT_AMF_CAPACITY 80
 #endif
 
 #ifndef HEADROOM_PERCENTAGE
-#define HEADROOM_PERCENTAGE HEADROOM / 100.F
+#define HEADROOM_PERCENTAGE 0.20f
 #endif
 
 /* Derived/default thresholds (kept as macros for clarity) */
