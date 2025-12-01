@@ -1,0 +1,8 @@
+[2025-11-30 12:05:30] [INFO] [main] Logging initialized at logs/2025-11-30_120530/run.log
+[2025-11-30 12:05:30] [INFO] [main] Latency log initialized at logs/2025-11-30_120530/associative-latency.csv
+[2025-11-30 12:05:30] [INFO] [main] Wrote PID 21 to logs/tmp.pid
+[2025-11-30 12:05:30] [INFO] [forward] forward_init_table: Initializing live thread table
+[2025-11-30 12:05:30] [DEBUG] [main] Initialized tables...
+[2025-11-30 12:05:30] [DEBUG] [main] Binding socket to 10.0.0.1:38412
+[2025-11-30 12:05:30] [INFO] [main] Setting up socket for listening (1000 max connections)...
+[2025-11-30 12:05:30] [SUCCESS] [main] Proxy listening on 10.0.0.1:38412 with AMF capacity 80
