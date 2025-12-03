@@ -33,7 +33,7 @@ void scale_up(void) {
         return;
     }
 
-    int threshold = (int)(active_count * AMF_CAPACITY * (1 - HEADROOM_PERCENTAGE));
+    int threshold = (int)(AMF_CAPACITY * ((float)active_count - HEADROOM_PERCENTAGE));
     log("DEBUG", "[scale] scale_up: total_conn_count=%d, threshold=%d\n",
         total_conn_count, threshold);
 
