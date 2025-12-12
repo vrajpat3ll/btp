@@ -1,2412 +1,2412 @@
 {
   "meta": {
-    "generated_at": "2025-11-30T09:46:05.918078Z",
+    "generated_at": "2025-12-12T12:42:31.868087Z",
     "num_ues": 400,
-    "lambda_arrival": 0.5,
-    "lambda_duration": 0.05,
-    "setup_time_s": 0.0,
-    "seed": 42,
+    "lambda_arrival": 0.2,
+    "lambda_duration": 0.01,
+    "setup_time_s": 10.0,
+    "seed": 42069,
     "namespace_prefix": "ran-simulator"
   },
   "ues": [
     {
       "ue_id": 1,
-      "arrival_s": 2.04,
-      "duration_s": 0.507,
+      "arrival_s": 9.169,
+      "duration_s": 207.784,
       "namespace": "ran-simulator1"
     },
     {
       "ue_id": 2,
-      "arrival_s": 2.683,
-      "duration_s": 5.052,
+      "arrival_s": 9.635,
+      "duration_s": 57.96,
       "namespace": "ran-simulator2"
     },
     {
       "ue_id": 3,
-      "arrival_s": 5.351,
-      "duration_s": 22.583,
+      "arrival_s": 10.623,
+      "duration_s": 240.874,
       "namespace": "ran-simulator3"
     },
     {
       "ue_id": 4,
-      "arrival_s": 9.805,
-      "duration_s": 1.819,
+      "arrival_s": 14.005,
+      "duration_s": 94.448,
       "namespace": "ran-simulator4"
     },
     {
       "ue_id": 5,
-      "arrival_s": 10.901,
-      "duration_s": 0.605,
+      "arrival_s": 15.997,
+      "duration_s": 383.877,
       "namespace": "ran-simulator5"
     },
     {
       "ue_id": 6,
-      "arrival_s": 11.395,
-      "duration_s": 14.078,
+      "arrival_s": 29.659,
+      "duration_s": 55.782,
       "namespace": "ran-simulator6"
     },
     {
       "ue_id": 7,
-      "arrival_s": 11.448,
-      "duration_s": 4.434,
+      "arrival_s": 30.728,
+      "duration_s": 313.59,
       "namespace": "ran-simulator7"
     },
     {
       "ue_id": 8,
-      "arrival_s": 13.547,
-      "duration_s": 15.747,
+      "arrival_s": 33.673,
+      "duration_s": 74.249,
       "namespace": "ran-simulator8"
     },
     {
       "ue_id": 9,
-      "arrival_s": 14.045,
-      "duration_s": 17.796,
+      "arrival_s": 41.259,
+      "duration_s": 78.104,
       "namespace": "ran-simulator9"
     },
     {
       "ue_id": 10,
-      "arrival_s": 17.361,
-      "duration_s": 0.13,
+      "arrival_s": 49.017,
+      "duration_s": 43.695,
       "namespace": "ran-simulator10"
     },
     {
       "ue_id": 11,
-      "arrival_s": 20.639,
-      "duration_s": 23.956,
+      "arrival_s": 59.107,
+      "duration_s": 125.53,
       "namespace": "ran-simulator11"
     },
     {
       "ue_id": 12,
-      "arrival_s": 21.471,
-      "duration_s": 3.38,
+      "arrival_s": 60.153,
+      "duration_s": 134.825,
       "namespace": "ran-simulator12"
     },
     {
       "ue_id": 13,
-      "arrival_s": 27.774,
-      "duration_s": 8.207,
+      "arrival_s": 62.469,
+      "duration_s": 34.381,
       "namespace": "ran-simulator13"
     },
     {
       "ue_id": 14,
-      "arrival_s": 27.968,
-      "duration_s": 2.034,
+      "arrival_s": 66.194,
+      "duration_s": 92.028,
       "namespace": "ran-simulator14"
     },
     {
       "ue_id": 15,
-      "arrival_s": 31.729,
-      "duration_s": 18.513,
+      "arrival_s": 69.139,
+      "duration_s": 47.871,
       "namespace": "ran-simulator15"
     },
     {
       "ue_id": 16,
-      "arrival_s": 35.021,
-      "duration_s": 26.167,
+      "arrival_s": 72.915,
+      "duration_s": 23.136,
       "namespace": "ran-simulator16"
     },
     {
       "ue_id": 17,
-      "arrival_s": 36.558,
-      "duration_s": 72.324,
+      "arrival_s": 74.069,
+      "duration_s": 106.173,
       "namespace": "ran-simulator17"
     },
     {
       "ue_id": 18,
-      "arrival_s": 37.509,
-      "duration_s": 16.061,
+      "arrival_s": 76.123,
+      "duration_s": 404.271,
       "namespace": "ran-simulator18"
     },
     {
       "ue_id": 19,
-      "arrival_s": 41.046,
-      "duration_s": 19.274,
+      "arrival_s": 76.226,
+      "duration_s": 15.443,
       "namespace": "ran-simulator19"
     },
     {
       "ue_id": 20,
-      "arrival_s": 45.003,
-      "duration_s": 17.224,
+      "arrival_s": 79.301,
+      "duration_s": 76.553,
       "namespace": "ran-simulator20"
     },
     {
       "ue_id": 21,
-      "arrival_s": 47.441,
-      "duration_s": 0.938,
+      "arrival_s": 82.661,
+      "duration_s": 24.582,
       "namespace": "ran-simulator21"
     },
     {
       "ue_id": 22,
-      "arrival_s": 47.959,
-      "duration_s": 6.833,
+      "arrival_s": 87.869,
+      "duration_s": 288.707,
       "namespace": "ran-simulator22"
     },
     {
       "ue_id": 23,
-      "arrival_s": 48.125,
-      "duration_s": 5.3,
+      "arrival_s": 88.984,
+      "duration_s": 74.757,
       "namespace": "ran-simulator23"
     },
     {
       "ue_id": 24,
-      "arrival_s": 48.338,
-      "duration_s": 6.514,
+      "arrival_s": 89.059,
+      "duration_s": 49.574,
       "namespace": "ran-simulator24"
     },
     {
       "ue_id": 25,
-      "arrival_s": 50.357,
-      "duration_s": 9.077,
+      "arrival_s": 103.134,
+      "duration_s": 53.594,
       "namespace": "ran-simulator25"
     },
     {
       "ue_id": 26,
-      "arrival_s": 51.282,
-      "duration_s": 4.702,
+      "arrival_s": 107.782,
+      "duration_s": 152.025,
       "namespace": "ran-simulator26"
     },
     {
       "ue_id": 27,
-      "arrival_s": 51.903,
-      "duration_s": 55.183,
+      "arrival_s": 110.37,
+      "duration_s": 56.355,
       "namespace": "ran-simulator27"
     },
     {
       "ue_id": 28,
-      "arrival_s": 53.992,
-      "duration_s": 18.788,
+      "arrival_s": 111.508,
+      "duration_s": 88.512,
       "namespace": "ran-simulator28"
     },
     {
       "ue_id": 29,
-      "arrival_s": 54.367,
-      "duration_s": 26.122,
+      "arrival_s": 118.367,
+      "duration_s": 17.113,
       "namespace": "ran-simulator29"
     },
     {
       "ue_id": 30,
-      "arrival_s": 54.724,
-      "duration_s": 9.543,
+      "arrival_s": 131.212,
+      "duration_s": 64.73,
       "namespace": "ran-simulator30"
     },
     {
       "ue_id": 31,
-      "arrival_s": 63.841,
-      "duration_s": 20.433,
+      "arrival_s": 140.039,
+      "duration_s": 144.762,
       "namespace": "ran-simulator31"
     },
     {
       "ue_id": 32,
-      "arrival_s": 65.469,
-      "duration_s": 23.079,
+      "arrival_s": 148.868,
+      "duration_s": 85.855,
       "namespace": "ran-simulator32"
     },
     {
       "ue_id": 33,
-      "arrival_s": 69.17,
-      "duration_s": 29.922,
+      "arrival_s": 149.709,
+      "duration_s": 17.9,
       "namespace": "ran-simulator33"
     },
     {
       "ue_id": 34,
-      "arrival_s": 69.691,
-      "duration_s": 0.653,
+      "arrival_s": 152.648,
+      "duration_s": 104.519,
       "namespace": "ran-simulator34"
     },
     {
       "ue_id": 35,
-      "arrival_s": 70.449,
-      "duration_s": 6.232,
+      "arrival_s": 162.636,
+      "duration_s": 10.853,
       "namespace": "ran-simulator35"
     },
     {
       "ue_id": 36,
-      "arrival_s": 70.923,
-      "duration_s": 57.262,
+      "arrival_s": 163.513,
+      "duration_s": 46.371,
       "namespace": "ran-simulator36"
     },
     {
       "ue_id": 37,
-      "arrival_s": 75.103,
-      "duration_s": 7.557,
+      "arrival_s": 164.67,
+      "duration_s": 16.688,
       "namespace": "ran-simulator37"
     },
     {
       "ue_id": 38,
-      "arrival_s": 77.234,
-      "duration_s": 10.071,
+      "arrival_s": 168.852,
+      "duration_s": 25.122,
       "namespace": "ran-simulator38"
     },
     {
       "ue_id": 39,
-      "arrival_s": 82.154,
-      "duration_s": 12.281,
+      "arrival_s": 178.486,
+      "duration_s": 73.781,
       "namespace": "ran-simulator39"
     },
     {
       "ue_id": 40,
-      "arrival_s": 82.769,
-      "duration_s": 5.664,
+      "arrival_s": 181.342,
+      "duration_s": 22.111,
       "namespace": "ran-simulator40"
     },
     {
       "ue_id": 41,
-      "arrival_s": 84.418,
-      "duration_s": 6.096,
+      "arrival_s": 181.645,
+      "duration_s": 251.467,
       "namespace": "ran-simulator41"
     },
     {
       "ue_id": 42,
-      "arrival_s": 86.175,
-      "duration_s": 45.621,
+      "arrival_s": 183.557,
+      "duration_s": 137.345,
       "namespace": "ran-simulator42"
     },
     {
       "ue_id": 43,
-      "arrival_s": 87.194,
-      "duration_s": 4.952,
+      "arrival_s": 202.666,
+      "duration_s": 29.647,
       "namespace": "ran-simulator43"
     },
     {
       "ue_id": 44,
-      "arrival_s": 99.207,
-      "duration_s": 14.248,
+      "arrival_s": 205.582,
+      "duration_s": 19.728,
       "namespace": "ran-simulator44"
     },
     {
       "ue_id": 45,
-      "arrival_s": 99.398,
-      "duration_s": 0.965,
+      "arrival_s": 208.918,
+      "duration_s": 77.942,
       "namespace": "ran-simulator45"
     },
     {
       "ue_id": 46,
-      "arrival_s": 99.63,
-      "duration_s": 19.747,
+      "arrival_s": 211.722,
+      "duration_s": 295.132,
       "namespace": "ran-simulator46"
     },
     {
       "ue_id": 47,
-      "arrival_s": 102.772,
-      "duration_s": 10.969,
+      "arrival_s": 215.955,
+      "duration_s": 38.166,
       "namespace": "ran-simulator47"
     },
     {
       "ue_id": 48,
-      "arrival_s": 102.903,
-      "duration_s": 9.613,
+      "arrival_s": 216.718,
+      "duration_s": 39.805,
       "namespace": "ran-simulator48"
     },
     {
       "ue_id": 49,
-      "arrival_s": 114.007,
-      "duration_s": 15.063,
+      "arrival_s": 217.935,
+      "duration_s": 47.765,
       "namespace": "ran-simulator49"
     },
     {
       "ue_id": 50,
-      "arrival_s": 121.094,
-      "duration_s": 39.434,
+      "arrival_s": 218.511,
+      "duration_s": 94.363,
       "namespace": "ran-simulator50"
     },
     {
       "ue_id": 51,
-      "arrival_s": 121.117,
-      "duration_s": 25.511,
+      "arrival_s": 219.196,
+      "duration_s": 36.341,
       "namespace": "ran-simulator51"
     },
     {
       "ue_id": 52,
-      "arrival_s": 123.406,
-      "duration_s": 15.399,
+      "arrival_s": 242.857,
+      "duration_s": 127.875,
       "namespace": "ran-simulator52"
     },
     {
       "ue_id": 53,
-      "arrival_s": 124.027,
-      "duration_s": 20.487,
+      "arrival_s": 243.974,
+      "duration_s": 94.375,
       "namespace": "ran-simulator53"
     },
     {
       "ue_id": 54,
-      "arrival_s": 124.264,
-      "duration_s": 11.41,
+      "arrival_s": 249.055,
+      "duration_s": 73.876,
       "namespace": "ran-simulator54"
     },
     {
       "ue_id": 55,
-      "arrival_s": 125.473,
-      "duration_s": 61.502,
+      "arrival_s": 249.773,
+      "duration_s": 614.338,
       "namespace": "ran-simulator55"
     },
     {
       "ue_id": 56,
-      "arrival_s": 129.646,
-      "duration_s": 6.114,
+      "arrival_s": 251.756,
+      "duration_s": 114.704,
       "namespace": "ran-simulator56"
     },
     {
       "ue_id": 57,
-      "arrival_s": 131.034,
-      "duration_s": 3.936,
+      "arrival_s": 256.616,
+      "duration_s": 102.951,
       "namespace": "ran-simulator57"
     },
     {
       "ue_id": 58,
-      "arrival_s": 135.909,
-      "duration_s": 40.884,
+      "arrival_s": 264.095,
+      "duration_s": 34.932,
       "namespace": "ran-simulator58"
     },
     {
       "ue_id": 59,
-      "arrival_s": 136.618,
-      "duration_s": 20.375,
+      "arrival_s": 268.752,
+      "duration_s": 35.506,
       "namespace": "ran-simulator59"
     },
     {
       "ue_id": 60,
-      "arrival_s": 138.496,
-      "duration_s": 3.317,
+      "arrival_s": 284.689,
+      "duration_s": 62.331,
       "namespace": "ran-simulator60"
     },
     {
       "ue_id": 61,
-      "arrival_s": 141.371,
-      "duration_s": 15.504,
+      "arrival_s": 288.949,
+      "duration_s": 295.354,
       "namespace": "ran-simulator61"
     },
     {
       "ue_id": 62,
-      "arrival_s": 144.387,
-      "duration_s": 15.116,
+      "arrival_s": 289.539,
+      "duration_s": 25.087,
       "namespace": "ran-simulator62"
     },
     {
       "ue_id": 63,
-      "arrival_s": 144.388,
-      "duration_s": 7.836,
+      "arrival_s": 294.826,
+      "duration_s": 19.913,
       "namespace": "ran-simulator63"
     },
     {
       "ue_id": 64,
-      "arrival_s": 144.428,
-      "duration_s": 52.929,
+      "arrival_s": 302.099,
+      "duration_s": 33.532,
       "namespace": "ran-simulator64"
     },
     {
       "ue_id": 65,
-      "arrival_s": 148.647,
-      "duration_s": 35.636,
+      "arrival_s": 306.671,
+      "duration_s": 11.762,
       "namespace": "ran-simulator65"
     },
     {
       "ue_id": 66,
-      "arrival_s": 149.382,
-      "duration_s": 1.193,
+      "arrival_s": 307.027,
+      "duration_s": 11.214,
       "namespace": "ran-simulator66"
     },
     {
       "ue_id": 67,
-      "arrival_s": 153.59,
-      "duration_s": 58.73,
+      "arrival_s": 307.594,
+      "duration_s": 119.413,
       "namespace": "ran-simulator67"
     },
     {
       "ue_id": 68,
-      "arrival_s": 153.769,
-      "duration_s": 13.31,
+      "arrival_s": 313.466,
+      "duration_s": 55.258,
       "namespace": "ran-simulator68"
     },
     {
       "ue_id": 69,
-      "arrival_s": 153.912,
-      "duration_s": 28.593,
+      "arrival_s": 323.887,
+      "duration_s": 21.078,
       "namespace": "ran-simulator69"
     },
     {
       "ue_id": 70,
-      "arrival_s": 156.816,
-      "duration_s": 2.748,
+      "arrival_s": 325.892,
+      "duration_s": 55.629,
       "namespace": "ran-simulator70"
     },
     {
       "ue_id": 71,
-      "arrival_s": 158.105,
-      "duration_s": 15.961,
+      "arrival_s": 332.353,
+      "duration_s": 11.61,
       "namespace": "ran-simulator71"
     },
     {
       "ue_id": 72,
-      "arrival_s": 158.721,
-      "duration_s": 41.182,
+      "arrival_s": 335.376,
+      "duration_s": 55.03,
       "namespace": "ran-simulator72"
     },
     {
       "ue_id": 73,
-      "arrival_s": 159.822,
-      "duration_s": 4.76,
+      "arrival_s": 339.98,
+      "duration_s": 45.048,
       "namespace": "ran-simulator73"
     },
     {
       "ue_id": 74,
-      "arrival_s": 161.372,
-      "duration_s": 26.182,
+      "arrival_s": 341.66,
+      "duration_s": 38.729,
       "namespace": "ran-simulator74"
     },
     {
       "ue_id": 75,
-      "arrival_s": 161.821,
-      "duration_s": 7.471,
+      "arrival_s": 347.939,
+      "duration_s": 45.822,
       "namespace": "ran-simulator75"
     },
     {
       "ue_id": 76,
-      "arrival_s": 172.478,
-      "duration_s": 20.989,
+      "arrival_s": 348.514,
+      "duration_s": 208.69,
       "namespace": "ran-simulator76"
     },
     {
       "ue_id": 77,
-      "arrival_s": 173.631,
-      "duration_s": 14.579,
+      "arrival_s": 358.143,
+      "duration_s": 83.244,
       "namespace": "ran-simulator77"
     },
     {
       "ue_id": 78,
-      "arrival_s": 173.889,
-      "duration_s": 5.09,
+      "arrival_s": 358.419,
+      "duration_s": 13.444,
       "namespace": "ran-simulator78"
     },
     {
       "ue_id": 79,
-      "arrival_s": 174.714,
-      "duration_s": 17.75,
+      "arrival_s": 358.972,
+      "duration_s": 27.32,
       "namespace": "ran-simulator79"
     },
     {
       "ue_id": 80,
-      "arrival_s": 175.237,
-      "duration_s": 4.975,
+      "arrival_s": 382.405,
+      "duration_s": 165.589,
       "namespace": "ran-simulator80"
     },
     {
       "ue_id": 81,
-      "arrival_s": 175.384,
-      "duration_s": 19.945,
+      "arrival_s": 390.55,
+      "duration_s": 150.069,
       "namespace": "ran-simulator81"
     },
     {
       "ue_id": 82,
-      "arrival_s": 175.904,
-      "duration_s": 47.166,
+      "arrival_s": 391.743,
+      "duration_s": 175.357,
       "namespace": "ran-simulator82"
     },
     {
       "ue_id": 83,
-      "arrival_s": 179.831,
-      "duration_s": 1.47,
+      "arrival_s": 393.946,
+      "duration_s": 129.112,
       "namespace": "ran-simulator83"
     },
     {
       "ue_id": 84,
-      "arrival_s": 180.375,
-      "duration_s": 22.111,
+      "arrival_s": 403.009,
+      "duration_s": 63.885,
       "namespace": "ran-simulator84"
     },
     {
       "ue_id": 85,
-      "arrival_s": 180.857,
-      "duration_s": 2.838,
+      "arrival_s": 403.922,
+      "duration_s": 43.442,
       "namespace": "ran-simulator85"
     },
     {
       "ue_id": 86,
-      "arrival_s": 186.34,
-      "duration_s": 16.928,
+      "arrival_s": 407.898,
+      "duration_s": 93.1,
       "namespace": "ran-simulator86"
     },
     {
       "ue_id": 87,
-      "arrival_s": 187.62,
-      "duration_s": 30.707,
+      "arrival_s": 410.387,
+      "duration_s": 63.003,
       "namespace": "ran-simulator87"
     },
     {
       "ue_id": 88,
-      "arrival_s": 190.915,
-      "duration_s": 4.225,
+      "arrival_s": 422.658,
+      "duration_s": 445.708,
       "namespace": "ran-simulator88"
     },
     {
       "ue_id": 89,
-      "arrival_s": 191.119,
-      "duration_s": 11.279,
+      "arrival_s": 423.987,
+      "duration_s": 170.4,
       "namespace": "ran-simulator89"
     },
     {
       "ue_id": 90,
-      "arrival_s": 192.221,
-      "duration_s": 12.586,
+      "arrival_s": 427.929,
+      "duration_s": 499.628,
       "namespace": "ran-simulator90"
     },
     {
       "ue_id": 91,
-      "arrival_s": 194.833,
-      "duration_s": 22.378,
+      "arrival_s": 444.621,
+      "duration_s": 178.745,
       "namespace": "ran-simulator91"
     },
     {
       "ue_id": 92,
-      "arrival_s": 203.124,
-      "duration_s": 2.072,
+      "arrival_s": 456.554,
+      "duration_s": 22.632,
       "namespace": "ran-simulator92"
     },
     {
       "ue_id": 93,
-      "arrival_s": 204.154,
-      "duration_s": 8.289,
+      "arrival_s": 460.131,
+      "duration_s": 11.484,
       "namespace": "ran-simulator93"
     },
     {
       "ue_id": 94,
-      "arrival_s": 208.11,
-      "duration_s": 5.718,
+      "arrival_s": 460.153,
+      "duration_s": 110.067,
       "namespace": "ran-simulator94"
     },
     {
       "ue_id": 95,
-      "arrival_s": 208.532,
-      "duration_s": 11.906,
+      "arrival_s": 464.135,
+      "duration_s": 59.379,
       "namespace": "ran-simulator95"
     },
     {
       "ue_id": 96,
-      "arrival_s": 209.628,
-      "duration_s": 6.53,
+      "arrival_s": 466.704,
+      "duration_s": 51.006,
       "namespace": "ran-simulator96"
     },
     {
       "ue_id": 97,
-      "arrival_s": 210.203,
-      "duration_s": 51.348,
+      "arrival_s": 470.59,
+      "duration_s": 97.948,
       "namespace": "ran-simulator97"
     },
     {
       "ue_id": 98,
-      "arrival_s": 211.374,
-      "duration_s": 39.516,
+      "arrival_s": 471.682,
+      "duration_s": 15.579,
       "namespace": "ran-simulator98"
     },
     {
       "ue_id": 99,
-      "arrival_s": 212.972,
-      "duration_s": 1.038,
+      "arrival_s": 476.23,
+      "duration_s": 245.868,
       "namespace": "ran-simulator99"
     },
     {
       "ue_id": 100,
-      "arrival_s": 227.452,
-      "duration_s": 36.161,
+      "arrival_s": 477.395,
+      "duration_s": 114.422,
       "namespace": "ran-simulator100"
     },
     {
       "ue_id": 101,
-      "arrival_s": 234.399,
-      "duration_s": 52.173,
+      "arrival_s": 481.814,
+      "duration_s": 155.12,
       "namespace": "ran-simulator101"
     },
     {
       "ue_id": 102,
-      "arrival_s": 238.176,
-      "duration_s": 3.638,
+      "arrival_s": 482.595,
+      "duration_s": 111.334,
       "namespace": "ran-simulator102"
     },
     {
       "ue_id": 103,
-      "arrival_s": 239.506,
-      "duration_s": 4.81,
+      "arrival_s": 485.838,
+      "duration_s": 333.414,
       "namespace": "ran-simulator103"
     },
     {
       "ue_id": 104,
-      "arrival_s": 240.531,
-      "duration_s": 1.208,
+      "arrival_s": 500.221,
+      "duration_s": 169.255,
       "namespace": "ran-simulator104"
     },
     {
       "ue_id": 105,
-      "arrival_s": 241.484,
-      "duration_s": 84.41,
+      "arrival_s": 500.942,
+      "duration_s": 83.356,
       "namespace": "ran-simulator105"
     },
     {
       "ue_id": 106,
-      "arrival_s": 242.1,
-      "duration_s": 30.656,
+      "arrival_s": 503.979,
+      "duration_s": 111.892,
       "namespace": "ran-simulator106"
     },
     {
       "ue_id": 107,
-      "arrival_s": 243.314,
-      "duration_s": 10.999,
+      "arrival_s": 504.431,
+      "duration_s": 70.387,
       "namespace": "ran-simulator107"
     },
     {
       "ue_id": 108,
-      "arrival_s": 249.622,
-      "duration_s": 107.733,
+      "arrival_s": 505.485,
+      "duration_s": 212.9,
       "namespace": "ran-simulator108"
     },
     {
       "ue_id": 109,
-      "arrival_s": 251.245,
-      "duration_s": 25.346,
+      "arrival_s": 505.629,
+      "duration_s": 25.325,
       "namespace": "ran-simulator109"
     },
     {
       "ue_id": 110,
-      "arrival_s": 251.581,
-      "duration_s": 7.04,
+      "arrival_s": 507.732,
+      "duration_s": 46.894,
       "namespace": "ran-simulator110"
     },
     {
       "ue_id": 111,
-      "arrival_s": 258.51,
-      "duration_s": 17.311,
+      "arrival_s": 509.049,
+      "duration_s": 46.332,
       "namespace": "ran-simulator111"
     },
     {
       "ue_id": 112,
-      "arrival_s": 260.073,
-      "duration_s": 27.565,
+      "arrival_s": 510.003,
+      "duration_s": 68.555,
       "namespace": "ran-simulator112"
     },
     {
       "ue_id": 113,
-      "arrival_s": 260.19,
-      "duration_s": 17.55,
+      "arrival_s": 513.981,
+      "duration_s": 35.776,
       "namespace": "ran-simulator113"
     },
     {
       "ue_id": 114,
-      "arrival_s": 261.588,
-      "duration_s": 38.308,
+      "arrival_s": 516.227,
+      "duration_s": 321.732,
       "namespace": "ran-simulator114"
     },
     {
       "ue_id": 115,
-      "arrival_s": 261.931,
-      "duration_s": 64.771,
+      "arrival_s": 521.535,
+      "duration_s": 97.934,
       "namespace": "ran-simulator115"
     },
     {
       "ue_id": 116,
-      "arrival_s": 262.098,
-      "duration_s": 4.112,
+      "arrival_s": 522.259,
+      "duration_s": 136.387,
       "namespace": "ran-simulator116"
     },
     {
       "ue_id": 117,
-      "arrival_s": 263.906,
-      "duration_s": 22.492,
+      "arrival_s": 536.045,
+      "duration_s": 62.792,
       "namespace": "ran-simulator117"
     },
     {
       "ue_id": 118,
-      "arrival_s": 264.442,
-      "duration_s": 2.554,
+      "arrival_s": 552.468,
+      "duration_s": 355.005,
       "namespace": "ran-simulator118"
     },
     {
       "ue_id": 119,
-      "arrival_s": 268.862,
-      "duration_s": 5.653,
+      "arrival_s": 556.89,
+      "duration_s": 175.962,
       "namespace": "ran-simulator119"
     },
     {
       "ue_id": 120,
-      "arrival_s": 270.667,
-      "duration_s": 19.319,
+      "arrival_s": 565.303,
+      "duration_s": 18.705,
       "namespace": "ran-simulator120"
     },
     {
       "ue_id": 121,
-      "arrival_s": 271.754,
-      "duration_s": 17.526,
+      "arrival_s": 567.869,
+      "duration_s": 262.928,
       "namespace": "ran-simulator121"
     },
     {
       "ue_id": 122,
-      "arrival_s": 273.233,
-      "duration_s": 54.577,
+      "arrival_s": 574.409,
+      "duration_s": 67.165,
       "namespace": "ran-simulator122"
     },
     {
       "ue_id": 123,
-      "arrival_s": 273.69,
-      "duration_s": 25.189,
+      "arrival_s": 577.053,
+      "duration_s": 583.632,
       "namespace": "ran-simulator123"
     },
     {
       "ue_id": 124,
-      "arrival_s": 274.236,
-      "duration_s": 10.077,
+      "arrival_s": 582.624,
+      "duration_s": 113.228,
       "namespace": "ran-simulator124"
     },
     {
       "ue_id": 125,
-      "arrival_s": 276.463,
-      "duration_s": 7.133,
+      "arrival_s": 582.918,
+      "duration_s": 12.739,
       "namespace": "ran-simulator125"
     },
     {
       "ue_id": 126,
-      "arrival_s": 277.223,
-      "duration_s": 27.876,
+      "arrival_s": 585.757,
+      "duration_s": 26.319,
       "namespace": "ran-simulator126"
     },
     {
       "ue_id": 127,
-      "arrival_s": 277.374,
-      "duration_s": 12.26,
+      "arrival_s": 601.954,
+      "duration_s": 103.631,
       "namespace": "ran-simulator127"
     },
     {
       "ue_id": 128,
-      "arrival_s": 290.319,
-      "duration_s": 110.917,
+      "arrival_s": 602.129,
+      "duration_s": 34.325,
       "namespace": "ran-simulator128"
     },
     {
       "ue_id": 129,
-      "arrival_s": 290.471,
-      "duration_s": 4.794,
+      "arrival_s": 617.537,
+      "duration_s": 26.059,
       "namespace": "ran-simulator129"
     },
     {
       "ue_id": 130,
-      "arrival_s": 291.087,
-      "duration_s": 54.139,
+      "arrival_s": 618.48,
+      "duration_s": 46.869,
       "namespace": "ran-simulator130"
     },
     {
       "ue_id": 131,
-      "arrival_s": 295.342,
-      "duration_s": 42.284,
+      "arrival_s": 622.317,
+      "duration_s": 136.659,
       "namespace": "ran-simulator131"
     },
     {
       "ue_id": 132,
-      "arrival_s": 296.265,
-      "duration_s": 3.433,
+      "arrival_s": 623.111,
+      "duration_s": 188.241,
       "namespace": "ran-simulator132"
     },
     {
       "ue_id": 133,
-      "arrival_s": 299.853,
-      "duration_s": 24.317,
+      "arrival_s": 638.61,
+      "duration_s": 444.554,
       "namespace": "ran-simulator133"
     },
     {
       "ue_id": 134,
-      "arrival_s": 301.745,
-      "duration_s": 87.218,
+      "arrival_s": 643.415,
+      "duration_s": 23.178,
       "namespace": "ran-simulator134"
     },
     {
       "ue_id": 135,
-      "arrival_s": 303.868,
-      "duration_s": 0.157,
+      "arrival_s": 643.729,
+      "duration_s": 20.574,
       "namespace": "ran-simulator135"
     },
     {
       "ue_id": 136,
-      "arrival_s": 307.265,
-      "duration_s": 7.116,
+      "arrival_s": 644.601,
+      "duration_s": 347.406,
       "namespace": "ran-simulator136"
     },
     {
       "ue_id": 137,
-      "arrival_s": 309.443,
-      "duration_s": 55.915,
+      "arrival_s": 650.45,
+      "duration_s": 28.167,
       "namespace": "ran-simulator137"
     },
     {
       "ue_id": 138,
-      "arrival_s": 309.731,
-      "duration_s": 2.453,
+      "arrival_s": 657.815,
+      "duration_s": 35.029,
       "namespace": "ran-simulator138"
     },
     {
       "ue_id": 139,
-      "arrival_s": 309.958,
-      "duration_s": 16.114,
+      "arrival_s": 658.665,
+      "duration_s": 66.058,
       "namespace": "ran-simulator139"
     },
     {
       "ue_id": 140,
-      "arrival_s": 310.594,
-      "duration_s": 18.569,
+      "arrival_s": 673.634,
+      "duration_s": 15.98,
       "namespace": "ran-simulator140"
     },
     {
       "ue_id": 141,
-      "arrival_s": 313.123,
-      "duration_s": 4.553,
+      "arrival_s": 675.016,
+      "duration_s": 176.835,
       "namespace": "ran-simulator141"
     },
     {
       "ue_id": 142,
-      "arrival_s": 315.134,
-      "duration_s": 6.13,
+      "arrival_s": 680.5,
+      "duration_s": 137.912,
       "namespace": "ran-simulator142"
     },
     {
       "ue_id": 143,
-      "arrival_s": 316.475,
-      "duration_s": 47.149,
+      "arrival_s": 680.83,
+      "duration_s": 13.822,
       "namespace": "ran-simulator143"
     },
     {
       "ue_id": 144,
-      "arrival_s": 320.218,
-      "duration_s": 1.937,
+      "arrival_s": 682.028,
+      "duration_s": 36.812,
       "namespace": "ran-simulator144"
     },
     {
       "ue_id": 145,
-      "arrival_s": 321.32,
-      "duration_s": 6.478,
+      "arrival_s": 701.317,
+      "duration_s": 130.672,
       "namespace": "ran-simulator145"
     },
     {
       "ue_id": 146,
-      "arrival_s": 321.327,
-      "duration_s": 29.491,
+      "arrival_s": 702.76,
+      "duration_s": 17.518,
       "namespace": "ran-simulator146"
     },
     {
       "ue_id": 147,
-      "arrival_s": 323.354,
-      "duration_s": 6.075,
+      "arrival_s": 706.373,
+      "duration_s": 90.602,
       "namespace": "ran-simulator147"
     },
     {
       "ue_id": 148,
-      "arrival_s": 326.058,
-      "duration_s": 16.045,
+      "arrival_s": 709.814,
+      "duration_s": 31.293,
       "namespace": "ran-simulator148"
     },
     {
       "ue_id": 149,
-      "arrival_s": 327.174,
-      "duration_s": 0.194,
+      "arrival_s": 713.684,
+      "duration_s": 641.239,
       "namespace": "ran-simulator149"
     },
     {
       "ue_id": 150,
-      "arrival_s": 327.33,
-      "duration_s": 42.93,
+      "arrival_s": 726.813,
+      "duration_s": 17.125,
       "namespace": "ran-simulator150"
     },
     {
       "ue_id": 151,
-      "arrival_s": 332.016,
-      "duration_s": 15.775,
+      "arrival_s": 734.6,
+      "duration_s": 10.685,
       "namespace": "ran-simulator151"
     },
     {
       "ue_id": 152,
-      "arrival_s": 335.615,
-      "duration_s": 17.47,
+      "arrival_s": 738.344,
+      "duration_s": 21.252,
       "namespace": "ran-simulator152"
     },
     {
       "ue_id": 153,
-      "arrival_s": 335.935,
-      "duration_s": 2.727,
+      "arrival_s": 738.501,
+      "duration_s": 59.187,
       "namespace": "ran-simulator153"
     },
     {
       "ue_id": 154,
-      "arrival_s": 336.672,
-      "duration_s": 45.849,
+      "arrival_s": 749.334,
+      "duration_s": 129.363,
       "namespace": "ran-simulator154"
     },
     {
       "ue_id": 155,
-      "arrival_s": 339.853,
-      "duration_s": 39.423,
+      "arrival_s": 750.362,
+      "duration_s": 132.328,
       "namespace": "ran-simulator155"
     },
     {
       "ue_id": 156,
-      "arrival_s": 344.436,
-      "duration_s": 4.716,
+      "arrival_s": 757.734,
+      "duration_s": 114.157,
       "namespace": "ran-simulator156"
     },
     {
       "ue_id": 157,
-      "arrival_s": 345.011,
-      "duration_s": 2.169,
+      "arrival_s": 760.898,
+      "duration_s": 66.729,
       "namespace": "ran-simulator157"
     },
     {
       "ue_id": 158,
-      "arrival_s": 348.04,
-      "duration_s": 43.107,
+      "arrival_s": 774.1,
+      "duration_s": 202.485,
       "namespace": "ran-simulator158"
     },
     {
       "ue_id": 159,
-      "arrival_s": 349.083,
-      "duration_s": 19.387,
+      "arrival_s": 784.572,
+      "duration_s": 75.6,
       "namespace": "ran-simulator159"
     },
     {
       "ue_id": 160,
-      "arrival_s": 349.419,
-      "duration_s": 53.151,
+      "arrival_s": 785.467,
+      "duration_s": 96.432,
       "namespace": "ran-simulator160"
     },
     {
       "ue_id": 161,
-      "arrival_s": 353.418,
-      "duration_s": 74.766,
+      "arrival_s": 786.161,
+      "duration_s": 20.202,
       "namespace": "ran-simulator161"
     },
     {
       "ue_id": 162,
-      "arrival_s": 356.747,
-      "duration_s": 42.643,
+      "arrival_s": 786.352,
+      "duration_s": 38.876,
       "namespace": "ran-simulator162"
     },
     {
       "ue_id": 163,
-      "arrival_s": 356.798,
-      "duration_s": 26.679,
+      "arrival_s": 794.117,
+      "duration_s": 83.281,
       "namespace": "ran-simulator163"
     },
     {
       "ue_id": 164,
-      "arrival_s": 357.605,
-      "duration_s": 53.42,
+      "arrival_s": 795.436,
+      "duration_s": 47.906,
       "namespace": "ran-simulator164"
     },
     {
       "ue_id": 165,
-      "arrival_s": 360.846,
-      "duration_s": 39.911,
+      "arrival_s": 800.581,
+      "duration_s": 129.773,
       "namespace": "ran-simulator165"
     },
     {
       "ue_id": 166,
-      "arrival_s": 364.176,
-      "duration_s": 6.207,
+      "arrival_s": 805.766,
+      "duration_s": 56.801,
       "namespace": "ran-simulator166"
     },
     {
       "ue_id": 167,
-      "arrival_s": 367.272,
-      "duration_s": 2.288,
+      "arrival_s": 809.806,
+      "duration_s": 224.11,
       "namespace": "ran-simulator167"
     },
     {
       "ue_id": 168,
-      "arrival_s": 371.386,
-      "duration_s": 39.122,
+      "arrival_s": 810.233,
+      "duration_s": 28.652,
       "namespace": "ran-simulator168"
     },
     {
       "ue_id": 169,
-      "arrival_s": 371.889,
-      "duration_s": 33.92,
+      "arrival_s": 821.596,
+      "duration_s": 82.837,
       "namespace": "ran-simulator169"
     },
     {
       "ue_id": 170,
-      "arrival_s": 373.123,
-      "duration_s": 7.282,
+      "arrival_s": 824.245,
+      "duration_s": 26.608,
       "namespace": "ran-simulator170"
     },
     {
       "ue_id": 171,
-      "arrival_s": 376.296,
-      "duration_s": 5.165,
+      "arrival_s": 825.252,
+      "duration_s": 44.836,
       "namespace": "ran-simulator171"
     },
     {
       "ue_id": 172,
-      "arrival_s": 376.344,
-      "duration_s": 4.292,
+      "arrival_s": 838.13,
+      "duration_s": 89.03,
       "namespace": "ran-simulator172"
     },
     {
       "ue_id": 173,
-      "arrival_s": 377.139,
-      "duration_s": 39.954,
+      "arrival_s": 838.162,
+      "duration_s": 102.456,
       "namespace": "ran-simulator173"
     },
     {
       "ue_id": 174,
-      "arrival_s": 383.955,
-      "duration_s": 6.546,
+      "arrival_s": 844.809,
+      "duration_s": 34.95,
       "namespace": "ran-simulator174"
     },
     {
       "ue_id": 175,
-      "arrival_s": 386.007,
-      "duration_s": 10.206,
+      "arrival_s": 847.665,
+      "duration_s": 244.074,
       "namespace": "ran-simulator175"
     },
     {
       "ue_id": 176,
-      "arrival_s": 393.949,
-      "duration_s": 15.367,
+      "arrival_s": 850.259,
+      "duration_s": 56.046,
       "namespace": "ran-simulator176"
     },
     {
       "ue_id": 177,
-      "arrival_s": 399.551,
-      "duration_s": 2.451,
+      "arrival_s": 850.311,
+      "duration_s": 96.442,
       "namespace": "ran-simulator177"
     },
     {
       "ue_id": 178,
-      "arrival_s": 406.591,
-      "duration_s": 3.934,
+      "arrival_s": 862.516,
+      "duration_s": 11.067,
       "namespace": "ran-simulator178"
     },
     {
       "ue_id": 179,
-      "arrival_s": 413.16,
-      "duration_s": 6.17,
+      "arrival_s": 863.602,
+      "duration_s": 144.186,
       "namespace": "ran-simulator179"
     },
     {
       "ue_id": 180,
-      "arrival_s": 413.389,
-      "duration_s": 11.403,
+      "arrival_s": 865.358,
+      "duration_s": 248.2,
       "namespace": "ran-simulator180"
     },
     {
       "ue_id": 181,
-      "arrival_s": 415.997,
-      "duration_s": 7.528,
+      "arrival_s": 866.469,
+      "duration_s": 200.917,
       "namespace": "ran-simulator181"
     },
     {
       "ue_id": 182,
-      "arrival_s": 417.861,
-      "duration_s": 14.325,
+      "arrival_s": 866.821,
+      "duration_s": 489.076,
       "namespace": "ran-simulator182"
     },
     {
       "ue_id": 183,
-      "arrival_s": 418.834,
-      "duration_s": 17.188,
+      "arrival_s": 871.137,
+      "duration_s": 63.693,
       "namespace": "ran-simulator183"
     },
     {
       "ue_id": 184,
-      "arrival_s": 419.422,
-      "duration_s": 24.674,
+      "arrival_s": 875.573,
+      "duration_s": 154.772,
       "namespace": "ran-simulator184"
     },
     {
       "ue_id": 185,
-      "arrival_s": 419.425,
-      "duration_s": 51.959,
+      "arrival_s": 880.267,
+      "duration_s": 25.901,
       "namespace": "ran-simulator185"
     },
     {
       "ue_id": 186,
-      "arrival_s": 420.971,
-      "duration_s": 25.419,
+      "arrival_s": 881.75,
+      "duration_s": 89.748,
       "namespace": "ran-simulator186"
     },
     {
       "ue_id": 187,
-      "arrival_s": 423.681,
-      "duration_s": 22.211,
+      "arrival_s": 883.339,
+      "duration_s": 20.99,
       "namespace": "ran-simulator187"
     },
     {
       "ue_id": 188,
-      "arrival_s": 424.586,
-      "duration_s": 1.451,
+      "arrival_s": 896.72,
+      "duration_s": 158.657,
       "namespace": "ran-simulator188"
     },
     {
       "ue_id": 189,
-      "arrival_s": 426.769,
-      "duration_s": 8.016,
+      "arrival_s": 902.91,
+      "duration_s": 188.627,
       "namespace": "ran-simulator189"
     },
     {
       "ue_id": 190,
-      "arrival_s": 427.523,
-      "duration_s": 37.68,
+      "arrival_s": 903.145,
+      "duration_s": 64.027,
       "namespace": "ran-simulator190"
     },
     {
       "ue_id": 191,
-      "arrival_s": 430.067,
-      "duration_s": 7.143,
+      "arrival_s": 904.898,
+      "duration_s": 18.405,
       "namespace": "ran-simulator191"
     },
     {
       "ue_id": 192,
-      "arrival_s": 430.807,
-      "duration_s": 10.498,
+      "arrival_s": 907.243,
+      "duration_s": 302.91,
       "namespace": "ran-simulator192"
     },
     {
       "ue_id": 193,
-      "arrival_s": 431.837,
-      "duration_s": 7.01,
+      "arrival_s": 907.993,
+      "duration_s": 72.33,
       "namespace": "ran-simulator193"
     },
     {
       "ue_id": 194,
-      "arrival_s": 432.109,
-      "duration_s": 10.91,
+      "arrival_s": 908.482,
+      "duration_s": 52.422,
       "namespace": "ran-simulator194"
     },
     {
       "ue_id": 195,
-      "arrival_s": 437.748,
-      "duration_s": 22.622,
+      "arrival_s": 912.075,
+      "duration_s": 263.641,
       "namespace": "ran-simulator195"
     },
     {
       "ue_id": 196,
-      "arrival_s": 442.41,
-      "duration_s": 19.117,
+      "arrival_s": 912.63,
+      "duration_s": 83.799,
       "namespace": "ran-simulator196"
     },
     {
       "ue_id": 197,
-      "arrival_s": 443.126,
-      "duration_s": 15.879,
+      "arrival_s": 913.055,
+      "duration_s": 20.324,
       "namespace": "ran-simulator197"
     },
     {
       "ue_id": 198,
-      "arrival_s": 443.127,
-      "duration_s": 6.763,
+      "arrival_s": 914.456,
+      "duration_s": 104.942,
       "namespace": "ran-simulator198"
     },
     {
       "ue_id": 199,
-      "arrival_s": 444.251,
-      "duration_s": 17.349,
+      "arrival_s": 926.668,
+      "duration_s": 34.932,
       "namespace": "ran-simulator199"
     },
     {
       "ue_id": 200,
-      "arrival_s": 446.377,
-      "duration_s": 12.509,
+      "arrival_s": 928.299,
+      "duration_s": 214.324,
       "namespace": "ran-simulator200"
     },
     {
       "ue_id": 201,
-      "arrival_s": 447.545,
-      "duration_s": 4.808,
+      "arrival_s": 930.406,
+      "duration_s": 78.21,
       "namespace": "ran-simulator201"
     },
     {
       "ue_id": 202,
-      "arrival_s": 448.827,
-      "duration_s": 46.289,
+      "arrival_s": 934.982,
+      "duration_s": 122.782,
       "namespace": "ran-simulator202"
     },
     {
       "ue_id": 203,
-      "arrival_s": 452.006,
-      "duration_s": 3.719,
+      "arrival_s": 945.692,
+      "duration_s": 299.704,
       "namespace": "ran-simulator203"
     },
     {
       "ue_id": 204,
-      "arrival_s": 452.183,
-      "duration_s": 14.491,
+      "arrival_s": 947.432,
+      "duration_s": 115.475,
       "namespace": "ran-simulator204"
     },
     {
       "ue_id": 205,
-      "arrival_s": 454.188,
-      "duration_s": 8.165,
+      "arrival_s": 948.305,
+      "duration_s": 11.096,
       "namespace": "ran-simulator205"
     },
     {
       "ue_id": 206,
-      "arrival_s": 457.6,
-      "duration_s": 27.817,
+      "arrival_s": 952.248,
+      "duration_s": 87.113,
       "namespace": "ran-simulator206"
     },
     {
       "ue_id": 207,
-      "arrival_s": 459.834,
-      "duration_s": 5.089,
+      "arrival_s": 957.568,
+      "duration_s": 127.555,
       "namespace": "ran-simulator207"
     },
     {
       "ue_id": 208,
-      "arrival_s": 460.278,
-      "duration_s": 0.495,
+      "arrival_s": 959.257,
+      "duration_s": 36.587,
       "namespace": "ran-simulator208"
     },
     {
       "ue_id": 209,
-      "arrival_s": 460.84,
-      "duration_s": 12.892,
+      "arrival_s": 968.68,
+      "duration_s": 121.519,
       "namespace": "ran-simulator209"
     },
     {
       "ue_id": 210,
-      "arrival_s": 464.631,
-      "duration_s": 1.512,
+      "arrival_s": 979.749,
+      "duration_s": 112.06,
       "namespace": "ran-simulator210"
     },
     {
       "ue_id": 211,
-      "arrival_s": 465.701,
-      "duration_s": 19.872,
+      "arrival_s": 983.725,
+      "duration_s": 14.573,
       "namespace": "ran-simulator211"
     },
     {
       "ue_id": 212,
-      "arrival_s": 466.134,
-      "duration_s": 23.838,
+      "arrival_s": 984.968,
+      "duration_s": 352.303,
       "namespace": "ran-simulator212"
     },
     {
       "ue_id": 213,
-      "arrival_s": 467.497,
-      "duration_s": 5.594,
+      "arrival_s": 992.51,
+      "duration_s": 241.018,
       "namespace": "ran-simulator213"
     },
     {
       "ue_id": 214,
-      "arrival_s": 469.632,
-      "duration_s": 0.111,
+      "arrival_s": 996.825,
+      "duration_s": 99.769,
       "namespace": "ran-simulator214"
     },
     {
       "ue_id": 215,
-      "arrival_s": 472.412,
-      "duration_s": 29.398,
+      "arrival_s": 1000.429,
+      "duration_s": 127.386,
       "namespace": "ran-simulator215"
     },
     {
       "ue_id": 216,
-      "arrival_s": 472.638,
-      "duration_s": 11.073,
+      "arrival_s": 1005.001,
+      "duration_s": 35.923,
       "namespace": "ran-simulator216"
     },
     {
       "ue_id": 217,
-      "arrival_s": 473.025,
-      "duration_s": 63.386,
+      "arrival_s": 1006.825,
+      "duration_s": 75.08,
       "namespace": "ran-simulator217"
     },
     {
       "ue_id": 218,
-      "arrival_s": 474.484,
-      "duration_s": 1.03,
+      "arrival_s": 1010.193,
+      "duration_s": 244.797,
       "namespace": "ran-simulator218"
     },
     {
       "ue_id": 219,
-      "arrival_s": 475.057,
-      "duration_s": 37.722,
+      "arrival_s": 1017.807,
+      "duration_s": 35.63,
       "namespace": "ran-simulator219"
     },
     {
       "ue_id": 220,
-      "arrival_s": 476.277,
-      "duration_s": 32.331,
+      "arrival_s": 1018.594,
+      "duration_s": 154.879,
       "namespace": "ran-simulator220"
     },
     {
       "ue_id": 221,
-      "arrival_s": 478.479,
-      "duration_s": 88.279,
+      "arrival_s": 1040.261,
+      "duration_s": 27.634,
       "namespace": "ran-simulator221"
     },
     {
       "ue_id": 222,
-      "arrival_s": 480.289,
-      "duration_s": 59.93,
+      "arrival_s": 1040.82,
+      "duration_s": 204.674,
       "namespace": "ran-simulator222"
     },
     {
       "ue_id": 223,
-      "arrival_s": 484.73,
-      "duration_s": 18.969,
+      "arrival_s": 1048.36,
+      "duration_s": 111.062,
       "namespace": "ran-simulator223"
     },
     {
       "ue_id": 224,
-      "arrival_s": 487.271,
-      "duration_s": 14.055,
+      "arrival_s": 1051.945,
+      "duration_s": 61.736,
       "namespace": "ran-simulator224"
     },
     {
       "ue_id": 225,
-      "arrival_s": 490.821,
-      "duration_s": 15.876,
+      "arrival_s": 1057.692,
+      "duration_s": 147.32,
       "namespace": "ran-simulator225"
     },
     {
       "ue_id": 226,
-      "arrival_s": 495.371,
-      "duration_s": 27.225,
+      "arrival_s": 1066.978,
+      "duration_s": 191.253,
       "namespace": "ran-simulator226"
     },
     {
       "ue_id": 227,
-      "arrival_s": 496.659,
-      "duration_s": 6.0,
+      "arrival_s": 1074.824,
+      "duration_s": 112.856,
       "namespace": "ran-simulator227"
     },
     {
       "ue_id": 228,
-      "arrival_s": 497.227,
-      "duration_s": 20.304,
+      "arrival_s": 1079.931,
+      "duration_s": 79.108,
       "namespace": "ran-simulator228"
     },
     {
       "ue_id": 229,
-      "arrival_s": 500.13,
-      "duration_s": 14.734,
+      "arrival_s": 1081.366,
+      "duration_s": 45.032,
       "namespace": "ran-simulator229"
     },
     {
       "ue_id": 230,
-      "arrival_s": 502.101,
-      "duration_s": 6.421,
+      "arrival_s": 1084.285,
+      "duration_s": 117.531,
       "namespace": "ran-simulator230"
     },
     {
       "ue_id": 231,
-      "arrival_s": 502.262,
-      "duration_s": 6.73,
+      "arrival_s": 1085.066,
+      "duration_s": 373.231,
       "namespace": "ran-simulator231"
     },
     {
       "ue_id": 232,
-      "arrival_s": 502.897,
-      "duration_s": 7.705,
+      "arrival_s": 1093.253,
+      "duration_s": 33.46,
       "namespace": "ran-simulator232"
     },
     {
       "ue_id": 233,
-      "arrival_s": 504.45,
-      "duration_s": 2.979,
+      "arrival_s": 1093.664,
+      "duration_s": 139.474,
       "namespace": "ran-simulator233"
     },
     {
       "ue_id": 234,
-      "arrival_s": 504.976,
-      "duration_s": 23.68,
+      "arrival_s": 1102.192,
+      "duration_s": 93.786,
       "namespace": "ran-simulator234"
     },
     {
       "ue_id": 235,
-      "arrival_s": 507.428,
-      "duration_s": 1.328,
+      "arrival_s": 1108.756,
+      "duration_s": 15.381,
       "namespace": "ran-simulator235"
     },
     {
       "ue_id": 236,
-      "arrival_s": 508.475,
-      "duration_s": 15.644,
+      "arrival_s": 1116.515,
+      "duration_s": 42.82,
       "namespace": "ran-simulator236"
     },
     {
       "ue_id": 237,
-      "arrival_s": 509.55,
-      "duration_s": 4.634,
+      "arrival_s": 1123.518,
+      "duration_s": 13.391,
       "namespace": "ran-simulator237"
     },
     {
       "ue_id": 238,
-      "arrival_s": 510.64,
-      "duration_s": 47.044,
+      "arrival_s": 1125.272,
+      "duration_s": 48.139,
       "namespace": "ran-simulator238"
     },
     {
       "ue_id": 239,
-      "arrival_s": 512.394,
-      "duration_s": 23.783,
+      "arrival_s": 1128.421,
+      "duration_s": 292.396,
       "namespace": "ran-simulator239"
     },
     {
       "ue_id": 240,
-      "arrival_s": 516.28,
-      "duration_s": 29.014,
+      "arrival_s": 1129.553,
+      "duration_s": 149.444,
       "namespace": "ran-simulator240"
     },
     {
       "ue_id": 241,
-      "arrival_s": 517.237,
-      "duration_s": 0.118,
+      "arrival_s": 1133.186,
+      "duration_s": 43.34,
       "namespace": "ran-simulator241"
     },
     {
       "ue_id": 242,
-      "arrival_s": 518.104,
-      "duration_s": 28.006,
+      "arrival_s": 1138.271,
+      "duration_s": 407.995,
       "namespace": "ran-simulator242"
     },
     {
       "ue_id": 243,
-      "arrival_s": 521.945,
-      "duration_s": 61.336,
+      "arrival_s": 1139.035,
+      "duration_s": 47.958,
       "namespace": "ran-simulator243"
     },
     {
       "ue_id": 244,
-      "arrival_s": 523.031,
-      "duration_s": 27.528,
+      "arrival_s": 1144.162,
+      "duration_s": 24.844,
       "namespace": "ran-simulator244"
     },
     {
       "ue_id": 245,
-      "arrival_s": 524.611,
-      "duration_s": 18.489,
+      "arrival_s": 1150.013,
+      "duration_s": 92.056,
       "namespace": "ran-simulator245"
     },
     {
       "ue_id": 246,
-      "arrival_s": 525.109,
-      "duration_s": 4.954,
+      "arrival_s": 1154.157,
+      "duration_s": 16.168,
       "namespace": "ran-simulator246"
     },
     {
       "ue_id": 247,
-      "arrival_s": 526.254,
-      "duration_s": 0.589,
+      "arrival_s": 1155.715,
+      "duration_s": 326.117,
       "namespace": "ran-simulator247"
     },
     {
       "ue_id": 248,
-      "arrival_s": 527.074,
-      "duration_s": 22.735,
+      "arrival_s": 1156.83,
+      "duration_s": 192.631,
       "namespace": "ran-simulator248"
     },
     {
       "ue_id": 249,
-      "arrival_s": 528.11,
-      "duration_s": 3.608,
+      "arrival_s": 1175.752,
+      "duration_s": 66.051,
       "namespace": "ran-simulator249"
     },
     {
       "ue_id": 250,
-      "arrival_s": 529.37,
-      "duration_s": 2.731,
+      "arrival_s": 1175.826,
+      "duration_s": 113.339,
       "namespace": "ran-simulator250"
     },
     {
       "ue_id": 251,
-      "arrival_s": 531.317,
-      "duration_s": 0.547,
+      "arrival_s": 1180.348,
+      "duration_s": 138.674,
       "namespace": "ran-simulator251"
     },
     {
       "ue_id": 252,
-      "arrival_s": 532.319,
-      "duration_s": 16.62,
+      "arrival_s": 1183.583,
+      "duration_s": 149.565,
       "namespace": "ran-simulator252"
     },
     {
       "ue_id": 253,
-      "arrival_s": 532.374,
-      "duration_s": 20.586,
+      "arrival_s": 1185.141,
+      "duration_s": 92.417,
       "namespace": "ran-simulator253"
     },
     {
       "ue_id": 254,
-      "arrival_s": 532.665,
-      "duration_s": 12.387,
+      "arrival_s": 1185.222,
+      "duration_s": 65.118,
       "namespace": "ran-simulator254"
     },
     {
       "ue_id": 255,
-      "arrival_s": 532.768,
-      "duration_s": 9.532,
+      "arrival_s": 1192.308,
+      "duration_s": 97.31,
       "namespace": "ran-simulator255"
     },
     {
       "ue_id": 256,
-      "arrival_s": 533.244,
-      "duration_s": 7.916,
+      "arrival_s": 1196.959,
+      "duration_s": 844.888,
       "namespace": "ran-simulator256"
     },
     {
       "ue_id": 257,
-      "arrival_s": 536.109,
-      "duration_s": 9.533,
+      "arrival_s": 1204.717,
+      "duration_s": 168.917,
       "namespace": "ran-simulator257"
     },
     {
       "ue_id": 258,
-      "arrival_s": 538.897,
-      "duration_s": 35.667,
+      "arrival_s": 1205.634,
+      "duration_s": 19.066,
       "namespace": "ran-simulator258"
     },
     {
       "ue_id": 259,
-      "arrival_s": 539.479,
-      "duration_s": 1.709,
+      "arrival_s": 1206.477,
+      "duration_s": 164.715,
       "namespace": "ran-simulator259"
     },
     {
       "ue_id": 260,
-      "arrival_s": 539.518,
-      "duration_s": 15.505,
+      "arrival_s": 1207.781,
+      "duration_s": 129.11,
       "namespace": "ran-simulator260"
     },
     {
       "ue_id": 261,
-      "arrival_s": 558.102,
-      "duration_s": 8.614,
+      "arrival_s": 1208.144,
+      "duration_s": 227.628,
       "namespace": "ran-simulator261"
     },
     {
       "ue_id": 262,
-      "arrival_s": 560.202,
-      "duration_s": 30.395,
+      "arrival_s": 1209.271,
+      "duration_s": 25.612,
       "namespace": "ran-simulator262"
     },
     {
       "ue_id": 263,
-      "arrival_s": 562.312,
-      "duration_s": 28.067,
+      "arrival_s": 1215.093,
+      "duration_s": 37.044,
       "namespace": "ran-simulator263"
     },
     {
       "ue_id": 264,
-      "arrival_s": 568.288,
-      "duration_s": 4.447,
+      "arrival_s": 1219.805,
+      "duration_s": 52.902,
       "namespace": "ran-simulator264"
     },
     {
       "ue_id": 265,
-      "arrival_s": 568.329,
-      "duration_s": 3.307,
+      "arrival_s": 1220.018,
+      "duration_s": 70.127,
       "namespace": "ran-simulator265"
     },
     {
       "ue_id": 266,
-      "arrival_s": 568.599,
-      "duration_s": 22.14,
+      "arrival_s": 1221.328,
+      "duration_s": 114.759,
       "namespace": "ran-simulator266"
     },
     {
       "ue_id": 267,
-      "arrival_s": 570.259,
-      "duration_s": 4.917,
+      "arrival_s": 1222.87,
+      "duration_s": 25.746,
       "namespace": "ran-simulator267"
     },
     {
       "ue_id": 268,
-      "arrival_s": 572.663,
-      "duration_s": 29.126,
+      "arrival_s": 1236.722,
+      "duration_s": 68.956,
       "namespace": "ran-simulator268"
     },
     {
       "ue_id": 269,
-      "arrival_s": 573.031,
-      "duration_s": 18.692,
+      "arrival_s": 1242.955,
+      "duration_s": 55.513,
       "namespace": "ran-simulator269"
     },
     {
       "ue_id": 270,
-      "arrival_s": 575.787,
-      "duration_s": 2.433,
+      "arrival_s": 1249.548,
+      "duration_s": 15.125,
       "namespace": "ran-simulator270"
     },
     {
       "ue_id": 271,
-      "arrival_s": 579.208,
-      "duration_s": 66.889,
+      "arrival_s": 1251.401,
+      "duration_s": 119.068,
       "namespace": "ran-simulator271"
     },
     {
       "ue_id": 272,
-      "arrival_s": 579.437,
-      "duration_s": 0.52,
+      "arrival_s": 1262.254,
+      "duration_s": 176.349,
       "namespace": "ran-simulator272"
     },
     {
       "ue_id": 273,
-      "arrival_s": 580.185,
-      "duration_s": 22.624,
+      "arrival_s": 1269.195,
+      "duration_s": 230.511,
       "namespace": "ran-simulator273"
     },
     {
       "ue_id": 274,
-      "arrival_s": 586.533,
-      "duration_s": 10.105,
+      "arrival_s": 1273.226,
+      "duration_s": 147.508,
       "namespace": "ran-simulator274"
     },
     {
       "ue_id": 275,
-      "arrival_s": 589.044,
-      "duration_s": 1.581,
+      "arrival_s": 1284.749,
+      "duration_s": 149.083,
       "namespace": "ran-simulator275"
     },
     {
       "ue_id": 276,
-      "arrival_s": 591.39,
-      "duration_s": 19.737,
+      "arrival_s": 1298.908,
+      "duration_s": 92.398,
       "namespace": "ran-simulator276"
     },
     {
       "ue_id": 277,
-      "arrival_s": 591.605,
-      "duration_s": 29.61,
+      "arrival_s": 1301.197,
+      "duration_s": 157.868,
       "namespace": "ran-simulator277"
     },
     {
       "ue_id": 278,
-      "arrival_s": 595.404,
-      "duration_s": 18.346,
+      "arrival_s": 1302.988,
+      "duration_s": 108.202,
       "namespace": "ran-simulator278"
     },
     {
       "ue_id": 279,
-      "arrival_s": 595.662,
-      "duration_s": 82.51,
+      "arrival_s": 1303.869,
+      "duration_s": 70.896,
       "namespace": "ran-simulator279"
     },
     {
       "ue_id": 280,
-      "arrival_s": 598.714,
-      "duration_s": 8.53,
+      "arrival_s": 1311.266,
+      "duration_s": 18.868,
       "namespace": "ran-simulator280"
     },
     {
       "ue_id": 281,
-      "arrival_s": 599.833,
-      "duration_s": 9.259,
+      "arrival_s": 1319.492,
+      "duration_s": 119.266,
       "namespace": "ran-simulator281"
     },
     {
       "ue_id": 282,
-      "arrival_s": 601.243,
-      "duration_s": 8.348,
+      "arrival_s": 1333.252,
+      "duration_s": 26.38,
       "namespace": "ran-simulator282"
     },
     {
       "ue_id": 283,
-      "arrival_s": 605.031,
-      "duration_s": 34.557,
+      "arrival_s": 1334.477,
+      "duration_s": 42.459,
       "namespace": "ran-simulator283"
     },
     {
       "ue_id": 284,
-      "arrival_s": 605.254,
-      "duration_s": 64.775,
+      "arrival_s": 1336.833,
+      "duration_s": 22.981,
       "namespace": "ran-simulator284"
     },
     {
       "ue_id": 285,
-      "arrival_s": 607.273,
-      "duration_s": 35.288,
+      "arrival_s": 1347.124,
+      "duration_s": 83.675,
       "namespace": "ran-simulator285"
     },
     {
       "ue_id": 286,
-      "arrival_s": 609.731,
-      "duration_s": 11.436,
+      "arrival_s": 1347.62,
+      "duration_s": 14.409,
       "namespace": "ran-simulator286"
     },
     {
       "ue_id": 287,
-      "arrival_s": 612.378,
-      "duration_s": 67.321,
+      "arrival_s": 1358.678,
+      "duration_s": 338.972,
       "namespace": "ran-simulator287"
     },
     {
       "ue_id": 288,
-      "arrival_s": 613.007,
-      "duration_s": 33.026,
+      "arrival_s": 1362.594,
+      "duration_s": 30.392,
       "namespace": "ran-simulator288"
     },
     {
       "ue_id": 289,
-      "arrival_s": 614.552,
-      "duration_s": 13.214,
+      "arrival_s": 1362.781,
+      "duration_s": 43.108,
       "namespace": "ran-simulator289"
     },
     {
       "ue_id": 290,
-      "arrival_s": 615.696,
-      "duration_s": 26.263,
+      "arrival_s": 1362.811,
+      "duration_s": 73.046,
       "namespace": "ran-simulator290"
     },
     {
       "ue_id": 291,
-      "arrival_s": 616.321,
-      "duration_s": 38.172,
+      "arrival_s": 1364.217,
+      "duration_s": 128.311,
       "namespace": "ran-simulator291"
     },
     {
       "ue_id": 292,
-      "arrival_s": 619.874,
-      "duration_s": 1.813,
+      "arrival_s": 1379.638,
+      "duration_s": 38.884,
       "namespace": "ran-simulator292"
     },
     {
       "ue_id": 293,
-      "arrival_s": 624.142,
-      "duration_s": 5.591,
+      "arrival_s": 1385.304,
+      "duration_s": 46.063,
       "namespace": "ran-simulator293"
     },
     {
       "ue_id": 294,
-      "arrival_s": 625.392,
-      "duration_s": 18.849,
+      "arrival_s": 1385.459,
+      "duration_s": 24.478,
       "namespace": "ran-simulator294"
     },
     {
       "ue_id": 295,
-      "arrival_s": 626.344,
-      "duration_s": 0.582,
+      "arrival_s": 1411.848,
+      "duration_s": 47.77,
       "namespace": "ran-simulator295"
     },
     {
       "ue_id": 296,
-      "arrival_s": 630.151,
-      "duration_s": 4.014,
+      "arrival_s": 1422.706,
+      "duration_s": 459.491,
       "namespace": "ran-simulator296"
     },
     {
       "ue_id": 297,
-      "arrival_s": 630.628,
-      "duration_s": 31.973,
+      "arrival_s": 1424.944,
+      "duration_s": 68.853,
       "namespace": "ran-simulator297"
     },
     {
       "ue_id": 298,
-      "arrival_s": 631.46,
-      "duration_s": 42.459,
+      "arrival_s": 1426.954,
+      "duration_s": 67.798,
       "namespace": "ran-simulator298"
     },
     {
       "ue_id": 299,
-      "arrival_s": 633.876,
-      "duration_s": 6.467,
+      "arrival_s": 1454.301,
+      "duration_s": 449.085,
       "namespace": "ran-simulator299"
     },
     {
       "ue_id": 300,
-      "arrival_s": 633.897,
-      "duration_s": 59.154,
+      "arrival_s": 1455.866,
+      "duration_s": 64.381,
       "namespace": "ran-simulator300"
     },
     {
       "ue_id": 301,
-      "arrival_s": 634.076,
-      "duration_s": 25.465,
+      "arrival_s": 1458.171,
+      "duration_s": 17.841,
       "namespace": "ran-simulator301"
     },
     {
       "ue_id": 302,
-      "arrival_s": 635.417,
-      "duration_s": 28.39,
+      "arrival_s": 1462.194,
+      "duration_s": 136.872,
       "namespace": "ran-simulator302"
     },
     {
       "ue_id": 303,
-      "arrival_s": 637.763,
-      "duration_s": 20.764,
+      "arrival_s": 1470.699,
+      "duration_s": 189.033,
       "namespace": "ran-simulator303"
     },
     {
       "ue_id": 304,
-      "arrival_s": 639.113,
-      "duration_s": 31.494,
+      "arrival_s": 1479.254,
+      "duration_s": 78.873,
       "namespace": "ran-simulator304"
     },
     {
       "ue_id": 305,
-      "arrival_s": 639.308,
-      "duration_s": 5.01,
+      "arrival_s": 1486.771,
+      "duration_s": 101.962,
       "namespace": "ran-simulator305"
     },
     {
       "ue_id": 306,
-      "arrival_s": 641.662,
-      "duration_s": 7.312,
+      "arrival_s": 1499.033,
+      "duration_s": 52.459,
       "namespace": "ran-simulator306"
     },
     {
       "ue_id": 307,
-      "arrival_s": 643.405,
-      "duration_s": 12.821,
+      "arrival_s": 1501.749,
+      "duration_s": 137.312,
       "namespace": "ran-simulator307"
     },
     {
       "ue_id": 308,
-      "arrival_s": 644.919,
-      "duration_s": 11.085,
+      "arrival_s": 1504.835,
+      "duration_s": 105.065,
       "namespace": "ran-simulator308"
     },
     {
       "ue_id": 309,
-      "arrival_s": 647.659,
-      "duration_s": 8.033,
+      "arrival_s": 1506.446,
+      "duration_s": 33.502,
       "namespace": "ran-simulator309"
     },
     {
       "ue_id": 310,
-      "arrival_s": 650.086,
-      "duration_s": 6.319,
+      "arrival_s": 1508.633,
+      "duration_s": 34.983,
       "namespace": "ran-simulator310"
     },
     {
       "ue_id": 311,
-      "arrival_s": 650.665,
-      "duration_s": 2.572,
+      "arrival_s": 1509.424,
+      "duration_s": 20.203,
       "namespace": "ran-simulator311"
     },
     {
       "ue_id": 312,
-      "arrival_s": 651.093,
-      "duration_s": 2.547,
+      "arrival_s": 1510.373,
+      "duration_s": 87.964,
       "namespace": "ran-simulator312"
     },
     {
       "ue_id": 313,
-      "arrival_s": 652.628,
-      "duration_s": 28.726,
+      "arrival_s": 1513.28,
+      "duration_s": 662.301,
       "namespace": "ran-simulator313"
     },
     {
       "ue_id": 314,
-      "arrival_s": 653.038,
-      "duration_s": 4.877,
+      "arrival_s": 1516.414,
+      "duration_s": 94.975,
       "namespace": "ran-simulator314"
     },
     {
       "ue_id": 315,
-      "arrival_s": 654.362,
-      "duration_s": 25.79,
+      "arrival_s": 1525.304,
+      "duration_s": 108.951,
       "namespace": "ran-simulator315"
     },
     {
       "ue_id": 316,
-      "arrival_s": 661.872,
-      "duration_s": 14.874,
+      "arrival_s": 1530.415,
+      "duration_s": 132.551,
       "namespace": "ran-simulator316"
     },
     {
       "ue_id": 317,
-      "arrival_s": 662.538,
-      "duration_s": 2.119,
+      "arrival_s": 1533.27,
+      "duration_s": 101.505,
       "namespace": "ran-simulator317"
     },
     {
       "ue_id": 318,
-      "arrival_s": 662.969,
-      "duration_s": 5.162,
+      "arrival_s": 1534.273,
+      "duration_s": 60.36,
       "namespace": "ran-simulator318"
     },
     {
       "ue_id": 319,
-      "arrival_s": 663.365,
-      "duration_s": 0.285,
+      "arrival_s": 1544.332,
+      "duration_s": 51.166,
       "namespace": "ran-simulator319"
     },
     {
       "ue_id": 320,
-      "arrival_s": 664.893,
-      "duration_s": 6.413,
+      "arrival_s": 1547.523,
+      "duration_s": 38.479,
       "namespace": "ran-simulator320"
     },
     {
       "ue_id": 321,
-      "arrival_s": 672.215,
-      "duration_s": 16.12,
+      "arrival_s": 1550.414,
+      "duration_s": 15.228,
       "namespace": "ran-simulator321"
     },
     {
       "ue_id": 322,
-      "arrival_s": 674.606,
-      "duration_s": 2.7,
+      "arrival_s": 1551.656,
+      "duration_s": 163.446,
       "namespace": "ran-simulator322"
     },
     {
       "ue_id": 323,
-      "arrival_s": 678.662,
-      "duration_s": 13.501,
+      "arrival_s": 1551.734,
+      "duration_s": 51.451,
       "namespace": "ran-simulator323"
     },
     {
       "ue_id": 324,
-      "arrival_s": 682.785,
-      "duration_s": 17.069,
+      "arrival_s": 1553.752,
+      "duration_s": 33.132,
       "namespace": "ran-simulator324"
     },
     {
       "ue_id": 325,
-      "arrival_s": 684.053,
-      "duration_s": 11.613,
+      "arrival_s": 1561.195,
+      "duration_s": 39.035,
       "namespace": "ran-simulator325"
     },
     {
       "ue_id": 326,
-      "arrival_s": 684.46,
-      "duration_s": 1.055,
+      "arrival_s": 1564.672,
+      "duration_s": 118.211,
       "namespace": "ran-simulator326"
     },
     {
       "ue_id": 327,
-      "arrival_s": 690.123,
-      "duration_s": 12.991,
+      "arrival_s": 1564.748,
+      "duration_s": 61.944,
       "namespace": "ran-simulator327"
     },
     {
       "ue_id": 328,
-      "arrival_s": 693.576,
-      "duration_s": 10.24,
+      "arrival_s": 1565.153,
+      "duration_s": 28.719,
       "namespace": "ran-simulator328"
     },
     {
       "ue_id": 329,
-      "arrival_s": 693.73,
-      "duration_s": 19.855,
+      "arrival_s": 1566.703,
+      "duration_s": 128.499,
       "namespace": "ran-simulator329"
     },
     {
       "ue_id": 330,
-      "arrival_s": 693.84,
-      "duration_s": 3.232,
+      "arrival_s": 1569.824,
+      "duration_s": 14.236,
       "namespace": "ran-simulator330"
     },
     {
       "ue_id": 331,
-      "arrival_s": 695.495,
-      "duration_s": 7.243,
+      "arrival_s": 1570.702,
+      "duration_s": 38.951,
       "namespace": "ran-simulator331"
     },
     {
       "ue_id": 332,
-      "arrival_s": 705.7,
-      "duration_s": 2.522,
+      "arrival_s": 1573.058,
+      "duration_s": 28.782,
       "namespace": "ran-simulator332"
     },
     {
       "ue_id": 333,
-      "arrival_s": 708.592,
-      "duration_s": 18.644,
+      "arrival_s": 1574.167,
+      "duration_s": 38.003,
       "namespace": "ran-simulator333"
     },
     {
       "ue_id": 334,
-      "arrival_s": 711.72,
-      "duration_s": 5.116,
+      "arrival_s": 1574.236,
+      "duration_s": 174.558,
       "namespace": "ran-simulator334"
     },
     {
       "ue_id": 335,
-      "arrival_s": 713.199,
-      "duration_s": 11.975,
+      "arrival_s": 1582.591,
+      "duration_s": 59.254,
       "namespace": "ran-simulator335"
     },
     {
       "ue_id": 336,
-      "arrival_s": 714.368,
-      "duration_s": 39.346,
+      "arrival_s": 1585.767,
+      "duration_s": 31.08,
       "namespace": "ran-simulator336"
     },
     {
       "ue_id": 337,
-      "arrival_s": 723.585,
-      "duration_s": 7.288,
+      "arrival_s": 1587.525,
+      "duration_s": 71.355,
       "namespace": "ran-simulator337"
     },
     {
       "ue_id": 338,
-      "arrival_s": 725.525,
-      "duration_s": 18.813,
+      "arrival_s": 1588.409,
+      "duration_s": 73.32,
       "namespace": "ran-simulator338"
     },
     {
       "ue_id": 339,
-      "arrival_s": 728.22,
-      "duration_s": 58.973,
+      "arrival_s": 1599.0,
+      "duration_s": 54.121,
       "namespace": "ran-simulator339"
     },
     {
       "ue_id": 340,
-      "arrival_s": 728.686,
-      "duration_s": 4.74,
+      "arrival_s": 1607.434,
+      "duration_s": 124.459,
       "namespace": "ran-simulator340"
     },
     {
       "ue_id": 341,
-      "arrival_s": 730.846,
-      "duration_s": 3.417,
+      "arrival_s": 1608.042,
+      "duration_s": 257.237,
       "namespace": "ran-simulator341"
     },
     {
       "ue_id": 342,
-      "arrival_s": 731.228,
-      "duration_s": 1.561,
+      "arrival_s": 1608.18,
+      "duration_s": 20.398,
       "namespace": "ran-simulator342"
     },
     {
       "ue_id": 343,
-      "arrival_s": 731.233,
-      "duration_s": 11.975,
+      "arrival_s": 1608.374,
+      "duration_s": 51.729,
       "namespace": "ran-simulator343"
     },
     {
       "ue_id": 344,
-      "arrival_s": 733.035,
-      "duration_s": 6.885,
+      "arrival_s": 1608.375,
+      "duration_s": 10.729,
       "namespace": "ran-simulator344"
     },
     {
       "ue_id": 345,
-      "arrival_s": 733.562,
-      "duration_s": 24.549,
+      "arrival_s": 1622.565,
+      "duration_s": 64.234,
       "namespace": "ran-simulator345"
     },
     {
       "ue_id": 346,
-      "arrival_s": 735.99,
-      "duration_s": 12.104,
+      "arrival_s": 1623.323,
+      "duration_s": 94.175,
       "namespace": "ran-simulator346"
     },
     {
       "ue_id": 347,
-      "arrival_s": 738.315,
-      "duration_s": 51.517,
+      "arrival_s": 1625.08,
+      "duration_s": 173.211,
       "namespace": "ran-simulator347"
     },
     {
       "ue_id": 348,
-      "arrival_s": 741.416,
-      "duration_s": 19.62,
+      "arrival_s": 1633.309,
+      "duration_s": 262.406,
       "namespace": "ran-simulator348"
     },
     {
       "ue_id": 349,
-      "arrival_s": 743.581,
-      "duration_s": 54.262,
+      "arrival_s": 1644.264,
+      "duration_s": 10.231,
       "namespace": "ran-simulator349"
     },
     {
       "ue_id": 350,
-      "arrival_s": 744.688,
-      "duration_s": 15.73,
+      "arrival_s": 1646.463,
+      "duration_s": 201.725,
       "namespace": "ran-simulator350"
     },
     {
       "ue_id": 351,
-      "arrival_s": 746.774,
-      "duration_s": 47.809,
+      "arrival_s": 1648.85,
+      "duration_s": 10.201,
       "namespace": "ran-simulator351"
     },
     {
       "ue_id": 352,
-      "arrival_s": 750.279,
-      "duration_s": 1.482,
+      "arrival_s": 1658.087,
+      "duration_s": 88.841,
       "namespace": "ran-simulator352"
     },
     {
       "ue_id": 353,
-      "arrival_s": 750.641,
-      "duration_s": 7.352,
+      "arrival_s": 1665.528,
+      "duration_s": 64.498,
       "namespace": "ran-simulator353"
     },
     {
       "ue_id": 354,
-      "arrival_s": 753.406,
-      "duration_s": 16.843,
+      "arrival_s": 1672.337,
+      "duration_s": 105.995,
       "namespace": "ran-simulator354"
     },
     {
       "ue_id": 355,
-      "arrival_s": 754.087,
-      "duration_s": 2.656,
+      "arrival_s": 1675.264,
+      "duration_s": 39.869,
       "namespace": "ran-simulator355"
     },
     {
       "ue_id": 356,
-      "arrival_s": 756.421,
-      "duration_s": 24.062,
+      "arrival_s": 1682.408,
+      "duration_s": 75.234,
       "namespace": "ran-simulator356"
     },
     {
       "ue_id": 357,
-      "arrival_s": 762.139,
-      "duration_s": 13.882,
+      "arrival_s": 1683.913,
+      "duration_s": 11.546,
       "namespace": "ran-simulator357"
     },
     {
       "ue_id": 358,
-      "arrival_s": 763.5,
-      "duration_s": 1.677,
+      "arrival_s": 1693.965,
+      "duration_s": 116.372,
       "namespace": "ran-simulator358"
     },
     {
       "ue_id": 359,
-      "arrival_s": 763.582,
-      "duration_s": 11.314,
+      "arrival_s": 1694.656,
+      "duration_s": 63.174,
       "namespace": "ran-simulator359"
     },
     {
       "ue_id": 360,
-      "arrival_s": 764.36,
-      "duration_s": 5.763,
+      "arrival_s": 1700.716,
+      "duration_s": 344.795,
       "namespace": "ran-simulator360"
     },
     {
       "ue_id": 361,
-      "arrival_s": 764.551,
-      "duration_s": 65.357,
+      "arrival_s": 1704.475,
+      "duration_s": 27.599,
       "namespace": "ran-simulator361"
     },
     {
       "ue_id": 362,
-      "arrival_s": 768.167,
-      "duration_s": 17.123,
+      "arrival_s": 1708.463,
+      "duration_s": 21.239,
       "namespace": "ran-simulator362"
     },
     {
       "ue_id": 363,
-      "arrival_s": 774.19,
-      "duration_s": 155.147,
+      "arrival_s": 1709.691,
+      "duration_s": 209.504,
       "namespace": "ran-simulator363"
     },
     {
       "ue_id": 364,
-      "arrival_s": 776.421,
-      "duration_s": 6.281,
+      "arrival_s": 1710.224,
+      "duration_s": 135.445,
       "namespace": "ran-simulator364"
     },
     {
       "ue_id": 365,
-      "arrival_s": 776.503,
-      "duration_s": 28.234,
+      "arrival_s": 1713.438,
+      "duration_s": 34.054,
       "namespace": "ran-simulator365"
     },
     {
       "ue_id": 366,
-      "arrival_s": 777.775,
-      "duration_s": 21.083,
+      "arrival_s": 1717.088,
+      "duration_s": 85.533,
       "namespace": "ran-simulator366"
     },
     {
       "ue_id": 367,
-      "arrival_s": 782.73,
-      "duration_s": 4.005,
+      "arrival_s": 1717.552,
+      "duration_s": 131.268,
       "namespace": "ran-simulator367"
     },
     {
       "ue_id": 368,
-      "arrival_s": 784.491,
-      "duration_s": 20.145,
+      "arrival_s": 1718.449,
+      "duration_s": 328.163,
       "namespace": "ran-simulator368"
     },
     {
       "ue_id": 369,
-      "arrival_s": 785.844,
-      "duration_s": 1.914,
+      "arrival_s": 1719.01,
+      "duration_s": 17.604,
       "namespace": "ran-simulator369"
     },
     {
       "ue_id": 370,
-      "arrival_s": 786.7,
-      "duration_s": 8.109,
+      "arrival_s": 1724.59,
+      "duration_s": 22.126,
       "namespace": "ran-simulator370"
     },
     {
       "ue_id": 371,
-      "arrival_s": 788.918,
-      "duration_s": 39.001,
+      "arrival_s": 1739.352,
+      "duration_s": 92.435,
       "namespace": "ran-simulator371"
     },
     {
       "ue_id": 372,
-      "arrival_s": 789.718,
-      "duration_s": 23.662,
+      "arrival_s": 1743.182,
+      "duration_s": 146.743,
       "namespace": "ran-simulator372"
     },
     {
       "ue_id": 373,
-      "arrival_s": 790.398,
-      "duration_s": 58.079,
+      "arrival_s": 1754.038,
+      "duration_s": 139.192,
       "namespace": "ran-simulator373"
     },
     {
       "ue_id": 374,
-      "arrival_s": 793.758,
-      "duration_s": 15.974,
+      "arrival_s": 1754.229,
+      "duration_s": 58.423,
       "namespace": "ran-simulator374"
     },
     {
       "ue_id": 375,
-      "arrival_s": 794.971,
-      "duration_s": 7.553,
+      "arrival_s": 1766.34,
+      "duration_s": 58.773,
       "namespace": "ran-simulator375"
     },
     {
       "ue_id": 376,
-      "arrival_s": 795.752,
-      "duration_s": 70.255,
+      "arrival_s": 1769.348,
+      "duration_s": 46.277,
       "namespace": "ran-simulator376"
     },
     {
       "ue_id": 377,
-      "arrival_s": 796.788,
-      "duration_s": 14.455,
+      "arrival_s": 1782.385,
+      "duration_s": 21.904,
       "namespace": "ran-simulator377"
     },
     {
       "ue_id": 378,
-      "arrival_s": 805.653,
-      "duration_s": 21.439,
+      "arrival_s": 1789.808,
+      "duration_s": 209.055,
       "namespace": "ran-simulator378"
     },
     {
       "ue_id": 379,
-      "arrival_s": 807.218,
-      "duration_s": 10.663,
+      "arrival_s": 1791.723,
+      "duration_s": 188.512,
       "namespace": "ran-simulator379"
     },
     {
       "ue_id": 380,
-      "arrival_s": 807.633,
-      "duration_s": 8.981,
+      "arrival_s": 1792.498,
+      "duration_s": 61.804,
       "namespace": "ran-simulator380"
     },
     {
       "ue_id": 381,
-      "arrival_s": 810.458,
-      "duration_s": 19.638,
+      "arrival_s": 1802.621,
+      "duration_s": 140.854,
       "namespace": "ran-simulator381"
     },
     {
       "ue_id": 382,
-      "arrival_s": 813.312,
-      "duration_s": 4.552,
+      "arrival_s": 1808.017,
+      "duration_s": 172.94,
       "namespace": "ran-simulator382"
     },
     {
       "ue_id": 383,
-      "arrival_s": 814.906,
-      "duration_s": 52.531,
+      "arrival_s": 1832.893,
+      "duration_s": 275.161,
       "namespace": "ran-simulator383"
     },
     {
       "ue_id": 384,
-      "arrival_s": 816.058,
-      "duration_s": 23.963,
+      "arrival_s": 1839.9,
+      "duration_s": 96.181,
       "namespace": "ran-simulator384"
     },
     {
       "ue_id": 385,
-      "arrival_s": 816.317,
-      "duration_s": 72.347,
+      "arrival_s": 1841.73,
+      "duration_s": 222.374,
       "namespace": "ran-simulator385"
     },
     {
       "ue_id": 386,
-      "arrival_s": 818.195,
-      "duration_s": 5.47,
+      "arrival_s": 1842.876,
+      "duration_s": 106.359,
       "namespace": "ran-simulator386"
     },
     {
       "ue_id": 387,
-      "arrival_s": 818.54,
-      "duration_s": 16.007,
+      "arrival_s": 1856.459,
+      "duration_s": 44.686,
       "namespace": "ran-simulator387"
     },
     {
       "ue_id": 388,
-      "arrival_s": 820.147,
-      "duration_s": 1.957,
+      "arrival_s": 1860.392,
+      "duration_s": 67.22,
       "namespace": "ran-simulator388"
     },
     {
       "ue_id": 389,
-      "arrival_s": 829.869,
-      "duration_s": 48.821,
+      "arrival_s": 1863.429,
+      "duration_s": 18.666,
       "namespace": "ran-simulator389"
     },
     {
       "ue_id": 390,
-      "arrival_s": 831.106,
-      "duration_s": 2.499,
+      "arrival_s": 1869.918,
+      "duration_s": 134.065,
       "namespace": "ran-simulator390"
     },
     {
       "ue_id": 391,
-      "arrival_s": 834.676,
-      "duration_s": 13.798,
+      "arrival_s": 1874.371,
+      "duration_s": 120.659,
       "namespace": "ran-simulator391"
     },
     {
       "ue_id": 392,
-      "arrival_s": 837.198,
-      "duration_s": 14.221,
+      "arrival_s": 1874.386,
+      "duration_s": 120.544,
       "namespace": "ran-simulator392"
     },
     {
       "ue_id": 393,
-      "arrival_s": 837.836,
-      "duration_s": 36.003,
+      "arrival_s": 1879.191,
+      "duration_s": 66.642,
       "namespace": "ran-simulator393"
     },
     {
       "ue_id": 394,
-      "arrival_s": 845.685,
-      "duration_s": 5.587,
+      "arrival_s": 1888.255,
+      "duration_s": 147.2,
       "namespace": "ran-simulator394"
     },
     {
       "ue_id": 395,
-      "arrival_s": 847.288,
-      "duration_s": 9.677,
+      "arrival_s": 1896.666,
+      "duration_s": 14.717,
       "namespace": "ran-simulator395"
     },
     {
       "ue_id": 396,
-      "arrival_s": 852.386,
-      "duration_s": 14.195,
+      "arrival_s": 1907.955,
+      "duration_s": 136.47,
       "namespace": "ran-simulator396"
     },
     {
       "ue_id": 397,
-      "arrival_s": 856.616,
-      "duration_s": 39.906,
+      "arrival_s": 1914.983,
+      "duration_s": 21.107,
       "namespace": "ran-simulator397"
     },
     {
       "ue_id": 398,
-      "arrival_s": 857.262,
-      "duration_s": 31.214,
+      "arrival_s": 1920.717,
+      "duration_s": 93.716,
       "namespace": "ran-simulator398"
     },
     {
       "ue_id": 399,
-      "arrival_s": 858.334,
-      "duration_s": 54.437,
+      "arrival_s": 1921.495,
+      "duration_s": 118.014,
       "namespace": "ran-simulator399"
     },
     {
       "ue_id": 400,
-      "arrival_s": 859.752,
-      "duration_s": 34.357,
+      "arrival_s": 1924.07,
+      "duration_s": 65.613,
       "namespace": "ran-simulator400"
     }
   ]

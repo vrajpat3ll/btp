@@ -151,15 +151,15 @@ void* descaler(void* arg) {
                                 // creat an amf2gnb thread where source is new_sock and dest is gnb socket
 
                                 pthread_t amf2gnb_thread;
-                                forward_info_t* amf2gnb_info = malloc(sizeof(forward_info_t));
+                                forward_info_t* amf2gnb_info = calloc(1, sizeof(forward_info_t));
                                 if (!amf2gnb_info) {
-                                    log("INFO", "[forward] handle_gnb_connection: Memory allocation failed for amf_to_gnb\n");
+                                    log("INFO", "[scale] descaler: Memory allocation failed for amf_to_gnb\n");
                                     continue;
                                 }
                                 amf2gnb_info->source_socket = new_sock;
                                 amf2gnb_info->destination_socket = malloc(sizeof(int));
                                 *(amf2gnb_info->destination_socket) = thread_info->source_socket;
-                                amf2gnb_info->current_amf = malloc(sizeof(AMF*));
+                                amf2gnb_info->current_amf = calloc(1, sizeof(AMF*));
                                 *(amf2gnb_info->current_amf) = new_amf;
                                 amf2gnb_info->is_active = 1;
                                 amf2gnb_info->live_thread_index = -1;

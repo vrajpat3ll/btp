@@ -240,9 +240,10 @@ void* handle_gnb_connection(void* arg) {
             sleep(RECONNECT_BUFFER_SECONDS);
         }
     } while (amf_sock < 0);
-
+    pthread_mutex_lock(&amf_state_mutex);
     target_amf->connections++;
     total_conn_count++;
+    pthread_mutex_unlock(&amf_state_mutex);
     gettimeofday(&end_time, NULL);
     double latency_ms = (end_time.tv_sec - start_time.tv_sec) * 1000.0 +
                         (end_time.tv_usec - start_time.tv_usec) / 1000.0;
@@ -272,7 +273,7 @@ void* handle_gnb_connection(void* arg) {
     pthread_mutex_unlock(&amf_state_mutex);
 
     // --- GNB -> AMF thread ---
-    forward_info_t* gnb_to_amf = malloc(sizeof(forward_info_t));
+    forward_info_t* gnb_to_amf = calloc(1, sizeof(forward_info_t));
     if (!gnb_to_amf) {
         log("INFO", "[forward] handle_gnb_connection: Memory allocation failed for gnb_to_amf\n");
         close(gnb_socket);
@@ -283,10 +284,11 @@ void* handle_gnb_connection(void* arg) {
     gnb_to_amf->source_socket = gnb_socket;
     gnb_to_amf->destination_socket = malloc(sizeof(int));
     *(gnb_to_amf->destination_socket) = amf_sock;
-    gnb_to_amf->current_amf = (AMF**)malloc(sizeof(AMF*));
+    gnb_to_amf->current_amf = (AMF**)calloc(1, sizeof(AMF*));
     *(gnb_to_amf->current_amf) = target_amf;
     gnb_to_amf->is_active = 1;
     gnb_to_amf->live_thread_index = -1;
+    gnb_to_amf->from_gnb = 1;   // THIS thread decrements counters on exit
 
     int slot_g2a = forward_register_thread(gnb_to_amf);
     if (slot_g2a == -1) {
@@ -306,7 +308,7 @@ void* handle_gnb_connection(void* arg) {
     log("INFO", "[forward] handle_gnb_connection: GNB->AMF forwarding thread started at index %d\n", slot_g2a);
 
     // --- AMF -> GNB thread ---
-    forward_info_t* amf_to_gnb = malloc(sizeof(forward_info_t));
+    forward_info_t* amf_to_gnb = calloc(1, sizeof(forward_info_t));
     if (!amf_to_gnb) {
         log("INFO", "[forward] handle_gnb_connection: Memory allocation failed for amf_to_gnb\n");
         return NULL;
@@ -315,10 +317,11 @@ void* handle_gnb_connection(void* arg) {
     amf_to_gnb->source_socket = amf_sock;
     amf_to_gnb->destination_socket = malloc(sizeof(int));
     *(amf_to_gnb->destination_socket) = gnb_socket;
-    amf_to_gnb->current_amf = (AMF**)malloc(sizeof(AMF*));
+    amf_to_gnb->current_amf = (AMF**)calloc(1, sizeof(AMF*));
     *(amf_to_gnb->current_amf) = target_amf;  // NULL, to avoid double true in live_threads
     amf_to_gnb->is_active = 1;
     amf_to_gnb->live_thread_index = -1;
+    amf_to_gnb->from_gnb = 0;   // THIS thread must NOT decrement
 
     int slot_a2g = forward_register_thread(amf_to_gnb);
     if (slot_a2g == -1) {
