@@ -38,7 +38,6 @@ static void cleanup_forward_info(forward_info_t* info) {
     if (info->from_gnb) {
         if (info->destination_socket && *(info->destination_socket) > 0) {
             log("INFO", "[forward] cleanup_forward_info: Shutting down destination socket %d\n", *(info->destination_socket));
-            // close(*(info->destination_socket));
             shutdown(*(info->destination_socket), SHUT_RDWR);
         }
         free(info->destination_socket);
@@ -60,7 +59,7 @@ void* forward_messages(void* arg) {
     get_ip_port(dest_sock_init, dst_addr, sizeof(dst_addr));
     pthread_mutex_unlock(&(*info->current_amf)->lock);
 
-    log("INFO", "[forward] forward_messages: Started forwarding messages (thread index: %d, %s -> %s)\n",
+    log("INFO", "[forward] forward_messages: Started forwarding messages (index %d, %s -> %s)\n",
         info->live_thread_index, src_addr, dst_addr);
     log("INFO", "[forward] forward_messages: initial sockets: src_sock=%d dest_sock=%d\n",
         info->source_socket, dest_sock_init);
@@ -69,10 +68,6 @@ void* forward_messages(void* arg) {
         nbytes = sctp_recvmsg(info->source_socket, buffer, sizeof(buffer), NULL, 0, NULL, NULL);
         int dest_sock = -1;
         AMF* temp_amf = *(info->current_amf);
-        log("INFO", "[forward] forward_messages: recv returned nbytes=%zd from %s (socket=%d)\n",
-            nbytes, src_addr, info->source_socket);
-
-        // Lock AMF to safely read the socket descriptor if needed
 
         if (nbytes > 0) {
             pthread_mutex_lock(&temp_amf->lock);
@@ -81,8 +76,6 @@ void* forward_messages(void* arg) {
             log("INFO", "[forward] forward_messages: resolved dest_sock=%d for AMF id=%d (dst=%s)\n",
                 dest_sock, temp_amf ? temp_amf->id : -1, dst_addr);
             if (dest_sock > 0) {
-                log("INFO", "[forward] forward_messages: attempting to send %zd bytes %s(socket=%d) -> %s(socket=%d)\n",
-                    nbytes, src_addr, info->source_socket, dst_addr, dest_sock);
                 ssize_t sent = sctp_sendmsg(dest_sock, buffer, nbytes, NULL, 0, 0, 0, 0, 0, 0);
                 if (sent < 0) {
                     char buf[256];
@@ -131,12 +124,8 @@ void* forward_messages(void* arg) {
     if (info->from_gnb) {
         pthread_mutex_lock(&amf_state_mutex);
         if (*info->current_amf) {
-            log("INFO", "[forward] forward_messages: decrementing connection counts for AMF id=%d (for %s -> %s), before: connections=%d total_conn_count=%d\n",
-                (*info->current_amf)->id, src_addr, dst_addr, (*info->current_amf)->connections, total_conn_count);
             (*info->current_amf)->connections--;
             total_conn_count--;
-            log("INFO", "[forward] forward_messages: Decremented connection counts for AMF id=%d, total_conn_count=%d\n",
-                (*info->current_amf)->id, total_conn_count);
         }
         pthread_mutex_unlock(&amf_state_mutex);
     }
@@ -145,8 +134,6 @@ void* forward_messages(void* arg) {
     info->is_active = 0;
     if (info->live_thread_index >= 0 && info->live_thread_index < FORWARD_CONNS_ARRAY_LEN) {
         live_threads[info->live_thread_index] = NULL;
-        log("INFO", "[forward] forward_messages: Unregistered thread index %d for %s -> %s\n",
-            info->live_thread_index, src_addr, dst_addr);
     }
     pthread_mutex_unlock(&live_threads_mutex);
 
@@ -156,33 +143,28 @@ void* forward_messages(void* arg) {
 
 int forward_register_thread(forward_info_t* info) {
     pthread_mutex_lock(&live_threads_mutex);
-    int found_slot = -1;
+    int found = -1;
+
     for (int i = 0; i < FORWARD_CONNS_ARRAY_LEN; i++) {
         if (live_threads[i] == NULL) {
             live_threads[i] = info;
             info->live_thread_index = i;
-            found_slot = i;
-            log("INFO", "[forward] forward_register_thread: Registered thread at slot %d\n", i);
+            found = i;
             break;
         }
     }
+
     pthread_mutex_unlock(&live_threads_mutex);
-    if (found_slot == -1) {
-        log("INFO", "[forward] forward_register_thread: No free slot available\n");
-    }
-    return found_slot;
+    return found;
 }
 
 void forward_unregister_index(int idx) {
-    if (idx < 0 || idx >= FORWARD_CONNS_ARRAY_LEN) {
-        log("INFO", "[forward] forward_unregister_index: Invalid index %d\n", idx);
-        return;
-    }
+    if (idx < 0 || idx >= FORWARD_CONNS_ARRAY_LEN) return;
+
     pthread_mutex_lock(&live_threads_mutex);
     if (live_threads[idx]) {
         live_threads[idx]->is_active = 0;
         live_threads[idx] = NULL;
-        log("INFO", "[forward] forward_unregister_index: Unregistered thread at index %d\n", idx);
     }
     pthread_mutex_unlock(&live_threads_mutex);
 }
@@ -194,152 +176,114 @@ void* handle_gnb_connection(void* arg) {
 
     struct sockaddr_in gnb_addr;
     socklen_t addr_len = sizeof(gnb_addr);
-    char gnb_ip[INET_ADDRSTRLEN];  // for IPv4, use INET6_ADDRSTRLEN for IPv6
+    char gnb_ip[INET_ADDRSTRLEN] = "unknown";
     int gnb_port = -1;
 
     if (getpeername(gnb_socket, (struct sockaddr*)&gnb_addr, &addr_len) == 0) {
         inet_ntop(AF_INET, &gnb_addr.sin_addr, gnb_ip, sizeof(gnb_ip));
         gnb_port = ntohs(gnb_addr.sin_port);
-        log("INFO", "[forward] Handling new gNB connection: socket=%d, IP=%s, port=%d\n", gnb_socket, gnb_ip, gnb_port);
+        log("INFO", "[forward] New gNB connection: sock=%d, IP=%s, port=%d\n",
+            gnb_socket, gnb_ip, gnb_port);
     } else {
         log_perror("[forward] getpeername failed");
-        snprintf(gnb_ip, sizeof(gnb_ip), "unknown");
     }
 
-    AMF* target_amf = get_next_amf();
-    int amf_sock;
+    // Pick an AMF
+    AMF* target_amf = NULL;
+    int amf_sock = -1;
 
-    do {
+    for (int attempt = 0; attempt < MAX_RETRIES; attempt++) {
+        target_amf = get_next_amf();
         if (!target_amf) {
-            log("INFO", "[forward] handle_gnb_connection: No active AMF available, closing gNB socket %d\n", gnb_socket);
-            int i = 0;
-            for (; i < MAX_RETRIES && !target_amf; ++i) {
-                target_amf = get_next_amf();
-                if (!target_amf) {
-                    log("INFO", "[forward] handle_gnb_connection: Still no active AMF, retrying in 10 seconds...\n");
-                    sleep(10);
-                }
-            }
-            if (i >= MAX_RETRIES) {
-                log("INFO", "[forward] handle_gnb_connection: Reached max retries for connecting to AMFs...\n");
-                close(gnb_socket);
-                return NULL;
-            }
+            log("WARN", "[forward] No AMF active, retrying in 10 seconds...\n");
+            sleep(10);
+            continue;
         }
 
-        // Consistent locking order: global then specific
         pthread_mutex_lock(&amf_state_mutex);
         pthread_mutex_lock(&target_amf->lock);
 
         amf_sock = connect_to_amf(target_amf);
-        if (amf_sock < 0) {
-            log("INFO", "[forward] handle_gnb_connection: Failed to connect to AMF id=%d ip=%s\n",
-                target_amf->id, target_amf->ip);
-            pthread_mutex_unlock(&target_amf->lock);
-            pthread_mutex_unlock(&amf_state_mutex);
-            sleep(RECONNECT_BUFFER_SECONDS);
+
+        if (amf_sock >= 0) {
+            // IMPORTANT: increment counters under lock
+            target_amf->connections++;
+            total_conn_count++;
         }
-    } while (amf_sock < 0);
-    pthread_mutex_lock(&amf_state_mutex);
-    target_amf->connections++;
-    total_conn_count++;
-    pthread_mutex_unlock(&amf_state_mutex);
+
+        pthread_mutex_unlock(&target_amf->lock);
+        pthread_mutex_unlock(&amf_state_mutex);
+
+        if (amf_sock >= 0) break;  // success
+
+        log("INFO",
+            "[forward] Failed to connect to AMF id=%d ip=%s, retrying...\n",
+            target_amf->id, target_amf->ip);
+        sleep(RECONNECT_BUFFER_SECONDS);
+    }
+
+    if (amf_sock < 0) {
+        log("ERROR", "[forward] Could not connect to any AMF. Closing gNB socket.\n");
+        close(gnb_socket);
+        return NULL;
+    }
+
+    // Measure setup latency
     gettimeofday(&end_time, NULL);
     double latency_ms = (end_time.tv_sec - start_time.tv_sec) * 1000.0 +
                         (end_time.tv_usec - start_time.tv_usec) / 1000.0;
-    double latency_us = latency_ms * 1000;
-    log("INFO", "[forward] Connection setup latency: gNB socket %d -> AMF id=%d took %.3lf µs (%.3f ms)\n",
+    double latency_us = latency_ms * 1000.0;
+
+    log("INFO",
+        "[forward] Setup latency: gNB sock %d -> AMF id=%d = %.3lf µs (%.3f ms)\n",
         gnb_socket, target_amf->id, latency_us, latency_ms);
 
+    // Log to CSV
     {
-        // Format timestamp as YYYY-MM-DD HH:MM:SS
         time_t now = time(NULL);
         struct tm tm_now;
-        char timestamp_str[32];
+        char timestamp[32];
         localtime_r(&now, &tm_now);
-        strftime(timestamp_str, sizeof(timestamp_str), "%Y-%m-%d %H:%M:%S", &tm_now);
+        strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", &tm_now);
 
-        // Log to CSV file: timestamp,gnb_ip,amf_ip,latency_us,latency_ms
         latency_file = fopen(latency_log_filename, "a");
         if (latency_file) {
-            fprintf(latency_file, "%s,%s,%s,%.3lf,%.3f\n", timestamp_str, gnb_ip, target_amf->ip, latency_us, latency_ms);
+            fprintf(latency_file, "%s,%s,%s,%.3lf,%.3f\n",
+                    timestamp, gnb_ip, target_amf->ip, latency_us, latency_ms);
             fclose(latency_file);
-        } else {
-            log_perror("Failed to open latency log");
         }
     }
 
-    pthread_mutex_unlock(&target_amf->lock);
-    pthread_mutex_unlock(&amf_state_mutex);
-
     // --- GNB -> AMF thread ---
-    forward_info_t* gnb_to_amf = calloc(1, sizeof(forward_info_t));
-    if (!gnb_to_amf) {
-        log("INFO", "[forward] handle_gnb_connection: Memory allocation failed for gnb_to_amf\n");
-        close(gnb_socket);
-        close(amf_sock);
-        return NULL;
-    }
+    forward_info_t* g2a = calloc(1, sizeof(forward_info_t));
+    g2a->source_socket = gnb_socket;
+    g2a->destination_socket = malloc(sizeof(int));
+    *(g2a->destination_socket) = amf_sock;
+    g2a->current_amf = calloc(1, sizeof(AMF*));
+    *(g2a->current_amf) = target_amf;
+    g2a->from_gnb = 1;
+    g2a->is_active = 1;
 
-    gnb_to_amf->source_socket = gnb_socket;
-    gnb_to_amf->destination_socket = malloc(sizeof(int));
-    *(gnb_to_amf->destination_socket) = amf_sock;
-    gnb_to_amf->current_amf = (AMF**)calloc(1, sizeof(AMF*));
-    *(gnb_to_amf->current_amf) = target_amf;
-    gnb_to_amf->is_active = 1;
-    gnb_to_amf->live_thread_index = -1;
-    gnb_to_amf->from_gnb = 1;   // THIS thread decrements counters on exit
-
-    int slot_g2a = forward_register_thread(gnb_to_amf);
-    if (slot_g2a == -1) {
-        fprintf(stderr, "[forward] handle_gnb_connection: Max connections reached. Cannot handle new connection.\n");
-        cleanup_forward_info(gnb_to_amf);
-        return NULL;
-    }
-
-    pthread_t thread_g2a;
-    if (pthread_create(&thread_g2a, NULL, forward_messages, gnb_to_amf) != 0) {
-        log_perror("[forward] handle_gnb_connection: pthread_create error (GNB->AMF)");
-        forward_unregister_index(slot_g2a);
-        cleanup_forward_info(gnb_to_amf);
-        return NULL;
-    }
-    pthread_detach(thread_g2a);
-    log("INFO", "[forward] handle_gnb_connection: GNB->AMF forwarding thread started at index %d\n", slot_g2a);
+    int slot_g2a = forward_register_thread(g2a);
+    pthread_t th_g2a;
+    pthread_create(&th_g2a, NULL, forward_messages, g2a);
+    pthread_detach(th_g2a);
 
     // --- AMF -> GNB thread ---
-    forward_info_t* amf_to_gnb = calloc(1, sizeof(forward_info_t));
-    if (!amf_to_gnb) {
-        log("INFO", "[forward] handle_gnb_connection: Memory allocation failed for amf_to_gnb\n");
-        return NULL;
-    }
+    forward_info_t* a2g = calloc(1, sizeof(forward_info_t));
+    a2g->source_socket = amf_sock;
+    a2g->destination_socket = malloc(sizeof(int));
+    *(a2g->destination_socket) = gnb_socket;
+    a2g->current_amf = calloc(1, sizeof(AMF*));
+    *(a2g->current_amf) = target_amf;
+    a2g->from_gnb = 0;
+    a2g->is_active = 1;
 
-    amf_to_gnb->source_socket = amf_sock;
-    amf_to_gnb->destination_socket = malloc(sizeof(int));
-    *(amf_to_gnb->destination_socket) = gnb_socket;
-    amf_to_gnb->current_amf = (AMF**)calloc(1, sizeof(AMF*));
-    *(amf_to_gnb->current_amf) = target_amf;  // NULL, to avoid double true in live_threads
-    amf_to_gnb->is_active = 1;
-    amf_to_gnb->live_thread_index = -1;
-    amf_to_gnb->from_gnb = 0;   // THIS thread must NOT decrement
+    int slot_a2g = forward_register_thread(a2g);
+    pthread_t th_a2g;
+    pthread_create(&th_a2g, NULL, forward_messages, a2g);
+    pthread_detach(th_a2g);
 
-    int slot_a2g = forward_register_thread(amf_to_gnb);
-    if (slot_a2g == -1) {
-        fprintf(stderr, "[forward] handle_gnb_connection: Max connections reached. Cannot handle AMF->GNB thread.\n");
-        cleanup_forward_info(amf_to_gnb);
-        return NULL;
-    }
-
-    pthread_t thread_a2g;
-    if (pthread_create(&thread_a2g, NULL, forward_messages, amf_to_gnb) != 0) {
-        log_perror("[forward] handle_gnb_connection: pthread_create error (AMF->GNB)");
-        forward_unregister_index(slot_a2g);
-        cleanup_forward_info(amf_to_gnb);
-        return NULL;
-    }
-    pthread_detach(thread_a2g);
-    log("INFO", "[forward] handle_gnb_connection: AMF->GNB forwarding thread started at index %d\n", slot_a2g);
-    // *(amf_to_gnb->current_amf) = NULL; // NULL, to avoid double true in live_threads
     return NULL;
 }
 

@@ -181,7 +181,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--trace", required=True)
     p.add_argument("--log-dir", default="ue_logs")
-    p.add_argument("--events", default="events.json")
+    # p.add_argument("--events", default="events.json")
     p.add_argument(
         "--no-sudo",
         action="store_true",
@@ -228,7 +228,7 @@ def main():
         "run_generated_at": iso_now(),
         "events": events_sorted,
     }
-    os.makedirs(os.path.dirname(args.events) or ".", exist_ok=True)
+    os.makedirs(os.path.dirname(Path("events") / f"{total}_{trace.meta.lambda_arrival}_{trace.meta.lambda_duration}.json") or ".", exist_ok=True)
     with open(args.events, "w") as f:
         json.dump(out, f, indent=2)
 
