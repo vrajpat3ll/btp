@@ -80,9 +80,7 @@ void* descaler(void* arg) {
                 AMF* old_amf = &amfs[i];
                 if (!old_amf->active) continue;
 
-                float util = old_amf->connections > 0
-                                 ? (float)old_amf->connections / AMF_CAPACITY
-                                 : 0.0f;
+                float util = (float)old_amf->connections / AMF_CAPACITY;
                 log("DEBUG", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                     old_amf->id, util);
             }
@@ -96,9 +94,7 @@ void* descaler(void* arg) {
             AMF* old_amf = &amfs[i];
             if (!old_amf->active) continue;
 
-            float util = old_amf->connections > 0
-                             ? (float)old_amf->connections / AMF_CAPACITY
-                             : 0.0f;
+            float util = (float)old_amf->connections / AMF_CAPACITY;
             log("DEBUG", "[scale] descaler: Checking AMF %d utilization: %.2f\n",
                 old_amf->id, util);
 
