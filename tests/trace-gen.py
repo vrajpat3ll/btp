@@ -4,7 +4,7 @@ trace-gen.py
 Generate a Poisson arrival + exponential session duration trace in JSON.
 
 Usage:
-    python3 ./trace-gen.py --num-ues 100 --lambda-arr 0.5 --lambda-dur 0.05 --setup-time 10 --out traces/400ue-run.json --seed 42
+    python3 ./trace-gen.py --num-ues 400 --lambda-arr 0.5 --lambda-dur 0.05 --setup-time 0 --out traces/400ue-run.json --seed 42
 """
 
 import json
@@ -28,7 +28,7 @@ def main():
     )
     p.add_argument("--setup-time", type=float, default=20.0, help="connection setup time buffer (seconds)")
     p.add_argument("--out", required=True)
-    p.add_argument("--seed", type=int, default=None)
+    p.add_argument("--seed", type=int, default=42069)
     p.add_argument("--namespace-prefix", default="ran-simulator")
     args = p.parse_args()
 
@@ -52,7 +52,7 @@ def main():
 
     current_time = 0.0
     for i in range(1, args.num_ues + 1):
-        dt = random.expovariate(args.lambda_arr)
+        dt = 1 + random.expovariate(args.lambda_arr) # minimum 1 second buffer rest is exponentially sampled
         current_time += dt
         # Duration includes setup time + random active time
         duration = args.setup_time + random.expovariate(args.lambda_dur)
