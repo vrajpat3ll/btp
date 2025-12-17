@@ -1,15 +1,15 @@
 {
   "trace_file": "traces/400ue-run.json",
-  "run_generated_at": "2025-11-30T12:33:23.414Z",
+  "run_generated_at": "2025-12-17T19:34:03.606Z",
   "events": [
     {
       "ue_id": 1,
       "namespace": "ran-simulator1",
-      "scheduled_arrival_s": 2.04,
+      "scheduled_arrival_s": 3.04,
       "scheduled_duration_s": 0.507,
-      "scheduled_time": "2025-11-30T12:28:52.165Z",
+      "scheduled_time": "2025-12-17T19:28:03.280Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:28:53.443Z",
+      "actual_stop_time": "2025-12-17T19:28:03.456Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_1.log"
@@ -17,11 +17,11 @@
     {
       "ue_id": 2,
       "namespace": "ran-simulator2",
-      "scheduled_arrival_s": 2.683,
+      "scheduled_arrival_s": 4.683,
       "scheduled_duration_s": 5.052,
-      "scheduled_time": "2025-11-30T12:28:56.999Z",
+      "scheduled_time": "2025-12-17T19:28:09.474Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:28:57.086Z",
+      "actual_stop_time": "2025-12-17T19:28:09.637Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_2.log"
@@ -29,11 +29,11 @@
     {
       "ue_id": 3,
       "namespace": "ran-simulator3",
-      "scheduled_arrival_s": 5.351,
+      "scheduled_arrival_s": 8.351,
       "scheduled_duration_s": 22.583,
-      "scheduled_time": "2025-11-30T12:29:17.219Z",
+      "scheduled_time": "2025-12-17T19:28:30.682Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:17.284Z",
+      "actual_stop_time": "2025-12-17T19:28:30.846Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_3.log"
@@ -41,11 +41,11 @@
     {
       "ue_id": 4,
       "namespace": "ran-simulator4",
-      "scheduled_arrival_s": 9.805,
+      "scheduled_arrival_s": 13.805,
       "scheduled_duration_s": 1.819,
-      "scheduled_time": "2025-11-30T12:29:00.888Z",
+      "scheduled_time": "2025-12-17T19:28:15.369Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:00.942Z",
+      "actual_stop_time": "2025-12-17T19:28:15.534Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_4.log"
@@ -53,11 +53,11 @@
     {
       "ue_id": 5,
       "namespace": "ran-simulator5",
-      "scheduled_arrival_s": 10.901,
+      "scheduled_arrival_s": 15.901,
       "scheduled_duration_s": 0.605,
-      "scheduled_time": "2025-11-30T12:29:00.773Z",
+      "scheduled_time": "2025-12-17T19:28:16.246Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:00.830Z",
+      "actual_stop_time": "2025-12-17T19:28:16.409Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_5.log"
@@ -65,11 +65,11 @@
     {
       "ue_id": 6,
       "namespace": "ran-simulator6",
-      "scheduled_arrival_s": 11.395,
+      "scheduled_arrival_s": 17.395,
       "scheduled_duration_s": 14.078,
-      "scheduled_time": "2025-11-30T12:29:14.759Z",
+      "scheduled_time": "2025-12-17T19:28:31.213Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:14.826Z",
+      "actual_stop_time": "2025-12-17T19:28:31.386Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_6.log"
@@ -77,11 +77,11 @@
     {
       "ue_id": 7,
       "namespace": "ran-simulator7",
-      "scheduled_arrival_s": 11.448,
+      "scheduled_arrival_s": 18.448,
       "scheduled_duration_s": 4.434,
-      "scheduled_time": "2025-11-30T12:29:05.149Z",
+      "scheduled_time": "2025-12-17T19:28:22.634Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:05.212Z",
+      "actual_stop_time": "2025-12-17T19:28:22.796Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_7.log"
@@ -89,11 +89,11 @@
     {
       "ue_id": 8,
       "namespace": "ran-simulator8",
-      "scheduled_arrival_s": 13.547,
+      "scheduled_arrival_s": 21.547,
       "scheduled_duration_s": 15.747,
-      "scheduled_time": "2025-11-30T12:29:18.579Z",
+      "scheduled_time": "2025-12-17T19:28:37.029Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:18.662Z",
+      "actual_stop_time": "2025-12-17T19:28:37.190Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_8.log"
@@ -101,11 +101,11 @@
     {
       "ue_id": 9,
       "namespace": "ran-simulator9",
-      "scheduled_arrival_s": 14.045,
+      "scheduled_arrival_s": 23.045,
       "scheduled_duration_s": 17.796,
-      "scheduled_time": "2025-11-30T12:29:21.121Z",
+      "scheduled_time": "2025-12-17T19:28:40.572Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:21.186Z",
+      "actual_stop_time": "2025-12-17T19:28:40.734Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_9.log"
@@ -113,11 +113,11 @@
     {
       "ue_id": 10,
       "namespace": "ran-simulator10",
-      "scheduled_arrival_s": 17.361,
+      "scheduled_arrival_s": 27.361,
       "scheduled_duration_s": 0.13,
-      "scheduled_time": "2025-11-30T12:29:06.765Z",
+      "scheduled_time": "2025-12-17T19:28:27.248Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:06.831Z",
+      "actual_stop_time": "2025-12-17T19:28:27.412Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_10.log"
@@ -125,11 +125,11 @@
     {
       "ue_id": 11,
       "namespace": "ran-simulator11",
-      "scheduled_arrival_s": 20.639,
+      "scheduled_arrival_s": 31.639,
       "scheduled_duration_s": 23.956,
-      "scheduled_time": "2025-11-30T12:29:33.897Z",
+      "scheduled_time": "2025-12-17T19:28:55.380Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:34.011Z",
+      "actual_stop_time": "2025-12-17T19:28:55.543Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_11.log"
@@ -137,11 +137,11 @@
     {
       "ue_id": 12,
       "namespace": "ran-simulator12",
-      "scheduled_arrival_s": 21.471,
+      "scheduled_arrival_s": 33.471,
       "scheduled_duration_s": 3.38,
-      "scheduled_time": "2025-11-30T12:29:14.131Z",
+      "scheduled_time": "2025-12-17T19:28:36.610Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:14.195Z",
+      "actual_stop_time": "2025-12-17T19:28:36.771Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_12.log"
@@ -149,11 +149,11 @@
     {
       "ue_id": 13,
       "namespace": "ran-simulator13",
-      "scheduled_arrival_s": 27.774,
+      "scheduled_arrival_s": 40.774,
       "scheduled_duration_s": 8.207,
-      "scheduled_time": "2025-11-30T12:29:25.273Z",
+      "scheduled_time": "2025-12-17T19:28:48.759Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:25.348Z",
+      "actual_stop_time": "2025-12-17T19:28:48.919Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_13.log"
@@ -161,11 +161,11 @@
     {
       "ue_id": 14,
       "namespace": "ran-simulator14",
-      "scheduled_arrival_s": 27.968,
+      "scheduled_arrival_s": 41.968,
       "scheduled_duration_s": 2.034,
-      "scheduled_time": "2025-11-30T12:29:19.288Z",
+      "scheduled_time": "2025-12-17T19:28:43.775Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:19.627Z",
+      "actual_stop_time": "2025-12-17T19:28:43.942Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_14.log"
@@ -173,11 +173,11 @@
     {
       "ue_id": 15,
       "namespace": "ran-simulator15",
-      "scheduled_arrival_s": 31.729,
+      "scheduled_arrival_s": 46.729,
       "scheduled_duration_s": 18.513,
-      "scheduled_time": "2025-11-30T12:29:39.548Z",
+      "scheduled_time": "2025-12-17T19:29:05.030Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:39.620Z",
+      "actual_stop_time": "2025-12-17T19:29:05.189Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_15.log"
@@ -185,11 +185,11 @@
     {
       "ue_id": 16,
       "namespace": "ran-simulator16",
-      "scheduled_arrival_s": 35.021,
+      "scheduled_arrival_s": 51.021,
       "scheduled_duration_s": 26.167,
-      "scheduled_time": "2025-11-30T12:29:50.506Z",
+      "scheduled_time": "2025-12-17T19:29:16.974Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:50.568Z",
+      "actual_stop_time": "2025-12-17T19:29:17.129Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_16.log"
@@ -197,11 +197,11 @@
     {
       "ue_id": 17,
       "namespace": "ran-simulator17",
-      "scheduled_arrival_s": 36.558,
+      "scheduled_arrival_s": 53.558,
       "scheduled_duration_s": 72.324,
-      "scheduled_time": "2025-11-30T12:30:39.189Z",
+      "scheduled_time": "2025-12-17T19:30:05.710Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:45.567Z",
+      "actual_stop_time": "2025-12-17T19:30:05.872Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_17.log"
@@ -209,11 +209,11 @@
     {
       "ue_id": 18,
       "namespace": "ran-simulator18",
-      "scheduled_arrival_s": 37.509,
+      "scheduled_arrival_s": 55.509,
       "scheduled_duration_s": 16.061,
-      "scheduled_time": "2025-11-30T12:29:42.916Z",
+      "scheduled_time": "2025-12-17T19:29:11.330Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:43.009Z",
+      "actual_stop_time": "2025-12-17T19:29:11.493Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_18.log"
@@ -221,11 +221,11 @@
     {
       "ue_id": 19,
       "namespace": "ran-simulator19",
-      "scheduled_arrival_s": 41.046,
+      "scheduled_arrival_s": 60.046,
       "scheduled_duration_s": 19.274,
-      "scheduled_time": "2025-11-30T12:29:49.637Z",
+      "scheduled_time": "2025-12-17T19:29:19.129Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:49.820Z",
+      "actual_stop_time": "2025-12-17T19:29:19.287Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_19.log"
@@ -233,11 +233,11 @@
     {
       "ue_id": 20,
       "namespace": "ran-simulator20",
-      "scheduled_arrival_s": 45.003,
+      "scheduled_arrival_s": 65.003,
       "scheduled_duration_s": 17.224,
-      "scheduled_time": "2025-11-30T12:29:51.546Z",
+      "scheduled_time": "2025-12-17T19:29:22.035Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:53.362Z",
+      "actual_stop_time": "2025-12-17T19:29:22.195Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_20.log"
@@ -245,11 +245,11 @@
     {
       "ue_id": 21,
       "namespace": "ran-simulator21",
-      "scheduled_arrival_s": 47.441,
+      "scheduled_arrival_s": 68.441,
       "scheduled_duration_s": 0.938,
-      "scheduled_time": "2025-11-30T12:29:37.683Z",
+      "scheduled_time": "2025-12-17T19:29:09.173Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:37.756Z",
+      "actual_stop_time": "2025-12-17T19:29:09.338Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_21.log"
@@ -257,11 +257,11 @@
     {
       "ue_id": 22,
       "namespace": "ran-simulator22",
-      "scheduled_arrival_s": 47.959,
+      "scheduled_arrival_s": 69.959,
       "scheduled_duration_s": 6.833,
-      "scheduled_time": "2025-11-30T12:29:44.102Z",
+      "scheduled_time": "2025-12-17T19:29:16.535Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:44.243Z",
+      "actual_stop_time": "2025-12-17T19:29:16.696Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_22.log"
@@ -269,11 +269,11 @@
     {
       "ue_id": 23,
       "namespace": "ran-simulator23",
-      "scheduled_arrival_s": 48.125,
+      "scheduled_arrival_s": 71.125,
       "scheduled_duration_s": 5.3,
-      "scheduled_time": "2025-11-30T12:29:42.897Z",
+      "scheduled_time": "2025-12-17T19:29:16.231Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:43.027Z",
+      "actual_stop_time": "2025-12-17T19:29:16.393Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_23.log"
@@ -281,11 +281,11 @@
     {
       "ue_id": 24,
       "namespace": "ran-simulator24",
-      "scheduled_arrival_s": 48.338,
+      "scheduled_arrival_s": 72.338,
       "scheduled_duration_s": 6.514,
-      "scheduled_time": "2025-11-30T12:29:44.163Z",
+      "scheduled_time": "2025-12-17T19:29:18.632Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:44.404Z",
+      "actual_stop_time": "2025-12-17T19:29:18.794Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_24.log"
@@ -293,11 +293,11 @@
     {
       "ue_id": 25,
       "namespace": "ran-simulator25",
-      "scheduled_arrival_s": 50.357,
+      "scheduled_arrival_s": 75.357,
       "scheduled_duration_s": 9.077,
-      "scheduled_time": "2025-11-30T12:29:48.748Z",
+      "scheduled_time": "2025-12-17T19:29:24.237Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:48.869Z",
+      "actual_stop_time": "2025-12-17T19:29:24.402Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_25.log"
@@ -305,11 +305,11 @@
     {
       "ue_id": 26,
       "namespace": "ran-simulator26",
-      "scheduled_arrival_s": 51.282,
+      "scheduled_arrival_s": 77.282,
       "scheduled_duration_s": 4.702,
-      "scheduled_time": "2025-11-30T12:29:45.295Z",
+      "scheduled_time": "2025-12-17T19:29:21.782Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:45.481Z",
+      "actual_stop_time": "2025-12-17T19:29:21.946Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_26.log"
@@ -317,11 +317,11 @@
     {
       "ue_id": 27,
       "namespace": "ran-simulator27",
-      "scheduled_arrival_s": 51.903,
+      "scheduled_arrival_s": 78.903,
       "scheduled_duration_s": 55.183,
-      "scheduled_time": "2025-11-30T12:30:37.192Z",
+      "scheduled_time": "2025-12-17T19:30:13.909Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:45.567Z",
+      "actual_stop_time": "2025-12-17T19:30:14.070Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_27.log"
@@ -329,11 +329,11 @@
     {
       "ue_id": 28,
       "namespace": "ran-simulator28",
-      "scheduled_arrival_s": 53.992,
+      "scheduled_arrival_s": 81.992,
       "scheduled_duration_s": 18.788,
-      "scheduled_time": "2025-11-30T12:30:02.107Z",
+      "scheduled_time": "2025-12-17T19:29:40.609Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:02.179Z",
+      "actual_stop_time": "2025-12-17T19:29:40.773Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_28.log"
@@ -341,11 +341,11 @@
     {
       "ue_id": 29,
       "namespace": "ran-simulator29",
-      "scheduled_arrival_s": 54.367,
+      "scheduled_arrival_s": 83.367,
       "scheduled_duration_s": 26.122,
-      "scheduled_time": "2025-11-30T12:30:09.877Z",
+      "scheduled_time": "2025-12-17T19:29:49.234Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:10.045Z",
+      "actual_stop_time": "2025-12-17T19:29:49.403Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_29.log"
@@ -353,11 +353,11 @@
     {
       "ue_id": 30,
       "namespace": "ran-simulator30",
-      "scheduled_arrival_s": 54.724,
+      "scheduled_arrival_s": 84.724,
       "scheduled_duration_s": 9.543,
-      "scheduled_time": "2025-11-30T12:29:53.587Z",
+      "scheduled_time": "2025-12-17T19:29:34.070Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:53.646Z",
+      "actual_stop_time": "2025-12-17T19:29:34.233Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_30.log"
@@ -365,11 +365,11 @@
     {
       "ue_id": 31,
       "namespace": "ran-simulator31",
-      "scheduled_arrival_s": 63.841,
+      "scheduled_arrival_s": 94.841,
       "scheduled_duration_s": 20.433,
-      "scheduled_time": "2025-11-30T12:30:13.614Z",
+      "scheduled_time": "2025-12-17T19:29:55.091Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:13.798Z",
+      "actual_stop_time": "2025-12-17T19:29:55.255Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_31.log"
@@ -377,11 +377,11 @@
     {
       "ue_id": 32,
       "namespace": "ran-simulator32",
-      "scheduled_arrival_s": 65.469,
+      "scheduled_arrival_s": 97.469,
       "scheduled_duration_s": 23.079,
-      "scheduled_time": "2025-11-30T12:30:18.188Z",
+      "scheduled_time": "2025-12-17T19:30:00.377Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:18.396Z",
+      "actual_stop_time": "2025-12-17T19:30:00.547Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_32.log"
@@ -389,11 +389,11 @@
     {
       "ue_id": 33,
       "namespace": "ran-simulator33",
-      "scheduled_arrival_s": 69.17,
+      "scheduled_arrival_s": 102.17,
       "scheduled_duration_s": 29.922,
-      "scheduled_time": "2025-11-30T12:30:28.448Z",
+      "scheduled_time": "2025-12-17T19:30:11.907Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:28.521Z",
+      "actual_stop_time": "2025-12-17T19:30:12.070Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_33.log"
@@ -401,11 +401,11 @@
     {
       "ue_id": 34,
       "namespace": "ran-simulator34",
-      "scheduled_arrival_s": 69.691,
+      "scheduled_arrival_s": 103.691,
       "scheduled_duration_s": 0.653,
-      "scheduled_time": "2025-11-30T12:29:59.658Z",
+      "scheduled_time": "2025-12-17T19:29:44.172Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:29:59.726Z",
+      "actual_stop_time": "2025-12-17T19:29:44.336Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_34.log"
@@ -413,11 +413,11 @@
     {
       "ue_id": 35,
       "namespace": "ran-simulator35",
-      "scheduled_arrival_s": 70.449,
+      "scheduled_arrival_s": 105.449,
       "scheduled_duration_s": 6.232,
-      "scheduled_time": "2025-11-30T12:30:06.006Z",
+      "scheduled_time": "2025-12-17T19:29:51.478Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:06.066Z",
+      "actual_stop_time": "2025-12-17T19:29:51.641Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_35.log"
@@ -425,11 +425,11 @@
     {
       "ue_id": 36,
       "namespace": "ran-simulator36",
-      "scheduled_arrival_s": 70.923,
+      "scheduled_arrival_s": 106.923,
       "scheduled_duration_s": 57.262,
-      "scheduled_time": "2025-11-30T12:30:57.541Z",
+      "scheduled_time": "2025-12-17T19:30:43.926Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:57.684Z",
+      "actual_stop_time": "2025-12-17T19:30:44.087Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_36.log"
@@ -437,11 +437,11 @@
     {
       "ue_id": 37,
       "namespace": "ran-simulator37",
-      "scheduled_arrival_s": 75.103,
+      "scheduled_arrival_s": 112.103,
       "scheduled_duration_s": 7.557,
-      "scheduled_time": "2025-11-30T12:30:12.168Z",
+      "scheduled_time": "2025-12-17T19:29:59.454Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:13.518Z",
+      "actual_stop_time": "2025-12-17T19:29:59.642Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_37.log"
@@ -449,11 +449,11 @@
     {
       "ue_id": 38,
       "namespace": "ran-simulator38",
-      "scheduled_arrival_s": 77.234,
+      "scheduled_arrival_s": 115.234,
       "scheduled_duration_s": 10.071,
-      "scheduled_time": "2025-11-30T12:30:16.648Z",
+      "scheduled_time": "2025-12-17T19:30:05.134Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:16.713Z",
+      "actual_stop_time": "2025-12-17T19:30:05.297Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_38.log"
@@ -461,11 +461,11 @@
     {
       "ue_id": 39,
       "namespace": "ran-simulator39",
-      "scheduled_arrival_s": 82.154,
+      "scheduled_arrival_s": 121.154,
       "scheduled_duration_s": 12.281,
-      "scheduled_time": "2025-11-30T12:30:23.785Z",
+      "scheduled_time": "2025-12-17T19:30:13.264Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:23.880Z",
+      "actual_stop_time": "2025-12-17T19:30:13.425Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_39.log"
@@ -473,11 +473,11 @@
     {
       "ue_id": 40,
       "namespace": "ran-simulator40",
-      "scheduled_arrival_s": 82.769,
+      "scheduled_arrival_s": 122.769,
       "scheduled_duration_s": 5.664,
-      "scheduled_time": "2025-11-30T12:30:18.199Z",
+      "scheduled_time": "2025-12-17T19:30:08.163Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:18.454Z",
+      "actual_stop_time": "2025-12-17T19:30:08.329Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_40.log"
@@ -485,11 +485,11 @@
     {
       "ue_id": 41,
       "namespace": "ran-simulator41",
-      "scheduled_arrival_s": 84.418,
+      "scheduled_arrival_s": 125.418,
       "scheduled_duration_s": 6.096,
-      "scheduled_time": "2025-11-30T12:30:19.859Z",
+      "scheduled_time": "2025-12-17T19:30:11.343Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:19.932Z",
+      "actual_stop_time": "2025-12-17T19:30:11.507Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_41.log"
@@ -497,11 +497,11 @@
     {
       "ue_id": 42,
       "namespace": "ran-simulator42",
-      "scheduled_arrival_s": 86.175,
+      "scheduled_arrival_s": 128.175,
       "scheduled_duration_s": 45.621,
-      "scheduled_time": "2025-11-30T12:31:01.141Z",
+      "scheduled_time": "2025-12-17T19:30:53.626Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:01.202Z",
+      "actual_stop_time": "2025-12-17T19:30:53.794Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_42.log"
@@ -509,11 +509,11 @@
     {
       "ue_id": 43,
       "namespace": "ran-simulator43",
-      "scheduled_arrival_s": 87.194,
+      "scheduled_arrival_s": 130.194,
       "scheduled_duration_s": 4.952,
-      "scheduled_time": "2025-11-30T12:30:21.485Z",
+      "scheduled_time": "2025-12-17T19:30:14.939Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:21.545Z",
+      "actual_stop_time": "2025-12-17T19:30:15.102Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_43.log"
@@ -521,11 +521,11 @@
     {
       "ue_id": 44,
       "namespace": "ran-simulator44",
-      "scheduled_arrival_s": 99.207,
+      "scheduled_arrival_s": 143.207,
       "scheduled_duration_s": 14.248,
-      "scheduled_time": "2025-11-30T12:30:43.259Z",
+      "scheduled_time": "2025-12-17T19:30:37.186Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:45.677Z",
+      "actual_stop_time": "2025-12-17T19:30:37.350Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_44.log"
@@ -533,11 +533,11 @@
     {
       "ue_id": 45,
       "namespace": "ran-simulator45",
-      "scheduled_arrival_s": 99.398,
+      "scheduled_arrival_s": 144.398,
       "scheduled_duration_s": 0.965,
-      "scheduled_time": "2025-11-30T12:30:29.719Z",
+      "scheduled_time": "2025-12-17T19:30:25.175Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:29.798Z",
+      "actual_stop_time": "2025-12-17T19:30:25.349Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_45.log"
@@ -545,11 +545,11 @@
     {
       "ue_id": 46,
       "namespace": "ran-simulator46",
-      "scheduled_arrival_s": 99.63,
+      "scheduled_arrival_s": 145.63,
       "scheduled_duration_s": 19.747,
-      "scheduled_time": "2025-11-30T12:30:48.733Z",
+      "scheduled_time": "2025-12-17T19:30:45.167Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:48.811Z",
+      "actual_stop_time": "2025-12-17T19:30:45.337Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_46.log"
@@ -557,11 +557,11 @@
     {
       "ue_id": 47,
       "namespace": "ran-simulator47",
-      "scheduled_arrival_s": 102.772,
+      "scheduled_arrival_s": 149.772,
       "scheduled_duration_s": 10.969,
-      "scheduled_time": "2025-11-30T12:30:43.190Z",
+      "scheduled_time": "2025-12-17T19:30:40.478Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:45.686Z",
+      "actual_stop_time": "2025-12-17T19:30:40.637Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_47.log"
@@ -569,11 +569,11 @@
     {
       "ue_id": 48,
       "namespace": "ran-simulator48",
-      "scheduled_arrival_s": 102.903,
+      "scheduled_arrival_s": 150.903,
       "scheduled_duration_s": 9.613,
-      "scheduled_time": "2025-11-30T12:30:42.191Z",
+      "scheduled_time": "2025-12-17T19:30:40.276Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:45.679Z",
+      "actual_stop_time": "2025-12-17T19:30:40.438Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_48.log"
@@ -581,11 +581,11 @@
     {
       "ue_id": 49,
       "namespace": "ran-simulator49",
-      "scheduled_arrival_s": 114.007,
+      "scheduled_arrival_s": 163.007,
       "scheduled_duration_s": 15.063,
-      "scheduled_time": "2025-11-30T12:30:58.427Z",
+      "scheduled_time": "2025-12-17T19:30:57.813Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:30:58.484Z",
+      "actual_stop_time": "2025-12-17T19:30:57.980Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_49.log"
@@ -593,11 +593,11 @@
     {
       "ue_id": 50,
       "namespace": "ran-simulator50",
-      "scheduled_arrival_s": 121.094,
+      "scheduled_arrival_s": 171.094,
       "scheduled_duration_s": 39.434,
-      "scheduled_time": "2025-11-30T12:31:29.876Z",
+      "scheduled_time": "2025-12-17T19:31:30.324Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:29.941Z",
+      "actual_stop_time": "2025-12-17T19:31:30.494Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_50.log"
@@ -605,11 +605,11 @@
     {
       "ue_id": 51,
       "namespace": "ran-simulator51",
-      "scheduled_arrival_s": 121.117,
+      "scheduled_arrival_s": 172.117,
       "scheduled_duration_s": 25.511,
-      "scheduled_time": "2025-11-30T12:31:16.197Z",
+      "scheduled_time": "2025-12-17T19:31:17.429Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:16.435Z",
+      "actual_stop_time": "2025-12-17T19:31:17.587Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_51.log"
@@ -617,11 +617,11 @@
     {
       "ue_id": 52,
       "namespace": "ran-simulator52",
-      "scheduled_arrival_s": 123.406,
+      "scheduled_arrival_s": 175.406,
       "scheduled_duration_s": 15.399,
-      "scheduled_time": "2025-11-30T12:31:08.183Z",
+      "scheduled_time": "2025-12-17T19:31:10.565Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:09.349Z",
+      "actual_stop_time": "2025-12-17T19:31:10.730Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_52.log"
@@ -629,11 +629,11 @@
     {
       "ue_id": 53,
       "namespace": "ran-simulator53",
-      "scheduled_arrival_s": 124.027,
+      "scheduled_arrival_s": 177.027,
       "scheduled_duration_s": 20.487,
-      "scheduled_time": "2025-11-30T12:31:13.869Z",
+      "scheduled_time": "2025-12-17T19:31:17.313Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:13.951Z",
+      "actual_stop_time": "2025-12-17T19:31:17.471Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_53.log"
@@ -641,11 +641,11 @@
     {
       "ue_id": 54,
       "namespace": "ran-simulator54",
-      "scheduled_arrival_s": 124.264,
+      "scheduled_arrival_s": 178.264,
       "scheduled_duration_s": 11.41,
-      "scheduled_time": "2025-11-30T12:31:05.187Z",
+      "scheduled_time": "2025-12-17T19:31:09.498Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:05.468Z",
+      "actual_stop_time": "2025-12-17T19:31:09.665Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_54.log"
@@ -653,11 +653,11 @@
     {
       "ue_id": 55,
       "namespace": "ran-simulator55",
-      "scheduled_arrival_s": 125.473,
+      "scheduled_arrival_s": 180.473,
       "scheduled_duration_s": 61.502,
-      "scheduled_time": "2025-11-30T12:31:56.332Z",
+      "scheduled_time": "2025-12-17T19:32:01.718Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:56.456Z",
+      "actual_stop_time": "2025-12-17T19:32:01.883Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_55.log"
@@ -665,11 +665,11 @@
     {
       "ue_id": 56,
       "namespace": "ran-simulator56",
-      "scheduled_arrival_s": 129.646,
+      "scheduled_arrival_s": 185.646,
       "scheduled_duration_s": 6.114,
-      "scheduled_time": "2025-11-30T12:31:05.187Z",
+      "scheduled_time": "2025-12-17T19:31:11.506Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:05.472Z",
+      "actual_stop_time": "2025-12-17T19:31:11.675Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_56.log"
@@ -677,11 +677,11 @@
     {
       "ue_id": 57,
       "namespace": "ran-simulator57",
-      "scheduled_arrival_s": 131.034,
+      "scheduled_arrival_s": 188.034,
       "scheduled_duration_s": 3.936,
-      "scheduled_time": "2025-11-30T12:31:05.204Z",
+      "scheduled_time": "2025-12-17T19:31:11.750Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:05.483Z",
+      "actual_stop_time": "2025-12-17T19:31:11.909Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_57.log"
@@ -689,11 +689,11 @@
     {
       "ue_id": 58,
       "namespace": "ran-simulator58",
-      "scheduled_arrival_s": 135.909,
+      "scheduled_arrival_s": 193.909,
       "scheduled_duration_s": 40.884,
-      "scheduled_time": "2025-11-30T12:31:46.148Z",
+      "scheduled_time": "2025-12-17T19:31:54.567Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:46.213Z",
+      "actual_stop_time": "2025-12-17T19:31:54.738Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_58.log"
@@ -701,11 +701,11 @@
     {
       "ue_id": 59,
       "namespace": "ran-simulator59",
-      "scheduled_arrival_s": 136.618,
+      "scheduled_arrival_s": 195.618,
       "scheduled_duration_s": 20.375,
-      "scheduled_time": "2025-11-30T12:31:26.348Z",
+      "scheduled_time": "2025-12-17T19:31:35.727Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:26.425Z",
+      "actual_stop_time": "2025-12-17T19:31:35.893Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_59.log"
@@ -713,11 +713,11 @@
     {
       "ue_id": 60,
       "namespace": "ran-simulator60",
-      "scheduled_arrival_s": 138.496,
+      "scheduled_arrival_s": 198.496,
       "scheduled_duration_s": 3.317,
-      "scheduled_time": "2025-11-30T12:31:11.206Z",
+      "scheduled_time": "2025-12-17T19:31:21.590Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:13.513Z",
+      "actual_stop_time": "2025-12-17T19:31:21.755Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_60.log"
@@ -725,11 +725,11 @@
     {
       "ue_id": 61,
       "namespace": "ran-simulator61",
-      "scheduled_arrival_s": 141.371,
+      "scheduled_arrival_s": 202.371,
       "scheduled_duration_s": 15.504,
-      "scheduled_time": "2025-11-30T12:31:26.231Z",
+      "scheduled_time": "2025-12-17T19:31:37.693Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:26.290Z",
+      "actual_stop_time": "2025-12-17T19:31:37.858Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_61.log"
@@ -737,11 +737,11 @@
     {
       "ue_id": 62,
       "namespace": "ran-simulator62",
-      "scheduled_arrival_s": 144.387,
+      "scheduled_arrival_s": 206.387,
       "scheduled_duration_s": 15.116,
-      "scheduled_time": "2025-11-30T12:31:28.859Z",
+      "scheduled_time": "2025-12-17T19:31:41.332Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:29.262Z",
+      "actual_stop_time": "2025-12-17T19:31:41.498Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_62.log"
@@ -749,11 +749,11 @@
     {
       "ue_id": 63,
       "namespace": "ran-simulator63",
-      "scheduled_arrival_s": 144.388,
+      "scheduled_arrival_s": 207.388,
       "scheduled_duration_s": 7.836,
-      "scheduled_time": "2025-11-30T12:31:22.196Z",
+      "scheduled_time": "2025-12-17T19:31:34.998Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:22.324Z",
+      "actual_stop_time": "2025-12-17T19:31:35.162Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_63.log"
@@ -761,11 +761,11 @@
     {
       "ue_id": 64,
       "namespace": "ran-simulator64",
-      "scheduled_arrival_s": 144.428,
+      "scheduled_arrival_s": 208.428,
       "scheduled_duration_s": 52.929,
-      "scheduled_time": "2025-11-30T12:32:07.187Z",
+      "scheduled_time": "2025-12-17T19:32:21.136Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:15.374Z",
+      "actual_stop_time": "2025-12-17T19:32:21.301Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_64.log"
@@ -773,11 +773,11 @@
     {
       "ue_id": 65,
       "namespace": "ran-simulator65",
-      "scheduled_arrival_s": 148.647,
+      "scheduled_arrival_s": 213.647,
       "scheduled_duration_s": 35.636,
-      "scheduled_time": "2025-11-30T12:31:54.184Z",
+      "scheduled_time": "2025-12-17T19:32:09.112Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:54.330Z",
+      "actual_stop_time": "2025-12-17T19:32:09.281Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_65.log"
@@ -785,11 +785,11 @@
     {
       "ue_id": 66,
       "namespace": "ran-simulator66",
-      "scheduled_arrival_s": 149.382,
+      "scheduled_arrival_s": 215.382,
       "scheduled_duration_s": 1.193,
-      "scheduled_time": "2025-11-30T12:31:19.932Z",
+      "scheduled_time": "2025-12-17T19:31:36.402Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:19.994Z",
+      "actual_stop_time": "2025-12-17T19:31:36.569Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_66.log"
@@ -797,11 +797,11 @@
     {
       "ue_id": 67,
       "namespace": "ran-simulator67",
-      "scheduled_arrival_s": 153.59,
+      "scheduled_arrival_s": 220.59,
       "scheduled_duration_s": 58.73,
-      "scheduled_time": "2025-11-30T12:32:21.675Z",
+      "scheduled_time": "2025-12-17T19:32:39.141Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:21.758Z",
+      "actual_stop_time": "2025-12-17T19:32:39.304Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_67.log"
@@ -809,11 +809,11 @@
     {
       "ue_id": 68,
       "namespace": "ran-simulator68",
-      "scheduled_arrival_s": 153.769,
+      "scheduled_arrival_s": 221.769,
       "scheduled_duration_s": 13.31,
-      "scheduled_time": "2025-11-30T12:31:36.434Z",
+      "scheduled_time": "2025-12-17T19:31:54.870Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:36.496Z",
+      "actual_stop_time": "2025-12-17T19:31:55.037Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_68.log"
@@ -821,11 +821,11 @@
     {
       "ue_id": 69,
       "namespace": "ran-simulator69",
-      "scheduled_arrival_s": 153.912,
+      "scheduled_arrival_s": 222.912,
       "scheduled_duration_s": 28.593,
-      "scheduled_time": "2025-11-30T12:31:51.861Z",
+      "scheduled_time": "2025-12-17T19:32:11.297Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:51.922Z",
+      "actual_stop_time": "2025-12-17T19:32:11.464Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_69.log"
@@ -833,11 +833,11 @@
     {
       "ue_id": 70,
       "namespace": "ran-simulator70",
-      "scheduled_arrival_s": 156.816,
+      "scheduled_arrival_s": 226.816,
       "scheduled_duration_s": 2.748,
-      "scheduled_time": "2025-11-30T12:31:29.182Z",
+      "scheduled_time": "2025-12-17T19:31:49.370Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:29.286Z",
+      "actual_stop_time": "2025-12-17T19:31:49.533Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_70.log"
@@ -845,11 +845,11 @@
     {
       "ue_id": 71,
       "namespace": "ran-simulator71",
-      "scheduled_arrival_s": 158.105,
+      "scheduled_arrival_s": 229.105,
       "scheduled_duration_s": 15.961,
-      "scheduled_time": "2025-11-30T12:31:43.421Z",
+      "scheduled_time": "2025-12-17T19:32:04.895Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:44.304Z",
+      "actual_stop_time": "2025-12-17T19:32:05.059Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_71.log"
@@ -857,11 +857,11 @@
     {
       "ue_id": 72,
       "namespace": "ran-simulator72",
-      "scheduled_arrival_s": 158.721,
+      "scheduled_arrival_s": 230.721,
       "scheduled_duration_s": 41.182,
-      "scheduled_time": "2025-11-30T12:32:10.195Z",
+      "scheduled_time": "2025-12-17T19:32:31.732Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:15.487Z",
+      "actual_stop_time": "2025-12-17T19:32:31.897Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_72.log"
@@ -869,11 +869,11 @@
     {
       "ue_id": 73,
       "namespace": "ran-simulator73",
-      "scheduled_arrival_s": 159.822,
+      "scheduled_arrival_s": 232.822,
       "scheduled_duration_s": 4.76,
-      "scheduled_time": "2025-11-30T12:31:33.935Z",
+      "scheduled_time": "2025-12-17T19:31:57.346Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:33.998Z",
+      "actual_stop_time": "2025-12-17T19:31:57.515Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_73.log"
@@ -881,11 +881,11 @@
     {
       "ue_id": 74,
       "namespace": "ran-simulator74",
-      "scheduled_arrival_s": 161.372,
+      "scheduled_arrival_s": 235.372,
       "scheduled_duration_s": 26.182,
-      "scheduled_time": "2025-11-30T12:31:56.909Z",
+      "scheduled_time": "2025-12-17T19:32:21.349Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:56.976Z",
+      "actual_stop_time": "2025-12-17T19:32:21.509Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_74.log"
@@ -893,11 +893,11 @@
     {
       "ue_id": 75,
       "namespace": "ran-simulator75",
-      "scheduled_arrival_s": 161.821,
+      "scheduled_arrival_s": 236.821,
       "scheduled_duration_s": 7.471,
-      "scheduled_time": "2025-11-30T12:31:39.189Z",
+      "scheduled_time": "2025-12-17T19:32:04.086Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:40.315Z",
+      "actual_stop_time": "2025-12-17T19:32:04.245Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_75.log"
@@ -905,11 +905,11 @@
     {
       "ue_id": 76,
       "namespace": "ran-simulator76",
-      "scheduled_arrival_s": 172.478,
+      "scheduled_arrival_s": 248.478,
       "scheduled_duration_s": 20.989,
-      "scheduled_time": "2025-11-30T12:32:02.824Z",
+      "scheduled_time": "2025-12-17T19:32:29.273Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:02.885Z",
+      "actual_stop_time": "2025-12-17T19:32:29.435Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_76.log"
@@ -917,11 +917,11 @@
     {
       "ue_id": 77,
       "namespace": "ran-simulator77",
-      "scheduled_arrival_s": 173.631,
+      "scheduled_arrival_s": 250.631,
       "scheduled_duration_s": 14.579,
-      "scheduled_time": "2025-11-30T12:31:57.566Z",
+      "scheduled_time": "2025-12-17T19:32:24.966Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:57.643Z",
+      "actual_stop_time": "2025-12-17T19:32:25.133Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_77.log"
@@ -929,11 +929,11 @@
     {
       "ue_id": 78,
       "namespace": "ran-simulator78",
-      "scheduled_arrival_s": 173.889,
+      "scheduled_arrival_s": 251.889,
       "scheduled_duration_s": 5.09,
-      "scheduled_time": "2025-11-30T12:31:48.331Z",
+      "scheduled_time": "2025-12-17T19:32:16.713Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:48.400Z",
+      "actual_stop_time": "2025-12-17T19:32:16.876Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_78.log"
@@ -941,11 +941,11 @@
     {
       "ue_id": 79,
       "namespace": "ran-simulator79",
-      "scheduled_arrival_s": 174.714,
+      "scheduled_arrival_s": 253.714,
       "scheduled_duration_s": 17.75,
-      "scheduled_time": "2025-11-30T12:32:01.820Z",
+      "scheduled_time": "2025-12-17T19:32:31.223Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:01.883Z",
+      "actual_stop_time": "2025-12-17T19:32:31.386Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_79.log"
@@ -953,11 +953,11 @@
     {
       "ue_id": 80,
       "namespace": "ran-simulator80",
-      "scheduled_arrival_s": 175.237,
+      "scheduled_arrival_s": 255.237,
       "scheduled_duration_s": 4.975,
-      "scheduled_time": "2025-11-30T12:31:50.190Z",
+      "scheduled_time": "2025-12-17T19:32:20.041Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:51.305Z",
+      "actual_stop_time": "2025-12-17T19:32:20.203Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_80.log"
@@ -965,11 +965,11 @@
     {
       "ue_id": 81,
       "namespace": "ran-simulator81",
-      "scheduled_arrival_s": 175.384,
+      "scheduled_arrival_s": 256.384,
       "scheduled_duration_s": 19.945,
-      "scheduled_time": "2025-11-30T12:32:04.686Z",
+      "scheduled_time": "2025-12-17T19:32:36.112Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:04.755Z",
+      "actual_stop_time": "2025-12-17T19:32:36.277Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_81.log"
@@ -977,11 +977,11 @@
     {
       "ue_id": 82,
       "namespace": "ran-simulator82",
-      "scheduled_arrival_s": 175.904,
+      "scheduled_arrival_s": 257.904,
       "scheduled_duration_s": 47.166,
-      "scheduled_time": "2025-11-30T12:32:32.422Z",
+      "scheduled_time": "2025-12-17T19:33:04.822Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:32.488Z",
+      "actual_stop_time": "2025-12-17T19:33:04.984Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_82.log"
@@ -989,11 +989,11 @@
     {
       "ue_id": 83,
       "namespace": "ran-simulator83",
-      "scheduled_arrival_s": 179.831,
+      "scheduled_arrival_s": 262.831,
       "scheduled_duration_s": 1.47,
-      "scheduled_time": "2025-11-30T12:31:51.187Z",
+      "scheduled_time": "2025-12-17T19:32:24.054Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:51.336Z",
+      "actual_stop_time": "2025-12-17T19:32:24.222Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_83.log"
@@ -1001,11 +1001,11 @@
     {
       "ue_id": 84,
       "namespace": "ran-simulator84",
-      "scheduled_arrival_s": 180.375,
+      "scheduled_arrival_s": 264.375,
       "scheduled_duration_s": 22.111,
-      "scheduled_time": "2025-11-30T12:32:12.227Z",
+      "scheduled_time": "2025-12-17T19:32:46.269Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:15.485Z",
+      "actual_stop_time": "2025-12-17T19:32:46.433Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_84.log"
@@ -1013,11 +1013,11 @@
     {
       "ue_id": 85,
       "namespace": "ran-simulator85",
-      "scheduled_arrival_s": 180.857,
+      "scheduled_arrival_s": 265.857,
       "scheduled_duration_s": 2.838,
-      "scheduled_time": "2025-11-30T12:31:53.051Z",
+      "scheduled_time": "2025-12-17T19:32:28.524Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:31:53.132Z",
+      "actual_stop_time": "2025-12-17T19:32:28.685Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_85.log"
@@ -1025,11 +1025,11 @@
     {
       "ue_id": 86,
       "namespace": "ran-simulator86",
-      "scheduled_arrival_s": 186.34,
+      "scheduled_arrival_s": 272.34,
       "scheduled_duration_s": 16.928,
-      "scheduled_time": "2025-11-30T12:32:13.188Z",
+      "scheduled_time": "2025-12-17T19:32:49.015Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:15.525Z",
+      "actual_stop_time": "2025-12-17T19:32:49.185Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_86.log"
@@ -1037,11 +1037,11 @@
     {
       "ue_id": 87,
       "namespace": "ran-simulator87",
-      "scheduled_arrival_s": 187.62,
+      "scheduled_arrival_s": 274.62,
       "scheduled_duration_s": 30.707,
-      "scheduled_time": "2025-11-30T12:32:27.682Z",
+      "scheduled_time": "2025-12-17T19:33:05.094Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:27.776Z",
+      "actual_stop_time": "2025-12-17T19:33:05.261Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_87.log"
@@ -1049,11 +1049,11 @@
     {
       "ue_id": 88,
       "namespace": "ran-simulator88",
-      "scheduled_arrival_s": 190.915,
+      "scheduled_arrival_s": 278.915,
       "scheduled_duration_s": 4.225,
-      "scheduled_time": "2025-11-30T12:32:04.493Z",
+      "scheduled_time": "2025-12-17T19:32:42.960Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:04.560Z",
+      "actual_stop_time": "2025-12-17T19:32:43.129Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_88.log"
@@ -1061,11 +1061,11 @@
     {
       "ue_id": 89,
       "namespace": "ran-simulator89",
-      "scheduled_arrival_s": 191.119,
+      "scheduled_arrival_s": 280.119,
       "scheduled_duration_s": 11.279,
-      "scheduled_time": "2025-11-30T12:32:12.195Z",
+      "scheduled_time": "2025-12-17T19:32:51.198Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:15.527Z",
+      "actual_stop_time": "2025-12-17T19:32:51.354Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_89.log"
@@ -1073,11 +1073,11 @@
     {
       "ue_id": 90,
       "namespace": "ran-simulator90",
-      "scheduled_arrival_s": 192.221,
+      "scheduled_arrival_s": 282.221,
       "scheduled_duration_s": 12.586,
-      "scheduled_time": "2025-11-30T12:32:14.184Z",
+      "scheduled_time": "2025-12-17T19:32:54.636Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:15.531Z",
+      "actual_stop_time": "2025-12-17T19:32:54.797Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_90.log"
@@ -1085,11 +1085,11 @@
     {
       "ue_id": 91,
       "namespace": "ran-simulator91",
-      "scheduled_arrival_s": 194.833,
+      "scheduled_arrival_s": 285.833,
       "scheduled_duration_s": 22.378,
-      "scheduled_time": "2025-11-30T12:32:26.568Z",
+      "scheduled_time": "2025-12-17T19:33:07.955Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:26.695Z",
+      "actual_stop_time": "2025-12-17T19:33:08.118Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_91.log"
@@ -1097,11 +1097,11 @@
     {
       "ue_id": 92,
       "namespace": "ran-simulator92",
-      "scheduled_arrival_s": 203.124,
+      "scheduled_arrival_s": 295.124,
       "scheduled_duration_s": 2.072,
-      "scheduled_time": "2025-11-30T12:32:15.201Z",
+      "scheduled_time": "2025-12-17T19:32:56.943Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:15.568Z",
+      "actual_stop_time": "2025-12-17T19:32:57.110Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_92.log"
@@ -1109,11 +1109,11 @@
     {
       "ue_id": 93,
       "namespace": "ran-simulator93",
-      "scheduled_arrival_s": 204.154,
+      "scheduled_arrival_s": 297.154,
       "scheduled_duration_s": 8.289,
-      "scheduled_time": "2025-11-30T12:32:21.799Z",
+      "scheduled_time": "2025-12-17T19:33:05.190Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:21.864Z",
+      "actual_stop_time": "2025-12-17T19:33:05.353Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_93.log"
@@ -1121,11 +1121,11 @@
     {
       "ue_id": 94,
       "namespace": "ran-simulator94",
-      "scheduled_arrival_s": 208.11,
+      "scheduled_arrival_s": 302.11,
       "scheduled_duration_s": 5.718,
-      "scheduled_time": "2025-11-30T12:32:23.186Z",
+      "scheduled_time": "2025-12-17T19:33:07.627Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:23.297Z",
+      "actual_stop_time": "2025-12-17T19:33:07.797Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_94.log"
@@ -1133,11 +1133,11 @@
     {
       "ue_id": 95,
       "namespace": "ran-simulator95",
-      "scheduled_arrival_s": 208.532,
+      "scheduled_arrival_s": 303.532,
       "scheduled_duration_s": 11.906,
-      "scheduled_time": "2025-11-30T12:32:29.794Z",
+      "scheduled_time": "2025-12-17T19:33:15.268Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:29.855Z",
+      "actual_stop_time": "2025-12-17T19:33:15.434Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_95.log"
@@ -1145,11 +1145,11 @@
     {
       "ue_id": 96,
       "namespace": "ran-simulator96",
-      "scheduled_arrival_s": 209.628,
+      "scheduled_arrival_s": 305.628,
       "scheduled_duration_s": 6.53,
-      "scheduled_time": "2025-11-30T12:32:25.514Z",
+      "scheduled_time": "2025-12-17T19:33:11.902Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:25.573Z",
+      "actual_stop_time": "2025-12-17T19:33:12.072Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_96.log"
@@ -1157,11 +1157,11 @@
     {
       "ue_id": 97,
       "namespace": "ran-simulator97",
-      "scheduled_arrival_s": 210.203,
+      "scheduled_arrival_s": 307.203,
       "scheduled_duration_s": 51.348,
-      "scheduled_time": "2025-11-30T12:33:10.905Z",
+      "scheduled_time": "2025-12-17T19:33:58.332Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:33:11.237Z",
+      "actual_stop_time": "2025-12-17T19:33:58.496Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_97.log"
@@ -1169,11 +1169,11 @@
     {
       "ue_id": 98,
       "namespace": "ran-simulator98",
-      "scheduled_arrival_s": 211.374,
+      "scheduled_arrival_s": 309.374,
       "scheduled_duration_s": 39.516,
-      "scheduled_time": "2025-11-30T12:33:00.245Z",
+      "scheduled_time": "2025-12-17T19:33:48.719Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:33:00.317Z",
+      "actual_stop_time": "2025-12-17T19:33:48.887Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_98.log"
@@ -1181,11 +1181,11 @@
     {
       "ue_id": 99,
       "namespace": "ran-simulator99",
-      "scheduled_arrival_s": 212.972,
+      "scheduled_arrival_s": 311.972,
       "scheduled_duration_s": 1.038,
-      "scheduled_time": "2025-11-30T12:32:23.366Z",
+      "scheduled_time": "2025-12-17T19:33:12.759Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:32:23.450Z",
+      "actual_stop_time": "2025-12-17T19:33:12.923Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_99.log"
@@ -1193,11 +1193,11 @@
     {
       "ue_id": 100,
       "namespace": "ran-simulator100",
-      "scheduled_arrival_s": 227.452,
+      "scheduled_arrival_s": 327.452,
       "scheduled_duration_s": 36.161,
-      "scheduled_time": "2025-11-30T12:33:13.188Z",
+      "scheduled_time": "2025-12-17T19:34:03.429Z",
       "actual_start_time": null,
-      "actual_stop_time": "2025-11-30T12:33:23.411Z",
+      "actual_stop_time": "2025-12-17T19:34:03.606Z",
       "termination_method": null,
       "exit_code": 0,
       "log_path": "ue_logs/ue_100.log"
