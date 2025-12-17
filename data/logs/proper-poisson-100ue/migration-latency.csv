@@ -1,0 +1,2 @@
+timestamp,old_amf_ip,new_amf_ip,connections_migrated,migration_us,migration_ms
+2025-12-13 10:35:33,10.0.0.5,10.0.0.4,2,2123.000,2.123

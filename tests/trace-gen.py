@@ -4,7 +4,7 @@ trace-gen.py
 Generate a Poisson arrival + exponential session duration trace in JSON.
 
 Usage:
-    python3 ./trace-gen.py --num-ues 100 --lambda-arr 0.5 --lambda-dur 0.05 --setup-time 10 --out traces/400ue-run.json --seed 42
+    python3 ./trace-gen.py --num-ues 400 --lambda-arr 0.5 --lambda-dur 0.05 --setup-time 0 --out traces/400ue-run.json --seed 42
 """
 
 import json

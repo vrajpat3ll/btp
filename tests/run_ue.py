@@ -228,11 +228,12 @@ def main():
         "run_generated_at": iso_now(),
         "events": events_sorted,
     }
-    os.makedirs(os.path.dirname(Path("events") / f"{total}_{trace.meta.lambda_arrival}_{trace.meta.lambda_duration}.json") or ".", exist_ok=True)
-    with open(args.events, "w") as f:
+    events_path = Path("events") / f"{total}_{trace['meta']['lambda_arrival']}_{trace['meta']['lambda_duration']}.json"
+    os.makedirs(os.path.dirname(events_path) or ".", exist_ok=True)
+    with open(events_path, "w") as f:
         json.dump(out, f, indent=2)
 
-    log_info(f"Experiment finished. Events written to {args.events}")
+    log_info(f"Experiment finished. Events written to {events_path}")
 
 
 if __name__ == "__main__":
