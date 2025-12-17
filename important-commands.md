@@ -22,3 +22,13 @@ sudo kubectl cp loadbalancer/lb-0:/capture.pcap  capture-one-UE.pcap
 ```sh
 sudo kubectl exec -ti -n loadbalancer lb-0 -- bash
 ```
+
+# TO GET ACCESS TO ROOT FILES
+```sh
+sudo chown btp:btp -R data/logs
+```
+
+# TO GET LOGS FROM CLUSTER TO MACHINE
+```sh
+sudo kubectl cp loadbalancer/lb-0:/lb/logs  data/logs
+```
