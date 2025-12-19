@@ -9,6 +9,9 @@ Example command:
 python3 stop_ue.py --trace traces/400ue-run.json --log-dir ue_logs --num_ues 200 --events events/200ue_events.json
 for 100 UEs
 python3 stop_ue.py --trace traces/400ue-run.json --log-dir ue_logs --num_ues 100 --events events/100ue_events.json
+for 200 UEs
+python3 stop_ue.py --trace traces/400ue-run.json --log-dir ue_logs --num_ues 200 --events events/200ue_events.json
+
 """
 
 import argparse
