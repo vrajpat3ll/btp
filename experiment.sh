@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-NUM_UES=(0)
+NUM_UES=100
 
 # update parameters based on arguments inside loadbalancer
 CONFIG_FILE="/lb/include/config.h"
@@ -23,6 +23,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     -n|--num_ues)
       NUM_UES="$2"
+      shift 2
       ;;
     *)
       echo "Unknown option: $1"
@@ -37,6 +38,12 @@ python3 cpu_ram.py &
 CPU_RAM_PID=$!
 echo "Started cpu_ram.py with PID ${CPU_RAM_PID}"
 
+cleanup() {
+  echo "Stopping cpu_ram.py (PID ${CPU_RAM_PID})"
+  kill "${CPU_RAM_PID}"
+}
+
+trap cleanup EXIT INT TERM
 
 # Start loadbalancer
 gnome-terminal --tab --title "LoadBalancer" -- bash -c "
@@ -59,8 +66,5 @@ python3 stop_ue.py              \
   --log-dir ue_logs             \
   --num_ues $NUM_UES            \
   --events "events/100ue_events-$now.json"
-
-echo "Stopping cpu_ram.py (PID ${CPU_RAM_PID})"
-kill "${CPU_RAM_PID}"
 
 # wait "${CPU_RAM_PID}" 2>/dev/null || true
