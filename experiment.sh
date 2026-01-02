@@ -1,9 +1,10 @@
 #!/bin/bash
 set -e
 
-NUM_UES=100
+NUM_UES=150
 if [[ $# -eq 0 ]]; then
     echo "Usage: experiment.sh [-c/--capacity] [-h/--headroom] [-n/--num_ues]"
+    exit 1
 fi
 # update parameters based on arguments inside loadbalancer
 CONFIG_FILE="/lb/include/config.h"
@@ -41,8 +42,8 @@ CPU_RAM_PID=$!
 echo "Started cpu_ram.py with PID ${CPU_RAM_PID}"
 
 cleanup() {
-  echo "Stopping cpu_ram.py (PID ${CPU_RAM_PID})"
   kill "${CPU_RAM_PID}"
+  echo "Stopped cpu_ram.py (PID ${CPU_RAM_PID})"
 }
 
 trap cleanup EXIT INT TERM
