@@ -2,7 +2,9 @@
 set -e
 
 NUM_UES=100
-
+if [[ $# -eq 0 ]]; then
+    echo "Usage: experiment.sh [-c/--capacity] [-h/--headroom] [-n/--num_ues]"
+fi
 # update parameters based on arguments inside loadbalancer
 CONFIG_FILE="/lb/include/config.h"
 while [[ $# -gt 0 ]]; do
@@ -47,8 +49,14 @@ trap cleanup EXIT INT TERM
 
 # Start loadbalancer
 gnome-terminal --tab --title "LoadBalancer" -- bash -c "
-    sudo kubectl exec -n loadbalancer lb-0 -- bash -c 'cd lb; make; ./lb'; 
-    exec bash"
+  sudo kubectl exec -n loadbalancer lb-0 -- bash -c '
+    cd lb &&
+    make clean &&
+    make &&
+    ./lb
+  ';
+  exec bash
+"
 
 sleep 1
 
