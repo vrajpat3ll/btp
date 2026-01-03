@@ -74,6 +74,6 @@ python3 stop_ue.py              \
   --trace traces/400ue-run.json \
   --log-dir ue_logs             \
   --num_ues $NUM_UES            \
-  --events "events/100ue_events-$now.json"
+  --events "events/$NUM_UES-ue_events-$now.json"
 
 # wait "${CPU_RAM_PID}" 2>/dev/null || true
